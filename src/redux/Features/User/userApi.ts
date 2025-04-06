@@ -1,39 +1,127 @@
-import { baseApi } from "../../Api/baseApi";
+import { baseApi } from "@/redux/Api/baseApi";
+
 
 const userApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
 
-    getMyPurchasedCourses: builder.query({
+    // becomeSeller: builder.mutation({
+    //   query: (formData) => ({
+    //     url: "/seller/become-seller",
+    //     method: "POST",
+    //     body: formData,
+    //   }),
+    //   invalidatesTags: ["sellers"]
+    // }),
+
+    getAllUsersForAdmin: builder.query({
       query: () => ({
-        url: "/purchased/course",
         method: "GET",
-        credentials: "include",
+        url: `/user`,
       }),
-      providesTags: ["user"],
-    }),
-    getMe: builder.query({
-      query: () => ({
-        url: "/myprofile",
-        method: "GET",
-        credentials: "include",
-      }),
-      providesTags: ["user"],
+      providesTags: ["users"],
     }),
 
-    updateProfile: builder.mutation({
-      query: (profileUpdatedData) => ({
-        method: "PUT",
-        url: `/me/update`,
-        body: profileUpdatedData,
-        credentials: "include",
+    // getSingleSellerById: builder.query({
+    //   query: (id) => ({
+    //     method: "GET",
+    //     url: `/seller/${id}`,
+    //   }),
+    //   providesTags: ["users"]
+    // }),
+
+    getMe: builder.query({
+      query: () => ({
+        method: "GET",
+        url: `/user/me`,
       }),
-      invalidatesTags: ["user"],
+      providesTags: ["users"]
     }),
+
+    getMyOrders: builder.query({
+      query: (userId) => ({
+        method: "GET",
+        url: `/user/my-orders/${userId}`,
+      }),
+      providesTags: ["users"]
+    }),
+
+    // updateShop: builder.mutation({
+    //   query: ({ id, formData }) => ({
+    //     method: "PUT",
+    //     url: `/seller/update-seller/${id}`,
+    //     body: formData,
+    //   }),
+    //   invalidatesTags: ["users"]
+    // }),
+
+    changeRoleToAdmin: builder.mutation({
+      query: (id) => ({
+        method: "PUT",
+        url: `/user/make-admin/${id}`,
+      }),
+      invalidatesTags: ["users"]
+    }),
+
+    changeRoleToUser: builder.mutation({
+      query: (id) => ({
+        method: "PUT",
+        url: `/user/make-user/${id}`,
+      }),
+      invalidatesTags: ["users"]
+    }),
+
+    suspendUser: builder.mutation({
+      query: (id) => ({
+        method: "PUT",
+        url: `/user/suspend-user/${id}`,
+      }),
+      invalidatesTags: ["users"]
+    }),
+
+    // rejectRequest: builder.mutation({
+    //   query: (id) => ({
+    //     method: "PUT",
+    //     url: `/seller/reject-request/${id}`,
+    //   }),
+    //   invalidatesTags: ["users"]
+    // }),
+
+    // blacklistSeller: builder.mutation({
+    //   query: (id) => ({
+    //     method: "PUT",
+    //     url: `/seller/blacklist-seller/${id}`,
+    //   }),
+    //   invalidatesTags: ["users"]
+    // }),
+
+    removeUser: builder.mutation({
+      query: (id) => ({
+        method: "DELETE",
+        url: `/user/remove-user/${id}`,
+      }),
+      invalidatesTags: ["users"]
+    }),
+
+    followSeller: builder.mutation({
+      query: (followData) => ({
+        method: "PUT",
+        url: `/seller/follow`,
+        body : followData,
+      }),
+      invalidatesTags: ["sellers"]
+    }),
+
+
   }),
 });
 
-export const {
-  useGetMyPurchasedCoursesQuery,
-  useGetMeQuery,
-  useUpdateProfileMutation,
+export const { 
+  useGetAllUsersForAdminQuery,
+    useChangeRoleToAdminMutation,
+    useChangeRoleToUserMutation,
+    useSuspendUserMutation,
+    useRemoveUserMutation,
+    useGetMeQuery,
+    useGetMyOrdersQuery,
+    useFollowSellerMutation
 } = userApi;
