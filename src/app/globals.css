@@ -9,38 +9,61 @@
   /* Colors */
 
   /* Primary */
-  --color-primary-10: #06A0ED;
+  --color-primary-10: #61DAFB ;
+  --color-primary-20: #06A0ED;
+  --color-primary-30: #0696E7;
+  --color-primary-40: #06A0ED33;
+  --color-primary-50: #91A0B5;
 
-  /* Neutral */
-  /* --color-neutral-10: #ffffff1a;
-  --color-neutral-15: #ffffff0d;
-  --color-neutral-20: #ffffff14;
-  --color-neutral-25: #ffffff40;
-  --color-neutral-30: #06050B;
-  --color-neutral-35: #020618;
-  --color-neutral-40: #1D293D;
-  --color-neutral-45: #0F172B;
-  --color-neutral-50: #314158;
-  --color-neutral-55: #243757;
-  --color-neutral-60: #62748E; */
+/* secondary */
+--color-secondary-10: #1A1F2C;
+--color-secondary-20: #262B35;
+--color-secondary-30: #232323;
+--color-secondary-40: #313642;
+--color-secondary-50: #020817;
+--color-secondary-60: #0A1222;
 
-/* Gray/White */
-  /* --color-gray-10: #EDE9FE;
-  --color-gray-15: #ffffffbf;
-  --color-gray-20: #CAD5E2;
-  --color-gray-25: #ffffff80;
-  --color-gray-30: #E2E8F0;
-  --color-gray-35: #90A1B9;
-  --color-gray-40: #5D6B82; */
 
-   /* Shadows */
-   /* --shadow-custom: 0px 4px 28px -4px rgba(0, 0, 0, 0.10);
+  /* neutral */
+  --color-neutral-10: #FCFCFC;
+  --color-neutral-20: #F5F5F5;
+  --color-neutral-30: #D8D8D8;
+  --color-neutral-40: #BABABA;
+  --color-neutral-50: #B3B3B3;
+  --color-neutral-60: #AAAAAA;
+  --color-neutral-70: #616161;
+
+
+
+/* accent */
+  --color-accent-10: #000000;
+  --color-accent-20: #00000033;
+  --color-accent-30: #00000066;
+
+
+/* whites */
+  --color-whites-10: #ffffff1A;
+  --color-whites-20: #ffffff26;
+  --color-whites-30: #ffffff8C;
+  --color-whites-40: #ffffff0D;
+  --color-whites-50: #ffffff33;
+  --color-whites-60: #ffffff66;
+
+
+
+
+
+
+
+
+  /* Shadows */
+  /* --shadow-custom: 0px 4px 28px -4px rgba(0, 0, 0, 0.10);
    --shadow-custom-joinus: 0px 0px 56px 24px rgba(255, 255, 255, 0.10);
    --shadow-custom-hero: 0px 4px 250px 16px #A276FA;
    --shadow-custom-button: 0px -2px 2px 0px rgba(255, 255, 255, 0.05) inset, 0px 12px 45px 0px rgba(137, 81, 246, 0.35); */
 
-   /* Gradients */
-   /* --bg-gradient-primary: linear-gradient(180deg, #8C52FF 0%, #A276FA 100%);
+  /* Gradients */
+  /* --bg-gradient-primary: linear-gradient(180deg, #8C52FF 0%, #A276FA 100%);
    --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
 
@@ -55,21 +78,25 @@
 /* Custom scrollbar for a specific section */
 .custom-scrollbar {
   overflow-y: auto;
-  max-height: 400px; /* Adjust height as needed */
+  max-height: 400px;
+  /* Adjust height as needed */
 }
 
 /* Scrollbar Track (non-scrolled area) */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 5px; /* Scrollbar width */
+  width: 5px;
+  /* Scrollbar width */
 }
 
 /* Scrollbar Thumb (scrolled area) */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #1D293D; /* Dark blue scrollbar */
+  background-color: #1D293D;
+  /* Dark blue scrollbar */
   border-radius: 4px;
 }
 
 /* Scrollbar Track (background) */
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #020618; /* Dark background for non-scrolled area */
+  background: #020618;
+  /* Dark background for non-scrolled area */
 }
