@@ -10,7 +10,7 @@ import Button from "@/components/Reusable/Buttons/Button";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="flex items-center w-full justify-between lg:border lg:border-whites-60 lg:bg-whites-50 p-[11px] rounded-[15px] h-[79px] max-w-[1440px] ">
+    <div className="flex items-center w-full justify-between lg:border lg:border-whites-60 lg:bg-whites-50 p-[11px] rounded-[15px] h-[79px] max-w-[1440px] mx-6 ">
       <div>
         <Image
           src={IMAGES.prtechSolutionsLogoGray}

@@ -17,10 +17,14 @@ import darkLightMode from "./icons/light-dark-mode.svg";
 import topRightBlackArrow from "./icons/Arrows/top-right-black-arrow.svg";
 import hamburgerMenu from "./icons/hamburger-icon.svg";
 
+// images
+import heroImage from "./images/herobg.png";
+
 export const IMAGES = {
     comingSoonPage,
     prtechSolutionsLogo,
-    prtechSolutionsLogoGray
+    prtechSolutionsLogoGray,
+    heroImage,
 };
 
 export const ICONS = {

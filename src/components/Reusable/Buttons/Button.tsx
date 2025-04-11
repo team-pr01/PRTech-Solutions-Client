@@ -8,6 +8,7 @@ interface ButtonProps {
   iconPosition?: "left" | "right";
   alt?: string;
   className?: string;
+  textClassName?: string;
   onClick?: () => void;
 }
 
@@ -17,20 +18,21 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = "left",
   alt = "icon",
   className = "",
+  textClassName = "",
   onClick,
 }) => {
   return (
     <button
       onClick={onClick}
       className={clsx(
-        "flex flex-row justify-center items-center gap-2 rounded-full p-[15px] cursor-pointer ",
-        className
+        `flex flex-row justify-center items-center gap-2 rounded-full px-[15px] py-[15px] cursor-pointer ${className}`, 
+       
       )}
     >
       {icon && iconPosition === "left" && (
         <Image src={icon} alt={alt} className="size-6" />
       )}
-      {text && <span className="text-secondary-60 font-inter text-base not-italic font-medium leading-[1.4]">{text}</span>}
+      {text && <span className={`text-secondary-60 font-inter text-sx lg:text-base font-medium leading-[1.4] ${textClassName}`}>{text}</span>}
       {icon && iconPosition === "right" && (
         <Image src={icon} alt={alt} className="size-6  " />
       )}

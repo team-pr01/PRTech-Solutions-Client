@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 @import "tailwindcss";
 
 
 @theme {
   /* Fonts */
   --font-Inter: "Inter", "sans-serif";
+  --font-Rethink: "Rethink Sans", "sans-serif";
 
   /* Colors */
 
@@ -63,8 +65,8 @@
    --shadow-custom-button: 0px -2px 2px 0px rgba(255, 255, 255, 0.05) inset, 0px 12px 45px 0px rgba(137, 81, 246, 0.35); */
 
   /* Gradients */
-  /* --bg-gradient-primary: linear-gradient(180deg, #8C52FF 0%, #A276FA 100%);
-   --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
+  --bg-gradient-primary: linear-gradient(180deg, ##06A0ED 100%, ##6ECAF8 100%);
+   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
 
 .bg-gradient-primary {
