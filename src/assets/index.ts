@@ -21,6 +21,8 @@ import stars from "./icons/stars.svg";
 
 // gradient bg
 import gradientHero from "./gradient-bg/hero-gradient.png";
+import gradientServiceRight from "./gradient-bg/service-right-gradient .png";
+import gradientServiceLeft from "./gradient-bg/service-left-gradient .png";
 
 
 // images
@@ -50,4 +52,6 @@ export const ICONS = {
 };
 export const GRADIENT_BG = {
     gradientHero,
+    gradientServiceRight,
+    gradientServiceLeft,
 };

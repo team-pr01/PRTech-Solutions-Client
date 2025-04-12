@@ -17,8 +17,8 @@ const Heading: React.FC<HeadingProps> = ({
 }) => {
   return (
     <div className={`text-center  ${className}`}>
-      {heading && <h1 className={`text-white text-[64px] font-rethink font-bold leading-[1] ${headingClassName}`}>{heading}</h1>}
-      {subHeading && <p className={`text-white text-[22px] font-inter font-normal leading-[1.4] mt-4 ${subHeadingClassName}`}>{subHeading}</p>}
+      {heading && <h1 className={`text-black dark:text-white text-center font-rethink text-2xl md:text-5xl lg:text-[64px]  font-bold leading-[1] ${headingClassName}`}>{heading}</h1>}
+      {subHeading && <p className={`dark:text-neutral-30 text-neutral-80 text-center font-inter text-sx md:text-base lg:text-xl font-normal leading-[28px] ${subHeadingClassName}`}>{subHeading}</p>}
     </div>
   );
 };
