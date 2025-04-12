@@ -15,16 +15,24 @@ import githubGray from "./icons/Social Icons/github-gray.svg";
 // icons
 import darkLightMode from "./icons/light-dark-mode.svg"; 
 import topRightBlackArrow from "./icons/Arrows/top-right-black-arrow.svg";
+import dropDownWhiteArrow from "./icons/Arrows/drop-down-white-arrow.svg";
 import hamburgerMenu from "./icons/hamburger-icon.svg";
+import stars from "./icons/stars.svg";
+
+// gradient bg
+import gradientHero from "./gradient-bg/hero-gradient.png";
+
 
 // images
 import heroImage from "./images/herobg.png";
+import trustedPeople from "./images/trusted-people.png";
 
 export const IMAGES = {
     comingSoonPage,
     prtechSolutionsLogo,
     prtechSolutionsLogoGray,
     heroImage,
+    trustedPeople,
 };
 
 export const ICONS = {
@@ -35,5 +43,11 @@ export const ICONS = {
     githubGray,
     darkLightMode,
     topRightBlackArrow,
+    dropDownWhiteArrow,
     hamburgerMenu,
+    stars
+
+};
+export const GRADIENT_BG = {
+    gradientHero,
 };

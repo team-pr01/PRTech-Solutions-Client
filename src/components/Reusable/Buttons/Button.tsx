@@ -25,16 +25,16 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       className={clsx(
-        `flex flex-row justify-center items-center gap-2 rounded-full px-[15px] py-[15px] cursor-pointer ${className}`, 
+        `flex flex-row justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[15px] py-2 md:py-3 lg:py-[15px] cursor-pointer ${className}`, 
        
       )}
     >
       {icon && iconPosition === "left" && (
-        <Image src={icon} alt={alt} className="size-6" />
+        <Image src={icon} alt={alt} className="size-[18px] md:size-5 lg:size-6" />
       )}
-      {text && <span className={`text-secondary-60 font-inter text-sx lg:text-base font-medium leading-[1.4] ${textClassName}`}>{text}</span>}
+      {text && <span className={`text-secondary-60 font-inter text-[10px] md:text-sx lg:text-base font-medium leading-[1.4] ${textClassName}`}>{text}</span>}
       {icon && iconPosition === "right" && (
-        <Image src={icon} alt={alt} className="size-6  " />
+        <Image src={icon} alt={alt} className="size-[18px] md:size-5 lg:size-6  " />
       )}
     </button>
   );

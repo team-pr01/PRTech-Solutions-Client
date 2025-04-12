@@ -10,12 +10,12 @@ import Button from "@/components/Reusable/Buttons/Button";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="flex items-center w-full justify-between lg:border lg:border-whites-60 lg:bg-whites-50 p-[11px] rounded-[15px] h-[79px] max-w-[1440px] mx-6 ">
+    <div className="flex items-center w-full justify-between lg:border lg:border-whites-60 lg:bg-whites-50 p-[11px] rounded-[15px]  max-w-7xl mx-6 ">
       <div>
         <Image
           src={IMAGES.prtechSolutionsLogoGray}
-          alt={"prtech Solutions"}
-          className="h-12 w-34 cursor-pointer"
+          alt={"PRTech Solutions"}
+          className="h-[34px] md:h-12 w-26 md:w-34 cursor-pointer"
         />
       </div>
       <div className=" hidden lg:block ">
@@ -25,14 +25,14 @@ const Navbar = () => {
               key={name}
               href={href}
               className={clsx(
-                "text-white font-inter text-base  font-medium leading-[1.4] flex flex-row",
+                "text-white font-inter text-base item-center justify-center font-medium leading-[1.4] flex flex-row",
                 pathname === href && "font-semibold"
               )}
             >
               {name}
               {isMegaMenu && (
                 <Image
-                  src={ICONS.darkLightMode}
+                  src={ICONS.dropDownWhiteArrow}
                   alt={"arrow right"}
                   className="size-6"
                 />
