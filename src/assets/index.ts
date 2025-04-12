@@ -29,12 +29,15 @@ import gradientServiceLeft from "./gradient-bg/service-left-gradient .png";
 import heroImage from "./images/herobg.png";
 import trustedPeople from "./images/trusted-people.png";
 
+import services from "./images/servicesImage.png";
+
 export const IMAGES = {
     comingSoonPage,
     prtechSolutionsLogo,
     prtechSolutionsLogoGray,
     heroImage,
     trustedPeople,
+    services
 };
 
 export const ICONS = {
@@ -54,4 +57,5 @@ export const GRADIENT_BG = {
     gradientHero,
     gradientServiceRight,
     gradientServiceLeft,
+  
 };
