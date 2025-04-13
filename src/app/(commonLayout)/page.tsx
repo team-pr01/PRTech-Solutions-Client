@@ -1,4 +1,5 @@
 import Hero from "@/components/HomePage/Hero/Hero";
+import InAction from "@/components/HomePage/InAction/InAction";
 import OurProjects from "@/components/HomePage/OurProjects/OurProjects";
 import OurServices from "@/components/HomePage/OurServices/OurServices";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero/>
       <OurServices/>
       <OurProjects/>
+      <InAction/>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import Button from "@/components/Reusable/Buttons/Button";
 
 const OurProjects = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full py-0 dark:bg-secondary-60 bg-neutral-15 ">
+    <div className="flex flex-col items-center justify-center w-full h-full pb-14 dark:bg-secondary-60 bg-neutral-15 ">
       {/* Gradient Backgrounds */}
 
       <Container>
@@ -16,15 +16,17 @@ const OurProjects = () => {
             <Heading heading={"Our Projects"} subHeading={"our projects"} />
           </div>
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center">
+           {/* Gradient Backgrounds for dark mode */}
           <Image
             src={GRADIENT_BG.gradientDarkProjects}
             alt="PRTech Solutions Gradient Left"
             className="hidden  md:dark:block absolute top-18 lg:top-0 right-0 left-0 pointer-events-none z-0"
           />
+           {/* Gradient Backgrounds for light mode */}
           <Image
             src={GRADIENT_BG.gradientLightProjects}
             alt="PRTech Solutions Gradient Left"
-            className="hidden  md:block absolute top-18 lg:top-0 right-0 left-0 pointer-events-none z-0"
+            className="dark:hidden  md:block absolute top-18 lg:top-0 right-0 left-0 pointer-events-none z-0"
           />
           <div className="hidden dark:block md:py-10 lg:py-20">
             <Heading heading={"Our Projects"} subHeading={"our projects"} />
@@ -38,7 +40,7 @@ const OurProjects = () => {
           </div>
           <Button
             text="View All Projects"
-            className="bg-transparent border border-white mt-6 md:mt-[70px]"
+            className="bg-primary-20 dark:bg-transparent lg:px-[35px] border border-white mt-6 md:mt-[70px]"
             textClassName="text-white"
           />
         </div>

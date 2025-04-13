@@ -20,6 +20,7 @@ import dropDownWhiteArrow from "./icons/Arrows/drop-down-white-arrow.svg";
 import hamburgerMenu from "./icons/hamburger-icon.svg";
 import stars from "./icons/stars.svg";
 import starPointer from "./icons/star-pointer.svg";
+import InActionBtn from "./icons/in-action-play-btn.svg";
 
 // gradient bg
 import gradientHero from "./gradient-bg/hero-gradient.png";
@@ -27,6 +28,7 @@ import gradientServiceRight from "./gradient-bg/service-right-gradient .png";
 import gradientServiceLeft from "./gradient-bg/service-left-gradient .png";
 import gradientDarkProjects from "./gradient-bg/project-dark-gradient.svg"
 import gradientLightProjects from "./gradient-bg/projects-light-gradient.svg";
+import gradientInAction from "./gradient-bg/in-action-gradient.png";
 
 
 // images
@@ -56,6 +58,7 @@ export const ICONS = {
     hamburgerMenu,
     stars,
     starPointer,
+    InActionBtn
 
 };
 export const GRADIENT_BG = {
@@ -63,6 +66,7 @@ export const GRADIENT_BG = {
     gradientServiceRight,
     gradientServiceLeft,
     gradientDarkProjects,
-    gradientLightProjects
+    gradientLightProjects,
+    gradientInAction
   
 };
