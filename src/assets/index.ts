@@ -15,14 +15,18 @@ import githubGray from "./icons/Social Icons/github-gray.svg";
 // icons
 import darkLightMode from "./icons/light-dark-mode.svg"; 
 import topRightBlackArrow from "./icons/Arrows/top-right-black-arrow.svg";
+import topRightWhiteArrow from "./icons/Arrows/top-right-white-arrow.svg";
 import dropDownWhiteArrow from "./icons/Arrows/drop-down-white-arrow.svg";
 import hamburgerMenu from "./icons/hamburger-icon.svg";
 import stars from "./icons/stars.svg";
+import starPointer from "./icons/star-pointer.svg";
 
 // gradient bg
 import gradientHero from "./gradient-bg/hero-gradient.png";
 import gradientServiceRight from "./gradient-bg/service-right-gradient .png";
 import gradientServiceLeft from "./gradient-bg/service-left-gradient .png";
+import gradientDarkProjects from "./gradient-bg/project-dark-gradient.svg"
+import gradientLightProjects from "./gradient-bg/projects-light-gradient.svg";
 
 
 // images
@@ -47,15 +51,18 @@ export const ICONS = {
     whatsappGray,
     githubGray,
     darkLightMode,
-    topRightBlackArrow,
+    topRightBlackArrow,topRightWhiteArrow,
     dropDownWhiteArrow,
     hamburgerMenu,
-    stars
+    stars,
+    starPointer,
 
 };
 export const GRADIENT_BG = {
     gradientHero,
     gradientServiceRight,
     gradientServiceLeft,
+    gradientDarkProjects,
+    gradientLightProjects
   
 };

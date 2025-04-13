@@ -10,12 +10,12 @@ import Button from "@/components/Reusable/Buttons/Button";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="flex items-center w-full justify-between lg:border lg:border-whites-60 lg:bg-whites-50 p-[11px] rounded-[15px]  max-w-7xl mx-6 ">
+    <div className="flex items-center w-full justify-between lg:border lg:border-whites-60 lg:bg-whites-50 py-[11px] px-[25px] rounded-[15px]  max-w-7xl mx-6 ">
       <div>
         <Image
           src={IMAGES.prtechSolutionsLogoGray}
           alt={"PRTech Solutions"}
-          className="h-[34px] md:h-12 w-26 md:w-34 cursor-pointer"
+          className="h-[34px] 2xl:h-12 w-26 md:w-34 cursor-pointer"
         />
       </div>
       <div className=" hidden lg:block ">
@@ -42,12 +42,12 @@ const Navbar = () => {
         </nav>
       </div>
       <div className=" hidden lg:flex items-center gap-5 justify-center">
-        <Button icon={ICONS.darkLightMode} className="bg-whites-50" />
+        <Button icon={ICONS.darkLightMode} className="bg-whites-50 px-[15px] md:px-[15px] lg:px-[15px]"  />
         <Button
           icon={ICONS.topRightBlackArrow}
           text="Get the Quote"
           iconPosition="right"
-          className="bg-white"
+          className="bg-white lg:px-[35px]"
         />
       </div>
       <Button icon={ICONS.hamburgerMenu} className="bg-transparent lg:hidden " />
