@@ -1,6 +1,5 @@
 "use client";
 import { GRADIENT_BG, ICONS, IMAGES } from "@/assets";
-import Button from "@/components/Reusable/Buttons/Button";
 import Heading from "@/components/Reusable/Heading/Heading";
 import Modal from "@/components/Reusable/Modal/Modal";
 import Container from "@/components/Shared/Container/Container";
