@@ -1,17 +1,3 @@
-import comingSoonPage from "../assets/images/02 - Distance Nebulae.png";
-
-
-// Logos
-import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
-import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
-
-// Social Icons
-import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
-import facebookGray from "./icons/Social Icons/facebook-gray.svg";
-import instagramGray from "./icons/Social Icons/instagram-gray.svg";
-import whatsappGray from "./icons/Social Icons/whatsapp-gray.svg";
-import githubGray from "./icons/Social Icons/github-gray.svg";
-
 // icons
 import darkLightMode from "./icons/light-dark-mode.svg"; 
 import topRightBlackArrow from "./icons/Arrows/top-right-black-arrow.svg";
@@ -21,6 +7,12 @@ import hamburgerMenu from "./icons/hamburger-icon.svg";
 import stars from "./icons/stars.svg";
 import starPointer from "./icons/star-pointer.svg";
 import InActionBtn from "./icons/in-action-play-btn.svg";
+// Social Icons
+import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
+import facebookGray from "./icons/Social Icons/facebook-gray.svg";
+import instagramGray from "./icons/Social Icons/instagram-gray.svg";
+import whatsappGray from "./icons/Social Icons/whatsapp-gray.svg";
+import githubGray from "./icons/Social Icons/github-gray.svg";
 
 // gradient bg
 import gradientHero from "./gradient-bg/hero-gradient.png";
@@ -32,8 +24,14 @@ import gradientInAction from "./gradient-bg/in-action-gradient.png";
 
 
 // images
+import comingSoonPage from "../assets/images/02 - Distance Nebulae.png";
 import heroImage from "./images/herobg.png";
 import trustedPeople from "./images/trusted-people.png";
+import projectEllipse from "./images/projects-ellipse.svg";
+import videoDummyImage from "./images/video-dummy-image.png";
+// Logos
+import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
+import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
 
 import services from "./images/servicesImage.png";
 
@@ -43,7 +41,9 @@ export const IMAGES = {
     prtechSolutionsLogoGray,
     heroImage,
     trustedPeople,
-    services
+    services,
+    projectEllipse,
+    videoDummyImage,
 };
 
 export const ICONS = {

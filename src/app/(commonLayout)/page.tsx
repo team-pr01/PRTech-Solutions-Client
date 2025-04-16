@@ -10,7 +10,7 @@ export default function Home() {
       <Hero/>
       <OurServices/>
       <OurProjects/>
-      {/* <InAction/> */}
+      <InAction/> 
       {/* <OurTechStack/> */}
     </div>
   );
