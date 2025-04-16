@@ -13,7 +13,7 @@ const ProjectCard = () => {
       />
       <div className="flex flex-col w-full items-start justify-center px-4 md:p-8">
         <div className="flex flex-col-reverse md:flex-row w-full items-center justify-between gap-2 md:gap-3 lg:gap-5">
-          <h1 className=" text-black dark:text-white font-inter text-[20px] md:text-[32px] font-bold leading-[1.4]">
+          <h1 className=" text-black dark:text-white font-Inter text-[20px] md:text-[32px] font-bold leading-[1.4]">
             Project Name
           </h1>
           <Button
@@ -23,7 +23,7 @@ const ProjectCard = () => {
           />
         </div>
 
-        <p className="text-neutral-65 dark:text-primary-50 w-[85%] md:w-full font-inter  pt-6 pb-8 text-xs md:text-xl font-medium leading-[1.4]">
+        <p className="text-neutral-65 dark:text-primary-50 w-[85%] md:w-full font-Inter  pt-6 pb-8 text-xs md:text-xl font-medium leading-[1.4]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
           erat ac ligula facilisis commodo.
           adipiscing elit. Quisque ut

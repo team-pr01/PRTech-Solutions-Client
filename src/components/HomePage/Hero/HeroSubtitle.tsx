@@ -20,7 +20,7 @@ const HeroSubtitle = () => {
               alt="PRTech Solutions Logo"
               className="size-[15px] md:size-5"
             />
-            <p className="text-white text-center font-inter text-[8px] sm:text-[10px] md:text-xs 3xl:text-[13px] not-italic font-medium capitalize leading-none">
+            <p className="text-white text-center font-Inter text-[8px] sm:text-[10px] md:text-xs 3xl:text-[13px] not-italic font-medium capitalize leading-none">
               esatblish business online and test potential.
             </p>
             <Image

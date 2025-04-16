@@ -1,9 +1,9 @@
 import { GRADIENT_BG } from '@/assets'
 import Heading from '@/components/Reusable/Heading/Heading'
-import Container from '@/components/Shared/Container/Container'
 import Image from 'next/image'
 import React from 'react'
 import ServiceAccordion from '../OurServices/ServicesAccordion'
+import Container from '@/components/Reusable/Container/Container'
 
 const OurTechStack = () => {
   return (

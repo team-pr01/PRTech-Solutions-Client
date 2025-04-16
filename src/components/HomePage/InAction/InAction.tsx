@@ -1,8 +1,8 @@
 "use client";
 import { GRADIENT_BG, ICONS, IMAGES } from "@/assets";
+import Container from "@/components/Reusable/Container/Container";
 import Heading from "@/components/Reusable/Heading/Heading";
 import Modal from "@/components/Reusable/Modal/Modal";
-import Container from "@/components/Shared/Container/Container";
 import Image from "next/image";
 import React, { useState } from "react";
 

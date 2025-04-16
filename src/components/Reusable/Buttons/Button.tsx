@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
       {icon && iconPosition === "left" && (
         <Image src={icon} alt={alt} className="size-[18px] md:size-5 lg:size-6" />
       )}
-      {text && <span className={`text-secondary-60 font-inter text-[10px] md:text-sx lg:text-base font-medium leading-[1.4] ${textClassName}`}>{text}</span>}
+      {text && <span className={`text-secondary-60 font-Inter text-[10px] md:text-sm lg:text-base font-medium leading-[1.4] ${textClassName}`}>{text}</span>}
       {icon && iconPosition === "right" && (
         <Image src={icon} alt={alt} className="size-[18px] md:size-5 lg:size-6  " />
       )}

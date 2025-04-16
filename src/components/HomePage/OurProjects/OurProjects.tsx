@@ -3,8 +3,8 @@ import Heading from "@/components/Reusable/Heading/Heading";
 import Image from "next/image";
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import Container from "@/components/Shared/Container/Container";
 import Button from "@/components/Reusable/Buttons/Button";
+import Container from "@/components/Reusable/Container/Container";
 
 const OurProjects = () => {
   return (

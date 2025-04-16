@@ -78,7 +78,7 @@ const ServiceAccordion = () => {
                 : "grid-rows-[0fr] opacity-0"
             }`}
           >
-            <div className="overflow-hidden text-white font-inter text-ms md:text-lg 3xl:text-3xl font-medium leading-[1.4] flex flex-col gap-1 md:gap-2 3xl:gap-4">
+            <div className="overflow-hidden text-white font-Inter text-ms md:text-lg 3xl:text-3xl font-medium leading-[1.4] flex flex-col gap-1 md:gap-2 3xl:gap-4">
               {according.description.map((item: string, idx: number) => (
                 <span key={idx} className="flex items-center gap-2 md:gap-3 3xl:gap-4">
                   <Image src={ICONS.starPointer} alt={"PRTech Solutions"} className="size-2 md:size-4 3xl:size-6" />{" "}

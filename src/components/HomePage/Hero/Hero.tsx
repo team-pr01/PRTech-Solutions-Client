@@ -3,11 +3,11 @@ import Button from "@/components/Reusable/Buttons/Button";
 import Image from "next/image";
 import HeroSubtitle from "./HeroSubtitle";
 import TrustedBy from "./TrustedBy";
-import Container from "@/components/Shared/Container/Container";
+import Container from "@/components/Reusable/Container/Container";
 
 const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center w-full h-[500px] md:h-[700px] 3xl:h-[900px] bg-secondary-60 ">
+    <div className="relative flex items-center justify-center w-full h-[500px] md:h-[700px] 2xl:h-[900px] bg-secondary-60 ">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -25,14 +25,14 @@ const Hero = () => {
           <HeroSubtitle />
           {/* Hero Title and Description */}
           <div className="flex flex-col my-4 md:my-5 lg:my-[23px] 3xl:my-[25px] ">
-            <h1 className="text-center font-Rethink text-[40px] md:text-5xl lg:text-7xl 3xl:text-8xl bg-gradient-to-r from-primary-20 to-primary-15 bg-clip-text text-transparent not-italic font-bold leading-[1.13]">
+            <h1 className="text-center font-Inter text-[40px] md:text-5xl lg:text-7xl 3xl:text-8xl bg-gradient-to-r from-primary-20 to-primary-15 bg-clip-text text-transparent not-italic font-bold leading-[1.13]">
               We craft digital
             </h1>
             <h1 className="text-center font-Rethink text-[40px] md:text-5xl lg:text-7xl 3xl:text-8xl text-white not-italic font-bold leading-[1.13]">
               experiences that inspire
             </h1>
           </div>
-          <p className="text-white text-center font-inter text-xs md:text-md lg:text-xl 3xl:text-[22px] not-italic font-normal leading-[1.4]">
+          <p className="text-white text-center font-Inter text-xs md:text-md lg:text-xl 3xl:text-[22px] not-italic font-normal leading-[1.4]">
             Your partner in innovative technology solutions.
           </p>
           <div className="flex justify-center gap-4 md:gap-5 3xl:gap-6 mt-[30px]">
