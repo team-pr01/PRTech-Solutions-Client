@@ -25,20 +25,17 @@ const OurServices = () => {
       <div className="relative z-10">
         <Container>
           <div className="flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center text-center mb-10">
-              <Heading heading="Our Service" subHeading="our services" />
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-5 md:gap-9 3xl:gap-14">
+            <Heading
+              heading="Our Service"
+              subHeading="We offer a comprehensive range of digital services to help your business thrive online."
+            />
+            <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-5 md:gap-9 3xl:gap-14 mt-10 md:mt-12 xl:mt-16 2xl:mt-[70px] w-full">
               {/* Left Column */}
-              <div>
-                <Image
-                  src={IMAGES.services}
-                  alt="PRTech Solutions Services"
-                  className="w-full h-full object-center rounded-3xl 3xl:rounded-3xl"
-                />
-              </div>
-
+              <Image
+                src={IMAGES.services}
+                alt="PRTech Solutions Services"
+                className="w-full h-full object-center rounded-3xl 3xl:rounded-3xl"
+              />
               {/* Right Column */}
               <ServiceAccordion />
             </div>

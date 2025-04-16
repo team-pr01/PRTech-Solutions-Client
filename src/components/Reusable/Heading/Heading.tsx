@@ -20,14 +20,14 @@ const Heading: React.FC<HeadingProps> = ({
   const alignment = align === 'center' ? 'text-center' : align === 'right' ? 'text-right' : 'text-left';
 
   return (
-    <div className={`${alignment} flex flex-col gap-2 md:gap-3 lg:gap-5 3xl:gap-6 ${className}`}>
+    <div className={`${alignment} flex flex-col gap-7 lg:gap-5 2xl:gap-6 ${className}`}>
       {heading && (
-        <h1 className={`text-black dark:text-white font-rethink text-3xl md:text-5xl 3xl:text-[64px] font-bold leading-[1] ${alignment} ${headingClassName}`}>
+        <h1 className={`text-white font-rethink text-4xl md:text-5xl 2xl:text-[64px] font-bold leading-7 2xl:leading-[64px] ${alignment} ${headingClassName}`}>
           {heading}
         </h1>
       )}
       {subHeading && (
-        <p className={`dark:text-neutral-30 text-neutral-80 font-Inter text-sx md:text-base 3xl:text-xl font-normal leading-[28px] ${alignment} ${subHeadingClassName}`}>
+        <p className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 ${alignment} ${subHeadingClassName}`}>
           {subHeading}
         </p>
       )}
