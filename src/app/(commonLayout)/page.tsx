@@ -9,7 +9,7 @@ export default function Home() {
     <div className="flex flex-col justify-between items-center w-full">
       <Hero/>
       <OurServices/>
-      {/* <OurProjects/> */}
+      <OurProjects/>
       {/* <InAction/> */}
       {/* <OurTechStack/> */}
     </div>

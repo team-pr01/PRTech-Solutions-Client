@@ -63,6 +63,7 @@
 
   /* Gradients */
   --bg-gradient-primary: linear-gradient(180deg, ##06a0ed 100%, ##6ecaf8 100%);
+  --bg-project-bg-gradient: linear-gradient(180deg, #020817 0%, rgba(2, 8, 23, 0.00) 100%);
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
 
@@ -72,6 +73,9 @@
 
 .bg-gradient-dark {
   background: var(--bg-gradient-dark);
+}
+.bg-project-bg-gradient {
+  background: var(--bg-project-bg-gradient);
 }
 
 /* Custom scrollbar for a specific section */

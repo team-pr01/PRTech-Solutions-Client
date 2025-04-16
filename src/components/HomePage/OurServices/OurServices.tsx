@@ -8,7 +8,7 @@ import Container from "@/components/Reusable/Container/Container";
 
 const OurServices = () => {
   return (
-    <div className="relative w-full  h-full flex flex-col justify-center items-center py-20 dark:bg-secondary-50 overflow-hidden">
+    <div className="relative w-full h-full flex flex-col justify-center items-center py-20 dark:bg-secondary-50 overflow-hidden">
       {/* Gradient Backgrounds */}
       <Image
         src={GRADIENT_BG.gradientServiceLeft}
@@ -22,7 +22,7 @@ const OurServices = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         <Container>
           <div className="flex flex-col items-center justify-center">
             <Heading
