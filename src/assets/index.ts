@@ -35,6 +35,7 @@ import projectEllipse from "./images/projects-ellipse.svg";
 import videoDummyImage from "./images/video-dummy-image.png";
 import techStackGradientBg1 from "./images/Ellipse 11.svg";
 import techStackGradientBg2 from "./images/Ellipse 12.svg";
+import progressBarBg from "./images/progressbar-bg.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -52,6 +53,7 @@ export const IMAGES = {
     videoDummyImage,
     techStackGradientBg1,
     techStackGradientBg2,
+    progressBarBg,
 };
 
 export const ICONS = {

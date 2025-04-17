@@ -1,8 +1,8 @@
 import Hero from "@/components/HomePage/Hero/Hero";
 import InAction from "@/components/HomePage/InAction/InAction";
+import OurProgressBar from "@/components/HomePage/OurProgressBar/OurProgressBar";
 import OurProjects from "@/components/HomePage/OurProjects/OurProjects";
 import OurServices from "@/components/HomePage/OurServices/OurServices";
-import OurTechStack from "@/components/HomePage/OurTechStack/OurTechStack";
 
 export default function Home() {
   return (
@@ -11,7 +11,8 @@ export default function Home() {
       <OurServices/>
       <OurProjects/>
       <InAction/> 
-      <OurTechStack/>
+      {/* <OurTechStack/> */}
+      <OurProgressBar/>
     </div>
   );
 }
