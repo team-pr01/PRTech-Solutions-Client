@@ -14,6 +14,10 @@ import instagramGray from "./icons/Social Icons/instagram-gray.svg";
 import whatsappGray from "./icons/Social Icons/whatsapp-gray.svg";
 import githubGray from "./icons/Social Icons/github-gray.svg";
 
+
+
+import django from "./icons/tech-stack-icons/django.svg";
+
 // gradient bg
 import gradientHero from "./gradient-bg/hero-gradient.png";
 import gradientServiceRight from "./gradient-bg/service-right-gradient .png";
@@ -29,6 +33,8 @@ import heroImage from "./images/herobg.png";
 import trustedPeople from "./images/trusted-people.png";
 import projectEllipse from "./images/projects-ellipse.svg";
 import videoDummyImage from "./images/video-dummy-image.png";
+import techStackGradientBg1 from "./images/Ellipse 11.svg";
+import techStackGradientBg2 from "./images/Ellipse 12.svg";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -44,6 +50,8 @@ export const IMAGES = {
     services,
     projectEllipse,
     videoDummyImage,
+    techStackGradientBg1,
+    techStackGradientBg2,
 };
 
 export const ICONS = {
@@ -58,7 +66,10 @@ export const ICONS = {
     hamburgerMenu,
     stars,
     starPointer,
-    InActionBtn
+    InActionBtn,
+
+    // Tech stack logo
+    django,
 
 };
 export const GRADIENT_BG = {

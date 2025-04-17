@@ -11,7 +11,7 @@ export default function Home() {
       <OurServices/>
       <OurProjects/>
       <InAction/> 
-      {/* <OurTechStack/> */}
+      <OurTechStack/>
     </div>
   );
 }

@@ -74,7 +74,9 @@ const OurProjects = () => {
                 {projectCategories.map((category, idx) => (
                   <li
                     key={idx}
-                    ref={(el) => (tabRefs.current[idx] = el)}
+                    ref={(el) => {
+                      tabRefs.current[idx] = el;
+                    }}
                     onClick={() => setActiveTab(idx)}
                     className={`relative z-20 px-5 sm:px-6 py-2 transition duration-300 rounded-full cursor-pointer font-medium text-center text-nowrap ${
                       activeTab === idx ? "text-white" : "text-white/60"

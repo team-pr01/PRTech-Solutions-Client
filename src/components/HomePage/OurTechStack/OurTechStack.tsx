@@ -1,43 +1,53 @@
-import { GRADIENT_BG } from '@/assets'
-import Heading from '@/components/Reusable/Heading/Heading'
-import Image from 'next/image'
-import React from 'react'
-import ServiceAccordion from '../OurServices/ServicesAccordion'
-import Container from '@/components/Reusable/Container/Container'
+import Heading from "@/components/Reusable/Heading/Heading";
+import Container from "@/components/Reusable/Container/Container";
+import TechStackCard from "./TechStackCard";
+import MarqueeColumn from "./MarqueeColumn";
 
 const OurTechStack = () => {
+  const cards = new Array(6).fill(null);
+
   return (
-    <div className="relative w-full  h-full flex flex-col justify-center items-center py-20 dark:bg-secondary-50 overflow-hidden">
-          {/* Gradient Backgrounds dark mode */}
-          <Image
-            src={GRADIENT_BG.gradientServiceLeft}
-            alt="PRTech Solutions Gradient Left"
-            className="hidden dark:block absolute top-1/2 -translate-y-1/2 left-0  h-[380px] w-[200px] pointer-events-none select-none z-0"
-          />
-          <Image
-            src={GRADIENT_BG.gradientServiceRight}
-            alt="PRTech Solutions Gradient Right"
-            className="hidden dark:block absolute top-1/2 -translate-y-1/2 right-0 h-[460px] w-[250px] pointer-events-none select-none z-0"
-          />
-    
-        <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-[44%_35%] gap-5 md:gap-[266px] 3xl:gap-14">
-              {/* Left Column */}
-              <div>
-              <Heading heading="Our Tech Stack" subHeading="our tech stack " align='left' />
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi minus voluptates excepturi ullam accusantium totam dolores ratione, corporis consequatur deserunt. Mollitia placeat nulla cupiditate debitis exercitationem itaque consequuntur? Dolorem, ex.</p>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate quo assumenda explicabo voluptatem dolores accusantium minima nostrum, minus dicta sapiente culpa incidunt, consectetur ab animi? Animi nulla minus porro eligendi?</p>
-              </div>
+    <div className="w-full bg-secondary-60 overflow-hidden">
+      <Container>
+        <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-24">
+          {/* Left Column */}
+          <div className="w-full xl:w-[55%] py-14">
+            <Heading
+              heading="Our Tech Stack"
+              subHeading="We use cutting-edge technologies to build scalable, high-performance solutions."
+              align="left"
+            />
+            <p className="text-primary-50 text-xl font-Inter mt-6 md:mt-10 lg:mt-12 xl:mt-16 2xl:mt-[70px]">
+            At the heart of our development process is a powerful and diverse tech stack. We utilize the latest technologies, frameworks, and tools to craft scalable, secure, and high-performance solutions tailored to your needs. From front-end interfaces to back-end infrastructure, every component is chosen for its reliability, efficiency, and ability to adapt with innovation. 
+            <br />
+            <br />
+            Whether it’s web, mobile, or cloud-based systems, our stack ensures seamless integration, faster deployment, and long-term maintainability. With a constant eye on emerging trends and best practices, we build solutions that don’t just meet today’s demands — they’re ready for tomorrow’s challenges too.
+              {/* Keep full text as in your code */}
+            </p>
+          </div>
 
-              {/* Right Column */}
-              <ServiceAccordion />
-            </div>
-            
-            <div>cv </div>
-        </Container>
-      
+          {/* Right Column - Marquee Tech Cards */}
+          <div className="w-full xl:w-[42%] flex gap-4 xl:gap-10">
+            <MarqueeColumn direction="up">
+              {cards.map((_, i) => (
+                <TechStackCard key={`up-${i}`} />
+              ))}
+            </MarqueeColumn>
+            <MarqueeColumn direction="down">
+              {cards.map((_, i) => (
+                <TechStackCard key={`down-${i}`} />
+              ))}
+            </MarqueeColumn>
+            <MarqueeColumn direction="up">
+              {cards.map((_, i) => (
+                <TechStackCard key={`up2-${i}`} />
+              ))}
+            </MarqueeColumn>
+          </div>
+        </div>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default OurTechStack
+export default OurTechStack;

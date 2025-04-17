@@ -39,8 +39,8 @@
   --color-neutral-60: #aaaaaa;
   --color-neutral-65: #979797;
   --color-neutral-70: #616161;
-  
   --color-neutral-80: #272727;
+  --color-neutral-85: #c7c7c726;
 
   /* accent */
   --color-accent-10: #000000;
@@ -103,4 +103,23 @@
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #020618;
   /* Dark background for non-scrolled area */
+}
+
+
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll-up {
+  animation: scroll-up linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down linear infinite;
 }
