@@ -7,6 +7,8 @@ import hamburgerMenu from "./icons/hamburger-icon.svg";
 import stars from "./icons/stars.svg";
 import starPointer from "./icons/star-pointer.svg";
 import InActionBtn from "./icons/in-action-play-btn.svg";
+import arrowTopRight from "./icons/arrow-right-top.svg";
+import calendar from "./icons/calendar.svg";
 // Social Icons
 import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
 import facebookGray from "./icons/Social Icons/facebook-gray.svg";
@@ -36,6 +38,8 @@ import videoDummyImage from "./images/video-dummy-image.png";
 import techStackGradientBg1 from "./images/Ellipse 11.svg";
 import techStackGradientBg2 from "./images/Ellipse 12.svg";
 import progressBarBg from "./images/progressbar-bg.png";
+import bannerBg from "./images/banner-bg.svg";
+import bannerCircle from "./images/banner-circle.svg";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -54,6 +58,8 @@ export const IMAGES = {
     techStackGradientBg1,
     techStackGradientBg2,
     progressBarBg,
+    bannerBg,
+    bannerCircle,
 };
 
 export const ICONS = {
@@ -69,6 +75,8 @@ export const ICONS = {
     stars,
     starPointer,
     InActionBtn,
+    arrowTopRight,
+    calendar,
 
     // Tech stack logo
     django,

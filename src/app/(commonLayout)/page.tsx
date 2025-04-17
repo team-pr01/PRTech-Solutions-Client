@@ -1,3 +1,4 @@
+import Banner from "@/components/HomePage/Banner/Banner";
 import Hero from "@/components/HomePage/Hero/Hero";
 import InAction from "@/components/HomePage/InAction/InAction";
 import OurProgressBar from "@/components/HomePage/OurProgressBar/OurProgressBar";
@@ -13,6 +14,7 @@ export default function Home() {
       <InAction/> 
       {/* <OurTechStack/> */}
       <OurProgressBar/>
+      <Banner/>
     </div>
   );
 }

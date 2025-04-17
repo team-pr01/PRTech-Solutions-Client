@@ -29,7 +29,7 @@ const OurProgressBar = () => {
   return (
     <div className="relative bg-primary-40/40 py-16 w-full">
       <Image
-        className="absolute right-0 top-0 h-full w-full"
+        className="absolute right-0 top-0 h-full w-full z-0"
         src={IMAGES.progressBarBg}
         alt=""
       />
@@ -40,14 +40,14 @@ const OurProgressBar = () => {
           align="center"
         />
 
-        <div className="flex items-center justify-between mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center justify-between mt-16">
           {progressBarData?.map((item) => (
             <div key={item?.title} className="">
               <h1 className="text-primary-20 font-Rethink text-[64px] font-bold text-center">
                 {item?.value}
               </h1>
               <p
-                className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7`}
+                className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 text-center`}
               >
                 {item?.title}
               </p>
