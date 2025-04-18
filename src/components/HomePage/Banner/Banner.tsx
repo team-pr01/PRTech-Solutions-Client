@@ -6,7 +6,8 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="relative bg-secondary-60 h-[500px] w-full flex flex-col items-center justify-center">
+    <div className="bg-secondary-60 h-[450px] w-full">
+      <div className="relative flex h-full flex-col items-center justify-center">
       <Image
         className="absolute right-0 top-0 h-full w-full z-0"
         src={IMAGES.bannerBg}
@@ -45,11 +46,12 @@ const Banner = () => {
                 alt="arrow-top-right"
                 className="size-6"
               />
-              Get A Quote
+              Schedule a Call
             </button>
           </div>
         </div>
       </Container>
+    </div>
     </div>
   );
 };

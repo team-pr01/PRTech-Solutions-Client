@@ -7,7 +7,8 @@ import Container from "@/components/Reusable/Container/Container";
 
 const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center w-full h-[600px] md:h-[700px] lg:h-[800px] 2xl:h-[900px] bg-secondary-60 ">
+    <div className="h-[600px] md:h-[700px] lg:h-[800px] 2xl:h-[900px] bg-secondary-60 w-full">
+      <div className="relative flex items-center justify-center w-full h-full">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -52,6 +53,7 @@ const Hero = () => {
           </div>
         </div>
       </Container>
+    </div>
     </div>
   );
 };

@@ -8,7 +8,11 @@ import stars from "./icons/stars.svg";
 import starPointer from "./icons/star-pointer.svg";
 import InActionBtn from "./icons/in-action-play-btn.svg";
 import arrowTopRight from "./icons/arrow-right-top.svg";
+import rightArrowTop2 from "./icons/arrow-right-02.svg";
 import calendar from "./icons/calendar.svg";
+import mission from "./icons/mission.svg";
+import vision from "./icons/vision.svg";
+import disclaimer from "./icons/disclaimer.svg";
 // Social Icons
 import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
 import facebookGray from "./icons/Social Icons/facebook-gray.svg";
@@ -40,11 +44,12 @@ import techStackGradientBg2 from "./images/Ellipse 12.svg";
 import progressBarBg from "./images/progressbar-bg.png";
 import bannerBg from "./images/banner-bg.svg";
 import bannerCircle from "./images/banner-circle.svg";
+import aboutPrTech1 from "./images/about-prtech-1.png";
+import aboutPrTech2 from "./images/about-prtech-2.png";
+import services from "./images/servicesImage.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
-
-import services from "./images/servicesImage.png";
 
 export const IMAGES = {
     comingSoonPage,
@@ -60,6 +65,8 @@ export const IMAGES = {
     progressBarBg,
     bannerBg,
     bannerCircle,
+    aboutPrTech1,
+    aboutPrTech2,
 };
 
 export const ICONS = {
@@ -76,7 +83,11 @@ export const ICONS = {
     starPointer,
     InActionBtn,
     arrowTopRight,
+    rightArrowTop2,
     calendar,
+    mission,
+    vision,
+    disclaimer,
 
     // Tech stack logo
     django,
@@ -88,6 +99,6 @@ export const GRADIENT_BG = {
     gradientServiceLeft,
     gradientDarkProjects,
     gradientLightProjects,
-    gradientInAction
+    gradientInAction,
   
 };

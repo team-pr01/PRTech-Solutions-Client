@@ -1,3 +1,5 @@
+
+import AboutPRTech from "@/components/AboutPRTech/AboutPRTech";
 import Banner from "@/components/HomePage/Banner/Banner";
 import Hero from "@/components/HomePage/Hero/Hero";
 import InAction from "@/components/HomePage/InAction/InAction";
@@ -15,6 +17,7 @@ export default function Home() {
       {/* <OurTechStack/> */}
       <OurProgressBar/>
       <Banner/>
+      <AboutPRTech/>
     </div>
   );
 }
