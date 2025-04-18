@@ -13,8 +13,8 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
 }) => {
   return (
     <div className="flex gap-6">
-      {/* Icon */}
-      <div className="flex flex-col items-center gap-[27px]">
+      <div className="flex flex-col items-center gap-2 md:gap-[27px]">
+        {/* Icon */}
         <div className="bg-primary-20 size-11 rounded-full flex items-center justify-center">
           <Image src={icon} className="" alt="size-6" />
         </div>
@@ -22,11 +22,11 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
       </div>
       <div>
         <h1
-          className={`text-white font-Inter text-xl lg:text-2xl font-bold leading-7 lg:leading-[33px]`}
+          className={`text-white font-Inter text-xl md:text-2xl font-bold leading-7 lg:leading-[33px]`}
         >
           {title}
         </h1>
-        <p className="text-xs lg:text-xl leading-5 lg:leading-[32px] text-primary-50 mt-2 max-w-[464px]">
+        <p className="text-xs md:text-xl leading-5 lg:leading-[32px] text-primary-50 mt-2 max-w-full md:max-w-[464px]">
           {description}
         </p>
       </div>
