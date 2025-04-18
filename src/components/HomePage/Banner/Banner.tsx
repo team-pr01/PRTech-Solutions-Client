@@ -6,7 +6,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="bg-secondary-60 h-[500px] w-full">
+    <div className="bg-secondary-60 w-full">
       <div className="relative flex h-full flex-col items-center justify-center">
       <Image
         className="absolute right-0 top-0 h-full w-full z-0"
@@ -19,7 +19,7 @@ const Banner = () => {
         alt=""
       />
       <Container>
-        <div>
+        <div className="py-10 md:py-14 xl:py-40">
           <h1
             className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] text-center`}
           >
@@ -32,19 +32,19 @@ const Banner = () => {
           </p>
 
           <div className="flex items-center justify-center gap-5 mt-10">
-            <button className="bg-primary-30 border border-primary-30 text-white text-sm md:text-base font-Inter font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-4 rounded-[30px]">
+            <button className="bg-primary-30 border border-primary-30 text-white text-xs md:text-base font-Inter font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-4 rounded-[30px]">
               Get A Quote
               <Image
                 src={ICONS.arrowTopRight}
                 alt="arrow-top-right"
-                className="size-6"
+                className="size-4 md:size-6"
               />
             </button>
-            <button className="bg-secondary-60 text-white border border-white font-Inter text-sm md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-4 rounded-[30px]">
+            <button className="bg-secondary-60 text-white border border-white font-Inter text-xs md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-4 rounded-[30px]">
               <Image
                 src={ICONS.calendar}
                 alt="arrow-top-right"
-                className="size-6"
+                className="size-4 md:size-6"
               />
               Schedule a Call
             </button>
