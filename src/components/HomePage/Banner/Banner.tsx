@@ -6,7 +6,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="bg-secondary-60 h-[450px] w-full">
+    <div className="bg-secondary-60 h-[500px] w-full">
       <div className="relative flex h-full flex-col items-center justify-center">
       <Image
         className="absolute right-0 top-0 h-full w-full z-0"

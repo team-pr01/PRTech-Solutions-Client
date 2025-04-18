@@ -12,7 +12,7 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-6 font-Inter">
       <div className="flex flex-col items-center gap-2 md:gap-[27px]">
         {/* Icon */}
         <div className="bg-primary-20 size-11 rounded-full flex items-center justify-center">

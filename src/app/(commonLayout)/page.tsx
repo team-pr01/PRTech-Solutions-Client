@@ -6,6 +6,7 @@ import InAction from "@/components/HomePage/InAction/InAction";
 import OurProgressBar from "@/components/HomePage/OurProgressBar/OurProgressBar";
 import OurProjects from "@/components/HomePage/OurProjects/OurProjects";
 import OurServices from "@/components/HomePage/OurServices/OurServices";
+// import ProjectTimeline from "@/components/ProjectTimeline/ProjectTimeline";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <OurProgressBar/>
       <Banner/>
       <AboutPRTech/>
+      {/* <ProjectTimeline/> */}
     </div>
   );
 }

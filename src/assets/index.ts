@@ -13,6 +13,7 @@ import calendar from "./icons/calendar.svg";
 import mission from "./icons/mission.svg";
 import vision from "./icons/vision.svg";
 import disclaimer from "./icons/disclaimer.svg";
+import upArrow from "./icons/up-arrow.svg";
 // Social Icons
 import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
 import facebookGray from "./icons/Social Icons/facebook-gray.svg";
@@ -47,6 +48,8 @@ import bannerCircle from "./images/banner-circle.svg";
 import aboutPrTech1 from "./images/about-prtech-1.png";
 import aboutPrTech2 from "./images/about-prtech-2.png";
 import services from "./images/servicesImage.png";
+import linnerBgLeft from "./images/linner-bg-left.png";
+import linnerBgRight from "./images/linner-bg-right.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -67,6 +70,8 @@ export const IMAGES = {
     bannerCircle,
     aboutPrTech1,
     aboutPrTech2,
+    linnerBgLeft,
+    linnerBgRight,
 };
 
 export const ICONS = {
@@ -88,6 +93,7 @@ export const ICONS = {
     mission,
     vision,
     disclaimer,
+    upArrow,
 
     // Tech stack logo
     django,

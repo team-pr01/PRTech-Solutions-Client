@@ -28,13 +28,13 @@ const AboutPRTech = () => {
   return (
     <div className="bg-secondary-50 font-Inter py-20 w-full">
       <div className="w-full relative">
-        <div className="max-w-full 2xl:max-w-[1300px] mx-auto">
+        <div className="max-w-full 2xl:max-w-[1300px] mx-auto px-5 2xl:px-0">
           <h1
             className={`text-white font-Rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px]`}
           >
             About PRTech
           </h1>
-          <div className="flex flex-col lg:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
+          <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
             {/* Left side */}
             <AboutPRTechImages />
 
