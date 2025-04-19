@@ -63,7 +63,7 @@
    --shadow-custom-button: 0px -2px 2px 0px rgba(255, 255, 255, 0.05) inset, 0px 12px 45px 0px rgba(137, 81, 246, 0.35); */
 
   /* Gradients */
-  --bg-gradient-primary: linear-gradient(180deg, ##06a0ed 100%, ##6ecaf8 100%);
+  --bg-gradient-primary: linear-gradient(180deg, #06a0ed 100%, #6ecaf8 100%);
   --bg-project-bg-gradient: linear-gradient(180deg, #020817 0%, rgba(2, 8, 23, 0.00) 100%);
   --bg-about-bg-gradient: linear-gradient(180deg, #06A0ED 0%, rgba(3, 91, 135, 0.00) 100%);
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
@@ -109,6 +109,47 @@
   /* Dark background for non-scrolled area */
 }
 
+.card-wrapper {
+  --offset: 3px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 9999px;
+}
+
+.card-wrapper::before {
+  content: '';
+  background: conic-gradient(transparent 270deg, #06a0ed, transparent);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4); /* scale ensures border isn't cut off */
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 4s linear infinite;
+  z-index: 0; /* Make sure it stays behind */
+}
+
+.card-wrapper::after {
+  content: '';
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  height: calc(100% - 2 * var(--offset));
+  width: calc(100% - 2 * var(--offset));
+  z-index: 1; /* sits just above the rotating border */
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+  }
+}
+
 
 @keyframes scroll-up {
   0% { transform: translateY(0); }
@@ -127,3 +168,34 @@
 .animate-scroll-down {
   animation: scroll-down linear infinite;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-border {
+  background-size: 200% 200%;
+  animation: gradient-border 3s ease infinite;
+} */
