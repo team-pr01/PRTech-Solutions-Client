@@ -1,10 +1,10 @@
 import { ICONS, IMAGES } from "@/assets";
-import Button from "@/components/Reusable/Buttons/Button";
 import Image from "next/image";
 import HeroSubtitle from "./HeroSubtitle";
 import TrustedBy from "./TrustedBy";
 import Container from "@/components/Reusable/Container/Container";
-import AnimatedButtton from "@/components/Shared/Navbar/AnimatedButtton";
+import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
+import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
 
 const Hero = () => {
   return (
@@ -36,13 +36,14 @@ const Hero = () => {
             landscape.
           </p>
           <div className="flex justify-center gap-4 md:gap-5 3xl:gap-6 mt-8">
-            <Button
+            <GlowOnHover icon={ICONS.arrowTopRight} alt="tio-right-icon">Get Started</GlowOnHover>
+            <FillBgOnHover>View Our Work</FillBgOnHover>
+            {/* <Button
               icon={ICONS.topRightBlackArrow}
               text="Get Started"
               iconPosition="right"
               className="bg-white "
-              />
-              <AnimatedButtton/>
+              /> */}
             {/* <Button
               text="View Our Work"
               className="bg-transparent border border-white"
