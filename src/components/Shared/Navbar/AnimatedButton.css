@@ -1,0 +1,27 @@
+.animated-button {
+  transition: all 1000ms;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-button:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 5px 17px -4px #0579b3;
+}
+
+.animated-button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #06a0ed;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.animated-button:hover::before {
+  width: 250%;
+}

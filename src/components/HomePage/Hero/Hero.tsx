@@ -4,6 +4,7 @@ import Image from "next/image";
 import HeroSubtitle from "./HeroSubtitle";
 import TrustedBy from "./TrustedBy";
 import Container from "@/components/Reusable/Container/Container";
+import AnimatedButtton from "@/components/Shared/Navbar/AnimatedButtton";
 
 const Hero = () => {
   return (
@@ -40,13 +41,15 @@ const Hero = () => {
               text="Get Started"
               iconPosition="right"
               className="bg-white "
-            />
-            <Button
+              />
+              <AnimatedButtton/>
+            {/* <Button
               text="View Our Work"
               className="bg-transparent border border-white"
               textClassName="text-white lg:px-[35px]"
-            />
+            /> */}
           </div>
+          
           {/* Trusted by */}
           <div className="mt-4 lg:mt-[50px]">
             <TrustedBy />

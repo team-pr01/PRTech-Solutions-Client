@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       className={clsx(
-        `flex flex-row justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[15px] py-2 md:py-3 lg:py-[15px] cursor-pointer ${className}`
+        `flex justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[15px] py-2 md:py-3 lg:py-[15px] cursor-pointer ${className}`
       )}
     >
       {icon && iconPosition === "left" && (

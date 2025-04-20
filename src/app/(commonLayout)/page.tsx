@@ -13,12 +13,12 @@ export default function Home() {
     <div className="flex flex-col justify-between items-center w-full">
       <Hero/>
       <OurServices/>
+      <AboutPRTech/>
       <OurProjects/>
       <InAction/> 
       {/* <OurTechStack/> */}
       <OurProgressBar/>
       <Banner/>
-      <AboutPRTech/>
       {/* <ProjectTimeline/> */}
     </div>
   );
