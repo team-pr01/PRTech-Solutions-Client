@@ -22,8 +22,8 @@ const OurProgressBar = () => {
       value: "2+",
     },
     {
-      title: "Projects Delivered",
-      value: "15+",
+      title: "Success Ratio",
+      value: "98%",
     },
   ];
   return (

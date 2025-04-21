@@ -1,6 +1,6 @@
 import { ICONS } from "@/assets";
 import Image from "next/image";
-import React from "react";
+import "./HeroSubtitle.css"
 
 const HeroSubtitle = () => {
   return (

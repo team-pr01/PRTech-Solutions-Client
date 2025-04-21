@@ -1,7 +1,6 @@
 import { ICONS, IMAGES } from "@/assets";
 import Image from "next/image";
 import HeroSubtitle from "./HeroSubtitle";
-import TrustedBy from "./TrustedBy";
 import Container from "@/components/Reusable/Container/Container";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
@@ -51,10 +50,7 @@ const Hero = () => {
             /> */}
           </div>
           
-          {/* Trusted by */}
-          <div className="mt-4 lg:mt-[50px]">
-            <TrustedBy />
-          </div>
+          
         </div>
       </Container>
     </div>
