@@ -15,13 +15,17 @@ const ServiceAccordion = () => {
       <div className="flex gap-3 flex-col w-full">
         {accordingData?.map((according, index) => (
           <article
-            key={index}
-            className={`${
+          key={index}
+          className={`group relative overflow-hidden
+            ${
               isPlusAccording === index
-                ? "bg-primary-20 border-0 mb-2 rounded-2xl md:rounded-3xl p-4 md:p-6 3xl:p-8"
-                : "border-b-1 border-white/40 p-2 md:p-4 3xl:p-6 last:border-0"
-            }`}
-          >
+                ? "bg-primary-20/90 border-0 mb-2 rounded-2xl md:rounded-3xl p-4 md:p-6 3xl:p-8"
+                : "border-b border-white/40 p-2 md:p-4 3xl:p-6 last:border-0"
+            }
+          `}
+        >
+          {/* Inner border animation bar */}
+          <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-primary-20 transition-all duration-700 group-hover:w-full"></span>
             <div
               className="flex gap-[6px] 3xl:gap-2 cursor-pointer items-center justify-between w-full"
               onClick={() => handleBorderClick(index)}
@@ -71,18 +75,17 @@ const ServiceAccordion = () => {
               </div>
             </div>
             <div
-              className={`grid transition-all duration-350 overflow-hidden ease-in-out ${
+              className={`grid transition-all duration-500 overflow-hidden ease-in-out ${
                 isPlusAccording === index
                   ? "grid-rows-[1fr] opacity-100 mt-4"
                   : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <div className="overflow-hidden text-white font-Inter text-ms md:text-lg 3xl:text-3xl font-medium leading-[1.4] flex flex-col gap-1 md:gap-2 3xl:gap-4">
+              <div className="overflow-hidden text-white font-Inter text-ms md:text-lg 3xl:text-3xl leading-[1.4] flex flex-col gap-1 md:gap-2 2xl:gap-4">
                 {according.description.map((item: string, idx: number) => (
                   <span
                     key={idx}
-                    className="flex items-center gap-2 md:gap-3 3xl:gap-4"
-                  >
+                    className={`flex items-center gap-2 md:gap-3 3xl:gap-4`}>
                     <Image
                       src={ICONS.starPointer}
                       alt={"PRTech Solutions"}

@@ -8,17 +8,17 @@ import Container from "@/components/Reusable/Container/Container";
 
 const OurServices = () => {
   return (
-    <div className="relative w-full h-full flex flex-col justify-center items-center py-20 dark:bg-secondary-50 overflow-hidden">
+    <div className="relative w-full h-full flex flex-col justify-center items-center py-20 bg-secondary-50 overflow-hidden">
       {/* Gradient Backgrounds */}
       <Image
         src={GRADIENT_BG.gradientServiceLeft}
         alt="PRTech Solutions Gradient Left"
-        className="hidden dark:block absolute bottom-20 left-0 h-[380px] w-[200px] pointer-events-none select-none z-0"
+        className=" absolute bottom-20 left-0 h-[380px] w-[200px] pointer-events-none select-none z-0"
       />
       <Image
         src={GRADIENT_BG.gradientServiceRight}
         alt="PRTech Solutions Gradient Right"
-        className="hidden dark:block absolute top-20 right-0 h-[460px] w-[250px] pointer-events-none select-none z-0"
+        className=" absolute top-20 right-0 h-[460px] w-[250px] pointer-events-none select-none z-0"
       />
 
       {/* Content */}
