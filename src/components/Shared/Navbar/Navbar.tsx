@@ -7,6 +7,7 @@ import { navLinks } from "./navLinks";
 import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 
 const RocketArrowIcon = () => (
   <svg
@@ -91,21 +92,19 @@ const Navbar = () => {
             icon={ICONS.darkLightMode}
             className="bg-whites-50 px-[15px] md:px-[15px] lg:px-[15px]"
           />
-          <Button
+          {/* <Button
             icon={ICONS.topRightBlackArrow}
             text="Get the Quote"
             iconPosition="right"
             className="bg-white p-[15px]"
-          />
-          <button className="flex justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[15px] py-2 md:py-3 lg:py-[15px] cursor-pointer bg-white"></button>
+          /> */}
+          <FillBgToTopOnHover />
         </div>
         {/* Hamburger menu */}
         <Button
           icon={ICONS.hamburgerMenu}
           className="bg-transparent lg:hidden"
         />
-
-        
       </div>
     </Container>
   );
