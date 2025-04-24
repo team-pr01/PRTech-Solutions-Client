@@ -36,7 +36,7 @@ const Hero = () => {
           </p>
           <div className="flex justify-center gap-4 md:gap-5 3xl:gap-6 mt-8">
             <GlowOnHover icon={ICONS.arrowTopRight} alt="tio-right-icon">Get Started</GlowOnHover>
-            <FillBgOnHover>View Our Work</FillBgOnHover>
+            <FillBgOnHover classNames="text-white">View Our Work</FillBgOnHover>
             {/* <Button
               icon={ICONS.topRightBlackArrow}
               text="Get Started"

@@ -1,8 +1,9 @@
 import { ICONS } from "@/assets";
-import Image from "next/image";
 import AboutPRTechCard from "./AboutPRTechCard";
 import Link from "next/link";
 import AboutPRTechImages from "./AboutPRTechImages";
+import FillBgOnHover from "../AnimatedButtons/FillBgOnHover/FillBgOnHover";
+import { CgArrowTopRight } from "react-icons/cg";
 
 const AboutPRTech = () => {
   const missionAndVision = [
@@ -44,16 +45,11 @@ const AboutPRTech = () => {
               {missionAndVision.map((item, index) => (
                 <AboutPRTechCard key={index} {...item} />
               ))}
-              <Link
-                href={"/about-us"}
-                className="bg-white border text-secondary-60 text-sm md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-4 rounded-[30px] w-fit mt-5"
-              >
-                More About Us
-                <Image
-                  src={ICONS.rightArrowTop2}
-                  alt="arrow-top-right"
-                  className="size-6"
-                />
+              <Link href={"/about-us"} className="mt-5">
+                <FillBgOnHover classNames="w-fit group bg-white text-secondary-60 group-hover:text-white flex items-center gap-1">
+                  More About Us
+                  <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+                </FillBgOnHover>
               </Link>
             </div>
           </div>
