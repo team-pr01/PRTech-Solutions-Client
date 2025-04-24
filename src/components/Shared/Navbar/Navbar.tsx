@@ -97,12 +97,15 @@ const Navbar = () => {
             iconPosition="right"
             className="bg-white p-[15px]"
           />
+          <button className="flex justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[15px] py-2 md:py-3 lg:py-[15px] cursor-pointer bg-white"></button>
         </div>
         {/* Hamburger menu */}
         <Button
           icon={ICONS.hamburgerMenu}
           className="bg-transparent lg:hidden"
         />
+
+        
       </div>
     </Container>
   );
