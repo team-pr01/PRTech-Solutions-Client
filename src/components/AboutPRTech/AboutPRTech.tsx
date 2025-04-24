@@ -7,19 +7,19 @@ import AboutPRTechImages from "./AboutPRTechImages";
 const AboutPRTech = () => {
   const missionAndVision = [
     {
-      icon: ICONS.mission,
+      icon: ICONS.missionGif,
       title: "Our Mission",
       description:
         "To empower businesses with innovative digital solutions that drive growth and create meaningful connections with their audiences.",
     },
     {
-      icon: ICONS.vision,
+      icon: ICONS.visionGif,
       title: "Our Vision",
       description:
         "To empower businesses with innovative digital solutions that drive growth and create meaningful connections with their audiences.",
     },
     {
-      icon: ICONS.disclaimer,
+      icon: ICONS.disclaimerGif,
       title: "Disclaimer",
       description:
         "PRTech Agency is a fictitious company created for demonstration purposes only. Any resemblance to real companies, past or present, is purely coincidental.",

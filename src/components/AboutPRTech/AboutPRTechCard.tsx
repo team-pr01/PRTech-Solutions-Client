@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
+import "./AboutPRTech.css";
 
 type TAboutPRTechCardProps = {
   icon: any;
@@ -15,10 +16,16 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
     <div className="flex gap-6 font-Inter">
       <div className="flex flex-col items-center gap-2 md:gap-[27px]">
         {/* Icon */}
-        <div className="bg-primary-20 size-11 rounded-full flex items-center justify-center">
-          <Image src={icon} className="" alt="size-6" />
+        <div className="bg-primary-20 size-11 rounded-full flex items-center justify-center flex-shrink-0">
+          <Image
+            src={icon}
+            width={24}
+            height={24}
+            className="size-8"
+            alt="Section Icon"
+          />
         </div>
-        <div className="bg-about-bg-gradient w-[2px] h-[96px]"></div>
+        <div className="animated-connector-line w-[2px] h-[96px]"></div>
       </div>
       <div>
         <h1

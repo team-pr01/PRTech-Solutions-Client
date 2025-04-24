@@ -49,3 +49,78 @@
   .support-card-wave::after {
       display: block; /* Explicitly set display if needed */
   }
+
+
+
+
+  /* Target the icons within the support card */
+.support-card-wave .card-arrow-icon {
+    /* Base transition for the original icon's movement */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Initial state for the COPY icon - hidden off-screen */
+  .support-card-wave .card-arrow-icon--copy {
+    transform: translate(-150%, 150%);
+    /* Define the transition specifically for the copy's entrance, including delay */
+    transition: transform 0.3s ease-in-out 0.1s;
+  }
+  
+  /* --- HOVER Effects (triggered by hovering the CARD) --- */
+  
+  /* On card hover, move the ORIGINAL icon OUT */
+  /* We target the icon that DOES NOT have the --copy class */
+  .support-card-wave:hover .card-arrow-icon:not(.card-arrow-icon--copy) {
+    transform: translate(150%, -150%);
+  }
+  
+  /* On card hover, move the COPY icon IN */
+  .support-card-wave:hover .card-arrow-icon--copy {
+    transform: translate(0); /* Moves it back to its original position (0,0) */
+  }
+  
+ /* Variables for easier customization */
+:root {
+    --line-color-blue: #3b82f6; /* Tailwind's blue-500 (Adjust if needed) */
+    --line-color-dark: #111827; /* Example dark color (like gray-900, adjust to match your dark background) */
+    --line-animation-speed: 3s; /* Adjust duration */
+  }
+  
+  .animated-connector-line {
+    /* Ensure gradient occupies the space */
+    width: 3px; /* Use the width set by Tailwind (w-[2px]) */
+    height: 100px; /* Use the height set by Tailwind (h-[96px]) */
+  
+    /* Gradient: Dark -> Blue -> Dark */
+    background-image: linear-gradient(
+      to top, /* Vertical gradient */
+      var(--line-color-dark) 0%,
+      var(--line-color-blue) 50%,
+      var(--line-color-dark) 100%
+    );
+  
+    /* Background Size: Taller than the element (e.g., 200%) */
+    background-size: 100% 200%;
+    /* No repeat needed if size covers element */
+  
+    /* Animation */
+    animation: flow-line-gradient var(--line-animation-speed) linear infinite;
+  
+    /* Initial background position */
+    background-position: 0 0;
+  
+    /* Optional: Add overflow hidden if needed, but shouldn't be necessary */
+    /* overflow: hidden; */
+  }
+  
+  /* Keyframes for the animation */
+  @keyframes flow-line-gradient {
+    0% {
+      /* Start position */
+      background-position: 0 0;
+    }
+    100% {
+      /* End position: Move background down by exactly one pattern height (200%) */
+      background-position: 0 200%;
+    }
+  }
