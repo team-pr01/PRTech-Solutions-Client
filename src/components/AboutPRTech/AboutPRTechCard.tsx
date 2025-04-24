@@ -13,10 +13,10 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex gap-6 font-Inter">
+    <div className="flex gap-6 font-Inter group">
       <div className="flex flex-col items-center gap-2 md:gap-[27px]">
         {/* Icon */}
-        <div className="bg-primary-20 size-11 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="bg-primary-20 size-11 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ease-in-out group-hover:scale-150">
           <Image
             src={icon}
             width={24}
@@ -33,7 +33,7 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
         >
           {title}
         </h1>
-        <p className="text-xs md:text-xl leading-5 lg:leading-[32px] text-primary-50 mt-2 max-w-full md:max-w-[464px]">
+        <p className="text-xs md:text-lg leading-5 lg:leading-[28px] text-primary-50 mt-2 max-w-full md:max-w-[464px]">
           {description}
         </p>
       </div>

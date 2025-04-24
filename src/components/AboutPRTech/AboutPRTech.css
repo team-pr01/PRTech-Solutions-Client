@@ -1,128 +1,126 @@
 .support-card-wave {
-  /* Define wave colors - using rgba for transparency */
-  --wave-color-1: rgba(255, 255, 255, 0.15); /* Light, semi-transparent white */
-  --wave-color-2: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Lighter, more transparent white */
-
-  /* Define animation speeds */
-  --animation-speed-1: 7s;
-  --animation-speed-2: 9s;
-}
-
-.support-card-wave::before,
-.support-card-wave::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 300%; /* Make it much wider than the card */
-  height: 80px; /* Adjust height of the wave crest */
-  background-color: var(--wave-color-1);
-  border-radius: 45% 55%; /* Create an irregular oval top */
-  animation: wave-animation var(--animation-speed-1) linear infinite;
-  z-index: 1; /* Position behind the content (which has z-index: 2) */
-  will-change: transform; /* Hint for browser performance */
-}
-
-/* Style the second wave differently */
-.support-card-wave::after {
-  height: 65px; /* Slightly shorter */
-  bottom: -5px; /* Slightly lower starting position */
-  background-color: var(--wave-color-2);
-  border-radius: 55% 45%; /* Different oval shape */
-  animation-duration: var(--animation-speed-2); /* Different speed */
-  animation-delay: -2s; /* Offset the animation start */
-}
-
-/* Keyframes for the horizontal wave movement */
-@keyframes wave-animation {
-  0% {
-    transform: translateX(0%);
+    /* Define wave colors - using rgba for transparency */
+    --wave-color-1: rgba(255, 255, 255, 0.15); /* Light, semi-transparent white */
+    --wave-color-2: rgba(255, 255, 255, 0.1);  /* Lighter, more transparent white */
+  
+    /* Define animation speeds */
+    --animation-speed-1: 7s;
+    --animation-speed-2: 9s;
   }
-  100% {
-    /* Moves left by 2/3 of its width to loop seamlessly (since width is 300%) */
-    transform: translateX(-66.666%);
+  
+  .support-card-wave::before,
+  .support-card-wave::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300%; /* Make it much wider than the card */
+    height: 80px; /* Adjust height of the wave crest */
+    background-color: var(--wave-color-1);
+    border-radius: 45% 55%; /* Create an irregular oval top */
+    animation: wave-animation var(--animation-speed-1) linear infinite;
+    z-index: 1; /* Position behind the content (which has z-index: 2) */
+    will-change: transform; /* Hint for browser performance */
   }
-}
+  
+  /* Style the second wave differently */
+  .support-card-wave::after {
+    height: 65px; /* Slightly shorter */
+    bottom: -5px; /* Slightly lower starting position */
+    background-color: var(--wave-color-2);
+    border-radius: 55% 45%; /* Different oval shape */
+    animation-duration: var(--animation-speed-2); /* Different speed */
+    animation-delay: -2s; /* Offset the animation start */
+  }
+  
+  /* Keyframes for the horizontal wave movement */
+  @keyframes wave-animation {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      /* Moves left by 2/3 of its width to loop seamlessly (since width is 300%) */
+      transform: translateX(-66.666%);
+    }
+  }
+  
+  /* Tailwind base styles might interfere, ensure pseudo-elements are block */
+  .support-card-wave::before,
+  .support-card-wave::after {
+      display: block; /* Explicitly set display if needed */
+  }
 
-/* Tailwind base styles might interfere, ensure pseudo-elements are block */
-.support-card-wave::before,
-.support-card-wave::after {
-  display: block; /* Explicitly set display if needed */
-}
 
-/* Target the icons within the support card */
+
+
+  /* Target the icons within the support card */
 .support-card-wave .card-arrow-icon {
-  /* Base transition for the original icon's movement */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Initial state for the COPY icon - hidden off-screen */
-.support-card-wave .card-arrow-icon--copy {
-  transform: translate(-150%, 150%);
-  /* Define the transition specifically for the copy's entrance, including delay */
-  transition: transform 0.3s ease-in-out 0.1s;
-}
-
-/* --- HOVER Effects (triggered by hovering the CARD) --- */
-
-/* On card hover, move the ORIGINAL icon OUT */
-/* We target the icon that DOES NOT have the --copy class */
-.support-card-wave:hover .card-arrow-icon:not(.card-arrow-icon--copy) {
-  transform: translate(150%, -150%);
-}
-
-/* On card hover, move the COPY icon IN */
-.support-card-wave:hover .card-arrow-icon--copy {
-  transform: translate(0); /* Moves it back to its original position (0,0) */
-}
-
-/* Variables for easier customization */
+    /* Base transition for the original icon's movement */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Initial state for the COPY icon - hidden off-screen */
+  .support-card-wave .card-arrow-icon--copy {
+    transform: translate(-150%, 150%);
+    /* Define the transition specifically for the copy's entrance, including delay */
+    transition: transform 0.3s ease-in-out 0.1s;
+  }
+  
+  /* --- HOVER Effects (triggered by hovering the CARD) --- */
+  
+  /* On card hover, move the ORIGINAL icon OUT */
+  /* We target the icon that DOES NOT have the --copy class */
+  .support-card-wave:hover .card-arrow-icon:not(.card-arrow-icon--copy) {
+    transform: translate(150%, -150%);
+  }
+  
+  /* On card hover, move the COPY icon IN */
+  .support-card-wave:hover .card-arrow-icon--copy {
+    transform: translate(0); /* Moves it back to its original position (0,0) */
+  }
+  
+ /* Variables for easier customization */
 :root {
-  --line-color-blue: #3b82f6; /* Tailwind's blue-500 (Adjust if needed) */
-  --line-color-dark: #111827; /* Example dark color (like gray-900, adjust to match your dark background) */
-  --line-animation-speed: 3s; /* Adjust duration */
-}
-
-.animated-connector-line {
-  /* Ensure gradient occupies the space */
-  width: 3px; /* Use the width set by Tailwind (w-[2px]) */
-  height: 100px; /* Use the height set by Tailwind (h-[96px]) */
-
-  /* Gradient: Dark -> Blue -> Dark */
-  background-image: linear-gradient(
-    to top,
-    /* Vertical gradient */ var(--line-color-dark) 0%,
-    var(--line-color-blue) 50%,
-    var(--line-color-dark) 100%
-  );
-
-  /* Background Size: Taller than the element (e.g., 200%) */
-  background-size: 100% 200%;
-  /* No repeat needed if size covers element */
-
-  /* Animation */
-  animation: flow-line-gradient var(--line-animation-speed) linear infinite;
-
-  /* Initial background position */
-  background-position: 0 0;
-
-  /* Optional: Add overflow hidden if needed, but shouldn't be necessary */
-  /* overflow: hidden; */
-}
-
-/* Keyframes for the animation */
-@keyframes flow-line-gradient {
-  0% {
-    /* Start position */
+    --line-color-blue: #3b82f6; /* Tailwind's blue-500 (Adjust if needed) */
+    --line-color-dark: #111827; /* Example dark color (like gray-900, adjust to match your dark background) */
+    --line-animation-speed: 3s; /* Adjust duration */
+  }
+  
+  .animated-connector-line {
+    /* Ensure gradient occupies the space */
+    width: 3px; /* Use the width set by Tailwind (w-[2px]) */
+    height: 100px; /* Use the height set by Tailwind (h-[96px]) */
+  
+    /* Gradient: Dark -> Blue -> Dark */
+    background-image: linear-gradient(
+      to top, /* Vertical gradient */
+      var(--line-color-dark) 0%,
+      var(--line-color-blue) 50%,
+      var(--line-color-dark) 100%
+    );
+  
+    /* Background Size: Taller than the element (e.g., 200%) */
+    background-size: 100% 200%;
+    /* No repeat needed if size covers element */
+  
+    /* Animation */
+    animation: flow-line-gradient var(--line-animation-speed) linear infinite;
+  
+    /* Initial background position */
     background-position: 0 0;
+  
+    /* Optional: Add overflow hidden if needed, but shouldn't be necessary */
+    /* overflow: hidden; */
   }
-  100% {
-    /* End position: Move background down by exactly one pattern height (200%) */
-    background-position: 0 200%;
+  
+  /* Keyframes for the animation */
+  @keyframes flow-line-gradient {
+    0% {
+      /* Start position */
+      background-position: 0 0;
+    }
+    100% {
+      /* End position: Move background down by exactly one pattern height (200%) */
+      background-position: 0 200%;
+    }
   }
-}

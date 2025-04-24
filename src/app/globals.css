@@ -66,6 +66,9 @@
   --bg-gradient-primary: linear-gradient(180deg, #06a0ed 100%, #6ecaf8 100%);
   --bg-project-bg-gradient: linear-gradient(180deg, #020817 0%, rgba(2, 8, 23, 0.00) 100%);
   --bg-about-bg-gradient: linear-gradient(180deg, #06A0ED 0%, rgba(3, 91, 135, 0.00) 100%);
+  --bg-about-bg-gradient2: linear-gradient(180deg, #06A0ED 0%, rgba(3, 91, 135, 0.00) 100%);
+  --bg-our-projects-bg-gradient: linear-gradient(180deg, #1a1e27 0%, #0a1222 100%);
+
   --bg-service-gradient: linear-gradient(180deg, #284888 0%, #0A1222 100%);
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
@@ -85,6 +88,12 @@
 }
 .bg-about-bg-gradient {
   background: var(--bg-about-bg-gradient);
+}
+.bg-about-bg-gradient2 {
+  background: var(--bg-about-bg-gradient2);
+}
+.bg-our-projects-bg-gradient {
+  background: var(--bg-our-projects-bg-gradient);
 }
 
 /* Custom scrollbar for a specific section */

@@ -1,0 +1,64 @@
+/* --- Animated Gradient Border --- */
+
+.animated-gradient-border {
+    /* Dimensions and Shape (Equivalent to w-full rounded-3xl h-96) */
+    width: 100%;
+    /* height: 24rem; */
+    border-radius: 1.5rem; /* Equivalent to rounded-3xl */
+  
+    /* --- Core Styling for the Effect --- */
+    position: relative; /* Needed for the ::before pseudo-element positioning */
+    overflow: hidden; /* Clips the ::before element to the rounded corners */
+    padding: 3px; /* Adjust this value to control the border thickness */
+    z-index: 1; /* Ensures content is above the pseudo-element */
+  
+    /* IMPORTANT: Set this to your page/container's background color! */
+    /* This color fills the content area, revealing the gradient only at the edges. */
+    background-color: #0d1117; /* Example dark background - CHANGE THIS */
+  
+    /* --- Remove default browser focus outline if desired --- */
+    /* outline: none; */
+  }
+  
+  .animated-gradient-border::before {
+    content: '';
+    position: absolute;
+    z-index: -1; /* Position behind the main element's content */
+  
+    /* Make the pseudo-element larger than the parent */
+    /* and position it centered behind the parent */
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+  
+    /* The conic gradient for the animation */
+    /* Primary (#0696e7), Secondary (Purple), Tertiary (Pinkish-Purple), Primary again */
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      #0696e7,           /* Your primary color */
+      #5600f6,           /* Example Purple (BlueViolet) - Adjust as needed */
+      #5da8ff,           /* Example Pinkish-Purple - Adjust as needed */
+      #025ce2            /* Repeat primary color for smooth loop */
+    );
+  
+    /* Apply the animation */
+    animation: spinGradient 5s linear infinite; /* Adjust '3s' for speed */
+  }
+  
+  /* The Rotation Animation */
+  @keyframes spinGradient {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* --- Optional: Style for content inside --- */
+  /* Add styles for text, etc., inside .animated-gradient-border as needed */
+  .animated-gradient-border p {
+     /* Example styling */
+     margin: 0; /* Remove default paragraph margin if needed */
+  }

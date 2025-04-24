@@ -53,6 +53,7 @@ import aboutPrTech2 from "./images/about-prtech-2.png";
 import services from "./images/servicesImage.png";
 import linnerBgLeft from "./images/linner-bg-left.png";
 import linnerBgRight from "./images/linner-bg-right.png";
+import techGrid from "./images/tech-grid.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -75,6 +76,7 @@ export const IMAGES = {
     aboutPrTech2,
     linnerBgLeft,
     linnerBgRight,
+    techGrid,
 };
 
 export const ICONS = {

@@ -25,37 +25,3 @@
 .animated-button:hover::before {
   width: 250%;
 }
-
-/* Target the icons within the support card */
-.card-arrow-icon {
-  /* Base transition for the original icon's movement */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Initial state for the COPY icon - hidden off-screen */
-.card-arrow-icon--copy {
-  transform: translate(-150%, 150%);
-  /* Define the transition specifically for the copy's entrance, including delay */
-  transition: transform 0.3s ease-in-out 0.1s;
-}
-
-/* --- HOVER Effects (triggered by hovering the CARD) --- */
-
-/* On card hover, move the ORIGINAL icon OUT */
-/* We target the icon that DOES NOT have the --copy class */
-.card-arrow-icon:not(.card-arrow-icon--copy) {
-  transform: translate(150%, -150%);
-}
-
-/* On card hover, move the COPY icon IN */
-.card-arrow-icon--copy {
-  transform: translate(0); /* Moves it back to its original position (0,0) */
-}
-
-.animated-button:hover .card-arrow-icon:not(.card-arrow-icon--copy) {
-  transform: translate(150%, -150%);
-}
-
-.animated-button:hover .card-arrow-icon--copy {
-  transform: translate(0);
-}
