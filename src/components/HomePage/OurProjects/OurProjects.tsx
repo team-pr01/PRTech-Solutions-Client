@@ -130,7 +130,7 @@ const OurProjects = () => {
                   classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
                 />
               </div>
-              <div className="flex flex-col gap-6 mt-7">
+              <div className="flex flex-col gap-6 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar">
                {
                 [1,2,3,4,5].map((project, index) => 
                   <OurProjectCard key={index} cardDirection={index % 2 !== 0 ? "left" : "right"} />

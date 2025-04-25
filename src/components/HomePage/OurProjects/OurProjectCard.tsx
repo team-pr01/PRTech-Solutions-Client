@@ -7,9 +7,9 @@ const OurProjectCard = ({cardDirection} : {cardDirection: "left" | "right"}) => 
   return (
     <div className="bg-our-projects-bg-gradient rounded-3xl w-full h-full border border-neutral-65/30 p-6 relative z-10 ">
       {/* Bg gradients */}
-      <div className="bg-primary-20 absolute bottom-10 left-0 z-0 size-[239px] rounded-full opacity-50 blur-[150px]"></div>
-      <div className="bg-primary-20 absolute bottom-0 right-0 top-0 z-0 size-[200px] rounded-full opacity-50 blur-[150px]"></div>
-      <div className={`flex gap-7 h-[500px] font-Inter z-10 ${cardDirection === "left" ? "flex-row-reverse" : "flex-row"}`}>
+      <div className="bg-primary-20 absolute bottom-4 left-0 z-0 size-[300px] overflow-hidden rounded-full opacity-10 blur-2xl"></div>
+      <div className="bg-primary-20 absolute bottom-0 right-0 top-6 z-[-1] size-[200px] rounded-full opacity-20 blur-2xl"></div>
+      <div className={`flex gap-7 h-[500px] font-Inter z-[] ${cardDirection === "left" ? "flex-row-reverse" : "flex-row"}`}>
         <div className="w-[72%]">
           <Image
             src={IMAGES.project1}

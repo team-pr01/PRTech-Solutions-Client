@@ -152,6 +152,28 @@
   animation: scroll-down linear infinite;
 }
 
+/* Only apply to divs with custom-scrollbar class */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px; /* for horizontal scrolling */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: gray transparent;
+}
+
+
 
 
 

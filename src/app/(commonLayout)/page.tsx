@@ -6,6 +6,7 @@ import InAction from "@/components/HomePage/InAction/InAction";
 import OurProgressBar from "@/components/HomePage/OurProgressBar/OurProgressBar";
 import OurProjects from "@/components/HomePage/OurProjects/OurProjects";
 import OurServices from "@/components/HomePage/OurServices/OurServices";
+import OurTechStack from "@/components/HomePage/OurTechStack/OurTechStack";
 // import ProjectTimeline from "@/components/ProjectTimeline/ProjectTimeline";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
       <AboutPRTech/>
       <OurProjects/>
       <InAction/> 
-      {/* <OurTechStack/> */}
+      <OurTechStack/>
       <OurProgressBar/>
       <Banner/>
       {/* <ProjectTimeline/> */}
