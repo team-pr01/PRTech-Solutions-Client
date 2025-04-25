@@ -1,0 +1,40 @@
+/* Footer.css */
+
+/* Define the NEW animation: Pulse from Center Out and Back */
+@keyframes pulseCenterOutAndBack {
+    0%, 100% {
+      background-position: 50% 0;
+    }
+    50% {
+      background-position: 0% 0;
+    }
+  }
+  
+  /* Style the main line element */
+  .animated-gradient-line {
+    position: relative;
+    z-index: 2;
+  
+    background-image: linear-gradient(
+      to right,
+      #210366 0%,
+      #135af3 50%,
+      #96baf8 100%
+    );
+  
+    background-size: 200% 100%;
+  
+    animation-name: pulseCenterOutAndBack;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  /* Removed the ::after pseudo-element for glowing effect */
+  
+  /* Optional: Ensure footer content sits above background images if needed */
+  .footer-content-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+  
