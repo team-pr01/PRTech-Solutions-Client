@@ -7,7 +7,7 @@ interface MarqueeColumnProps {
   duration?: number; // Optional for speed control
 }
 
-const MarqueeColumn = ({ children, height="h-[550px]", direction = "up", duration = 20 }: MarqueeColumnProps) => {
+const MarqueeColumn = ({ children, height="h-[700px]", direction = "up", duration = 20 }: MarqueeColumnProps) => {
   const animationDirection = direction === "up" ? "animate-scroll-up" : "animate-scroll-down";
 
   return (

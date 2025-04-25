@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { ICONS, IMAGES } from "@/assets";
+import { ANIMATEDICONS, ICONS, IMAGES } from "@/assets";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import Container from "@/components/Reusable/Container/Container";
 import Image from "next/image";
@@ -56,8 +56,9 @@ const Banner = () => {
         />
         <Container>
           <div className="py-10 md:py-14 xl:py-40">
+            <Image src={ANIMATEDICONS.banner} alt="" className="size-40 justify-self-center" />
             <h1
-              className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] text-center`}
+              className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
             >
               Ready to transform your digital presence?
             </h1>

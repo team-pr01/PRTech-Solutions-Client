@@ -1,4 +1,4 @@
-import { GRADIENT_BG, IMAGES } from "@/assets";
+import { ANIMATEDICONS, GRADIENT_BG, IMAGES } from "@/assets";
 import Heading from "@/components/Reusable/Heading/Heading";
 
 import Image from "next/image";
@@ -25,6 +25,7 @@ const OurServices = () => {
       <div className="relative z-10 w-full">
         <Container>
           <div className="flex flex-col items-center justify-center">
+            <Image src={ANIMATEDICONS.servicesGif} alt="" className="size-28" />
             <Heading
               heading="Our Service"
               subHeading="We offer a comprehensive range of digital services to help your business thrive online."

@@ -3,13 +3,44 @@ import Container from "@/components/Reusable/Container/Container";
 import TechStackCard from "./TechStackCard";
 import MarqueeColumn from "./MarqueeColumn";
 import Image from "next/image";
-import { IMAGES } from "@/assets";
+import { ANIMATEDICONS, ICONS, IMAGES } from "@/assets";
 import Link from "next/link";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
 
 const OurTechStack = () => {
-  const cards = new Array(6).fill(null);
+  const webTechnologies = [
+    { technologyName: "React.JS", icon: ICONS.reactJs },
+    { technologyName: "Next.JS", icon: ICONS.nextJs },
+    { technologyName: "JavaScript", icon: ICONS.javascript },
+    { technologyName: "TypeScript", icon: ICONS.typescript },
+    { technologyName: "Node.JS", icon: ICONS.nodeJs },
+    { technologyName: "Express.JS", icon: ICONS.expressJs },
+    { technologyName: "Django", icon: ICONS.django },
+    { technologyName: "HTML", icon: ICONS.html },
+    { technologyName: "CSS", icon: ICONS.css },
+    { technologyName: "Tailwind CSS", icon: ICONS.tailwindCss },
+    { technologyName: "Redux", icon: ICONS.redux },
+    { technologyName: "REST API", icon: ICONS.restApi },
+  ];
+
+  const androidTechnologies = [
+    { technologyName: "Android Studio", icon: ICONS.androidStudio },
+    { technologyName: "React Native", icon: ICONS.reactNative },
+    { technologyName: "Swift (IOS)", icon: ICONS.swift },
+    { technologyName: "Java", icon: ICONS.java },
+    { technologyName: "Firebase", icon: ICONS.firebase },
+    { technologyName: "Expo", icon: ICONS.expo },
+  ];
+
+  const tools = [
+    { technologyName: "Docker", icon: ICONS.docker },
+    { technologyName: "AWS", icon: ICONS.aws },
+    { technologyName: "Vercel", icon: ICONS.vercel },
+    { technologyName: "MongoDB", icon: ICONS.mongoDb },
+    { technologyName: "PostgreSQL", icon: ICONS.postgresql },
+    { technologyName: "Prisma", icon: ICONS.prisma },
+  ];
 
   return (
     <div className="w-full bg-secondary-60 overflow-hidden relative">
@@ -28,6 +59,7 @@ const OurTechStack = () => {
         <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-24">
           {/* Left Column */}
           <div className="w-full xl:w-[55%] py-14">
+            <Image src={ANIMATEDICONS.techStack} alt="" className="size-28" />
             <Heading
               heading="Our Tech Stack"
               subHeading="We use cutting-edge technologies to build scalable, high-performance solutions."
@@ -60,18 +92,18 @@ const OurTechStack = () => {
           {/* Right Column - Marquee Tech Cards */}
           <div className="w-full xl:w-[42%] flex gap-4 xl:gap-10">
             <MarqueeColumn direction="up">
-              {cards.map((_, i) => (
-                <TechStackCard key={`up-${i}`} />
+              {webTechnologies.map((item, i) => (
+                <TechStackCard key={`up-${i}`} {...item} />
               ))}
             </MarqueeColumn>
-            <MarqueeColumn direction="down" height="h-[620px]">
-              {cards.map((_, i) => (
-                <TechStackCard key={`down-${i}`} />
+            <MarqueeColumn direction="down" height="h-[680px]">
+              {androidTechnologies.map((item, i) => (
+                <TechStackCard key={`down-${i}`} {...item} />
               ))}
             </MarqueeColumn>
             <MarqueeColumn direction="up">
-              {cards.map((_, i) => (
-                <TechStackCard key={`up2-${i}`} />
+              {tools.map((item, i) => (
+                <TechStackCard key={`up2-${i}`} {...item} />
               ))}
             </MarqueeColumn>
           </div>
