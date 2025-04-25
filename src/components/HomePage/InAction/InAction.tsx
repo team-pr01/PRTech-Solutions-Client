@@ -39,9 +39,12 @@ const InAction = () => {
               alt="PRTech Solutions In Action"
               className="w-full h-auto rounded-2xl z-50 opacity-70"
             />
-                {/* video play btn */}
+            {/* video play btn */}
             <div className=" absolute top-0 bottom-0 right-0 left-0 z-50 flex items-center justify-center">
-              <button onClick={() => setIsModalOpen(true)} className="video-button cursor-pointer">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="video-button cursor-pointer"
+              >
                 <svg
                   viewBox="0 0 448 512"
                   xmlns="http://www.w3.org/2000/svg"

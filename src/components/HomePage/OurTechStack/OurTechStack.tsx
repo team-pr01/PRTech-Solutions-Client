@@ -3,7 +3,7 @@ import Container from "@/components/Reusable/Container/Container";
 import TechStackCard from "./TechStackCard";
 import MarqueeColumn from "./MarqueeColumn";
 import Image from "next/image";
-import { ANIMATEDICONS, ICONS, IMAGES } from "@/assets";
+import { ICONS, IMAGES } from "@/assets";
 import Link from "next/link";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
@@ -59,7 +59,7 @@ const OurTechStack = () => {
         <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-24">
           {/* Left Column */}
           <div className="w-full xl:w-[55%] py-14">
-            <Image src={ANIMATEDICONS.techStack} alt="" className="size-28" />
+            {/* <Image src={ANIMATEDICONS.techStack} alt="" className="size-28" /> */}
             <Heading
               heading="Our Tech Stack"
               subHeading="We use cutting-edge technologies to build scalable, high-performance solutions."

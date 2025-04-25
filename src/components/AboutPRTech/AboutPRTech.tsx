@@ -1,10 +1,9 @@
-import { ANIMATEDICONS, ICONS } from "@/assets";
+import { ICONS } from "@/assets";
 import AboutPRTechCard from "./AboutPRTechCard";
 import Link from "next/link";
 import AboutPRTechImages from "./AboutPRTechImages";
 import FillBgOnHover from "../AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
-import Image from "next/image";
 
 const AboutPRTech = () => {
   const missionAndVision = [
@@ -31,13 +30,13 @@ const AboutPRTech = () => {
     <div className="bg-secondary-50 font-Inter py-20 w-full">
       <div className="w-full relative">
         <div className="max-w-full 2xl:max-w-[1300px] mx-auto px-5 2xl:px-0">
-          <div className="flex items-center gap-10 relative w-fit">
+          <div className="flex items-center gap-10 w-fit">
           <h1
             className={`text-white font-Rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px]`}
           >
             About PRTech
           </h1>
-          <Image src={ANIMATEDICONS.aboutUsGif} alt="" className="size-28 absolute -right-32 -top-12" />
+          {/* <Image src={ANIMATEDICONS.aboutUsGif} alt="" className="size-28 absolute -right-32 -top-12" /> */}
           </div>
           <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
             {/* Left side */}
