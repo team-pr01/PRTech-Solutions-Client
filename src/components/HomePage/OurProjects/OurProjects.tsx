@@ -57,7 +57,7 @@ const OurProjects = () => {
   //   };
   // }, []);
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full pb-14 bg-secondary-60 relative">
+    <div className="flex flex-col items-center justify-center w-full pb-14 bg-secondary-60 relative ">
       {/* <div className="bg-primary-20 absolute top-20 bottom-0 left-20 right-0 z-0 w-[70%] mx-auto h-[318px] rounded-full opacity-10 blur-[150px]"></div> */}
       <div className="absolute w-full top-0 bottom-0 right-0 left-0 opacity-[2%] bg-about-bg-gradient2 h-fit">
         <Image src={IMAGES.techGrid} alt="" className="" />
@@ -89,14 +89,9 @@ const OurProjects = () => {
             works—crafted to deliver real value, impact, and long-lasting
             impressions.
           </p>
-          {/* <Image
-              src={IMAGES.projectEllipse}
-              alt="PRTech Solutions Gradient Left"
-              className="absolute z-[0] top-40"
-            /> */}
           <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
-          <div className="animated-gradient-border w-full rounded-3xl h-full text-white mt-9 z-10">
-            <div className="bg-secondary-60 w-full h-full rounded-3xl p-5">
+          <div className="animated-gradient-border w-full rounded-3xl  text-white mt-9 z-10 sticky top-0">
+            <div className="bg-secondary-60 w-full rounded-3xl p-5">
               <div className="flex items-center justify-end gap-64">
                 {/* Tab */}
                 <div className="flex items-center justify-center">
@@ -135,9 +130,12 @@ const OurProjects = () => {
                   classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
                 />
               </div>
-              <div className="flex flex-col gap-6  mt-7">
-                <OurProjectCard />
-                <OurProjectCard />
+              <div className="flex flex-col gap-6 mt-7">
+               {
+                [1,2,3,4,5].map((project, index) => 
+                  <OurProjectCard key={index} cardDirection={index % 2 !== 0 ? "left" : "right"} />
+                )
+               }
               </div>
             </div>
           </div>
