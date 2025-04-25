@@ -17,6 +17,7 @@ import upArrow from "./icons/up-arrow.svg";
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
 import disclaimerGif from "./icons/disclaimer.gif";
+import calendarGif from "./icons/calendar.gif";
 // Social Icons
 import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
 import facebookGray from "./icons/Social Icons/facebook-gray.svg";
@@ -106,6 +107,7 @@ export const ICONS = {
     missionGif,
     visionGif,
     disclaimerGif,
+    calendarGif,
 
     // Tech stack logo
     django,
