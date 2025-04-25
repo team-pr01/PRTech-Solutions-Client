@@ -3,9 +3,11 @@ import "./OurProjects.css";
 import { IMAGES } from "@/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import ProjectCard from "./ProjectCard";
-import Button from "@/components/Reusable/Buttons/Button";
 import Container from "@/components/Reusable/Container/Container";
+import OurProjectCard from "./OurProjectCard";
+import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
+// import { Scrambler } from "react-text-scrambler";
+import TextLoop from "react-text-loop";
 
 const OurProjects = () => {
   const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
@@ -27,6 +29,33 @@ const OurProjects = () => {
       });
     }
   }, [activeTab]);
+
+  // const [inView, setInView] = useState(false);
+  // const sectionRef = useRef(null);
+
+  // Intersection Observer logic to trigger when section is in view
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         setInView(entry.isIntersecting);
+  //       });
+  //     },
+  //     {
+  //       threshold: 0.5,
+  //     }
+  //   );
+
+  //   if (sectionRef.current) {
+  //     observer.observe(sectionRef.current);
+  //   }
+
+  //   return () => {
+  //     if (sectionRef.current) {
+  //       observer.unobserve(sectionRef.current);
+  //     }
+  //   };
+  // }, []);
   return (
     <div className="flex flex-col items-center justify-center w-full h-full pb-14 bg-secondary-60 relative">
       {/* <div className="bg-primary-20 absolute top-20 bottom-0 left-20 right-0 z-0 w-[70%] mx-auto h-[318px] rounded-full opacity-10 blur-[150px]"></div> */}
@@ -35,10 +64,24 @@ const OurProjects = () => {
       </div>
       <Container>
         <div className="py-10 md:py-14 xl:py-20 relative">
+          {/* <section ref={sectionRef} className="">
+      <h1 className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[72px] max-w-[900px] mx-auto text-center">
+        <Scrambler text={inView ? 'Explore ' : ''} />
+        <span className="text-primary-20">Our Works</span>
+        <Scrambler text={inView ? ' And See What We Create Best' : ''} />
+      </h1>
+    </section> */}
           <h1 className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[72px] max-w-[900px] mx-auto text-center">
-            Explore <span className="text-primary-20">Our Works</span> And See
-            What We Create Best
+            Explore {" "}
+            <TextLoop>
+              <span className="text-primary-20">Our Works</span>
+              <span className="text-primary-20">Our Creations</span>
+              <span className="text-primary-20">Our Solutions</span>
+              <span className="text-primary-20">Our Expertise</span>
+            </TextLoop>{" "}
+            And See What We Create Best
           </h1>
+
           <p
             className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-[900px] mx-auto text-center mt-7`}
           >
@@ -51,11 +94,10 @@ const OurProjects = () => {
               alt="PRTech Solutions Gradient Left"
               className="absolute z-[0] top-40"
             /> */}
-            <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
+          <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
           <div className="animated-gradient-border w-full rounded-3xl h-full text-white mt-9 z-10">
-         
             <div className="bg-secondary-60 w-full h-full rounded-3xl p-5">
-              <div className="bg-our-projects-bg-gradient rounded-3xl w-full h-full border border-neutral-65/30 p-5">
+              <div className="flex items-center justify-end gap-64">
                 {/* Tab */}
                 <div className="flex items-center justify-center">
                   <ul
@@ -88,19 +130,14 @@ const OurProjects = () => {
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-0 xl:px-[90px] z-50 mt-10">
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-            </div>
-            <div className="flex items-center justify-center">
-            <Button
-              text="View All Projects"
-              className="bg-transparent border border-white mt-6 md:mt-10 lg:mt-14 2xl:mt-[60px]"
-              textClassName="text-white px-5 py-1"
-            />
-            </div>
+                <FillBgToTopOnHover
+                  btnText="See All projects"
+                  classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
+                />
+              </div>
+              <div className="flex flex-col gap-6  mt-7">
+                <OurProjectCard />
+                <OurProjectCard />
               </div>
             </div>
           </div>

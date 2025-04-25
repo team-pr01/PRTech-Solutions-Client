@@ -98,7 +98,7 @@ const Navbar = () => {
             iconPosition="right"
             className="bg-white p-[15px]"
           /> */}
-          <FillBgToTopOnHover />
+          <FillBgToTopOnHover btnText="Get Free Quote" />
         </div>
         {/* Hamburger menu */}
         <Button
