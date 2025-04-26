@@ -7,6 +7,7 @@ import { ICONS, IMAGES } from "@/assets";
 import Link from "next/link";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
+import Marquee from "react-fast-marquee";
 
 const OurTechStack = () => {
   const webTechnologies = [
@@ -48,15 +49,15 @@ const OurTechStack = () => {
       <Image
         src={IMAGES.techStackShadow}
         alt=""
-        className=" absolute top-0 right-[270px] w-[550px] h-[150px] z-10"
+        className="hidden xl:block absolute top-0 right-[270px] w-[550px] h-[150px] z-10"
       />
       <Image
         src={IMAGES.techStackShadow}
         alt=""
-        className=" absolute bottom-0 right-[270px] w-[550px] h-[150px] z-10 rotate-180"
+        className="hidden xl:block absolute bottom-0 right-[270px] w-[550px] h-[150px] z-10 rotate-180"
       />
       <Container>
-        <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-24">
+        <div className="flex flex-col xl:flex-row items-center gap-0 md:gap-12 xl:gap-24">
           {/* Left Column */}
           <div className="w-full xl:w-[55%] py-14">
             {/* <Image src={ANIMATEDICONS.techStack} alt="" className="size-28" /> */}
@@ -89,8 +90,38 @@ const OurTechStack = () => {
             </Link>
           </div>
 
+          <div className="w-full block xl:hidden">
+            <Marquee speed={70} loop={0} direction="left">
+              {webTechnologies.map((item, i) => (
+                <div key={`up-${i}`} className="mr-7">
+                  <TechStackCard {...item} />
+                </div>
+              ))}
+            </Marquee>
+          </div>
+
+          <div className="w-full block xl:hidden mt-5">
+            <Marquee speed={60} loop={0} direction="right">
+              {androidTechnologies.map((item, i) => (
+                <div key={`up-${i}`} className="mr-7">
+                  <TechStackCard {...item} />
+                </div>
+              ))}
+            </Marquee>
+          </div>
+
+          <div className="w-full block xl:hidden mt-5 pb-5">
+            <Marquee speed={90} loop={0} direction="left">
+              {tools.map((item, i) => (
+                <div key={`up-${i}`} className="mr-7">
+                  <TechStackCard {...item} />
+                </div>
+              ))}
+            </Marquee>
+          </div>
+
           {/* Right Column - Marquee Tech Cards */}
-          <div className="w-full xl:w-[42%] flex gap-4 xl:gap-10">
+          <div className="w-full xl:w-[42%] xl:flex gap-4 xl:gap-10 hidden">
             <MarqueeColumn direction="up">
               {webTechnologies.map((item, i) => (
                 <TechStackCard key={`up-${i}`} {...item} />
