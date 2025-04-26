@@ -14,13 +14,13 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-between items-center w-full">
       <Hero/>
-      <Testimonials/>
       <OurServices/>
       <AboutPRTech/>
       <OurProjects/>
       <InAction/> 
       <OurTechStack/>
       <OurProgressBar/>
+      <Testimonials/>
       <Banner/>
       {/* <ProjectTimeline/> */}
     </div>

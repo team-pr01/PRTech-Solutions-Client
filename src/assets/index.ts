@@ -5,6 +5,7 @@ import topRightWhiteArrow from "./icons/Arrows/top-right-white-arrow.svg";
 import dropDownWhiteArrow from "./icons/Arrows/drop-down-white-arrow.svg";
 import hamburgerMenu from "./icons/hamburger-icon.svg";
 import stars from "./icons/stars.svg";
+import star from "./icons/star.svg";
 import starPointer from "./icons/star-pointer.svg";
 import InActionBtn from "./icons/in-action-play-btn.svg";
 import arrowTopRight from "./icons/arrow-right-top.svg";
@@ -14,6 +15,9 @@ import mission from "./icons/mission.svg";
 import vision from "./icons/vision.svg";
 import disclaimer from "./icons/disclaimer.svg";
 import upArrow from "./icons/up-arrow.svg";
+import rightArrow from "./icons/right-arrow-white.svg";
+import leftArrow from "./icons/left-arrow-white.svg";
+import quote from "./icons/quote.svg";
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
 import disclaimerGif from "./icons/disclaimer.gif";
@@ -83,6 +87,8 @@ import aboutPrTech2 from "./images/about-prtech-2.png";
 import services from "./images/servicesImage.png";
 import linnerBgLeft from "./images/linner-bg-left.png";
 import linnerBgRight from "./images/linner-bg-right.png";
+import linnerBg1 from "./images/linnerBg1.png";
+import linnerBg2 from "./images/linnerBg2.png";
 import techGrid from "./images/tech-grid.png";
 import project1 from "./images/project1.png";
 import project2 from "./images/project2.png";
@@ -109,6 +115,8 @@ export const IMAGES = {
   aboutPrTech2,
   linnerBgLeft,
   linnerBgRight,
+  linnerBg1,
+  linnerBg2,
   techGrid,
   project1,
   project2,
@@ -127,6 +135,7 @@ export const ICONS = {
   dropDownWhiteArrow,
   hamburgerMenu,
   stars,
+  star,
   starPointer,
   InActionBtn,
   arrowTopRight,
@@ -136,6 +145,9 @@ export const ICONS = {
   vision,
   disclaimer,
   upArrow,
+  rightArrow,
+  leftArrow,
+  quote,
   missionGif,
   visionGif,
   disclaimerGif,

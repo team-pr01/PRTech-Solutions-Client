@@ -99,13 +99,13 @@ const InAction = () => {
           </motion.div>
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
             <div className="w-full aspect-video mx-auto">
-              <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" // Added autoplay=1
+              {/* <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
                 title="YouTube video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" // Updated allow attribute
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowFullScreen
                 className="w-full h-full rounded"
-              />
+              /> */}
             </div>
           </Modal>
         </Container>
