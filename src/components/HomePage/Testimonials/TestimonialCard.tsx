@@ -11,7 +11,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <div
-      className={`border border-secondary-40 rounded-lg p-4 font-Inter flex flex-col gap-3 relative overflow-hidden ${
+      className={`border border-secondary-40 rounded-lg p-4 font-Inter flex flex-col gap-3 relative overflow-hidden cursor-grabbing ${
         isMiddle ? "bg-primary-20/40" : "bg-neutral-85/50"
       }`}
     >

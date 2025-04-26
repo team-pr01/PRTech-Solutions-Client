@@ -11,6 +11,7 @@ import { ICONS, IMAGES } from "@/assets";
 import TestimonialCard from "./TestimonialCard";
 import { useState, useEffect, useRef } from "react";
 import type SwiperCore from "swiper";
+import { motion } from "framer-motion";
 
 interface TestimonialData {
   id: number;
@@ -53,6 +54,32 @@ const Testimonials = () => {
     }
   }, []);
 
+  const textVariants = {
+    hidden: { opacity: 0, x: -50 }, // Start hidden, slightly to the left
+    visible: {
+      opacity: 1,
+      x: 0,           // End visible, at original position
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+  
+  const buttonsVariants = {
+    hidden: { opacity: 0, x: 50 }, // Start hidden, slightly to the right
+    visible: {
+      opacity: 1,
+      x: 0,          // End visible, at original position
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2, // Optional: Slight delay for buttons
+      },
+    },
+  };
+  
+
   return (
     <div className="relative w-full py-32 border-y border-neutral-80/50">
       <div className="bg-primary-20 size-[300px] opacity-20 blur-[150px] absolute top-48 z-0 left-20"></div>
@@ -67,46 +94,58 @@ const Testimonials = () => {
         alt=""
       />
       <Container>
-        <div className="flex flex-col lg:flex-row justify-between mb-5 items-center lg:items-end">
-          {/* Text Content */}
-          <div className="mb-4 lg:mb-0 text-center lg:text-left">
-            <h1
-              className={`text-white text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-tight md:leading-snug 2xl:leading-[64px]`}
-            >
-              What's <span className="text-primary-20">Our Clients</span>{" "}
-              Saying?
-            </h1>
-            <p
-              className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-relaxed md:leading-7 mt-4 lg:mx-0`}
-            >
-              Hear from our most valuable clients and partners about their
-              experience with us.
-            </p>
-          </div>
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-            <button
-              id="prevButtonDesktop"
-              className="rounded-full size-12 bg-neutral-70 hover:bg-primary-20 transition duration-300 flex items-center justify-center cursor-pointer group"
-            >
-              <Image
-                src={ICONS.leftArrow}
-                alt="Previous Testimonial"
-                className="size-6 transition-transform duration-300 group-hover:-translate-x-1"
-              />
-            </button>
-            <button
-              id="nextButtonDesktop"
-              className="rounded-full size-12 bg-primary-20 border border-primary-20 hover:bg-primary-20/80 transition duration-300 flex items-center justify-center cursor-pointer group"
-            >
-              <Image
-                src={ICONS.rightArrow}
-                alt="Next Testimonial"
-                className="size-6 transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </button>
-          </div>
-        </div>
+      <div className="flex flex-col lg:flex-row justify-between mb-5 items-center lg:items-end overflow-hidden"> {/* Added overflow-hidden to parent */}
+        {/* Text Content - Animate from Left */}
+        <motion.div
+          className="mb-4 lg:mb-0 text-center lg:text-left z-10"
+          variants={textVariants}      // Apply variants
+          initial="hidden"             // Start hidden
+          whileInView="visible"        // Animate when in view
+          viewport={{ once: true, amount: 0.3 }} // Trigger once when 30% visible
+        >
+          <h1
+            className={`text-white text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-tight md:leading-snug 2xl:leading-[64px]`}
+          >
+            What's <span className="text-primary-20">Our Clients</span> Saying?
+          </h1>
+          <p
+            className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-relaxed md:leading-7 mt-4 lg:mx-0`}
+          >
+            Hear from our most valuable clients and partners about their
+            experience with us.
+          </p>
+        </motion.div>
+
+        {/* Desktop Navigation - Animate from Right */}
+        <motion.div
+          className="hidden lg:flex items-center gap-4 flex-shrink-0 z-10"
+          variants={buttonsVariants}   // Apply variants
+          initial="hidden"             // Start hidden
+          whileInView="visible"        // Animate when in view
+          viewport={{ once: true, amount: 0.3 }} // Trigger once when 30% visible
+        >
+          <button
+            id="prevButtonDesktop"
+            className="rounded-full size-12 bg-neutral-70 hover:bg-primary-20 transition duration-300 flex items-center justify-center cursor-pointer group"
+          >
+            <Image
+              src={ICONS.leftArrow}
+              alt="Previous Testimonial"
+              className="size-6 transition-transform duration-300 group-hover:-translate-x-1"
+            />
+          </button>
+          <button
+            id="nextButtonDesktop"
+            className="rounded-full size-12 bg-primary-20 border border-primary-20 hover:bg-primary-20/80 transition duration-300 flex items-center justify-center cursor-pointer group"
+          >
+            <Image
+              src={ICONS.rightArrow}
+              alt="Next Testimonial"
+              className="size-6 transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </button>
+        </motion.div>
+      </div>
 
         {/* Swiper Component */}
         <Swiper
