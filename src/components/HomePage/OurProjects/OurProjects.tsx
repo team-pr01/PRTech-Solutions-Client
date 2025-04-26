@@ -96,7 +96,7 @@ const OurProjects = () => {
           </p>
           <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
           {/* <div className="animated-gradient-border w-full rounded-3xl  text-white mt-9 z-10 sticky top-0"> */}
-          <div className="bg-secondary-60 w-full rounded-3xl p-5 mt-10">
+          <div className="bg-secondary-60 w-full rounded-3xl mt-10">
             {/* Tab */}
             <div className="flex items-center justify-center">
               <ul
@@ -130,7 +130,7 @@ const OurProjects = () => {
             </div>
 
             {/* Projects cards */}
-            <div className="flex flex-col gap-6 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar">
+            <div className="flex flex-col gap-6 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar w-full">
               {[1, 2, 3, 4, 5].map((project, index) => (
                 <OurProjectCard
                   key={index}

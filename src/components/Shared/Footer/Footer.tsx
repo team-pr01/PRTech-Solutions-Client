@@ -42,7 +42,7 @@ const Footer = () => {
     <div className="bg-secondary-10 font-Inter">
       {/* <div className="animated-gradient-line"></div> */}
       <div className="relative">
-        <div className="bg-primary-20 absolute top-0 right-0 left-0 z-0 w-[1000px] h-[50px] opacity-40 blur-[100px] mx-auto"></div>
+        <div className="bg-primary-20 absolute top-0 right-0 left-0 z-0 w-[1000px] h-[50px] opacity-40 blur-[100px] mx-auto hidden xl:block"></div>
         <Image
           src={IMAGES.linnerBgLeft}
           className="absolute left-0 bottom-0 top-0 h-full z-0"
