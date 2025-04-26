@@ -9,6 +9,7 @@ import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/
 // import { Scrambler } from "react-text-scrambler";
 import TextLoop from "react-text-loop";
 import Link from "next/link";
+import { motion, useInView } from "framer-motion";
 
 const OurProjects = () => {
   const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
@@ -16,6 +17,27 @@ const OurProjects = () => {
   const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
   const containerRef = useRef<HTMLUListElement>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
+
+   // Refs for animations
+   const headingRef = useRef(null);
+   const subheadingRef = useRef(null);
+   const tabsRef = useRef(null);
+   const buttonRef = useRef(null); // Ref for the button wrapper
+
+   // useInView hooks
+   const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
+   const isSubheadingInView = useInView(subheadingRef, { once: true, amount: 0.3 });
+   const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
+   const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
+
+   // Animation variants
+   const slideUpVariants = {
+     hidden: { y: 50, opacity: 0 },
+     visible: { y: 0, opacity: 1 },
+   };
+
+   // Base transition
+   const transition = { duration: 0.6, ease: "easeOut" };
 
   useEffect(() => {
     const currentTab = tabRefs.current[activeTab];
@@ -58,7 +80,8 @@ const OurProjects = () => {
   //   };
   // }, []);
   return (
-    <div className="flex flex-col items-center justify-center w-full pb-14 bg-secondary-60 relative ">
+    // Added overflow-hidden to the main container
+    <div className="flex flex-col items-center justify-center w-full pb-14 bg-secondary-60 relative overflow-hidden">
       {/* <div className="bg-primary-20 absolute top-20 bottom-0 left-20 right-0 z-0 w-[70%] mx-auto h-[318px] rounded-full opacity-10 blur-[150px]"></div> */}
       <div className="absolute w-full top-0 bottom-0 right-0 left-0 opacity-[2%] bg-about-bg-gradient2 h-fit">
         <Image src={IMAGES.techGrid} alt="" className="" />
@@ -77,7 +100,15 @@ const OurProjects = () => {
             alt=""
             className="size-28 justify-self-center"
           /> */}
-          <h1 className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[72px] max-w-[900px] mx-auto text-center">
+          {/* Animated Heading */}
+          <motion.h1
+            ref={headingRef}
+            variants={slideUpVariants}
+            initial="hidden"
+            animate={isHeadingInView ? "visible" : "hidden"}
+            transition={transition}
+            className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[72px] max-w-[900px] mx-auto text-center"
+          >
             Explore{" "}
             <TextLoop>
               <span className="text-primary-20">Our Works</span>
@@ -86,19 +117,33 @@ const OurProjects = () => {
               <span className="text-primary-20">Our Expertise</span>
             </TextLoop>{" "}
             And See What We Create Best
-          </h1>
+          </motion.h1>
 
-          <p
-            className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-[900px] mx-auto text-center mt-7`}>
+          {/* Animated Subheading */}
+          <motion.p
+            ref={subheadingRef}
+            variants={slideUpVariants}
+            initial="hidden"
+            animate={isSubheadingInView ? "visible" : "hidden"}
+            transition={{ ...transition, delay: 0.2 }} // Delay after heading
+            className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-[900px] mx-auto text-center mt-7`}
+          >
             Discover the passion, creativity, and dedication behind our
             works—crafted to deliver real value, impact, and long-lasting
             impressions.
-          </p>
+          </motion.p>
           <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
           {/* <div className="animated-gradient-border w-full rounded-3xl  text-white mt-9 z-10 sticky top-0"> */}
           <div className="bg-secondary-60 w-full rounded-3xl mt-10">
-            {/* Tab */}
-            <div className="flex items-center justify-center">
+            {/* Animated Tab */}
+            <motion.div
+              ref={tabsRef}
+              variants={slideUpVariants}
+              initial="hidden"
+              animate={areTabsInView ? "visible" : "hidden"}
+              transition={{ ...transition, delay: 0.4 }} // Delay after subheading
+              className="flex items-center justify-center"
+            >
               <ul
                 ref={containerRef}
                 className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-fit overflow-x-auto"
@@ -127,26 +172,39 @@ const OurProjects = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Projects cards */}
+            {/* Projects cards - Animation should happen inside OurProjectCard */}
             <div className="flex flex-col gap-6 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar w-full">
               {[1, 2, 3, 4, 5].map((project, index) => (
+                // Pass index for individual card animation delay
                 <OurProjectCard
                   key={index}
+                  index={index} // Pass index here
                   cardDirection={index % 2 !== 0 ? "left" : "right"}
                 />
               ))}
             </div>
 
-            {/* See all projects button */}
-            <Link href={"/"} className="flex items-center justify-center mt-10">
-              {/* <FillBgToTopOnHover
-                btnText="See All projects"
-                classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
-              /> */}
-              <FillBgToTopOnHover btnText="See All projects" />
-            </Link>
+            {/* Animated See all projects button */}
+            {/* Wrap the Link with motion.div for animation */}
+            <motion.div
+               ref={buttonRef}
+               variants={slideUpVariants}
+               initial="hidden"
+               animate={isButtonInView ? "visible" : "hidden"}
+               // Adjust delay based on expected card loading time or keep it simple
+               transition={{ ...transition, delay: 0.6 }} // Delay after tabs (adjust as needed)
+               className="flex items-center justify-center mt-10"
+            >
+              <Link href={"/"}>
+                {/* <FillBgToTopOnHover
+                  btnText="See All projects"
+                  classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
+                /> */}
+                <FillBgToTopOnHover btnText="See All projects" />
+              </Link>
+            </motion.div>
           </div>
           {/* </div> */}
         </div>

@@ -3,14 +3,28 @@ import Image from "next/image";
 import "./OurProjects.css";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const OurProjectCard = ({
+  index,
   cardDirection,
 }: {
+  index: number;
   cardDirection: "left" | "right";
 }) => {
+  // Animation variants
+  const slideUpVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+};
   return (
-    <div className="bg-our-projects-bg-gradient rounded-3xl w-full h-full border border-neutral-65/30 p-3 xl:p-6 relative z-10 ">
+    <motion.div
+    variants={slideUpVariants}
+    initial="hidden"
+    whileInView="visible" // Trigger animation when in view
+    viewport={{ once: true, amount: 0.2 }} // Adjust amount as needed
+    transition={{ duration: 0.5, delay: index * 0.15 }}
+    className="bg-our-projects-bg-gradient rounded-3xl w-full h-full border border-neutral-65/30 p-3 xl:p-6 relative z-10 ">
       {/* Bg gradients */}
       <div className="bg-primary-20 absolute bottom-4 left-0 z-0 size-[300px] overflow-hidden rounded-full opacity-10 blur-2xl"></div>
       <div className="bg-primary-20 absolute bottom-0 right-0 top-6 z-[-1] size-[200px] rounded-full opacity-20 blur-2xl"></div>
@@ -83,7 +97,7 @@ const OurProjectCard = ({
           <Image src={ICONS.arrowTopRight} alt="top-right-icon" />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
