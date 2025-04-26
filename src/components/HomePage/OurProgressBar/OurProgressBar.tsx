@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { IMAGES } from "@/assets";
+import { ANIMATEDICONS, IMAGES } from "@/assets";
 import Container from "@/components/Reusable/Container/Container";
 import Heading from "@/components/Reusable/Heading/Heading";
 import Image from "next/image";
@@ -53,6 +53,7 @@ const OurProgressBar = () => {
         alt=""
       />
       <Container>
+        <Image src={ANIMATEDICONS.progressGif} alt="" className="size-28 justify-self-center mb-10" />
         <Heading
           heading="Our Progress at a Glance"
           subHeading="Driven by results, powered by performance – here’s how we measure success."

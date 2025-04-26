@@ -43,10 +43,10 @@ const OurProjectCard = ({cardDirection} : {cardDirection: "left" | "right"}) => 
 
       <div className="flex items-center justify-between mt-5">
         <div className="flex items-center gap-5">
-          <div className="bg-secondary-20/80 border border-secondary-40 rounded-md px-4 py-2 font-medium text-sm">
+          <div className="bg-secondary-20/80 border border-secondary-40 rounded-md px-4 py-2 font-medium text-sm text-neutral-40">
             Next.JS
           </div>
-          <div className="bg-secondary-20/80 border border-secondary-40 rounded-md px-4 py-2 font-medium text-sm">
+          <div className="bg-secondary-20/80 border border-secondary-40 rounded-md px-4 py-2 font-medium text-sm text-neutral-40">
             Express.JS
           </div>
         </div>

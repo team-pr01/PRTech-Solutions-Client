@@ -8,6 +8,7 @@ import OurProjectCard from "./OurProjectCard";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 // import { Scrambler } from "react-text-scrambler";
 import TextLoop from "react-text-loop";
+import Link from "next/link";
 
 const OurProjects = () => {
   const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
@@ -88,63 +89,66 @@ const OurProjects = () => {
           </h1>
 
           <p
-            className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-[900px] mx-auto text-center mt-7`}
-          >
+            className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-[900px] mx-auto text-center mt-7`}>
             Discover the passion, creativity, and dedication behind our
             works—crafted to deliver real value, impact, and long-lasting
             impressions.
           </p>
           <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
-          <div className="animated-gradient-border w-full rounded-3xl  text-white mt-9 z-10 sticky top-0">
-            <div className="bg-secondary-60 w-full rounded-3xl p-5">
-              <div className="flex items-center justify-end gap-64">
-                {/* Tab */}
-                <div className="flex items-center justify-center">
-                  <ul
-                    ref={containerRef}
-                    className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-fit overflow-x-auto"
-                  >
-                    {/* Blue Highlighter */}
-                    <span
-                      className="absolute bg-[#06A0ED] h-[85%] transition-all duration-500 rounded-full z-10"
-                      style={{
-                        width: `${indicatorStyle.width}px`,
-                        left: `${indicatorStyle.left}px`,
-                      }}
-                    />
-
-                    {projectCategories.map((category, idx) => (
-                      <li
-                        key={idx}
-                        ref={(el) => {
-                          tabRefs.current[idx] = el;
-                        }}
-                        onClick={() => setActiveTab(idx)}
-                        className={`relative z-20 px-5 sm:px-6 py-2 transition duration-300 rounded-full cursor-pointer font-medium text-center text-nowrap hover:text-white ${
-                          activeTab === idx ? "text-white" : "text-white/60"
-                        }`}
-                      >
-                        {category}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <FillBgToTopOnHover
-                  btnText="See All projects"
-                  classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
+          {/* <div className="animated-gradient-border w-full rounded-3xl  text-white mt-9 z-10 sticky top-0"> */}
+          <div className="bg-secondary-60 w-full rounded-3xl p-5 mt-10">
+            {/* Tab */}
+            <div className="flex items-center justify-center">
+              <ul
+                ref={containerRef}
+                className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-fit overflow-x-auto"
+              >
+                {/* Blue Highlighter */}
+                <span
+                  className="absolute bg-[#06A0ED] h-[85%] transition-all duration-500 rounded-full z-10"
+                  style={{
+                    width: `${indicatorStyle.width}px`,
+                    left: `${indicatorStyle.left}px`,
+                  }}
                 />
-              </div>
-              <div className="flex flex-col gap-6 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar">
-                {[1, 2, 3, 4, 5].map((project, index) => (
-                  <OurProjectCard
-                    key={index}
-                    cardDirection={index % 2 !== 0 ? "left" : "right"}
-                  />
+
+                {projectCategories.map((category, idx) => (
+                  <li
+                    key={idx}
+                    ref={(el) => {
+                      tabRefs.current[idx] = el;
+                    }}
+                    onClick={() => setActiveTab(idx)}
+                    className={`relative z-20 px-5 sm:px-6 py-2 transition duration-300 rounded-full cursor-pointer font-medium text-center text-nowrap hover:text-white ${
+                      activeTab === idx ? "text-white" : "text-white/60"
+                    }`}
+                  >
+                    {category}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
+
+            {/* Projects cards */}
+            <div className="flex flex-col gap-6 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar">
+              {[1, 2, 3, 4, 5].map((project, index) => (
+                <OurProjectCard
+                  key={index}
+                  cardDirection={index % 2 !== 0 ? "left" : "right"}
+                />
+              ))}
+            </div>
+
+            {/* See all projects button */}
+            <Link href={"/"} className="flex items-center justify-center mt-10">
+              {/* <FillBgToTopOnHover
+                btnText="See All projects"
+                classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
+              /> */}
+              <FillBgToTopOnHover btnText="See All projects" />
+            </Link>
           </div>
+          {/* </div> */}
         </div>
       </Container>
     </div>
