@@ -1,0 +1,39 @@
+.bubble-blob {
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%; /* Blob Shape */
+  animation: blobMove 8s ease-in-out infinite, wobbleBubble 6s ease-in-out infinite;
+}
+
+/* Make it organically change shape (bubble effect) */
+@keyframes blobMove {
+  0% {
+    border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 70% / 60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%;
+  }
+}
+
+/* Floating, rotating, scaling (bubble wobble) */
+@keyframes wobbleBubble {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.03) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.06) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.03) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}

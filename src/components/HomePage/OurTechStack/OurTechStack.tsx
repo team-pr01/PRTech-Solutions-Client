@@ -4,47 +4,16 @@ import Container from "@/components/Reusable/Container/Container";
 import TechStackCard from "./TechStackCard";
 import MarqueeColumn from "./MarqueeColumn";
 import Image from "next/image";
-import { ICONS, IMAGES } from "@/assets";
+import { IMAGES } from "@/assets";
 import Link from "next/link";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
 import Marquee from "react-fast-marquee";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
+import { androidTechnologies, tools, webTechnologies } from "./techStack.data";
 
 const OurTechStack = () => {
-  const webTechnologies = [
-    { technologyName: "React.JS", icon: ICONS.reactJs },
-    { technologyName: "Next.JS", icon: ICONS.nextJs },
-    { technologyName: "JavaScript", icon: ICONS.javascript },
-    { technologyName: "TypeScript", icon: ICONS.typescript },
-    { technologyName: "Node.JS", icon: ICONS.nodeJs },
-    { technologyName: "Express.JS", icon: ICONS.expressJs },
-    { technologyName: "Django", icon: ICONS.django },
-    { technologyName: "HTML", icon: ICONS.html },
-    { technologyName: "CSS", icon: ICONS.css },
-    { technologyName: "Tailwind CSS", icon: ICONS.tailwindCss },
-    { technologyName: "Redux", icon: ICONS.redux },
-    { technologyName: "REST API", icon: ICONS.restApi },
-  ];
-
-  const androidTechnologies = [
-    { technologyName: "Android Studio", icon: ICONS.androidStudio },
-    { technologyName: "React Native", icon: ICONS.reactNative },
-    { technologyName: "Swift (IOS)", icon: ICONS.swift },
-    { technologyName: "Java", icon: ICONS.java },
-    { technologyName: "Firebase", icon: ICONS.firebase },
-    { technologyName: "Expo", icon: ICONS.expo },
-  ];
-
-  const tools = [
-    { technologyName: "Docker", icon: ICONS.docker },
-    { technologyName: "AWS", icon: ICONS.aws },
-    { technologyName: "Vercel", icon: ICONS.vercel },
-    { technologyName: "MongoDB", icon: ICONS.mongoDb },
-    { technologyName: "PostgreSQL", icon: ICONS.postgresql },
-    { technologyName: "Prisma", icon: ICONS.prisma },
-  ];
 
   // Refs for animation triggers
   const headingRef = useRef(null);
