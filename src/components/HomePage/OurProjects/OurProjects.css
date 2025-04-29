@@ -4,12 +4,12 @@
     /* Dimensions and Shape (Equivalent to w-full rounded-3xl h-96) */
     width: 100%;
     /* height: 24rem; */
-    border-radius: 1.5rem; /* Equivalent to rounded-3xl */
+    border-radius: 16px; /* Equivalent to rounded-3xl */
   
     /* --- Core Styling for the Effect --- */
     position: relative; /* Needed for the ::before pseudo-element positioning */
     overflow: hidden; /* Clips the ::before element to the rounded corners */
-    padding: 3px; /* Adjust this value to control the border thickness */
+    padding: 3px;
     z-index: 1; /* Ensures content is above the pseudo-element */
   
     /* IMPORTANT: Set this to your page/container's background color! */

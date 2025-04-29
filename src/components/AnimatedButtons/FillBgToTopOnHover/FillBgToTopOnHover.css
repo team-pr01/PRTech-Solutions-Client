@@ -5,7 +5,6 @@
     overflow: hidden;
     z-index: 1;
   }
-
   
   .fill-to-top-animated-button:before {
     content: "";

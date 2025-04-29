@@ -64,22 +64,22 @@ import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md";
   export const contactInfo = [
     {
       label : "Address",
-      icon: <IoLocationSharp className="text-primary-50" />,
+      icon: <IoLocationSharp className="text-primary-50 group-hover:text-white" />,
       text: "Kathmandu, Nepal",
     },
     {
       label : "Phone Number",
-      icon: <MdSettingsPhone className="text-primary-50" />,
+      icon: <MdSettingsPhone className="text-primary-50 group-hover:text-white" />,
       href: "cell:+91 673463746",
     },
     {
       label : "Email",
-      icon: <MdEmail className="text-primary-50" />,
+      icon: <MdEmail className="text-primary-50 group-hover:text-white" />,
       href: "mailto:hello@prtech-solutions.com",
     },
     {
       label : "Working Hour",
-      icon: <MdAccessTimeFilled className="text-primary-50" />,
+      icon: <MdAccessTimeFilled className="text-primary-50 group-hover:text-white" />,
       text: "Monday - Saturday: 9:00 AM - 10:00 PM",
     },
   ];

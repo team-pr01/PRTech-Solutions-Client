@@ -25,7 +25,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           placeholder={placeholder}
           rows={rows}
           ref={ref}
-          className={`px-[18px] py-[14px] rounded-lg bg-secondary-10 border border-neutral-70/30 focus:outline-none focus:border-primary-20/50 transition duration-300 text-neutral-50 ${error ? "border-red-500" : "border-neutral-75"
+          className={`px-[18px] py-[14px] rounded-lg bg-secondary-10 border border-neutral-70/30 hover:border-neutral-70 focus:outline-none focus:border-primary-20/50 transition duration-300 text-neutral-50 active:scale-95 ease-in-out ${error ? "border-red-500" : "border-neutral-75"
           }`}
           {...rest}
         ></textarea>

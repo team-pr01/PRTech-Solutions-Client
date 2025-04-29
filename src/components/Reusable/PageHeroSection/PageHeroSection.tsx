@@ -54,7 +54,7 @@ const PageHeroSection: React.FC<TPageHeroSection> = ({
 
       <div className="relative min-h-[400px] xl:h-auto flex items-center justify-center">
         <Container>
-          <div className="flex flex-col items-center justify-center py-20 md:py-24 lg:py-32">
+          <div className="flex flex-col items-center justify-center absolute top-10 bottom-0 right-0 left-0 h-full">
             <motion.h1
               variants={slideFromLeft}
               initial="hidden"
