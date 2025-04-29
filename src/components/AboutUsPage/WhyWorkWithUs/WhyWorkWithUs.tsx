@@ -55,7 +55,7 @@ const WhyWorkWithUs = () => {
       <div className="bg-primary-20 absolute bottom-0 right-0 z-0 size-[200px] rounded-full opacity-70 blur-[150px]"></div>
 
       <Container>
-        <div className="flex flex-col xl:flex-row items-center justify-between w-full">
+        <div className="flex flex-col xl:flex-row gap-10 xl:gap-0 items-center justify-between w-full">
           {/* Left Column Image */}
           <motion.div
             className="relative"
