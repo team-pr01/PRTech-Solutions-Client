@@ -7,7 +7,7 @@ import { contactInfo, footerLinks, socialLinks } from "./footer.data";
 import "./Footer.css";
 import clsx from "clsx";
 
-const RocketArrowIcon = () => (
+export const RocketArrowIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

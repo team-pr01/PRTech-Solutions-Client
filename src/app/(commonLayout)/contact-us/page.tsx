@@ -1,10 +1,13 @@
+import ContactUs from "@/components/ContactUsPage/ContactUs/ContactUs";
+import ContactUsHero from "@/components/ContactUsPage/ContactUsHero/ContactUsHero";
 
-const ContactUs = () => {
+const ContactUsPage = () => {
     return (
         <div>
-            Contact Us Page
+            <ContactUsHero/>
+            <ContactUs/>
         </div>
     );
 };
 
-export default ContactUs;
+export default ContactUsPage;

@@ -3,10 +3,10 @@ import { ICONS } from "@/assets";
 import AboutPRTechCard from "./AboutPRTechCard";
 import Link from "next/link";
 import AboutPRTechImages from "./AboutPRTechImages";
-import FillBgOnHover from "../AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
+import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 
 const AboutPRTech = () => {
 

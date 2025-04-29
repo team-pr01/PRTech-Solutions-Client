@@ -5,7 +5,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-import { MdEmail, MdSettingsPhone } from "react-icons/md"; 
+import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md"; 
  
  export const socialLinks = [
     {
@@ -63,15 +63,23 @@ import { MdEmail, MdSettingsPhone } from "react-icons/md";
 
   export const contactInfo = [
     {
+      label : "Address",
       icon: <IoLocationSharp className="text-primary-50" />,
       text: "Kathmandu, Nepal",
     },
     {
+      label : "Phone Number",
       icon: <MdSettingsPhone className="text-primary-50" />,
-      href: "+91 673463746",
+      href: "cell:+91 673463746",
     },
     {
+      label : "Email",
       icon: <MdEmail className="text-primary-50" />,
-      href: "hello@prtech-solutions.com",
+      href: "mailto:hello@prtech-solutions.com",
+    },
+    {
+      label : "Working Hour",
+      icon: <MdAccessTimeFilled className="text-primary-50" />,
+      text: "Monday - Saturday: 9:00 AM - 10:00 PM",
     },
   ];
