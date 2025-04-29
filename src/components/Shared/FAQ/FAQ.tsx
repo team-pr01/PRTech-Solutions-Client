@@ -4,9 +4,45 @@ import Container from "@/components/Reusable/Container/Container";
 import Heading from "@/components/Reusable/Heading/Heading";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+interface IAccordingItem {
+  title: string;
+  description: string;
+}
+
+// Define animation variants
+const headingVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 const FAQ = () => {
-  const accordingData = [
+  const accordingData: IAccordingItem[] = [
     {
       title: "What is the purpose of wireframing in design?",
       description:
@@ -48,44 +84,59 @@ const FAQ = () => {
     },
   ];
 
-  const [isAccordingOpen, setIsAccordingOpen] = useState(0);
-
-  const handleClick = (index) =>
+  const [isAccordingOpen, setIsAccordingOpen] = useState<number | null>(0);
+  const handleClick = (index: number): void =>
     setIsAccordingOpen((prevIndex) => (prevIndex === index ? null : index));
+
   return (
     <div className="bg-secondary-50 font-Inter py-20 w-full overflow-hidden">
       <div className="w-full relative">
         <Container>
-          <Heading
-            heading="Frequently Asked Questions"
-            subHeading="Find answers to common questions about our services, process, and company"
-          />
-          <div className=" w-full rounded-2xl p-2 flex items-center justify-center mt-12">
-            <div className="bg-faq-gradient w-full max-h-[800px] overflow-y-auto rounded-2xl p-10">
+          <motion.div
+            variants={headingVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <Heading
+              heading="Frequently Asked Questions"
+              subHeading="Find answers to common questions about our services, process, and company"
+            />
+          </motion.div>
+
+          <div className="w-full rounded-2xl p-2 flex items-center justify-center mt-12">
+            <motion.div
+              className="bg-faq-gradient w-full max-h-[800px] overflow-y-auto rounded-2xl p-4 lg:p-10"
+              variants={listVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+                {/* Mapping faq data */}
               <div className="flex flex-col w-full">
                 {accordingData?.map((according, index) => (
-                  <article
+                  <motion.article
                     key={index}
-                    className={`px-12 py-8 transition-all duration-300 ${
+                    variants={itemVariants}
+                    className={`px-5 lg:px-12 py-5 lg:py-8 transition-all duration-300 ${
                       isAccordingOpen === index
                         ? "bg-faq-gradient rounded-2xl border-none mt-3"
-                        : "bg-none rounded-none mt-0 border-b border-neutral-90/50"
+                        : "bg-transparent rounded-none mt-0 border-b border-neutral-90/50"
                     }`}
                   >
                     <div
                       className="flex gap-2 cursor-pointer items-center justify-between w-full"
                       onClick={() => handleClick(index)}
                     >
-                      <h2 className="text-white font-medium text-xl leading-6">
+                      <h2 className="text-white font-medium text-base md:text-xl leading-6">
                         {according.title}
                       </h2>
                       <Image
                         src={ICONS.downArrow}
                         alt=""
                         className={`transition-all duration-500 ${
-                          isAccordingOpen === index &&
-                          "rotate-[180deg] !text-[#3B9DF8]"
-                        }`}
+                          isAccordingOpen === index && "rotate-[180deg]"
+                        } size-6`}
                       />
                     </div>
                     <div
@@ -95,14 +146,14 @@ const FAQ = () => {
                           : "grid-rows-[0fr] opacity-0"
                       }`}
                     >
-                      <p className="text-[15px] leading-6 text-neutral-40 overflow-hidden">
+                      <p className="text-xs md:text-[15px] leading-6 text-neutral-40 overflow-hidden">
                         {according.description}
                       </p>
                     </div>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0"></div>
