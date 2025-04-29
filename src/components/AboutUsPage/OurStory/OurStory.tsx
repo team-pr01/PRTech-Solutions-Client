@@ -21,8 +21,8 @@ const OurStory = () => {
 
   // Animation variants - Changed to slide from left
   const slideFromLeftVariants = {
-    hidden: { x: -100, opacity: 0 }, // Start from left
-    visible: { x: 0, opacity: 1 }, // End at original position
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
   };
 
   // Base transition
@@ -33,19 +33,17 @@ const OurStory = () => {
   });
 
   const variants = {
-    hidden: { x: "100%", opacity: 0 }, // Start off-screen to the right and invisible
+    hidden: { x: "100%", opacity: 0 },
     visible: {
-      x: 0, // End at the original position
-      opacity: 1, // End fully visible
+      x: 0,
+      opacity: 1,
       transition: {
-        duration: 0.8, // Animation duration
-        ease: "easeInOut", // Animation easing function
-        // type: "spring", // Alternatively use a spring animation
-        // stiffness: 100,
-        // damping: 15
+        duration: 0.8,
+        ease: "easeInOut",
       },
     },
   };
+  
   return (
     <div className="w-full bg-secondary-60 overflow-hidden relative py-14">
       <div className="bg-primary-20 absolute top-36 bottom-0 left-0 z-0 size-[239px] rounded-full opacity-40 blur-[150px]"></div>

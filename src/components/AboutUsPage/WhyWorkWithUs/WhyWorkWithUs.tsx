@@ -1,0 +1,127 @@
+"use client";
+import { ICONS, IMAGES } from "@/assets";
+import Container from "@/components/Reusable/Container/Container";
+import Heading from "@/components/Reusable/Heading/Heading";
+import { motion, useInView } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
+
+const WhyWorkWithUs = () => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
+
+  // Consolidated variants and transitions
+  const variants = {
+    imageLeft: {
+      hidden: { x: "-100%", opacity: 0 },
+      visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeInOut" } },
+    },
+    slideFromRight: {
+      hidden: { x: 100, opacity: 0 },
+      visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    },
+    listContainer: {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.3,
+        },
+      },
+    },
+    listItem: {
+      hidden: { opacity: 0, y: 50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" },
+      },
+    },
+  };
+
+  const specialitites = [
+    { title: "Expert Team", description: "Our team consists of industry experts with years of experience." },
+    { title: "Fast Response", description: "We respond to inquiries within 24 hours, guaranteed." },
+    { title: "Quality Assurance", description: "We deliver thoroughly tested and high-quality solutions." },
+    { title: "Ongoing Support", description: "Our relationship continues after project completion." },
+  ];
+
+  return (
+    <div className="w-full bg-gradient-to-r from-cyan-500/50 to-blue-500/80 overflow-hidden relative py-14">
+      {/* Background effects */}
+      <Image src={IMAGES.linnerBg1} className="absolute right-0 top-0 h-full opacity-20 z-0" alt="" />
+      <Image src={IMAGES.linnerBg2} className="absolute left-0 top-0 h-full opacity-30 z-0" alt="" />
+      <div className="bg-primary-20 absolute top-36 bottom-0 left-0 z-0 size-[239px] rounded-full opacity-40 blur-[150px]"></div>
+      <div className="bg-primary-20 absolute bottom-0 right-0 z-0 size-[200px] rounded-full opacity-70 blur-[150px]"></div>
+
+      <Container>
+        <div className="flex flex-col xl:flex-row items-center justify-between w-full">
+          {/* Left Column Image */}
+          <motion.div
+            className="relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={variants.imageLeft}
+          >
+            <Image
+              src={IMAGES.aboutPrTech2}
+              alt="About Image"
+              width={450}
+              height={600}
+              className="w-full md:w-[550px] h-auto md:h-[700px] object-cover rounded-full"
+            />
+            <div className="absolute bottom-0 left-0 md:-left-24">
+              <div className="bubble-blob size-[150px] md:size-[300px] border-4 border-cyan-500/50 overflow-hidden rounded-full">
+                <Image
+                  src={IMAGES.aboutPrTech2}
+                  alt="About Image Bubble"
+                  layout="fill"
+                  objectFit="cover"
+                  className="size-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column Content */}
+          <div className="w-full xl:w-[55%]">
+            <motion.div
+              ref={headingRef}
+              variants={variants.slideFromRight}
+              initial="hidden"
+              animate={isHeadingInView ? "visible" : "hidden"}
+            >
+              <h1 className="text-neutral-30 text-2xl font-semibold font-Inter mb-2">Why Work With Us</h1>
+              <Heading
+                heading="We Execute Our ideas From the Start to Finish"
+                subHeading="We’re not just another creative agency — we’re your strategic partner in turning ideas into impact. With a blend of bold creativity, smart thinking, and pixel-perfect execution, we help brands grow, connect, and stand out in a crowded world."
+                align="left"
+              />
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col gap-6 mt-10"
+              variants={variants.listContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {specialitites.map((speciality) => (
+                <motion.div key={speciality.title} className="flex gap-6 font-Inter" variants={variants.listItem}>
+                  <Image src={ICONS.tickMark} alt="" width={32} height={32} className="size-8 flex-shrink-0" />
+                  <div>
+                    <h1 className="text-neutral-20 text-2xl font-semibold">{speciality.title}</h1>
+                    <p className="text-neutral-40 text-lg mt-[6px] max-w-[416px]">{speciality.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+};
+
+export default WhyWorkWithUs;
