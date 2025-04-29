@@ -18,26 +18,29 @@ const OurProjects = () => {
   const containerRef = useRef<HTMLUListElement>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
 
-   // Refs for animations
-   const headingRef = useRef(null);
-   const subheadingRef = useRef(null);
-   const tabsRef = useRef(null);
-   const buttonRef = useRef(null); // Ref for the button wrapper
+  // Refs for animations
+  const headingRef = useRef(null);
+  const subheadingRef = useRef(null);
+  const tabsRef = useRef(null);
+  const buttonRef = useRef(null); // Ref for the button wrapper
 
-   // useInView hooks
-   const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
-   const isSubheadingInView = useInView(subheadingRef, { once: true, amount: 0.3 });
-   const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
-   const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
+  // useInView hooks
+  const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  const isSubheadingInView = useInView(subheadingRef, {
+    once: true,
+    amount: 0.3,
+  });
+  const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
+  const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
 
-   // Animation variants
-   const slideUpVariants = {
-     hidden: { y: 50, opacity: 0 },
-     visible: { y: 0, opacity: 1 },
-   };
+  // Animation variants
+  const slideUpVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
-   // Base transition
-   const transition = { duration: 0.6, ease: "easeOut" };
+  // Base transition
+  const transition = { duration: 0.6, ease: "easeOut" };
 
   useEffect(() => {
     const currentTab = tabRefs.current[activeTab];
@@ -189,13 +192,13 @@ const OurProjects = () => {
             {/* Animated See all projects button */}
             {/* Wrap the Link with motion.div for animation */}
             <motion.div
-               ref={buttonRef}
-               variants={slideUpVariants}
-               initial="hidden"
-               animate={isButtonInView ? "visible" : "hidden"}
-               // Adjust delay based on expected card loading time or keep it simple
-               transition={{ ...transition, delay: 0.6 }} // Delay after tabs (adjust as needed)
-               className="flex items-center justify-center mt-10"
+              ref={buttonRef}
+              variants={slideUpVariants}
+              initial="hidden"
+              animate={isButtonInView ? "visible" : "hidden"}
+              // Adjust delay based on expected card loading time or keep it simple
+              transition={{ ...transition, delay: 0.6 }} // Delay after tabs (adjust as needed)
+              className="flex items-center justify-center mt-10"
             >
               <Link href={"/"}>
                 {/* <FillBgToTopOnHover

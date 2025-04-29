@@ -17,6 +17,7 @@ import disclaimer from "./icons/disclaimer.svg";
 import upArrow from "./icons/up-arrow.svg";
 import rightArrow from "./icons/right-arrow-white.svg";
 import leftArrow from "./icons/left-arrow-white.svg";
+import downArrow from "./icons/arrow-down.svg";
 import quote from "./icons/quote.svg";
 import tickMark from "./icons/tick-mark.svg";
 import missionGif from "./icons/mission.gif";
@@ -152,6 +153,7 @@ export const ICONS = {
   upArrow,
   rightArrow,
   leftArrow,
+  downArrow,
   quote,
   tickMark,
   missionGif,

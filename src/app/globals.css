@@ -41,6 +41,7 @@
   --color-neutral-70: #616161;
   --color-neutral-80: #272727;
   --color-neutral-85: #c7c7c726;
+  --color-neutral-90: #727272;
 
   /* accent */
   --color-accent-10: #000000;
@@ -70,6 +71,9 @@
   --bg-our-projects-bg-gradient: linear-gradient(180deg, #1a1e27 0%, #0a1222 100%);
 
   --bg-service-gradient: linear-gradient(180deg, #284888 0%, #0A1222 100%);
+  --bg-faq-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(114, 114, 114, 0.05) 100%);
+  --bg-faq-bg-gradient: linear-gradient(to right, rgba(6, 160, 237, 1) 0%, rgba(6, 160, 237, 0.2) 60%, rgba(11, 19, 36, 0) 100%);
+
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
 
@@ -85,6 +89,12 @@
 }
 .bg-service-gradient {
   background: var(--bg-service-gradient);
+}
+.bg-faq-bg-gradient {
+  background: var(--bg-faq-bg-gradient);
+}
+.bg-faq-gradient {
+  background: var(--bg-faq-gradient) ;
 }
 .bg-about-bg-gradient {
   background: var(--bg-about-bg-gradient);
