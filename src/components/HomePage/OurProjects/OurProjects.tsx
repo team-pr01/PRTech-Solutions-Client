@@ -200,7 +200,7 @@ const OurProjects = () => {
               transition={{ ...transition, delay: 0.6 }} // Delay after tabs (adjust as needed)
               className="flex items-center justify-center mt-10"
             >
-              <Link href={"/"}>
+              <Link href={"/our-projects"}>
                 {/* <FillBgToTopOnHover
                   btnText="See All projects"
                   classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
