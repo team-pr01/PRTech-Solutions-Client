@@ -165,20 +165,20 @@ const ContactUsForm = () => {
           </motion.div>
 
           {/* Animate the button */}
-          <motion.button
+          <motion.div
             custom={0.6}
             initial="hidden"
             whileInView="visible"
             viewport={viewportSettings}
             variants={slideUpVariant}
             className="justify-self-end"
-            type="submit"
+            // type="submit"
           >
             <FillBgOnHover classNames="w-fit text-sm md:text-base px-5 lg:px-[35px] py-3 md:py-3 lg:py-[15px] group bg-primary-20 border-none text-white flex items-center gap-1 justify-self-end rounded-xl">
               Submit
               <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
             </FillBgOnHover>
-          </motion.button>
+          </motion.div>
         </form>
       </div>
     </div>

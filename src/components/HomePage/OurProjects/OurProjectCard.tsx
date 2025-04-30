@@ -1,5 +1,5 @@
-"use client"
-import { ICONS, IMAGES } from "@/assets";
+"use client";
+import { ANIMATEDICONS, ICONS, IMAGES } from "@/assets";
 import Image from "next/image";
 import "./OurProjects.css";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
@@ -9,23 +9,26 @@ import { motion } from "framer-motion";
 const OurProjectCard = ({
   index,
   cardDirection,
+  isIFrameView = false,
 }: {
   index: number;
   cardDirection: "left" | "right";
+  isIFrameView?: boolean;
 }) => {
   // Animation variants
   const slideUpVariants = {
     hidden: { y: 50, opacity: 0 },
     visible: { y: 0, opacity: 1 },
-};
+  };
   return (
     <motion.div
-    variants={slideUpVariants}
-    initial="hidden"
-    whileInView="visible" // Trigger animation when in view
-    viewport={{ once: true, amount: 0.2 }} // Adjust amount as needed
-    transition={{ duration: 0.5, delay: index * 0.15 }}
-    className="bg-our-projects-bg-gradient rounded-3xl w-full h-full border border-neutral-65/30 p-3 xl:p-6 relative z-10 ">
+      variants={slideUpVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      className="bg-our-projects-bg-gradient rounded-3xl w-full h-full border border-neutral-65/30 p-3 xl:p-6 relative z-10 "
+    >
       {/* Bg gradients */}
       <div className="bg-primary-20 absolute bottom-4 left-0 z-0 size-[300px] overflow-hidden rounded-full opacity-10 blur-2xl"></div>
       <div className="bg-primary-20 absolute bottom-0 right-0 top-6 z-[-1] size-[200px] rounded-full opacity-20 blur-2xl"></div>
@@ -35,20 +38,40 @@ const OurProjectCard = ({
         }`}
       >
         <div className="w-[72%]">
-          <Image
-            src={IMAGES.project1}
-            alt=""
-            className="w-full h-full rounded-2xl"
-            priority={true}
-          />
+          {isIFrameView ? (
+            <iframe
+              src="https://mitraconsultancy.co.in/"
+              className="w-full h-full rounded-2xl"
+              frameBorder="0"
+              loading="lazy"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <Image
+              src={IMAGES.project1}
+              alt=""
+              className="w-full h-full rounded-2xl"
+              priority={true}
+            />
+          )}
         </div>
         <div className="w-[28%]">
-          <Image
-            src={IMAGES.project2}
-            alt=""
-            className="w-full h-full rounded-2xl"
-            priority={true}
-          />
+          {isIFrameView ? (
+            <iframe
+              src="https://mitraconsultancy.co.in/"
+              className="w-full h-full rounded-2xl"
+              frameBorder="0"
+              loading="lazy"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <Image
+              src={IMAGES.project2}
+              alt=""
+              className="w-full h-full rounded-2xl"
+              priority={true}
+            />
+          )}
         </div>
       </div>
 
@@ -82,13 +105,21 @@ const OurProjectCard = ({
           </div>
         </div>
 
-        <div className="hidden xl:block">
+        <div className="hidden xl:flex items-center gap-5">
+          <a href="https://mitraconsultancy.co.in/" target="_blank" className="cursor-pointer border border-white flex items-center gap-2 px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base rounded-[30px]">
+            <Image
+              src={ANIMATEDICONS.linkGif}
+              alt="arrow-top-right"
+              className="size-4 md:size-6"
+            />
+            View Live
+          </a>
           <GlowOnHover
-            classNames="px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base "
+            classNames="px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base border border-primary-20"
             icon={ICONS.arrowTopRight}
             alt="tio-right-icon"
           >
-            Learn More
+            See Details
           </GlowOnHover>
         </div>
         <Link

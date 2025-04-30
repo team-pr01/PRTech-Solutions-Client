@@ -32,6 +32,7 @@ import techStack from "./icons/Animated-Icons/tech-stack.gif";
 import banner from "./icons/Animated-Icons/banner.gif";
 import servicesGif from "./icons/Animated-Icons/services.gif";
 import progressGif from "./icons/Animated-Icons/progress.gif";
+import linkGif from "./icons/Animated-Icons/link.gif";
 // Social Icons
 import linkedinGray from "./icons/Social Icons/linkedin-gray.svg";
 import facebookGray from "./icons/Social Icons/facebook-gray.svg";
@@ -204,4 +205,5 @@ export const ANIMATEDICONS = {
   banner,
   servicesGif,
   progressGif,
+  linkGif,
 };
