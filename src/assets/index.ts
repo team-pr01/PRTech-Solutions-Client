@@ -20,6 +20,12 @@ import leftArrow from "./icons/left-arrow-white.svg";
 import downArrow from "./icons/arrow-down.svg";
 import quote from "./icons/quote.svg";
 import tickMark from "./icons/tick-mark.svg";
+import date from "./icons/date.svg";
+import time from "./icons/time.svg";
+import team from "./icons/team.svg";
+import website from "./icons/website.svg";
+import timelineBycicle from "./icons/timeline-bycicle.svg";
+
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
 import disclaimerGif from "./icons/disclaimer.gif";
@@ -157,6 +163,11 @@ export const ICONS = {
   downArrow,
   quote,
   tickMark,
+  date,
+  time,
+  team,
+  website,
+  timelineBycicle,
   missionGif,
   visionGif,
   disclaimerGif,
