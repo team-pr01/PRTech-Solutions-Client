@@ -36,14 +36,14 @@ const ProjectTimeline = () => {
       </div>
 
       {/* Timeline */}
-      <div className="relative mt-6 pl-6 border-l border-neutral-30 space-y-8">
+      <div className="relative mt-6 pl-6 border-l border-neutral-60 space-y-8">
         {timelineData.map((item, index) => {
           const isLast = index === timelineData.length - 1;
           return (
             <div key={index} className="relative">
               {/* Dot */}
               <span
-                className={`absolute -left-[30px] top-1.5 rounded-full ${
+                className={`absolute -left-[30.5px] top-1.5 rounded-full ${
                   isLast ? "bg-green-500" : "bg-blue-500"
                 } size-3`}
               />

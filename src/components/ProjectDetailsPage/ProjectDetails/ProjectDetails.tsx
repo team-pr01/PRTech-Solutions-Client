@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import ProjectOverview from "./ProjectOverview/ProjectOverview";
 import ProjectTimeline from "./ProjectTimeline/ProjectTimeline";
 import ChallengesAndSolutions from "./ChallengesAndSolutions/ChallengesAndSolutions";
+import ProjectPhotoGallary from "./ProjectPhotoGallary/ProjectPhotoGallary";
 
 const ProjectDetails = () => {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -33,9 +34,8 @@ const ProjectDetails = () => {
 
             {/* Project Overview */}
             {activeTab === "Overview" && <ProjectOverview />}
-            {activeTab === "Challenges & Solutions" && (
-              <ChallengesAndSolutions />
-            )}
+            {activeTab === "Challenges & Solutions" && <ChallengesAndSolutions />}
+            {activeTab === "Gallery" && <ProjectPhotoGallary />}
           </div>
           <ProjectTimeline />
         </div>
