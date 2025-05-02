@@ -33,7 +33,7 @@ const ProjectDetailsHero = () => {
       <div className="bg-gradient-to-r from-blue-950/30 to-indigo-900/30 py-7 mt-6">
         <Container>
           <h1
-            className={`text-white font-rethink text-3xl md:text-5xl font-bold leading-9 2xl:leading-[64px]`}
+            className={`text-white font-rethink text-2xl md:text-3xl xl:text-5xl font-bold leading-8 md:leading-9 xl:leading-[64px]`}
           >
             E-Commerce Platform Redesign
           </h1>
@@ -43,11 +43,11 @@ const ProjectDetailsHero = () => {
             Client : John Smith
           </p>
 
-          <div className="mt-[50px] flex items-center gap-6">
+          <div className="mt-[50px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center gap-6">
             {data?.map((item) => (
               <div
                 key={item?.label}
-                className="relative bg-neutral-85/50 border border-primary-40 rounded-lg flex gap-3 p-6 w-full sm:w-[342px] h-[128px]"
+                className="relative bg-neutral-85/50 border border-primary-40 rounded-lg flex gap-3 p-6 w-full sm:w-[342px] lg:w-full 2xl:w-[342px] h-[128px]"
               >
                 <Image
                   className="absolute right-0 top-0 h-full w-full opacity-60 overflow-hidden"
@@ -61,13 +61,11 @@ const ProjectDetailsHero = () => {
                 />
                 <Image src={item?.icon} alt={``} className="size-6" />
                 <div>
-                  <h1 className="text-white text-[8px] lg:text-lg font-bold leading-5 mb-2">
+                  <h1 className="text-white text-lg font-bold leading-5 mb-2">
                     {item?.label}
                   </h1>
                   {item?.description && (
-                    <p
-                      className={`text-neutral-65 font-Inter text-sm md:text-base`}
-                    >
+                    <p className={`text-neutral-65 font-Inter text-base`}>
                       {item?.description}
                     </p>
                   )}
@@ -75,7 +73,7 @@ const ProjectDetailsHero = () => {
                     <Link
                       href={item?.href}
                       target="_blank"
-                      className={`text-neutral-65 font-Inter text-sm md:text-base`}
+                      className={`text-neutral-65 font-Inter text-base`}
                     >
                       {item?.href}
                     </Link>

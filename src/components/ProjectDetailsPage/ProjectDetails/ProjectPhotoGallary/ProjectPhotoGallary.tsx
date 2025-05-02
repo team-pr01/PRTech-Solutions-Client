@@ -10,18 +10,14 @@ import { IMAGES } from "@/assets";
 import { useRef, useState } from "react";
 
 const ProjectPhotoGallary = () => {
-  const [progress, setProgress] = useState(0); // 0 to 100
-  // The ref is not strictly needed for this logic but doesn't hurt
+  const [progress, setProgress] = useState(0);
   const progressRef = useRef<HTMLDivElement | null>(null);
 
-  // --- Corrected Handler ---
   const handleAutoplayTimeLeft = (
     swiper: any,
     time: number,
     progressRatio: number
   ) => {
-    // progressRatio goes from 0 (start of delay) to 1 (end of delay)
-    // We want the bar width to go from 0% to 100%
     setProgress((1 - progressRatio) * 100);
   };
   return (
@@ -31,8 +27,7 @@ const ProjectPhotoGallary = () => {
           Checkout the Project
         </h1>
         <p
-          className={`text-neutral-65 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-3 max-w-full lg:max-w-[900px]`}
-        >
+          className={`text-neutral-65 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-3 max-w-full lg:max-w-[900px]`}>
           Complete redesign of an e-commerce platform with focus on mobile
         </p>
       </div>
@@ -54,7 +49,7 @@ const ProjectPhotoGallary = () => {
           slidesPerView={1}
           modules={[Navigation, Pagination, Autoplay]}
           autoplay={{
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           onAutoplayTimeLeft={handleAutoplayTimeLeft}
