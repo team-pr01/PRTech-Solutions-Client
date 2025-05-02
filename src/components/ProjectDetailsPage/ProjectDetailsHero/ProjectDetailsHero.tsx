@@ -43,6 +43,7 @@ const ProjectDetailsHero = () => {
             Client : John Smith
           </p>
 
+          {/* Data cards */}
           <div className="mt-[50px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-center gap-6">
             {data?.map((item) => (
               <div
@@ -50,17 +51,17 @@ const ProjectDetailsHero = () => {
                 className="relative bg-neutral-85/50 border border-primary-40 rounded-lg flex gap-3 p-6 w-full sm:w-[342px] lg:w-full 2xl:w-[342px] h-[128px]"
               >
                 <Image
-                  className="absolute right-0 top-0 h-full w-full opacity-60 overflow-hidden"
+                  className="absolute right-0 top-0 h-full w-full opacity-20 overflow-hidden z-0"
                   src={IMAGES.techStackGradientBg1}
                   alt=""
                 />
                 <Image
-                  className="absolute left-0 bottom-0 h-full w-full opacity-60 overflow-hidden"
+                  className="absolute left-0 bottom-0 h-full w-full opacity-20 overflow-hidden z-0"
                   src={IMAGES.techStackGradientBg2}
                   alt=""
                 />
                 <Image src={item?.icon} alt={``} className="size-6" />
-                <div>
+                <div className="z-10">
                   <h1 className="text-white text-lg font-bold leading-5 mb-2">
                     {item?.label}
                   </h1>

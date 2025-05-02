@@ -1,3 +1,4 @@
+import ProjectSnapshots from "@/components/OurProjectsPage/ProjectSnapshots/ProjectSnapshots";
 import ProjectDetails from "@/components/ProjectDetailsPage/ProjectDetails/ProjectDetails";
 import ProjectDetailsHero from "@/components/ProjectDetailsPage/ProjectDetailsHero/ProjectDetailsHero";
 
@@ -6,6 +7,7 @@ const ProjectDetailsPage = () => {
         <div>
             <ProjectDetailsHero/>
             <ProjectDetails/>
+            <ProjectSnapshots/>
         </div>
     );
 };

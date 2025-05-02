@@ -101,6 +101,7 @@ import linnerBg2 from "./images/linnerBg2.png";
 import techGrid from "./images/tech-grid.png";
 import project1 from "./images/project1.png";
 import project2 from "./images/project2.png";
+import project3 from "./images/project3.png";
 import techStackShadow from "./images/tech-stack-shadow.png";
 import heroBgImage from "./images/hero-bg-image.png";
 import heroBgImage2 from "./images/hero-bg-image-2.png";
@@ -131,6 +132,7 @@ export const IMAGES = {
   techGrid,
   project1,
   project2,
+  project3,
   techStackShadow,
   heroBgImage,
   heroBgImage2,
