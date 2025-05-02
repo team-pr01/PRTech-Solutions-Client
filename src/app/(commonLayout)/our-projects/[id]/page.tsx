@@ -5,7 +5,7 @@ const ProjectDetailsPage = () => {
     return (
         <div>
             <ProjectDetailsHero/>
-            {/* <ProjectDetails/> */}
+            <ProjectDetails/>
         </div>
     );
 };

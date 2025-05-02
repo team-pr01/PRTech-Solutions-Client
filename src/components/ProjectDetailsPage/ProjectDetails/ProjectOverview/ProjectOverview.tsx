@@ -2,7 +2,7 @@ const ProjectOverview = () => {
   return (
     <div className="flex flex-col gap-6 mt-[50px]">
       <div>
-        <h1 className="font-Rethink text-3xl font-bold leading-11 text-white">
+        <h1 className="text-white font-rethink text-2xl md:text-3xl font-bold leading-8 md:leading-9 xl:leading-[64px]">
           Project Overview
         </h1>
         <p
@@ -17,7 +17,7 @@ const ProjectOverview = () => {
 
       {/* Technology Used */}
       <div>
-        <h1 className="font-Rethink text-xl font-bold leading-11 text-white">
+        <h1 className="font-Rethink text-base md:text-xl font-bold leading-11 text-white">
           Technologies Used
         </h1>
         <div className="flex items-center gap-3 md:gap-5 mt-3">

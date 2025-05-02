@@ -26,7 +26,7 @@ const timelineData = [
 
 const ProjectTimeline = () => {
   return (
-    <div className="border border-secondary-40 rounded-2xl p-6 w-full lg:w-[30%] h-fit">
+    <div className="border border-secondary-40 rounded-2xl p-6 w-full xl:w-[30%] h-fit">
       {/* Heading */}
       <div className="flex items-center gap-4">
         <Image src={ICONS.timelineBycicle} alt="" className="size-7" />

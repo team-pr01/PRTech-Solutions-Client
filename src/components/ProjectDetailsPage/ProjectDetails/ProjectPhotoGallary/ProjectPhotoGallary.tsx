@@ -23,11 +23,12 @@ const ProjectPhotoGallary = () => {
   return (
     <div className="flex flex-col gap-6 mt-[50px]">
       <div>
-        <h1 className="font-Rethink text-3xl font-bold leading-11 text-white">
+        <h1 className="text-white font-rethink text-2xl md:text-3xl font-bold leading-8 md:leading-9 xl:leading-[64px]">
           Checkout the Project
         </h1>
         <p
-          className={`text-neutral-65 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-3 max-w-full lg:max-w-[900px]`}>
+          className={`text-neutral-65 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-3 max-w-full lg:max-w-[900px]`}
+        >
           Complete redesign of an e-commerce platform with focus on mobile
         </p>
       </div>
@@ -75,7 +76,7 @@ const ProjectPhotoGallary = () => {
         {/* Pagination dots */}
         <div className="swiper-pagination-custom text-center absolute bottom-4 left-0 right-0 w-full z-0"></div>
 
-          {/* Styles for dots */}
+        {/* Styles for dots */}
         <style jsx global>{`
           .swiper-pagination-custom .swiper-pagination-bullet {
             background-color: #fafcfd !important;

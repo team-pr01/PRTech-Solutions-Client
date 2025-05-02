@@ -3,7 +3,7 @@ const ChallengesAndSolutions = () => {
     return (
         <div className="flex flex-col gap-6 mt-[50px]">
       <div>
-        <h1 className="font-Rethink text-3xl font-bold leading-11 text-white">
+        <h1 className="text-white font-rethink text-2xl md:text-3xl font-bold leading-8 md:leading-9 xl:leading-[64px]">
           Challenges We Have Faced and Resolved
         </h1>
         <p
