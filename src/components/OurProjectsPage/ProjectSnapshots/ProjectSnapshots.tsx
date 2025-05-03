@@ -8,7 +8,7 @@ import LaptopMockup from "./LaptopMockup";
 
 const ProjectSnapshots = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full py-14 bg-secondary-60">
+    <div className="flex flex-col items-center justify-center w-full pt-14 pb-32 bg-secondary-60 h-fit">
       <Container>
         <div>
           {/* Heading */}
@@ -28,12 +28,15 @@ const ProjectSnapshots = () => {
             visuals, strategic thinking, and user-centered digital experiences.
           </p>
 
-          <div>
-            <LaptopMockup/>
-            <TabMockup/>
-            <MobileMockup/>
-            <DesktopMockup/>
 
+          {/* Screen Mockups */}
+          <div className="mt-16 relative">
+            <DesktopMockup />
+            <LaptopMockup />
+            <div className="flex gap-7 items-end absolute top-66 z-10">
+              <MobileMockup />
+              <TabMockup />
+            </div>
           </div>
         </div>
       </Container>

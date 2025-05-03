@@ -1,28 +1,61 @@
 "use client";
+import React from "react";
 
-import Image from "next/image";
-import { IMAGES } from "@/assets";
+const DEFAULT_URL = "https://prtech-solutions.com/";
 
-const TabMockup = ({ imageUrl = IMAGES.project3, altText = "Project screenshot on tablet" }) => {
+const TabMockup = ({ url = DEFAULT_URL }) => {
+  const targetUrl = url;
+  const iframeWidth = 768;
+  const iframeHeight = 1024;
+
+  const outerFrameMaxWidth = 300;
+  const outerFrameHeight = 400;
+  const bezelWidth = 8;
+
+  const innerContentWidth = outerFrameMaxWidth - bezelWidth * 2;
+  const scaleFactor = innerContentWidth / iframeWidth;
+  const scaledHeight = iframeHeight * scaleFactor;
+
   return (
-   <div className="p-2 border border-neutral-70 rounded-xl h-[400px] max-w-[300px] shadow-xl">
-     <div className="relative border-black dark:border-neutral-700 bg-neutral-800 dark:bg-neutral-700 border-[8px] w-full h-full">
-      {/* Optional: Camera Dot */}
-      <div className="w-2 h-2 md:w-3 md:h-3 absolute top-[10px] md:top-[14px] left-1/2 -translate-x-1/2 bg-neutral-40 dark:bg-neutral-500 rounded-full"></div>
+    <div
+      className="border border-neutral-70 rounded-xl shadow-xl"
+      style={{
+        height: `${outerFrameHeight}px`,
+        maxWidth: `${outerFrameMaxWidth}px`,
+        width: "100%",
+      }}
+    >
+      <div className="relative border-black dark:border-neutral-700 bg-neutral-800 dark:bg-neutral-700 border-[8px] w-full h-full rounded-xl flex items-center justify-center">
+        <div className="w-2 h-2 md:w-3 md:h-3 absolute top-[10px] md:top-[14px] left-1/2 -translate-x-1/2 bg-neutral-40 dark:bg-neutral-500 rounded-full z-10"></div>
 
-      {/* Screen Content Area */}
-      <div className="overflow-hidden w-full h-full bg-white dark:bg-black">
-        <Image
-          src={imageUrl}
-          alt={altText}
-          className="w-full h-full object-cover dark:opacity-90"
-          priority={true}
-          width={500}
-          height={680}
-        />
+        <div
+          className="bg-white dark:bg-black overflow-hidden"
+          style={{
+            width: `${innerContentWidth}px`,
+            height: `${scaledHeight}px`,
+          }}
+        >
+          <iframe
+            src={targetUrl}
+            title={`Tablet view of ${targetUrl}`}
+            width={iframeWidth}
+            height={iframeHeight}
+            style={{
+              width: `${iframeWidth}px`,
+              height: `${iframeHeight}px`,
+              transform: `scale(${scaleFactor})`,
+              transformOrigin: "top left",
+              border: "0",
+              backgroundColor: "#fff",
+              display: "block",
+            }}
+            frameBorder="0"
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
-   </div>
   );
 };
 
