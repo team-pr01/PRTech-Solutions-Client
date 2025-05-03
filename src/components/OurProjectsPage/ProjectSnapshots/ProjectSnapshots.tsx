@@ -4,6 +4,7 @@ import Container from "@/components/Reusable/Container/Container";
 import Image from "next/image";
 import TextLoop from "react-text-loop";
 import TabMockup from "./TabMockup";
+import MobileMockup from "./MobileMockup";
 
 const ProjectSnapshots = () => {
   return (
@@ -50,6 +51,7 @@ const ProjectSnapshots = () => {
             {/* --- Laptop Mockup End --- */}
 
             <TabMockup/>
+            <MobileMockup/>
 
           </div>
         </div>
