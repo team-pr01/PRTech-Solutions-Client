@@ -4,20 +4,24 @@ import React, { useState } from "react";
 import { FaHandPointRight } from "react-icons/fa";
 
 type TServiceCardProps = {
+  index: number;
   icon: StaticImageData;
   hoverIcon: StaticImageData;
   title: string;
   description: string;
   features: string[];
 };
-const ServiceCard = ({ icon, hoverIcon, title, description, features } : TServiceCardProps) => {
+const ServiceCard = ({ index, icon, hoverIcon, title, description, features } : TServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative bg-faq-gradient text-white w-full h-full max-h-[491px] rounded-2xl p-5 md:p-8 border border-primary-70/50 group overflow-hidden"
+      // [1, 3, 5, 7]
+      // [1,3,4,5,7]
+      // ${[1,3,4,5,7].includes(index) ? "bg-service-gradient" : "bg-faq-gradient"}
+      className={`bg-faq-gradient relative  text-white w-full h-full max-h-[491px] rounded-2xl p-5 md:p-8 border border-primary-70/50 group overflow-hidden`}
     >
       {/* Gradient overlay */}
       <div
