@@ -105,6 +105,7 @@ import project3 from "./images/project3.png";
 import techStackShadow from "./images/tech-stack-shadow.png";
 import heroBgImage from "./images/hero-bg-image.png";
 import heroBgImage2 from "./images/hero-bg-image-2.png";
+import relatedProject from "./images/related-project.jpg";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -136,6 +137,7 @@ export const IMAGES = {
   techStackShadow,
   heroBgImage,
   heroBgImage2,
+  relatedProject,
 };
 
 export const ICONS = {

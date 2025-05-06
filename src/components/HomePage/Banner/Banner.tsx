@@ -157,7 +157,7 @@ const Banner = () => {
             >
               <h1 className="text-4xl sm:text-5xl font-bold text-center text-white mt-6">
                 We{" "}
-                <span className="text-primary-20 border-r-2 border-primary-20 pr-1 animate-pulse">
+                <span className="text-primary-20 border-r-2 border-primary-20 pr-1">
                   {/* Render typing text only when in view */}
                   {isTypingInView ? displayedText : ""}
                 </span>
