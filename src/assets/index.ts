@@ -72,6 +72,24 @@ import java from "./icons/tech-stack-icons/java.svg";
 import firebase from "./icons/tech-stack-icons/firebase.svg";
 import expo from "./icons/tech-stack-icons/expo.svg";
 
+// Swervice icons
+import designWhite from "./icons/service-icons/design-white.svg";
+import designBlue from "./icons/service-icons/design-blue.svg";
+import iosDevelopmentWhite from "./icons/service-icons/ios-development-white.svg";
+import iosDevelopmentBlue from "./icons/service-icons/ios-development-blue.svg";
+import mobileAppDevelopmentWhite from "./icons/service-icons/mobile-app-development-white.svg";
+import mobileAppDevelopmentBlue from "./icons/service-icons/mobile-app-development-blue.svg";
+import websiteRedesignWhite from "./icons/service-icons/website-redesign-white.svg";
+import websiteRedesignBlue from "./icons/service-icons/website-redesign-blue.svg";
+import uiUxDesignWhite from "./icons/service-icons/ui-ux-design-white.svg";
+import uiUxDesignBlue from "./icons/service-icons/ui-ux-design-blue.svg";
+import backendDevelopmentWhite from "./icons/service-icons/backend-development-white.svg";
+import backendDevelopmentBlue from "./icons/service-icons/backend-development-blue.svg";
+import frontendDevelopmentWhite from "./icons/service-icons/frontend-development-white.svg";
+import frontendDevelopmentBlue from "./icons/service-icons/frontend-development-blue.svg";
+import websiteDevelopmentWhite from "./icons/service-icons/website-development-white.svg";
+import websiteDevelopmentBlue from "./icons/service-icons/website-development-blue.svg";
+
 // gradient bg
 import gradientHero from "./gradient-bg/hero-gradient.png";
 import gradientServiceRight from "./gradient-bg/service-right-gradient .png";
@@ -202,6 +220,25 @@ export const ICONS = {
   java,
   firebase,
   expo,
+
+  // Service icons
+  // frontendDevelopment,
+  designWhite,
+  designBlue,
+  iosDevelopmentWhite,
+  iosDevelopmentBlue,
+  mobileAppDevelopmentWhite,
+  mobileAppDevelopmentBlue,
+  websiteRedesignWhite,
+  websiteRedesignBlue,
+  uiUxDesignWhite,
+  uiUxDesignBlue,
+  backendDevelopmentWhite,
+  backendDevelopmentBlue,
+  frontendDevelopmentWhite,
+  frontendDevelopmentBlue,
+  websiteDevelopmentWhite,
+  websiteDevelopmentBlue,
 };
 export const GRADIENT_BG = {
   gradientHero,
