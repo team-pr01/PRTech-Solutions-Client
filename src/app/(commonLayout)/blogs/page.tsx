@@ -7,8 +7,8 @@ const Blogs = () => {
   return (
     <div>
       <BlogsHero />
-      <OurAllBlogs/>
       <FeaturedBlogs/>
+      <OurAllBlogs/>
     </div>
   );
 };

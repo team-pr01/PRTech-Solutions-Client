@@ -1,18 +1,26 @@
 import Container from "@/components/Reusable/Container/Container";
 import FeaturedBlogCard from "./FeaturedBlogCard";
+import Link from "next/link";
+import { CgArrowTopRight } from "react-icons/cg";
 
 /* eslint-disable react/no-unescaped-entities */
 const FeaturedBlogs = () => {
   return (
     <div className="bg-secondary-50 font-Inter py-20 w-full">
       <Container>
-        <h1
-          className={`text-white font-rethink text-2xl md:text-3xl xl:text-5xl font-bold leading-8 md:leading-9 xl:leading-[64px]`}
+       <div className="flex items-center justify-between">
+       <h1
+          className={`text-white font-rethink text-2xl md:text-3xl xl:text-5xl font-bold`}
         >
           Check What's Special For You
         </h1>
+        <Link href={"/"} className="w-fit group text-neutral-65 flex items-center gap-1 hover:underline transition-all duration-500 ease-in-out hover:-translate-y-1">
+            See All Featured Blogs
+            <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+          </Link>
+       </div>
 
-        <div className="flex flex-col gap-10 mt-6">
+        <div className="flex flex-col gap-10 xl:gap-16 mt-8">
             <FeaturedBlogCard/>
             <FeaturedBlogCard/>
         </div>

@@ -11,7 +11,7 @@ const FeaturedBlogCard = () => {
   const shouldTruncate = text.length > 300;
   const displayedText = shouldTruncate ? `${text.slice(0, 300)}...` : text;
   return (
-    <div className="flex flex-col md:flex-row gap-8 xl:gap-10 2xl:gap-14 font-Inter max-h-full h-full 2xl:max-h-[432px] overflow-y-auto">
+    <div className="flex flex-col md:flex-row gap-8 xl:gap-10 2xl:gap-14 font-Inter">
       <Image src={IMAGES.dummyBlog} alt="" className="rounded-2xl" />
 
       <div className="flex flex-col gap-6">
@@ -23,7 +23,6 @@ const FeaturedBlogCard = () => {
             className={`text-white font-rethink text-xl md:text-2xl xl:text-3xl font-bold leading-8 md:leading-9 xl:leading-11 mt-4`}
           >
             10 UX Principles Every Developer Should Know 10 UX Principles Every
-            Developer Should Know
           </h1>
         </div>
 
