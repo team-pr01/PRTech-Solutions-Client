@@ -92,7 +92,7 @@ const OurAllBlogs = () => {
           </div>
         </div>
 
-        <CategorizedBlogs />
+        <CategorizedBlogs heading={"All"} blogs={[1,2,3,4]} />
       </Container>
     </div>
   );

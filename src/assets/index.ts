@@ -25,6 +25,8 @@ import time from "./icons/time.svg";
 import team from "./icons/team.svg";
 import website from "./icons/website.svg";
 import timelineBycicle from "./icons/timeline-bycicle.svg";
+import user from "./icons/user.svg";
+import comment from "./icons/comment.svg";
 
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
@@ -196,6 +198,8 @@ export const ICONS = {
   visionGif,
   disclaimerGif,
   calendarGif,
+  user,
+  comment,
 
   // Tech stack logo
   django,
