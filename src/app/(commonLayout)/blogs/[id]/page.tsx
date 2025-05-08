@@ -2,25 +2,27 @@ import BlogDetails from "@/components/BlogDetailsPage/BlogDetails/BlogDetails";
 import BlogDetailsHero from "@/components/BlogDetailsPage/BlogDetailsHero/BlogDetailsHero";
 import CompanyProfile from "@/components/BlogDetailsPage/CompanyProfile/CompanyProfile";
 import FollowUsOn from "@/components/BlogDetailsPage/FollowUsOn/FollowUsOn";
+import RelatedBlogs from "@/components/BlogDetailsPage/RelatedBlogs/RelatedBlogs";
 import TableOfContents from "@/components/BlogDetailsPage/TableOfContents/TableOfContents";
 import Container from "@/components/Reusable/Container/Container";
 
 const BlogDetailsPage = () => {
-    return (
-        <div>
-           <BlogDetailsHero/>
-           <Container>
-           <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-12 py-20">
-           <BlogDetails/>
-           <div className="flex flex-col gap-5 w-full lg:w-[25%]">
-            <CompanyProfile/>
-           <TableOfContents/>
-           <FollowUsOn/>
-           </div>
-           </div>
-           </Container>
+  return (
+    <div>
+      <BlogDetailsHero />
+      <Container>
+        <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-12 py-20">
+          <BlogDetails />
+          <div className="flex flex-col gap-5 w-full lg:w-[25%]">
+            <TableOfContents />
+            <CompanyProfile />
+            <FollowUsOn />
+            <RelatedBlogs />
+          </div>
         </div>
-    );
+      </Container>
+    </div>
+  );
 };
 
 export default BlogDetailsPage;
