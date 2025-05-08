@@ -8,11 +8,11 @@ const FeaturedBlogs = () => {
   return (
     <div className="bg-secondary-50 font-Inter py-20 w-full">
       <Container>
-       <div className="flex items-center justify-between">
+       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-0">
        <h1
           className={`text-white font-rethink text-2xl md:text-3xl xl:text-5xl font-bold`}
         >
-          Check What's Special For You
+          Check What's Special <span className="text-primary-20">For You</span>
         </h1>
         <Link href={"/"} className="w-fit group text-neutral-65 flex items-center gap-1 hover:underline transition-all duration-500 ease-in-out hover:-translate-y-1">
             See All Featured Blogs
@@ -20,7 +20,7 @@ const FeaturedBlogs = () => {
           </Link>
        </div>
 
-        <div className="flex flex-col gap-10 xl:gap-16 mt-8">
+        <div className="flex flex-col gap-10 xl:gap-12 mt-8">
             <FeaturedBlogCard/>
             <FeaturedBlogCard/>
         </div>

@@ -11,10 +11,10 @@ const FeaturedBlogCard = () => {
   const shouldTruncate = text.length > 300;
   const displayedText = shouldTruncate ? `${text.slice(0, 300)}...` : text;
   return (
-    <div className="flex flex-col md:flex-row gap-8 xl:gap-10 2xl:gap-14 font-Inter">
-      <Image src={IMAGES.dummyBlog} alt="" className="rounded-2xl" />
+    <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-14 font-Inter bg-neutral-800/50 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 transition-all duration-500 ease-in-out hover:scale-105">
+      <Image src={IMAGES.dummyBlog} alt="" className="rounded-l-2xl w-full lg:w-[50%] xl:w-full" />
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 p-5">
         <div>
           <p className="text-base md:text-lg xl:text-xl text-primary-20 font-medium leading-6 md:leading-7 xl:leading-8">
             UX Design
@@ -38,6 +38,7 @@ const FeaturedBlogCard = () => {
           )}
         </p>
 
+        <div className="flex flex-row lg:flex-col justify-between gap-0 lg:gap-6">
         <div className="flex items-center gap-3">
           <Image src={ICONS.date} alt="" className="size-5" />
           <p
@@ -53,6 +54,7 @@ const FeaturedBlogCard = () => {
             <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
           </FillBgOnHover>
         </Link>
+        </div>
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ const OurAllBlogs = () => {
     <div className="bg-secondary-60 font-Inter py-20">
       <Container>
         {/* Tab and Input field */}
-        <div className="flex items-center justify-between gap-10 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-5 xl:gap-10 w-full">
           {/* Tab */}
           <motion.div
             ref={tabsRef}
@@ -53,7 +53,7 @@ const OurAllBlogs = () => {
           >
             <ul
               ref={containerRef}
-              className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-lg px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-fit overflow-x-auto"
+              className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-lg px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-[700px] xl:max-w-fit overflow-x-auto"
             >
               {/* Blue Highlighter */}
               <span
@@ -81,17 +81,17 @@ const OurAllBlogs = () => {
             </ul>
           </motion.div>
 
-          <div className="relative">
+          <div className="relative w-full max-w-full md:max-w-[700px] lg:max-w-[300px]">
             <IoSearchSharp className="text-neutral-50 text-2xl absolute top-4 bottom-0 left-2" />
             <input
               type="text"
               placeholder="Search a project..."
-              className={`pl-10 pr-[18px] py-[14px] rounded-lg bg-secondary-10 border border-neutral-70/30 hover:border-neutral-70 focus:outline-none focus:border-primary-20/50 transition duration-300 text-neutral-50 active:scale-95 ease-in-out`}
+              className={`pl-10 pr-[18px] py-[14px] rounded-lg bg-secondary-10 border border-neutral-70/30 hover:border-neutral-70 focus:outline-none focus:border-primary-20/50 transition duration-300 text-neutral-50 active:scale-95 ease-in-out w-full`}
             />
           </div>
         </div>
 
-        <CategorizedBlogs/>
+        <CategorizedBlogs />
       </Container>
     </div>
   );
