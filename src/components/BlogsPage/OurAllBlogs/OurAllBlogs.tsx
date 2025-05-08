@@ -38,7 +38,7 @@ const OurAllBlogs = () => {
     }
   }, [activeTab]);
   return (
-    <div className="bg-secondary-60 font-Inter py-20">
+    <div className="bg-gradient-to-r from-neutral-65/10 via-indigo-950/10 to-primary-20/20 font-Inter py-20">
       <Container>
         {/* Tab and Input field */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-5 xl:gap-10 w-full">
@@ -81,6 +81,7 @@ const OurAllBlogs = () => {
             </ul>
           </motion.div>
 
+        {/* Search input field */}
           <div className="relative w-full max-w-full md:max-w-[700px] lg:max-w-[300px]">
             <IoSearchSharp className="text-neutral-50 text-2xl absolute top-4 bottom-0 left-2" />
             <input
