@@ -12,28 +12,28 @@ import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md";
       name: "Facebook",
       link: "https://www.facebook.com/prtechsolutions/",
       icon: (
-        <FaFacebook className="group-hover:text-secondary-30 text-white transition duration-300 text-[22px]" />
+        <FaFacebook className=" text-white transition duration-300 text-[22px]" />
       ),
     },
     {
       name: "Instagram",
       link: "https://www.facebook.com/prtechsolutions/",
       icon: (
-        <FaInstagram className="group-hover:text-secondary-30 text-white transition duration-300 text-[22px]" />
+        <FaInstagram className=" text-white transition duration-300 text-[22px]" />
       ),
     },
     {
       name: "Linkedin",
       link: "https://www.facebook.com/prtechsolutions/",
       icon: (
-        <FaLinkedin className="group-hover:text-secondary-30 text-white transition duration-300 text-[22px]" />
+        <FaLinkedin className=" text-white transition duration-300 text-[22px]" />
       ),
     },
     {
       name: "WhatsApp",
       link: "https://www.facebook.com/prtechsolutions/",
       icon: (
-        <FaWhatsapp className="group-hover:text-secondary-30 text-white transition duration-300 text-[22px]" />
+        <FaWhatsapp className=" text-white transition duration-300 text-[22px]" />
       ),
     },
   ];

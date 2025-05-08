@@ -72,7 +72,7 @@ const Footer = () => {
                     <a
                       href={item?.link}
                       key={item?.name}
-                      className="size-[40px] rounded-full hover:bg-primary-50 bg-primary-20 transition-all duration-300 cursor-pointer flex items-center justify-center group"
+                      className="size-[40px] rounded-full hover:bg-transparent bg-primary-20 border border-primary-20 transition-all duration-300 cursor-pointer flex items-center justify-center group"
                     >
                       {item?.icon}
                     </a>
