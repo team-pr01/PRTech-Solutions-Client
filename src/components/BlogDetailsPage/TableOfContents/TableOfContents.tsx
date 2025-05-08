@@ -12,6 +12,22 @@ const TableOfContents = () => {
           <TbPointer className="text-primary-20 rotate-90" />
           Lorem, ipsum dolor.
         </a>
+        <a className="text-neutral-65 font-Inter text-sm md:text-base hover:underline flex items-center gap-2">
+          <TbPointer className="text-primary-20 rotate-90" />
+          Lorem, ipsum dolor.
+        </a>
+        <a className="text-neutral-65 font-Inter text-sm md:text-base hover:underline flex items-center gap-2">
+          <TbPointer className="text-primary-20 rotate-90" />
+          Lorem, ipsum dolor.
+        </a>
+        <a className="text-neutral-65 font-Inter text-sm md:text-base hover:underline flex items-center gap-2">
+          <TbPointer className="text-primary-20 rotate-90" />
+          Lorem, ipsum dolor.
+        </a>
+        <a className="text-neutral-65 font-Inter text-sm md:text-base hover:underline flex items-center gap-2">
+          <TbPointer className="text-primary-20 rotate-90" />
+          Lorem, ipsum dolor.
+        </a>
       </div>
     </div>
   );

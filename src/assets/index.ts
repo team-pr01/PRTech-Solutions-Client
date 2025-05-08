@@ -130,11 +130,13 @@ import dummyBlog from "./images/dummy-blog.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
+import prtechSolutions from "../assets/images/logos/PRTech Solutions.png";
 
 export const IMAGES = {
   comingSoonPage,
   prtechSolutionsLogo,
   prtechSolutionsLogoGray,
+  prtechSolutions,
   heroImage,
   trustedPeople,
   services,
