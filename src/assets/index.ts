@@ -127,6 +127,7 @@ import heroBgImage from "./images/hero-bg-image.png";
 import heroBgImage2 from "./images/hero-bg-image-2.png";
 import relatedProject from "./images/related-project.jpg";
 import dummyBlog from "./images/dummy-blog.png";
+import bookConsultationBg from "./images/book-consultation.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -162,6 +163,7 @@ export const IMAGES = {
   heroBgImage2,
   relatedProject,
   dummyBlog,
+  bookConsultationBg,
 };
 
 export const ICONS = {

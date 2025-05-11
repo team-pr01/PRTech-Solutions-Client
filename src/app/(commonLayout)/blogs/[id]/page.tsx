@@ -15,7 +15,7 @@ const BlogDetailsPage = () => {
         <Container>
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-12 py-20">
           <BlogDetails />
-          <div className="flex flex-col gap-5 w-full lg:w-[25%]">
+          <div className="flex flex-col gap-5 w-full lg:w-[25%] mt-10 lg:mt-0">
             <TableOfContents />
             <CompanyProfile />
             <FollowUsOn />
