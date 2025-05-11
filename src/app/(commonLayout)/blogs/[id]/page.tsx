@@ -1,3 +1,4 @@
+import BlogComments from "@/components/BlogDetailsPage/BlogComments/BlogComments";
 import BlogDetails from "@/components/BlogDetailsPage/BlogDetails/BlogDetails";
 import BlogDetailsHero from "@/components/BlogDetailsPage/BlogDetailsHero/BlogDetailsHero";
 import CompanyProfile from "@/components/BlogDetailsPage/CompanyProfile/CompanyProfile";
@@ -10,7 +11,8 @@ const BlogDetailsPage = () => {
   return (
     <div>
       <BlogDetailsHero />
-      <Container>
+      <div className="border-b border-neutral-65/30">
+        <Container>
         <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-12 py-20">
           <BlogDetails />
           <div className="flex flex-col gap-5 w-full lg:w-[25%]">
@@ -21,6 +23,8 @@ const BlogDetailsPage = () => {
           </div>
         </div>
       </Container>
+      </div>
+      <BlogComments/>
     </div>
   );
 };

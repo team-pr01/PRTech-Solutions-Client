@@ -43,7 +43,7 @@ const BlogCard = () => {
 
           {/* This link uses its own isolated group class */}
           <Link
-            href="/"
+            href={`/blogs/${1}`}
             className="w-fit group/link text-white flex items-center gap-1 hover:underline transition-all duration-500 ease-in-out hover:-translate-y-1"
           >
             See Full Article

@@ -1,5 +1,6 @@
 import { IMAGES } from "@/assets";
 import Image from "next/image";
+import Link from "next/link";
 
 const RelatedBlogs = () => {
   return (
@@ -9,14 +10,20 @@ const RelatedBlogs = () => {
       </h1>
 
       <div className="flex flex-col gap-4 mt-4">
+        {/* Related blog card */}
         <div className="flex gap-4">
-          <Image src={IMAGES.dummyBlog} alt="" className="w-[110px] h-[80px] object-cover rounded" />
+          <Image
+            src={IMAGES.dummyBlog}
+            alt=""
+            className="w-[110px] h-[80px] object-cover rounded"
+          />
           <div>
-            <h1
-              className={`text-white font-rethink text-base md:text-xl font-medium`}
+            <Link
+            href={`/blogs/${2}`}
+              className={`text-white font-rethink text-base md:text-xl font-medium hover:underline`}
             >
               10 Web Design Trends for 2025
-            </h1>
+            </Link>
             <p className="text-neutral-65 font-Inter text-sm md:text-base leading-4 md:leading-7">
               April 10, 2025
             </p>
