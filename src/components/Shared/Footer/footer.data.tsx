@@ -70,12 +70,14 @@ import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md";
     {
       label : "Phone Number",
       icon: <MdSettingsPhone className="text-primary-50 group-hover:text-white" />,
-      href: "cell:+91 673463746",
+      href: "tel:+91 673463746",
+      text: "+91 673463746",
     },
     {
       label : "Email",
       icon: <MdEmail className="text-primary-50 group-hover:text-white" />,
       href: "mailto:hello@prtech-solutions.com",
+      text: "hello@prtech-solutions.com",
     },
     {
       label : "Working Hour",

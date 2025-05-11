@@ -9,7 +9,7 @@ const BookConsultation = () => {
       <div className="text-white pt-40 pb-10 font-Inter">
         <Heading
           heading="Book a Consultation"
-          subHeading="Schedule a free consultation with our experts to discuss your project needs and requirements. Schedule a free consultation with our experts to discuss your project needs and requirements."
+          subHeading="Schedule a free consultation with our experts to discuss your project needs and requirements. Schedule a free consultation with our experts."
         />
 
         <div className="flex flex-col-reverse lg:flex-row gap-10 mt-16">

@@ -27,7 +27,7 @@ const Heading: React.FC<HeadingProps> = ({
         </h1>
       )}
       {subHeading && (
-        <p className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-full lg:max-w-[800px] text-center mx-auto ${alignment} ${subHeadingClassName}`}>
+        <p className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-full lg:max-w-[800px] text-center ${align === "left" ? "mx-0" : "mx-auto"} ${alignment} ${subHeadingClassName}`}>
           {subHeading}
         </p>
       )}

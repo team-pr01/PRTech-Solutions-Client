@@ -130,7 +130,7 @@ const Footer = () => {
                     className="text-primary-50 font-medium leading-[30px] flex items-center gap-3 relative group w-fit"
                   >
                     {info?.icon}
-                    {info?.href ? info?.href : info?.text}
+                    {info?.text}
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                       <span
                         className={clsx(
