@@ -45,7 +45,7 @@ const CommentForm = () => {
   };
 
   return (
-      <div className="font-Inter bg-neutral-800/50 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 p-5 w-full xl:w-1/2 h-fit">
+      <div className="font-Inter bg-neutral-800/40 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 p-5 w-full lg:w-1/2 h-fit">
         <motion.h1
           custom={0.1}
           initial="hidden"

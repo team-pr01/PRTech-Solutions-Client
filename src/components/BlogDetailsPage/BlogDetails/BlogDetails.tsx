@@ -1,6 +1,6 @@
 const BlogDetails = () => {
   return (
-    <div className="w-[75%]">
+    <div className="w-full lg:w-[75%]">
       <h1
         className={`text-white font-rethink text-xl md:text-2xl xl:text-3xl font-bold leading-8 md:leading-9`}
       >
@@ -23,7 +23,7 @@ const BlogDetails = () => {
       </p>
 
       {/* Tags */}
-      <div className="flex flex-col md:flex-row items-center gap-4 mt-12">
+      <div className="flex flex-col md:flex-row items-start lg:items-center gap-4 mt-8 lg:mt-12">
         <h1
           className={`text-white font-rethink text-xl md:text-2xl font-bold leading-8 md:leading-9`}
         >

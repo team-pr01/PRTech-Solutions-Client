@@ -20,11 +20,11 @@ const RelatedBlogs = () => {
           <div>
             <Link
             href={`/blogs/${2}`}
-              className={`text-white font-rethink text-base md:text-xl font-medium hover:underline`}
+              className={`text-white font-rethink text-base md:text-xl lg:text-sm xl:text-base font-medium hover:underline`}
             >
               10 Web Design Trends for 2025
             </Link>
-            <p className="text-neutral-65 font-Inter text-sm md:text-base leading-4 md:leading-7">
+            <p className="text-neutral-65 font-Inter text-sm md:text- lg:text-xs xl:text-base leading-4 md:leading-7">
               April 10, 2025
             </p>
           </div>

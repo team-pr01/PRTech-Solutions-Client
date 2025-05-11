@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const CommentCard = () => {
   return (
-    <div className="font-Inter bg-neutral-800/50 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 p-5">
+    <div className="font-Inter bg-neutral-800/40 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 p-5">
       <div className="flex items-center gap-4">
         <Image
           src={IMAGES.prtechSolutions}
@@ -18,7 +18,7 @@ const CommentCard = () => {
         </div>
       </div>
 
-      <p className="text-primary-50 text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-4">
+      <p className="text-primary-50 text-sm lg:text-base font-Inter leading-4 md:leading-7 mt-4">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ea
         animi doloribus numquam alias dolores unde ipsum excepturi, labore
         maxime, neque qui nemo eaque, molestiae ducimus est eligendi totam
