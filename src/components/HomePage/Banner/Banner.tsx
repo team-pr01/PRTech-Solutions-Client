@@ -7,6 +7,7 @@ import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react"; // Import useRef
 import { CgArrowTopRight } from "react-icons/cg";
 import { motion, useInView } from "framer-motion"; // Import motion and hooks
+import Link from "next/link";
 
 const Banner = () => {
   const words = [
@@ -188,18 +189,18 @@ const Banner = () => {
               className="flex items-center justify-center gap-5 mt-10"
             >
               {/* Individual buttons don't need separate animation if container bounces */}
-              <FillBgOnHover classNames="w-fit group bg-primary-20 border border-primary-20 text-white flex items-center gap-1 hover:bg-primary-20/80">
-                More About Us
+              <Link href="/contact-us"><FillBgOnHover classNames="w-fit group bg-primary-20 border border-primary-20 text-white flex items-center gap-1 hover:bg-primary-20/80">
+                Contact Us
                 <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
-              </FillBgOnHover>
-              <button className=" text-white border border-white font-Inter text-xs md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-[14px] rounded-[30px]">
+              </FillBgOnHover></Link>
+              <Link href="/book-consultation" className=" text-white border border-white font-Inter text-xs md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-[14px] rounded-[30px] hover:bg-secondary-40 transition duration-300">
                 <Image
                   src={ICONS.calendarGif}
                   alt="arrow-top-right"
                   className="size-4 md:size-6"
                 />
                 Schedule a Call
-              </button>
+              </Link>
             </motion.div>
           </div>
         </Container>

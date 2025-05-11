@@ -84,7 +84,7 @@ const OurProjects = () => {
   // }, []);
   return (
     // Added overflow-hidden to the main container
-    <div className="flex flex-col items-center justify-center w-full pb-14 bg-secondary-60 relative overflow-hidden">
+    <div id="our-projects" className="flex flex-col items-center justify-center w-full pb-14 bg-secondary-60 relative overflow-hidden">
       {/* <div className="bg-primary-20 absolute top-20 bottom-0 left-20 right-0 z-0 w-[70%] mx-auto h-[318px] rounded-full opacity-10 blur-[150px]"></div> */}
       <div className="absolute w-full top-0 bottom-0 right-0 left-0 opacity-[2%] bg-about-bg-gradient2 h-fit">
         <Image src={IMAGES.techGrid} alt="" className="" />

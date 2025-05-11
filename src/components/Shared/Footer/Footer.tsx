@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable react/no-unescaped-entities */
 import { ICONS, IMAGES } from "@/assets";
 import Container from "@/components/Reusable/Container/Container";
@@ -186,7 +187,12 @@ const Footer = () => {
                   )
                 }
               </div>
-              <button className="bg-secondary-40 size-12 rounded-full flex items-center justify-center cursor-pointer">
+              <button
+              onClick={() => {
+                    const section = document.getElementById("navbar");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+              className="bg-secondary-40 size-12 rounded-full flex items-center justify-center cursor-pointer">
                 <Image
                   src={ICONS.upArrow}
                   className="size-7 animate-bounce"

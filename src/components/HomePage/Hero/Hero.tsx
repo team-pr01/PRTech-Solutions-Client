@@ -6,6 +6,7 @@ import Container from "@/components/Reusable/Container/Container";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   // Variants for different animations
@@ -39,7 +40,9 @@ const Hero = () => {
       {/* Use relative positioning on the main wrapper */}
       <div className="relative flex items-center justify-center w-full h-full">
         {/* Background Image Container */}
-        <div className="absolute inset-0 z-0"> {/* z-0 should be below z-20 */}
+        <div className="absolute inset-0 z-0">
+          {" "}
+          {/* z-0 should be below z-20 */}
           <motion.div
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -61,7 +64,7 @@ const Hero = () => {
         {/* Increased z-index to ensure it's above the background */}
         <div className="relative z-20 w-full">
           <Container>
-             {/* Removed redundant positioning/margin, rely on Container and flex alignment */}
+            {/* Removed redundant positioning/margin, rely on Container and flex alignment */}
             <div className="text-center px-4">
               {/* Hero Subtitle - Slide from Right */}
               <motion.div
@@ -94,8 +97,8 @@ const Hero = () => {
                 transition={transition(0.6)}
                 className="text-white/80 text-center font-Inter text-xs md:text-md lg:text-xl 3xl:text-[22px] font-normal leading-4 md:leading-5 lg:leading-8 2xl:leading-[30px] mt-4 lg:mt-6 max-w-[343px] lg:max-w-[520px] mx-auto"
               >
-                Award-winning digital agency helping brands stand out in the digital
-                landscape.
+                Award-winning digital agency helping brands stand out in the
+                digital landscape.
               </motion.p>
               {/* Buttons - Slide from Bottom */}
               <motion.div
@@ -105,8 +108,20 @@ const Hero = () => {
                 transition={transition(0.8)}
                 className="flex justify-center gap-4 md:gap-5 3xl:gap-6 mt-8"
               >
-                <GlowOnHover icon={ICONS.arrowTopRight} alt="tio-right-icon">Get Started</GlowOnHover>
-                <FillBgOnHover classNames="text-white">View Our Work</FillBgOnHover>
+                <Link href="/contact-us">
+                  <GlowOnHover icon={ICONS.arrowTopRight} alt="tio-right-icon">
+                    Contact Us
+                  </GlowOnHover>
+                </Link>
+                <FillBgOnHover
+                  classNames="text-white"
+                  onClick={() => {
+                    const section = document.getElementById("our-projects");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  View Our Work
+                </FillBgOnHover>
               </motion.div>
             </div>
           </Container>

@@ -7,8 +7,10 @@ import { CgArrowTopRight } from "react-icons/cg";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
+import { usePathname } from "next/navigation";
 
 const AboutPRTech = () => {
+  const pathname = usePathname();
 
   const headingRef = useRef(null);
   const imagesRef = useRef(null);
@@ -59,12 +61,12 @@ const AboutPRTech = () => {
             transition={transition}
             className="flex items-center gap-10 w-fit"
           >
-          <h1
-            className={`text-white font-Rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px]`}
-          >
-            About PRTech
-          </h1>
-          {/* <Image src={ANIMATEDICONS.aboutUsGif} alt="" className="size-28 absolute -right-32 -top-12" /> */}
+            <h1
+              className={`text-white font-Rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px]`}
+            >
+              About PRTech
+            </h1>
+            {/* <Image src={ANIMATEDICONS.aboutUsGif} alt="" className="size-28 absolute -right-32 -top-12" /> */}
           </motion.div>
           <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
             {/* Left side */}
@@ -73,16 +75,14 @@ const AboutPRTech = () => {
               variants={slideUpVariants}
               initial="hidden"
               animate={isImagesInView ? "visible" : "hidden"}
-              transition={{...transition, delay: 0.2}}
+              transition={{ ...transition, delay: 0.2 }}
               className="w-full xl:w-auto"
             >
               <AboutPRTechImages />
             </motion.div>
 
             {/* Right side */}
-            <div
-              className="flex flex-col gap-0 md:gap-3 mt-16 xl:mt-0"
-            >
+            <div className="flex flex-col gap-0 md:gap-3 mt-16 xl:mt-0">
               {/* Card */}
               {missionAndVision.map((item, index) => (
                 <AboutPRTechCard key={index} index={index} {...item} />
@@ -96,9 +96,12 @@ const AboutPRTech = () => {
                 transition={{ duration: 0.5, delay: buttonDelay }}
                 className="mt-5 w-fit"
               >
-                <Link href={"/about-us"} >
+                <Link
+                  href={pathname === "/about-us" ? "/contact-us" : "/about-us"}
+                >
                   <FillBgOnHover classNames="w-fit group bg-white text-secondary-60 group-hover:text-white flex items-center gap-1">
-                    More About Us
+                    {pathname === "/about-us" ? "Contact Us" : "More About Us"}
+
                     <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
                   </FillBgOnHover>
                 </Link>

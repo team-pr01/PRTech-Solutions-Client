@@ -30,7 +30,7 @@ const Navbar = () => {
   const pathname = usePathname();
   return (
     <Container>
-      <div className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter">
+      <div id="navbar" className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter">
         {/* Logo */}
         <Image
           src={IMAGES.prtechSolutionsLogoGray}
@@ -98,7 +98,9 @@ const Navbar = () => {
             iconPosition="right"
             className="bg-white p-[15px]"
           /> */}
+          <Link href={"/book-consultation"}>
           <FillBgToTopOnHover btnText="Get Free Quote" />
+          </Link>
         </div>
         {/* Hamburger menu */}
         <Button

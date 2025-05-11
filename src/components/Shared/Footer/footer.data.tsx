@@ -44,7 +44,7 @@ import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md";
       links: [
         { name: "About Us", link: "/about-us" },
         { name: "Our Services", link: "/our-services" },
-        { name: "Recent Works", link: "/our-works" },
+        { name: "Recent Works", link: "/our-projects" },
         { name: "Blogs", link: "/blogs" },
         { name: "Contact Us", link: "/contact-us" },
       ],
