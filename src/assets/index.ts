@@ -27,6 +27,7 @@ import website from "./icons/website.svg";
 import timelineBycicle from "./icons/timeline-bycicle.svg";
 import user from "./icons/user.svg";
 import comment from "./icons/comment.svg";
+import boxShape from "./icons/box-shape.svg";
 
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
@@ -204,6 +205,7 @@ export const ICONS = {
   calendarGif,
   user,
   comment,
+  boxShape,
 
   // Tech stack logo
   django,

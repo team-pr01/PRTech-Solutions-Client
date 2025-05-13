@@ -1,8 +1,7 @@
 export const navLinks = [
-    { name: 'Home', href: '/',isMegaMenu: false },
-    { name: 'Services', href: '/our-services', isMegaMenu: true },
-    { name: 'Projects', href: '/our-projects', isMegaMenu: false },
-    { name: 'About Us', href: '/about-us', IsMegaMenu: false },
-    { name: 'Blogs', href: '/blogs' ,isMegaMenu: false},
-    { name: 'Contact Us', href: '/contact-us', isMegaMenu: false },
+    { name: 'Home', href: '/' },
+    { name: 'Projects', href: '/our-projects' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Blogs', href: '/blogs' },
+    { name: 'Contact Us', href: '/contact-us' },
   ];

@@ -8,6 +8,8 @@ import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
+import { useEffect, useRef, useState } from "react";
+import MegaMenu from "./MegaMenu";
 
 const RocketArrowIcon = () => (
   <svg
@@ -28,9 +30,28 @@ const RocketArrowIcon = () => (
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const dropDownRef = useRef(null);
+  const items = ["React", "Angular", "Vue"];
+  useEffect(() => {
+    const close = (e) => {
+      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", close);
+
+    return () => {
+      document.removeEventListener("mousedown", close);
+    };
+  }, []);
+
   return (
     <Container>
-      <div id="navbar" className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter">
+      <div
+        id="navbar"
+        className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter"
+      >
         {/* Logo */}
         <Image
           src={IMAGES.prtechSolutionsLogoGray}
@@ -40,8 +61,34 @@ const Navbar = () => {
 
         {/* NavLinks */}
         <div className="hidden lg:block">
-          <nav className="flex gap-8 items-center justify-center ">
-            {navLinks.map(({ name, href, isMegaMenu }) => (
+          <nav className="flex gap-8 items-center justify-center w-full">
+            {/* Dropdown */}
+            <div
+              ref={dropDownRef}
+              className="relative mx-auto w-fit text-white"
+            >
+              <button
+                onClick={() => setOpen(!open)}
+                className="text-white items-center justify-center leading-[1.4] flex font-medium cursor-pointer group"
+              >
+                Services
+                <Image
+                  src={ICONS.dropDownWhiteArrow}
+                  alt={"dropdown arrow"}
+                  className="ml-1 size-6 relative z-10"
+                />
+              </button>
+
+              <div
+                className={`${
+                  open ? "group-hover:visible" : "invisible"
+                } absolute top-12 z-50 w-full`}
+              >
+                <MegaMenu />
+              </div>
+            </div>
+
+            {navLinks.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
@@ -59,10 +106,9 @@ const Navbar = () => {
                     <span
                       className={clsx(
                         "absolute -right-3 top-[13px]",
-                        "opacity-0", // Start hidden
+                        "opacity-0",
                         "-translate-x-2 translate-y-2",
                         "group-hover:opacity-100",
-                        // On hover, translate UP (-y) and RIGHT (+x) significantly
                         "group-hover:-translate-y-1 group-hover:translate-x-1",
                         "transition-all duration-300 ease-out",
                         "pointer-events-none"
@@ -72,15 +118,6 @@ const Navbar = () => {
                       <RocketArrowIcon />
                     </span>
                   </>
-                )}
-
-                {/* Original Dropdown Arrow */}
-                {isMegaMenu && (
-                  <Image
-                    src={ICONS.dropDownWhiteArrow}
-                    alt={"dropdown arrow"}
-                    className="ml-1 size-6 relative z-10"
-                  />
                 )}
               </Link>
             ))}
@@ -92,14 +129,8 @@ const Navbar = () => {
             icon={ICONS.darkLightMode}
             className="bg-whites-50 px-[15px] md:px-[15px] lg:px-[15px]"
           />
-          {/* <Button
-            icon={ICONS.topRightBlackArrow}
-            text="Get the Quote"
-            iconPosition="right"
-            className="bg-white p-[15px]"
-          /> */}
           <Link href={"/book-consultation"}>
-          <FillBgToTopOnHover btnText="Get Free Quote" />
+            <FillBgToTopOnHover btnText="Get Free Quote" />
           </Link>
         </div>
         {/* Hamburger menu */}
