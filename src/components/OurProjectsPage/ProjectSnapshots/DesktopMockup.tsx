@@ -13,7 +13,7 @@ const DesktopMockup = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="border border-neutral-70 rounded-xl w-full max-w-[580px] md:max-w-[900px] h-[340px] md:h-[500px] z-10">
+      <div className="border border-neutral-70 rounded-xl w-full max-w-[320] md:max-w-[580px] lg:max-w-[900px] h-[200px] md:h-[340px] lg:h-[500px] z-10">
         <div className="relative border-neutral-800 bg-neutral-800 border-[8px] rounded-xl w-full h-full">
           <div className="rounded-sm overflow-hidden w-full h-full bg-white dark:bg-neutral-900">
             <iframe

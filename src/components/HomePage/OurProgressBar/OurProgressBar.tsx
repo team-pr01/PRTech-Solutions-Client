@@ -116,7 +116,7 @@ const OurProgressBar = () => {
         {/* Animated Cards Container */}
         <div
           ref={cardsContainerRef} // Ref for Framer Motion trigger
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-start justify-between mt-16 z-10 relative" // Changed items-center to items-start if needed
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start justify-between mt-16 z-10 relative" // Changed items-center to items-start if needed
         >
           {progressBarData.map((item, index) => (
             // Wrap each card in motion.div for staggered animation
@@ -138,7 +138,7 @@ const OurProgressBar = () => {
                 )}
                 {item.title === "Success Ratio" ? "%" : "+"}
               </h1>
-              <p className="text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 text-center mt-2"> {/* Added margin-top */}
+              <p className="text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 text-center my-2"> {/* Added margin-top */}
                 {item.title}
               </p>
             </motion.div>
