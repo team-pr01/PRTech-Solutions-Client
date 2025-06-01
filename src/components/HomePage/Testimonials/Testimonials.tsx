@@ -38,7 +38,7 @@ const Testimonials = () => {
     position: "CTO, TechCorp",
     rating: 4.5,
     review:
-      "TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.",
+      "TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient!",
     briefReview: "Game-Changer for Our Workflow",
     business: "TechCorp",
     profileImage: "/images/alice.jpg",
