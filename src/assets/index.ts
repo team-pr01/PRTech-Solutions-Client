@@ -26,6 +26,7 @@ import team from "./icons/team.svg";
 import website from "./icons/website.svg";
 import timelineBycicle from "./icons/timeline-bycicle.svg";
 import user from "./icons/user.svg";
+import client from "./icons/clients.svg";
 import comment from "./icons/comment.svg";
 import boxShape from "./icons/box-shape.svg";
 
@@ -134,6 +135,9 @@ import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.p
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
 import prtechSolutions from "../assets/images/logos/PRTech Solutions.png";
 
+// mockup
+import mockup from "./images/mockup.jpg";
+
 export const IMAGES = {
   comingSoonPage,
   prtechSolutionsLogo,
@@ -165,6 +169,7 @@ export const IMAGES = {
   relatedProject,
   dummyBlog,
   bookConsultationBg,
+  mockup
 };
 
 export const ICONS = {
@@ -204,6 +209,7 @@ export const ICONS = {
   disclaimerGif,
   calendarGif,
   user,
+  client,
   comment,
   boxShape,
 
