@@ -53,18 +53,13 @@ const Navbar = () => {
         className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter"
       >
         {/* Logo */}
-        <Link
-                
-                href={"/"}
-                
-              ><Image
-          src={IMAGES.prtechSolutionsLogoGray}
-          alt={"PRTech Solutions"}
-          className="h-[34px] 2xl:h-12 w-26 md:w-34 cursor-pointer"
-        />
-
-              </Link>
-        
+        <Link href={"/"}>
+          <Image
+            src={IMAGES.prtechSolutionsLogoGray}
+            alt={"PRTech Solutions"}
+            className="h-[34px] 2xl:h-12 w-26 md:w-34 cursor-pointer"
+          />
+        </Link>
 
         {/* NavLinks */}
         <div className="hidden lg:block">
@@ -76,6 +71,7 @@ const Navbar = () => {
             >
               <button
                 onClick={() => setOpen(!open)}
+                onMouseEnter={() => setOpen(true)}
                 className="text-white items-center justify-center leading-[1.4] flex font-medium cursor-pointer group"
               >
                 Services
@@ -85,16 +81,8 @@ const Navbar = () => {
                   className="ml-1 size-6 relative z-10"
                 />
               </button>
-
-              <div
-                className={`${
-                  open ? "group-hover:visible" : "invisible"
-                } absolute top-12 z-50 w-full`}
-              >
-                <MegaMenu />
-              </div>
             </div>
-
+           
             {navLinks.map(({ name, href }) => (
               <Link
                 key={name}
@@ -146,6 +134,15 @@ const Navbar = () => {
           className="bg-transparent lg:hidden"
         />
       </div>
+       <div
+              className={clsx(
+                "fixed z-50",
+                open ? "visible" : "invisible",
+                "max-w-screen flex " // Optional: add px if needed to align with content
+              )}
+            >
+              <MegaMenu />
+            </div>
     </Container>
   );
 };
