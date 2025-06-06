@@ -25,7 +25,7 @@ const LaptopMockup = () => {
 
   return (
     <div className="relative z-10 flex justify-center mt-20 px-4">
-      <div className="flex flex-col items-center w-full max-w-[50vw] sm:max-w-[400px] lg:max-w-[600px] ">
+      <div className="flex flex-col items-center w-full max-w-[50vw] sm:max-w-[6zzzzzz00px]">
         <div className="border border-neutral-70 rounded-t-xl w-full" ref={containerRef}>
           <div
             className="relative bg-black dark:bg-gray-800"
