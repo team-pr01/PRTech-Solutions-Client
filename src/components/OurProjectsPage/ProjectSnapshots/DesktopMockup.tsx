@@ -1,45 +1,63 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const DesktopMockup = () => {
   const targetUrl = "https://prtech-solutions.com/";
   const iframeWidth = 1920;
   const iframeHeight = 1080;
-
-  const outerFrameMaxWidthMd = 900;
   const bezelWidth = 8;
 
-  const innerContentWidth = outerFrameMaxWidthMd - bezelWidth * 2;
-  const scaleFactor = innerContentWidth / iframeWidth;
+  const containerRef = useRef(null);
+  const [scaleFactor, setScaleFactor] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth - bezelWidth * 2;
+        const newScale = containerWidth / iframeWidth;
+        setScaleFactor(newScale);
+      }
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="border border-neutral-70 rounded-xl w-full max-w-[580px] md:max-w-[900px] h-[340px] md:h-[500px] z-10">
-        <div className="relative border-neutral-800 bg-neutral-800 border-[8px] rounded-xl w-full h-full">
-          <div className="rounded-sm overflow-hidden w-full h-full bg-white dark:bg-neutral-900">
+    <div className="flex flex-col items-center px-4 mt-10">
+      <div
+        ref={containerRef}
+        className="w-full max-w-[90vw] sm:max-w-[600px] lg:max-w-[900px] z-10"
+      >
+        {/* Desktop Frame */}
+        <div
+          className="relative border-[8px] border-neutral-800 bg-neutral-800 rounded-xl overflow-hidden"
+          style={{
+            height: `${iframeHeight * scaleFactor}px`,
+          }}
+        >
+          <div className="w-full h-full rounded-sm bg-white dark:bg-neutral-900 overflow-hidden">
             <iframe
               src={targetUrl}
-              title={`Desktop view of ${targetUrl}`}
+              title="Desktop Preview"
               width={iframeWidth}
               height={iframeHeight}
               style={{
-                width: `${iframeWidth}px`,
-                height: `${iframeHeight}px`,
                 transform: `scale(${scaleFactor})`,
                 transformOrigin: "top left",
                 border: "0",
                 backgroundColor: "#fff",
               }}
-              className=""
-              frameBorder="0"
               loading="lazy"
-              allowFullScreen
-            ></iframe>
+            />
           </div>
         </div>
       </div>
+
+      {/* Stand */}
       <div className="flex flex-col items-center">
-        <div className="w-10 md:w-24 h-12 md:h-20 bg-neutral-800 -mt-[1px]"></div>
-        <div className="w-48 md:w-60 h-3 md:h-4 bg-neutral-70 rounded-b-md rounded-t-sm"></div>
+        <div className="w-10 sm:w-16 h-12 sm:h-20 bg-neutral-800 -mt-[1px]" />
+        <div className="w-36 sm:w-60 h-3 sm:h-4 bg-neutral-70 rounded-b-md rounded-t-sm" />
       </div>
     </div>
   );

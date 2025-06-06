@@ -13,23 +13,71 @@ import { useState, useEffect, useRef } from "react";
 import type SwiperCore from "swiper";
 import { motion } from "framer-motion";
 
-interface TestimonialData {
-  id: number;
+// types/testimonial.ts (optional location)
+export interface TestimonialData {
+  name: string;
+  position: string;
+  rating: number;
+  review: string;
+  briefReview: string;
+  business: string;
+  profileImage: string;
+  dashboardImage: string;
 }
+
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [currentSlidesPerView, setCurrentSlidesPerView] = useState(1);
   const swiperRef = useRef<SwiperCore | null>(null);
 
+  
   const testimonials: TestimonialData[] = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-  ];
-
+  {
+    name: "Alice Johnson",
+    position: "CTO, TechCorp",
+    rating: 4.5,
+    review:
+      "TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient!",
+    briefReview: "Game-Changer for Our Workflow",
+    business: "TechCorp",
+    profileImage: "/images/alice.jpg",
+    dashboardImage: "/images/dashboard1.png",
+  },
+  {
+    name: "Michael Lee",
+    position: "Founder, StartHub",
+    rating: 5,
+    review:
+      "Absolutely loved the experience. Fast, reliable, and user-friendly. Highly recommended!",
+    briefReview: "Seamless User Experience",
+    business: "StartHub",
+    profileImage: "/images/michael.jpg",
+    dashboardImage: "/images/dashboard2.png",
+  },
+  {
+    name: "Sara Kim",
+    position: "Product Manager, InnovateX",
+    rating: 4,
+    review:
+      "A solid tool that supports our product lifecycle. Room for improvement, but very satisfied!",
+    briefReview: "Reliable & Intuitive",
+    business: "InnovateX",
+    profileImage: "/images/sara.jpg",
+    dashboardImage: "/images/dashboard3.png",
+  },
+  {
+    name: "David Brown",
+    position: "CEO, FutureVision",
+    rating: 4.5,
+    review:
+      "Great features and excellent customer service. Helped us streamline operations across departments.",
+    briefReview: "Excellent Business Tool",
+    business: "FutureVision",
+    profileImage: "/images/david.jpg",
+    dashboardImage: "/images/dashboard4.png",
+  },
+];
   const updateSlidesPerView = (swiper: SwiperCore) => {
     if (
       !swiper ||
@@ -168,23 +216,26 @@ const Testimonials = () => {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           onBreakpoint={(swiper) => updateSlidesPerView(swiper)}
           onResize={(swiper) => updateSlidesPerView(swiper)}
-          breakpoints={{
-            640: { slidesPerView: 2, spaceBetween: 25 },
-            1024: { slidesPerView: 2, spaceBetween: 30 },
-            1366: { slidesPerView: 3, spaceBetween: 30 },
-          }}
+          // breakpoints={{
+          //   640: { slidesPerView: 2, spaceBetween: 25 },
+          //   1024: { slidesPerView: 2, spaceBetween: 30 },
+          //   1366: { slidesPerView: 3, spaceBetween: 30 },
+          // }}
           className="!pb-16 md:!pb-20 mt-12"
         >
-          {testimonials.map((testimonial, index) => {
-            const isMiddle =
-              currentSlidesPerView === 3 && index === activeIndex + 1;
+          {testimonials.map((testimonial) => {
+  // const isMiddle =
+  //   currentSlidesPerView === 3 && index === activeIndex + 1;
 
-            return (
-              <SwiperSlide key={testimonial.id} className="self-stretch">
-                <TestimonialCard review="" isMiddle={isMiddle} />
-              </SwiperSlide>
-            );
-          })}
+  return (
+    <SwiperSlide key={testimonial.id} className="self-stretch">
+      <TestimonialCard
+        {...testimonial} // spread all testimonial data props
+     
+      />
+    </SwiperSlide>
+  );
+})}
           <div className="swiper-pagination-custom text-center absolute bottom-4 left-0 right-0 cursor-pointer w-fit"></div>
         </Swiper>
 

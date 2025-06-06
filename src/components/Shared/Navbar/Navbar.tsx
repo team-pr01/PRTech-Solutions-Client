@@ -53,11 +53,18 @@ const Navbar = () => {
         className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter"
       >
         {/* Logo */}
-        <Image
+        <Link
+                
+                href={"/"}
+                
+              ><Image
           src={IMAGES.prtechSolutionsLogoGray}
           alt={"PRTech Solutions"}
           className="h-[34px] 2xl:h-12 w-26 md:w-34 cursor-pointer"
         />
+
+              </Link>
+        
 
         {/* NavLinks */}
         <div className="hidden lg:block">
