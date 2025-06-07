@@ -31,11 +31,10 @@ const RocketArrowIcon = () => (
 const Navbar = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const dropDownRef = useRef(null);
-  const items = ["React", "Angular", "Vue"];
+  const dropDownRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const close = (e) => {
-      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+    const close = (e: MouseEvent) => {
+      if (dropDownRef.current && !dropDownRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };
@@ -64,25 +63,6 @@ const Navbar = () => {
         {/* NavLinks */}
         <div className="hidden lg:block">
           <nav className="flex gap-8 items-center justify-center w-full">
-            {/* Dropdown */}
-            <div
-              ref={dropDownRef}
-              className="relative mx-auto w-fit text-white"
-            >
-              <button
-                onClick={() => setOpen(!open)}
-                onMouseEnter={() => setOpen(true)}
-                className="text-white items-center justify-center leading-[1.4] flex font-medium cursor-pointer group"
-              >
-                Services
-                <Image
-                  src={ICONS.dropDownWhiteArrow}
-                  alt={"dropdown arrow"}
-                  className="ml-1 size-6 relative z-10"
-                />
-              </button>
-            </div>
-           
             {navLinks.map(({ name, href }) => (
               <Link
                 key={name}
@@ -116,6 +96,26 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
+            {/* Dropdown */}
+            <div
+              ref={dropDownRef}
+              className="relative mx-auto w-fit text-white"
+            >
+              <button
+                onClick={() => setOpen(!open)}
+                onMouseEnter={() => setOpen(true)}
+                className="text-white items-center justify-center leading-[1.4] flex font-medium cursor-pointer group"
+              >
+                Services
+                <Image
+                  src={ICONS.dropDownWhiteArrow}
+                  alt={"dropdown arrow"}
+                  className={`ml-1 size-6 relative z-10 ${
+                    open ? "rotate-180" : "rotate-0"
+                  } transition duration-300 `}
+                />
+              </button>
+            </div>
           </nav>
         </div>
         {/* Right side buttons */}
@@ -134,15 +134,15 @@ const Navbar = () => {
           className="bg-transparent lg:hidden"
         />
       </div>
-       <div
-              className={clsx(
-                "fixed z-50",
-                open ? "visible" : "invisible",
-                "max-w-screen flex " // Optional: add px if needed to align with content
-              )}
-            >
-              <MegaMenu />
-            </div>
+      <div
+        className={clsx(
+          "fixed z-50",
+          open ? "visible" : "invisible",
+          "max-w-screen flex "
+        )}
+      >
+        <MegaMenu />
+      </div>
     </Container>
   );
 };
