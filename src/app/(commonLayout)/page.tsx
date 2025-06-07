@@ -7,14 +7,12 @@ import OurServices from "@/components/HomePage/OurServices/OurServices";
 import OurTechStack from "@/components/HomePage/OurTechStack/OurTechStack";
 import Testimonials from "@/components/HomePage/Testimonials/Testimonials";
 import AboutPRTech from "@/components/Shared/AboutPRTech/AboutPRTech";
-import MegaMenu from "@/components/Shared/Navbar/MegaMenu";
 // import ProjectTimeline from "@/components/ProjectTimeline/ProjectTimeline";
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-between items-center w-full">
       <Hero/>
-      <MegaMenu/>
       <OurServices/>
       <AboutPRTech/>
       <OurProjects/>
