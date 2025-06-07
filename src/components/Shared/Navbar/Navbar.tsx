@@ -6,10 +6,11 @@ import Container from "@/components/Reusable/Container/Container";
 import { navLinks } from "./navLinks";
 import Link from "next/link";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 import { useEffect, useRef, useState } from "react";
 import MegaMenu from "./MegaMenu";
+// --- Step 1: Import motion and AnimatePresence ---
+import { motion, AnimatePresence } from "framer-motion";
 
 const RocketArrowIcon = () => (
   <svg
@@ -29,17 +30,44 @@ const RocketArrowIcon = () => (
 );
 
 const Navbar = () => {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const dropDownRef = useRef<HTMLDivElement>(null);
+
+  // --- Step 2: Define animation variants for the MegaMenu ---
+  const megaMenuVariants = {
+    hidden: {
+      opacity: 0,
+      y: -20, // Start 20px above its final position
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+      // Optimization: Set display to "none" after exit animation to prevent interaction
+      transitionEnd: {
+        display: "none",
+      },
+    },
+    visible: {
+      opacity: 1,
+      y: 0, // Animate to its final position
+      display: "block", // Ensure it is visible
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   useEffect(() => {
     const close = (e: MouseEvent) => {
-      if (dropDownRef.current && !dropDownRef.current.contains(e.target as Node)) {
+      if (
+        dropDownRef.current &&
+        !dropDownRef.current.contains(e.target as Node)
+      ) {
         setOpen(false);
       }
     };
     document.addEventListener("mousedown", close);
-
     return () => {
       document.removeEventListener("mousedown", close);
     };
@@ -69,15 +97,13 @@ const Navbar = () => {
                 href={href}
                 className={clsx(
                   "text-white item-center justify-center leading-[1.4] flex font-medium",
-                  "relative group py-2 px-1",
-                  pathname === href && ""
+                  "relative group py-2 px-1"
                 )}
               >
                 <span className="relative z-10">{name}</span>
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 {href !== "/our-services" && (
                   <>
-                    {/* Rocket animation */}
                     <span
                       className={clsx(
                         "absolute -right-3 top-[13px]",
@@ -96,14 +122,14 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            {/* Dropdown */}
+            {/* Dropdown Trigger */}
             <div
               ref={dropDownRef}
+              onMouseEnter={() => setOpen(true)}
               className="relative mx-auto w-fit text-white"
             >
               <button
-                onClick={() => setOpen(!open)}
-                onMouseEnter={() => setOpen(true)}
+                // onClick={() => setOpen(!open)} // onMouseEnter is often enough for dropdowns
                 className="text-white items-center justify-center leading-[1.4] flex font-medium cursor-pointer group"
               >
                 Services
@@ -118,31 +144,36 @@ const Navbar = () => {
             </div>
           </nav>
         </div>
+
         {/* Right side buttons */}
         <div className=" hidden lg:flex items-center gap-5 justify-center">
-          {/* <Button
-            icon={ICONS.darkLightMode}
-            className="bg-whites-50 px-[15px] md:px-[15px] lg:px-[15px]"
-          /> */}
           <Link href={"/book-consultation"}>
             <FillBgToTopOnHover btnText="Get Free Quote" />
           </Link>
         </div>
+
         {/* Hamburger menu */}
         <Button
           icon={ICONS.hamburgerMenu}
           className="bg-transparent lg:hidden"
         />
       </div>
-      <div
-        className={clsx(
-          "fixed z-50",
-          open ? "visible" : "invisible",
-          "max-w-screen flex "
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mega-menu"
+            variants={megaMenuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            onMouseDown={(e) => e.stopPropagation()} // 👈 Prevents the outside click logic
+            className="absolute top-[calc(100%+10px)] left-0 right-0 z-50"
+          >
+            <MegaMenu />
+          </motion.div>
         )}
-      >
-        <MegaMenu />
-      </div>
+      </AnimatePresence>
     </Container>
   );
 };
