@@ -1,11 +1,14 @@
 "use client";
 import Textarea from "@/components/Reusable/TextArea/TextArea";
 import TextInput from "@/components/Reusable/TextInput/TextInput";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import "../../HomePage/OurProjects/OurProjects.css";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { toast, Toaster } from "sonner";
 
 type TFormData = {
   name: string;
@@ -19,16 +22,50 @@ const ContactUsForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<TFormData>();
 
-  const handleSendMessage = (data: TFormData) => {
-    console.log("Form Data:", data);
+  const [isLoading, setIsLoading] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+  const sendEmail: SubmitHandler<TFormData> = () => {
+    if (!form.current) {
+      toast.error(
+        "An unexpected error occurred. Please refresh and try again."
+      );
+      return;
+    }
+
+    setIsLoading(true);
+
+    // Make sure your EmailJS credentials are correct and are stored
+    // securely, for example, in environment variables.
+    emailjs
+      .sendForm(
+        "service_35a8sxq",
+        "template_0743afm",
+        form.current,
+        "i-4z2W4xgSOfPtEtl"
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully! We'll be in touch soon.");
+          reset(); // Clear the form fields on success
+        },
+        (error) => {
+          console.error("EMAILJS FAILED...", error);
+          toast.error("Failed to send message. Please try again.");
+        }
+      )
+      .finally(() => {
+        // This ensures setIsLoading(false) is called whether it succeeds or fails.
+        setIsLoading(false);
+      });
   };
 
   const slideUpVariant = {
     hidden: { y: 50, opacity: 0 },
-    visible: (delay = 0) => ({ 
+    visible: (delay = 0) => ({
       y: 0,
       opacity: 1,
       transition: {
@@ -71,7 +108,8 @@ const ContactUsForm = () => {
         </motion.p>
 
         <form
-          onSubmit={handleSubmit(handleSendMessage)}
+          ref={form}
+          onSubmit={handleSubmit(sendEmail)}
           className="flex flex-col gap-6 mt-[50px]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -165,22 +203,26 @@ const ContactUsForm = () => {
           </motion.div>
 
           {/* Animate the button */}
-          <motion.div
+          <motion.button
+            type="submit"
+            disabled={isLoading} // FIX 3: Disable button during submission
             custom={0.6}
             initial="hidden"
             whileInView="visible"
             viewport={viewportSettings}
             variants={slideUpVariant}
             className="justify-self-end"
-            // type="submit"
           >
             <FillBgOnHover classNames="w-fit text-sm md:text-base px-5 lg:px-[35px] py-3 md:py-3 lg:py-[15px] group bg-primary-20 border-none text-white flex items-center gap-1 justify-self-end rounded-xl">
-              Submit
-              <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+              {isLoading ? "Sending..." : "Submit"}
+              {!isLoading && (
+                <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+              )}
             </FillBgOnHover>
-          </motion.div>
+          </motion.button>
         </form>
       </div>
+      <Toaster />
     </div>
   );
 };
