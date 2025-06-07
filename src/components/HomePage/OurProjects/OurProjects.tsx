@@ -113,7 +113,7 @@ const OurProjects = () => {
             initial="hidden"
             animate={isHeadingInView ? "visible" : "hidden"}
             transition={transition}
-            className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[72px] max-w-[900px] mx-auto text-center"
+            className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 md:leading-14 2xl:leading-[72px] max-w-[900px] mx-auto text-center"
           >
             Explore{" "}
             <TextLoop>

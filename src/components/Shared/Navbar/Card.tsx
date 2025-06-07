@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
@@ -36,9 +37,9 @@ const Card = () => {
           </p>
         </div>
 
-        <button className="font-Inter flex justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[35px] py-2 md:py-3 lg:py-[15px] cursor-pointer bg-primary-20 hover:bg-primary-20/80 text-[10px] md:text-sm lg:text-base font-medium leading-[1.4] transition-all duration-300 ease-in-out active:scale-75 hover:text-white">
+        <Link href={"/contact-us"} className="font-Inter flex justify-center items-center gap-2 rounded-full px-2 md:px-3 lg:px-[35px] py-2 md:py-3 lg:py-[15px] cursor-pointer bg-primary-20 hover:bg-primary-20/80 text-[10px] md:text-sm lg:text-base font-medium leading-[1.4] transition-all duration-300 ease-in-out active:scale-75 hover:text-white">
           Get Started Today
-        </button>
+        </Link>
       </div>
     </div>
   );

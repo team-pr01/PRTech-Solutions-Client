@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
 @import "tailwindcss";
 
@@ -18,7 +18,7 @@
   --color-primary-40: #06a0ed33;
   --color-primary-50: #91a0b5;
   --color-primary-60: #101742;
-  --color-primary-70: #2C5970;
+  --color-primary-70: #2c5970;
 
   /* secondary */
   --color-secondary-10: #1a1f2c;
@@ -29,9 +29,9 @@
   --color-secondary-60: #0a1222;
 
   /* neutral */
-  
+
   --color-neutral-10: #fcfcfc;
-  --color-neutral-15: #FAFCFD;
+  --color-neutral-15: #fafcfd;
   --color-neutral-20: #f5f5f5;
   --color-neutral-30: #d8d8d8;
   --color-neutral-40: #bababa;
@@ -49,7 +49,7 @@
   --color-accent-30: #00000066;
 
   /* whites */
-  --color-whites-05: #ffffff0D;
+  --color-whites-05: #ffffff0d;
   --color-whites-10: #ffffff1a;
   --color-whites-20: #ffffff26;
   --color-whites-30: #ffffff8c;
@@ -65,14 +65,39 @@
 
   /* Gradients */
   --bg-gradient-primary: linear-gradient(180deg, #06a0ed 100%, #6ecaf8 100%);
-  --bg-project-bg-gradient: linear-gradient(180deg, #020817 0%, rgba(2, 8, 23, 0.00) 100%);
-  --bg-about-bg-gradient: linear-gradient(180deg, #06A0ED 0%, rgba(3, 91, 135, 0.00) 100%);
-  --bg-about-bg-gradient2: linear-gradient(180deg, #06A0ED 0%, rgba(3, 91, 135, 0.00) 100%);
-  --bg-our-projects-bg-gradient: linear-gradient(180deg, #1a1e27 0%, #0a1222 100%);
+  --bg-project-bg-gradient: linear-gradient(
+    180deg,
+    #020817 0%,
+    rgba(2, 8, 23, 0) 100%
+  );
+  --bg-about-bg-gradient: linear-gradient(
+    180deg,
+    #06a0ed 0%,
+    rgba(3, 91, 135, 0) 100%
+  );
+  --bg-about-bg-gradient2: linear-gradient(
+    180deg,
+    #06a0ed 0%,
+    rgba(3, 91, 135, 0) 100%
+  );
+  --bg-our-projects-bg-gradient: linear-gradient(
+    180deg,
+    #1a1e27 0%,
+    #0a1222 100%
+  );
 
-  --bg-service-gradient: linear-gradient(180deg, #284888 0%, #0A1222 100%);
-  --bg-faq-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(114, 114, 114, 0.05) 100%);
-  --bg-faq-bg-gradient: linear-gradient(to right, rgba(6, 160, 237, 1) 0%, rgba(6, 160, 237, 0.2) 60%, rgba(11, 19, 36, 0) 100%);
+  --bg-service-gradient: linear-gradient(180deg, #284888 0%, #0a1222 100%);
+  --bg-faq-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(114, 114, 114, 0.05) 100%
+  );
+  --bg-faq-bg-gradient: linear-gradient(
+    to right,
+    rgba(6, 160, 237, 1) 0%,
+    rgba(6, 160, 237, 0.2) 60%,
+    rgba(11, 19, 36, 0) 100%
+  );
 
   /* --bg-gradient-dark: linear-gradient(180deg, rgba(124, 67, 215, 0.00) 0%, rgba(124, 67, 215, 0.05) 23.44%, rgba(124, 67, 215, 0.05) 100%); */
 }
@@ -94,7 +119,7 @@
   background: var(--bg-faq-bg-gradient);
 }
 .bg-faq-gradient {
-  background: var(--bg-faq-gradient) ;
+  background: var(--bg-faq-gradient);
 }
 .bg-about-bg-gradient {
   background: var(--bg-about-bg-gradient);
@@ -132,8 +157,6 @@
   /* Dark background for non-scrolled area */
 }
 
-
-
 @keyframes rotate {
   from {
     transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
@@ -143,15 +166,22 @@
   }
 }
 
-
 @keyframes scroll-up {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 @keyframes scroll-down {
-  0% { transform: translateY(-50%); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .animate-scroll-up {
@@ -184,18 +214,23 @@
 }
 
 
+/* Swiper Pagination Dots Custom Styles */
+.swiper-pagination-bullet {
+  background-color: #888888 !important; /* Unselected: gray */
+  opacity: 1 !important;
+  width: 8px;
+  height: 8px;
+  margin: 0 6px !important;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.swiper-pagination-bullet-active {
+  background-color: #06a0ed !important; /* Selected: blue */
+  width: 12px;
+  height: 12px;
+  transform: translateY(-2px);
+}
 
 /* 
 @keyframes gradient-border {
