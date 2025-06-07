@@ -120,10 +120,10 @@ const Navbar = () => {
         </div>
         {/* Right side buttons */}
         <div className=" hidden lg:flex items-center gap-5 justify-center">
-          <Button
+          {/* <Button
             icon={ICONS.darkLightMode}
             className="bg-whites-50 px-[15px] md:px-[15px] lg:px-[15px]"
-          />
+          /> */}
           <Link href={"/book-consultation"}>
             <FillBgToTopOnHover btnText="Get Free Quote" />
           </Link>

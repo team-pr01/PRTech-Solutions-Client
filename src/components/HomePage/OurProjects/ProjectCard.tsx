@@ -1,46 +1,82 @@
-import { ICONS, IMAGES } from "@/assets";
+"use client";
+import { ANIMATEDICONS, IMAGES } from "@/assets";
 import Image from "next/image";
-import React from "react";
+import "./OurProjects.css";
+import { motion } from "framer-motion";
 
-const ProjectCard = () => {
+const ProjectCard = ({
+  index,
+}: {
+  index: number;
+  cardDirection: "left" | "right";
+  isIFrameView?: boolean;
+}) => {
+  // Animation variants
+  const slideUpVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
   return (
-    <div className="border border-primary-50 rounded-lg flex flex-col items-center md:rounded-2xl w-full bg-secondary-50">
+    <motion.div
+      variants={slideUpVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      className="bg-secondary-20/80 rounded-3xl w-full h-full border border-neutral-65/30 relative z-10 "
+    >
+      {/* Bg gradients */}
+      {/* <div className="bg-primary-20 absolute bottom-4 left-0 z-0 size-[300px] overflow-hidden rounded-full opacity-5 blur-2xl"></div> */}
+      <div className="bg-primary-20 absolute bottom-0 right-0 top-6 z-[-1] size-[200px] rounded-full opacity-20 blur-2xl"></div>
+
       <Image
-        className="h-[228px] lg:h-[340px] rounded-t-lg md:rounded-t-2xl"
-        src={IMAGES.heroImage}
-        alt={"PRTech Solutions"}
+        src={IMAGES.mockup}
+        alt=""
+        className="w-full rounded-t-3xl h-[430px] object-cover"
+        priority={true}
       />
-      <div className="flex flex-col w-full items-start justify-center p-4 lg:p-8">
-        <div className="flex flex-col-reverse lg:flex-row w-full items-start lg:items-center justify-between gap-2 md:gap-3 lg:gap-5">
-          <h1 className="text-white font-Inter text-[20px] md:text-[32px] font-bold leading-[1.4]">
-            Project Name
-          </h1>
-          <div className="bg-secondary-50 border border-primary-50 px-5 py-1 font-Inter font-medium text-white rounded-4xl">
-            Website
-          </div>
-        </div>
+      <div className="p-3 xl:p-6">
+        <h1 className="text-white text-2xl md:text-3xl font-bold mt-5">
+        PRTech Solutions -{" "}
+        <span className="font-semibold text-xl md:text-2xl text-neutral-40">
+          Modern Web Design & Development Agency
+        </span>
+      </h1>
+      <p
+        className={`text-primary-50 text-sm md:text-base leading-4 md:leading-7 mt-4`}
+      >
+        Discover the passion, creativity, and dedication behind our
+        works—crafted to deliver real value, impact, and long-lasting
+        impressions.
+      </p>
 
-        <p className="text-primary-50 w-full lg:w-[90%] font-Inter font-medium leading-[1.4] mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
-          erat ac ligula facilisis commodo.
-        </p>
-
-        <div className="flex flex-row items-center justify-end w-full mt-7">
-          {/* <Button
-              icon={ICONS.topRightWhiteArrow}
-              text="Learn More"
-              iconPosition="right"
-              className="bg-whites-50 border border-transparent"
-              textClassName="hidden dark:block text-white text-xs md:text-[15px] lg:text-base"
-            /> */}
-          {/* px-10 py-4 bg-whites-50/30 rounded */}
-          <button className="flex items-center gap-3  text-white font-medium font-Inter cursor-pointer">
-            Learn More
-            <Image src={ICONS.topRightWhiteArrow} alt="" />
-          </button>
-        </div>
+        {/* <div className="hidden xl:flex items-center gap-5 mt-6">
+          <a href="https://mitraconsultancy.co.in/" target="_blank" className="cursor-pointer border border-white flex items-center gap-2 px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base rounded-[30px]">
+            <Image
+              src={ANIMATEDICONS.linkGif}
+              alt="arrow-top-right"
+              className="size-4 md:size-6"
+            />
+            View Live
+          </a>
+          <GlowOnHover
+            classNames="px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base border border-primary-20"
+            icon={ICONS.arrowTopRight}
+            alt="tio-right-icon"
+          >
+            See Details
+          </GlowOnHover>
+        </div> */}
+         <a href="https://mitraconsultancy.co.in/" target="_blank" className="cursor-pointer border border-white flex items-center gap-2 px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base rounded-[30px] mt-6 w-fit">
+            <Image
+              src={ANIMATEDICONS.linkGif}
+              alt="arrow-top-right"
+              className="size-4 md:size-6"
+            />
+            View Live
+          </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
