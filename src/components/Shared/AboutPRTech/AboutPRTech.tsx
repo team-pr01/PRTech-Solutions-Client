@@ -102,7 +102,7 @@ const AboutPRTech = () => {
                   <FillBgOnHover classNames="w-fit group bg-white text-secondary-60 group-hover:text-white flex items-center gap-1">
                     {pathname === "/about-us" ? "Contact Us" : "More About Us"}
 
-                    <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+                    <CgArrowTopRight className="text-base md:text-xl xl:text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
                   </FillBgOnHover>
                 </Link>
               </motion.div>
