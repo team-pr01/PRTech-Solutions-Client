@@ -22,9 +22,21 @@ export const androidTechnologies = [
   { technologyName: "Java", icon: ICONS.java },
   { technologyName: "Firebase", icon: ICONS.firebase },
   { technologyName: "Expo", icon: ICONS.expo },
+  { technologyName: "Android Studio", icon: ICONS.androidStudio },
+  { technologyName: "React Native", icon: ICONS.reactNative },
+  { technologyName: "Swift (IOS)", icon: ICONS.swift },
+  { technologyName: "Java", icon: ICONS.java },
+  { technologyName: "Firebase", icon: ICONS.firebase },
+  { technologyName: "Expo", icon: ICONS.expo },
 ];
 
 export const tools = [
+  { technologyName: "Docker", icon: ICONS.docker },
+  { technologyName: "AWS", icon: ICONS.aws },
+  { technologyName: "Vercel", icon: ICONS.vercel },
+  { technologyName: "MongoDB", icon: ICONS.mongoDb },
+  { technologyName: "PostgreSQL", icon: ICONS.postgresql },
+  { technologyName: "Prisma", icon: ICONS.prisma },
   { technologyName: "Docker", icon: ICONS.docker },
   { technologyName: "AWS", icon: ICONS.aws },
   { technologyName: "Vercel", icon: ICONS.vercel },
