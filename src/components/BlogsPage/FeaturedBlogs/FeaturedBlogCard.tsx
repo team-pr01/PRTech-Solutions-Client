@@ -55,7 +55,7 @@ const FeaturedBlogCard = () => {
           <Link href={"/about-us"}>
             <FillBgOnHover classNames="w-fit group bg-white text-secondary-60 group-hover:text-white flex items-center gap-1">
               Read Full Article
-              <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+              <CgArrowTopRight className="text-base md:text-xl lg:text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
             </FillBgOnHover>
           </Link>
         </div>

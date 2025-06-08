@@ -191,7 +191,7 @@ const Banner = () => {
               {/* Individual buttons don't need separate animation if container bounces */}
               <Link href="/contact-us"><FillBgOnHover classNames="w-fit group bg-primary-20 border border-primary-20 text-white flex items-center gap-1 hover:bg-primary-20/80">
                 Contact Us
-                <CgArrowTopRight className="text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
+                <CgArrowTopRight className="text-base md:text-xl lg:text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
               </FillBgOnHover></Link>
               <Link href="/book-consultation" className=" text-white border border-white font-Inter text-xs md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-[14px] rounded-[30px] hover:bg-secondary-40 transition duration-300">
                 <Image
