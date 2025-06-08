@@ -1,7 +1,6 @@
 "use client";
 import { ICONS, IMAGES } from "@/assets";
 import Image from "next/image";
-import Button from "@/components/Reusable/Buttons/Button";
 import Container from "@/components/Reusable/Container/Container";
 import { navLinks } from "./navLinks";
 import Link from "next/link";
@@ -9,8 +8,8 @@ import clsx from "clsx";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 import { useEffect, useRef, useState } from "react";
 import MegaMenu from "./MegaMenu";
-// --- Step 1: Import motion and AnimatePresence ---
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";import HamburgerMenu from "./HambugerMenu";
+
 
 const RocketArrowIcon = () => (
   <svg
@@ -30,31 +29,22 @@ const RocketArrowIcon = () => (
 );
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // for MegaMenu (desktop & mobile)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const dropDownRef = useRef<HTMLDivElement>(null);
 
-  // --- Step 2: Define animation variants for the MegaMenu ---
   const megaMenuVariants = {
     hidden: {
       opacity: 0,
-      y: -20, // Start 20px above its final position
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-      // Optimization: Set display to "none" after exit animation to prevent interaction
-      transitionEnd: {
-        display: "none",
-      },
+      y: -20,
+      transition: { duration: 0.3 },
+      transitionEnd: { display: "none" },
     },
     visible: {
       opacity: 1,
-      y: 0, // Animate to its final position
-      display: "block", // Ensure it is visible
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
+      y: 0,
+      display: "block",
+      transition: { duration: 0.3 },
     },
   };
 
@@ -68,17 +58,13 @@ const Navbar = () => {
       }
     };
     document.addEventListener("mousedown", close);
-    return () => {
-      document.removeEventListener("mousedown", close);
-    };
+    return () => document.removeEventListener("mousedown", close);
   }, []);
 
   return (
     <Container>
-      <div
-        id="navbar"
-        className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter"
-      >
+      {/* Navbar top bar */}
+      <div className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter relative">
         {/* Logo */}
         <Link href={"/"}>
           <Image
@@ -88,92 +74,88 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* NavLinks */}
+        {/* Desktop Nav */}
         <div className="hidden lg:block">
-          <nav className="flex gap-8 items-center justify-center w-full">
+          <nav className="flex gap-8 items-center">
             {navLinks.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
                 className={clsx(
-                  "text-white item-center justify-center leading-[1.4] flex font-medium",
-                  "relative group py-2 px-1"
+                  "text-white flex items-center font-medium relative group py-2 px-1"
                 )}
               >
                 <span className="relative z-10">{name}</span>
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 {href !== "/our-services" && (
-                  <>
-                    <span
-                      className={clsx(
-                        "absolute -right-3 top-[13px]",
-                        "opacity-0",
-                        "-translate-x-2 translate-y-2",
-                        "group-hover:opacity-100",
-                        "group-hover:-translate-y-1 group-hover:translate-x-1",
-                        "transition-all duration-300 ease-out",
-                        "pointer-events-none"
-                      )}
-                      aria-hidden="true"
-                    >
-                      <RocketArrowIcon />
-                    </span>
-                  </>
+                  <span
+                    className={clsx(
+                      "absolute -right-3 top-[13px]",
+                      "opacity-0 -translate-x-2 translate-y-2",
+                      "group-hover:opacity-100 group-hover:-translate-y-1 group-hover:translate-x-1",
+                      "transition-all duration-300 ease-out pointer-events-none"
+                    )}
+                    aria-hidden="true"
+                  >
+                    <RocketArrowIcon />
+                  </span>
                 )}
               </Link>
             ))}
-            {/* Dropdown Trigger */}
+
+            {/* Services with MegaMenu */}
             <div
               ref={dropDownRef}
               onMouseEnter={() => setOpen(true)}
-              className="relative mx-auto w-fit text-white"
+              onMouseLeave={() => setOpen(false)}
+              className="relative text-white"
             >
-              <button
-                // onClick={() => setOpen(!open)} // onMouseEnter is often enough for dropdowns
-                className="text-white items-center justify-center leading-[1.4] flex font-medium cursor-pointer group"
-              >
+              <button className="flex items-center font-medium group">
                 Services
                 <Image
                   src={ICONS.dropDownWhiteArrow}
-                  alt={"dropdown arrow"}
-                  className={`ml-1 size-6 relative z-10 ${
+                  alt="dropdown arrow"
+                  className={`ml-1 size-6 transition-transform ${
                     open ? "rotate-180" : "rotate-0"
-                  } transition duration-300 `}
+                  }`}
                 />
               </button>
+
+              <AnimatePresence>
+                {open && (
+                  <motion.div
+                    key="mega-menu"
+                    variants={megaMenuVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="absolute left-0 right-0 z-50"
+                  >
+                    <MegaMenu />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </nav>
         </div>
 
-        {/* Right side buttons */}
-        <div className=" hidden lg:flex items-center gap-5 justify-center">
-          <Link href={"/book-consultation"}>
+        {/* Desktop CTA */}
+        <div className="hidden lg:flex items-center gap-5">
+          <Link href="/book-consultation">
             <FillBgToTopOnHover btnText="Get Free Quote" />
           </Link>
         </div>
 
-        {/* Hamburger menu */}
-        <Button
-          icon={ICONS.hamburgerMenu}
-          className="bg-transparent lg:hidden"
-        />
+        {/* Hamburger for Mobile */}
+        <button className="lg:hidden" onClick={() => setSidebarOpen(true)}>
+          <Image src={ICONS.hamburgerMenu} alt="menu" className="h-6 w-6" />
+        </button>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            key="mega-menu"
-            variants={megaMenuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            onMouseDown={(e) => e.stopPropagation()} // 👈 Prevents the outside click logic
-            className="absolute top-[calc(100%+10px)] left-0 right-0 z-50"
-          >
-            <MegaMenu />
-          </motion.div>
-        )}
-      </AnimatePresence>
+     <HamburgerMenu
+  sidebarOpen={sidebarOpen}
+  setSidebarOpen={setSidebarOpen}
+/>
     </Container>
   );
 };
