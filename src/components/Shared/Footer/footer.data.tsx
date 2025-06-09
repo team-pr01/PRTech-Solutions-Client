@@ -10,28 +10,28 @@ import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md";
  export const socialLinks = [
     {
       name: "Facebook",
-      link: "https://www.facebook.com/prtechsolutions/",
+      link: "https://www.facebook.com/prtechsolutions01",
       icon: (
         <FaFacebook className=" text-white transition duration-300 text-[22px]" />
       ),
     },
     {
       name: "Instagram",
-      link: "https://www.facebook.com/prtechsolutions/",
+      link: "https://www.instagram.com/prtech_solutions",
       icon: (
         <FaInstagram className=" text-white transition duration-300 text-[22px]" />
       ),
     },
     {
       name: "Linkedin",
-      link: "https://www.facebook.com/prtechsolutions/",
+      link: "https://www.linkedin.com/company/prtech-solutions",
       icon: (
         <FaLinkedin className=" text-white transition duration-300 text-[22px]" />
       ),
     },
     {
       name: "WhatsApp",
-      link: "https://www.facebook.com/prtechsolutions/",
+      link: "https://wa.me/919359963665",
       icon: (
         <FaWhatsapp className=" text-white transition duration-300 text-[22px]" />
       ),
@@ -65,13 +65,13 @@ import { MdAccessTimeFilled, MdEmail, MdSettingsPhone } from "react-icons/md";
     {
       label : "Address",
       icon: <IoLocationSharp className="text-primary-50 group-hover:text-white" />,
-      text: "Kathmandu, Nepal",
+      text: "Mumbai, India",
     },
     {
       label : "Phone Number",
       icon: <MdSettingsPhone className="text-primary-50 group-hover:text-white" />,
-      href: "tel:+91 673463746",
-      text: "+91 673463746",
+      href: "tel:+91 9359963665",
+      text: "+91 9359963665",
     },
     {
       label : "Email",

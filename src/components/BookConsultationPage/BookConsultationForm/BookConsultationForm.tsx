@@ -173,9 +173,7 @@ const BookConsultationForm = () => {
                 isRequired={false}
                 placeholder="Your Company Name"
                 error={errors.company}
-                {...register("company", {
-                  required: "Company name is required",
-                })}
+                {...register("company")}
               />
             </motion.div>
           </div>

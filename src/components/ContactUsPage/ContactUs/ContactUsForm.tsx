@@ -194,10 +194,6 @@ const ContactUsForm = () => {
               error={errors.message}
               {...register("message", {
                 required: "Message is required",
-                minLength: {
-                  value: 15,
-                  message: "Message must be at least 15 characters",
-                },
               })}
             />
           </motion.div>

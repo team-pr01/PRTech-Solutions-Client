@@ -8,8 +8,8 @@ import clsx from "clsx";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 import { useEffect, useRef, useState } from "react";
 import MegaMenu from "./MegaMenu";
-import { motion, AnimatePresence } from "framer-motion";import HamburgerMenu from "./HambugerMenu";
-
+import { motion, AnimatePresence } from "framer-motion";
+import HamburgerMenu from "./HambugerMenu";
 
 const RocketArrowIcon = () => (
   <svg
@@ -107,10 +107,9 @@ const Navbar = () => {
             <div
               ref={dropDownRef}
               onMouseEnter={() => setOpen(true)}
-              onMouseLeave={() => setOpen(false)}
               className="relative text-white"
             >
-              <button className="flex items-center font-medium group">
+              <button className="flex items-center font-medium group cursor-pointer">
                 Services
                 <Image
                   src={ICONS.dropDownWhiteArrow}
@@ -121,20 +120,7 @@ const Navbar = () => {
                 />
               </button>
 
-              <AnimatePresence>
-                {open && (
-                  <motion.div
-                    key="mega-menu"
-                    variants={megaMenuVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    className="absolute left-0 right-0 z-50"
-                  >
-                    <MegaMenu />
-                  </motion.div>
-                )}
-              </AnimatePresence>
+             
             </div>
           </nav>
         </div>
@@ -152,10 +138,25 @@ const Navbar = () => {
         </button>
       </div>
 
-     <HamburgerMenu
-  sidebarOpen={sidebarOpen}
-  setSidebarOpen={setSidebarOpen}
-/>
+       <AnimatePresence>
+                {open && (
+                  <motion.div
+                    key="mega-menu"
+                    variants={megaMenuVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    className="absolute left-0 right-0 z-50"
+                  >
+                    <MegaMenu />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+      <HamburgerMenu
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
     </Container>
   );
 };

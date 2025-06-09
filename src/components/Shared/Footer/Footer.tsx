@@ -1,4 +1,4 @@
-"use client"
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 import { ICONS, IMAGES } from "@/assets";
 import Container from "@/components/Reusable/Container/Container";
@@ -27,18 +27,18 @@ export const RocketArrowIcon = () => (
 const Footer = () => {
   const companyResourses = [
     {
-      label : "Privacy Policy",
-      path : "/"
+      label: "Book Consultation",
+      path: "/book-consultation",
     },
     {
-      label : "Terms & Conditions",
-      path : "/"
+      label: "Terms & Conditions",
+      path: "/",
     },
     {
-      label : "Refund Policy",
-      path : "/"
+      label: "Refund Policy",
+      path: "/",
     },
-  ]
+  ];
   return (
     <div className="bg-secondary-10 font-Inter">
       {/* <div className="animated-gradient-line"></div> */}
@@ -73,6 +73,7 @@ const Footer = () => {
                     <a
                       href={item?.link}
                       key={item?.name}
+                      target="_blank"
                       className="size-[40px] rounded-full hover:bg-transparent bg-primary-20 border border-primary-20 transition-all duration-300 cursor-pointer flex items-center justify-center group"
                     >
                       {item?.icon}
@@ -133,21 +134,21 @@ const Footer = () => {
                     {info?.icon}
                     {info?.text}
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                      <span
-                        className={clsx(
-                          "absolute -right-4 top-[11px]",
-                          "opacity-0", // Start hidden
-                          "-translate-x-2 translate-y-2",
-                          "group-hover:opacity-100",
-                          // On hover, translate UP (-y) and RIGHT (+x) significantly
-                          "group-hover:-translate-y-1 group-hover:translate-x-1",
-                          "transition-all duration-300 ease-out",
-                          "pointer-events-none"
-                        )}
-                        aria-hidden="true"
-                      >
-                        <RocketArrowIcon />
-                      </span>
+                    <span
+                      className={clsx(
+                        "absolute -right-4 top-[11px]",
+                        "opacity-0", // Start hidden
+                        "-translate-x-2 translate-y-2",
+                        "group-hover:opacity-100",
+                        // On hover, translate UP (-y) and RIGHT (+x) significantly
+                        "group-hover:-translate-y-1 group-hover:translate-x-1",
+                        "transition-all duration-300 ease-out",
+                        "pointer-events-none"
+                      )}
+                      aria-hidden="true"
+                    >
+                      <RocketArrowIcon />
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -159,40 +160,39 @@ const Footer = () => {
                 © 2025 PRTech Solutions. All rights reserved.
               </p>
               <div className="flex flex-col lg:flex-row items-start md:items-center gap-4 md:gap-12 z-10">
-                {
-                  companyResourses?.map(item => 
-                    <Link
+                {companyResourses?.map((item) => (
+                  <Link
                     key={item?.label}
-                  href={item?.path}
-                  className="text-primary-50 leading-6 relative group w-fit"
-                >
-                  {item?.label}
-                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                      <span
-                        className={clsx(
-                          "absolute -right-4 top-[8px]",
-                          "opacity-0", // Start hidden
-                          "-translate-x-2 translate-y-2",
-                          "group-hover:opacity-100",
-                          // On hover, translate UP (-y) and RIGHT (+x) significantly
-                          "group-hover:-translate-y-1 group-hover:translate-x-1",
-                          "transition-all duration-300 ease-out",
-                          "pointer-events-none"
-                        )}
-                        aria-hidden="true"
-                      >
-                        <RocketArrowIcon />
-                      </span>
-                </Link>
-                  )
-                }
+                    href={item?.path}
+                    className="text-primary-50 leading-6 relative group w-fit"
+                  >
+                    {item?.label}
+                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    <span
+                      className={clsx(
+                        "absolute -right-4 top-[8px]",
+                        "opacity-0", // Start hidden
+                        "-translate-x-2 translate-y-2",
+                        "group-hover:opacity-100",
+                        // On hover, translate UP (-y) and RIGHT (+x) significantly
+                        "group-hover:-translate-y-1 group-hover:translate-x-1",
+                        "transition-all duration-300 ease-out",
+                        "pointer-events-none"
+                      )}
+                      aria-hidden="true"
+                    >
+                      <RocketArrowIcon />
+                    </span>
+                  </Link>
+                ))}
               </div>
               <button
-              onClick={() => {
-                    const section = document.getElementById("navbar");
-                    section?.scrollIntoView({ behavior: "smooth" });
-                  }}
-              className="bg-secondary-40 size-12 rounded-full flex items-center justify-center cursor-pointer">
+                onClick={() => {
+                  const section = document.getElementById("navbar");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-secondary-40 size-12 rounded-full flex items-center justify-center cursor-pointer"
+              >
                 <Image
                   src={ICONS.upArrow}
                   className="size-7 animate-bounce"
