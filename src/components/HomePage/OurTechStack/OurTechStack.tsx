@@ -80,19 +80,10 @@ const OurTechStack = () => {
               transition={transition(0.2)} // Delay after heading
               className="text-primary-50 text-lg font-Inter mt-6 md:mt-10 lg:mt-12 xl:mt-10 mb-10"
             >
-              At the heart of our development process is a powerful and diverse
-              tech stack. We utilize the latest technologies, frameworks, and
-              tools to craft scalable, secure, and high-performance solutions
-              tailored to your needs. From front-end interfaces to back-end
-              infrastructure, every component is chosen for its reliability,
-              efficiency, and ability to adapt with innovation.
+             At PRtech Solutions, we use a modern and reliable tech stack to build scalable, secure, and high-performance digital products. From intuitive front-end interfaces with React and Next.js to robust back-end systems using Node.js and Express, every tool is chosen to match your project’s unique needs.
               <br />
               <br />
-              Whether it’s web, mobile, or cloud-based systems, our stack
-              ensures seamless integration, faster deployment, and long-term
-              maintainability. With a constant eye on emerging trends and best
-              practices, we build solutions that don’t just meet today’s demands
-              — they’re ready for tomorrow’s challenges too.
+             We stay updated with the latest trends and best practices, ensuring our solutions are flexible, efficient, and future-ready. With the right mix of databases, APIs, and cloud services, we deliver products that perform seamlessly and grow with your business.
               {/* Keep full text as in your code */}
             </motion.p>
             {/* Animated Button */}
