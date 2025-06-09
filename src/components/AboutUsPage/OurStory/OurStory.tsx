@@ -74,23 +74,13 @@ const OurStory = () => {
               transition={transition(0.2)} // Delay after heading
               className="text-primary-50 text-lg font-Inter mt-6 md:mt-10 lg:mt-12 xl:mt-10 mb-10"
             >
-              PixelCraft was founded in 2014 with a simple mission: to help
-              businesses thrive in the digital world through innovative,
-              user-centered design and development.What started as a small
-              three-person team has grown into a full-service digital agency
-              with over 50 talented professionals across design, development,
-              marketing, and strategy.
+              At PRtech Solutions, our journey began with a simple belief: that powerful digital experiences can transform businesses. Founded by a small team of passionate developers and designers, we set out to help brands go beyond just having a website — we wanted to build products that truly perform.
               <br />
               <br />
-              Over the years, we have partnered with startups, growing
-              businesses, and Fortune 500 companies alike, helping them
-              transform their ideas into powerful digital experiences that drive
-              results.PixelCraft was founded in 2014 with a simple mission: to
-              help businesses thrive in the digital world through innovative,
-              user-centered design and development. What started as a small
-              three-person team has grown into a full-service digital agency
-              with over 50 talented professionals across design, development,
-              marketing, and strategy.
+             What started as a few late nights and bold ideas has grown into a full-service web and app development agency trusted by startups, local businesses, and growing brands. With each project, we bring a mix of strategy, clean design, and cutting-edge technology — always tailored to the unique goals of our clients.
+              <br />
+              <br />
+              Over the years, we’ve worked across industries, turning complex problems into user-friendly digital solutions. Our goal remains the same: to deliver work that not only looks great, but drives real results.
               {/* Keep full text as in your code */}
             </motion.p>
           </div>

@@ -39,11 +39,11 @@ const WhyWorkWithUs = () => {
     },
   };
 
-  const specialitites = [
-    { title: "Expert Team", description: "Our team consists of industry experts with years of experience." },
-    { title: "Fast Response", description: "We respond to inquiries within 24 hours, guaranteed." },
-    { title: "Quality Assurance", description: "We deliver thoroughly tested and high-quality solutions." },
-    { title: "Ongoing Support", description: "Our relationship continues after project completion." },
+  const specialties = [
+    { title: "Expert Team", description: "Skilled professionals with deep industry experience — committed to building smart, scalable solutions" },
+    { title: "Fast Response", description: "We value your time. Expect a clear, professional response within 24 hours — always." },
+    { title: "Quality Assurance", description: "Every line of code is tested, every product is refined. We deliver nothing less than quality." },
+    { title: "Ongoing Support", description: "Our partnership doesn’t end at launch — we’re here for updates, fixes, and future growth." },
   ];
 
   return (
@@ -95,7 +95,7 @@ const WhyWorkWithUs = () => {
               <h1 className="text-neutral-30 text-2xl font-semibold font-Inter mb-2">Why Work With Us</h1>
               <Heading
                 heading="We Execute Our ideas From the Start to Finish"
-                subHeading="We’re not just another creative agency — we’re your strategic partner in turning ideas into impact. With a blend of bold creativity, smart thinking, and pixel-perfect execution, we help brands grow, connect, and stand out in a crowded world."
+                subHeading="At PRtech Solutions, we create digital experiences that drive results. Blending bold creativity with modern tech, we turn ideas into high-performing websites and apps — helping startups and growing brands stand out and scale smarter."
                 align="left"
               />
             </motion.div>
@@ -107,12 +107,12 @@ const WhyWorkWithUs = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {specialitites.map((speciality) => (
-                <motion.div key={speciality.title} className="flex gap-6 font-Inter" variants={variants.listItem}>
+              {specialties.map((specialty) => (
+                <motion.div key={specialty.title} className="flex gap-6 font-Inter" variants={variants.listItem}>
                   <Image src={ICONS.tickMark} alt="" width={32} height={32} className="size-8 flex-shrink-0" />
                   <div>
-                    <h1 className="text-neutral-20 text-2xl font-semibold">{speciality.title}</h1>
-                    <p className="text-neutral-40 text-lg mt-[6px] max-w-[416px]">{speciality.description}</p>
+                    <h1 className="text-neutral-20 text-2xl font-semibold">{specialty.title}</h1>
+                    <p className="text-neutral-40 text-lg mt-[6px] max-w-[416px]">{specialty.description}</p>
                   </div>
                 </motion.div>
               ))}
