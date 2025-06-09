@@ -58,7 +58,7 @@ const OurServices = () => {
             >
               <Heading
                 heading="Our Service"
-                subHeading="We offer a comprehensive range of digital services to help your business thrive online."
+                subHeading="Smart digital solutions to grow your brand online — and beyond."
               />
             </motion.div>
             <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-5 md:gap-9 3xl:gap-14 mt-10 md:mt-12 xl:mt-16 2xl:mt-[70px] w-full">

@@ -97,8 +97,7 @@ const Hero = () => {
                 transition={transition(0.6)}
                 className="text-white/80 text-center font-Inter text-xs md:text-md lg:text-xl 3xl:text-[22px] font-normal leading-4 md:leading-5 lg:leading-8 2xl:leading-[30px] mt-4 lg:mt-6 max-w-[343px] lg:max-w-[520px] mx-auto"
               >
-                Award-winning digital agency helping brands stand out in the
-                digital landscape.
+                Websites and apps that look sharp, work fast, and help your brand grow.
               </motion.p>
               {/* Buttons - Slide from Bottom */}
               <motion.div

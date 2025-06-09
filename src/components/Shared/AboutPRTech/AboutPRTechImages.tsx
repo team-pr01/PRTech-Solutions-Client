@@ -10,7 +10,7 @@ const AboutPRTechImages = () => {
       <div className="bg-primary-20 absolute top-0 bottom-0 left-0 right-0 z-0 w-[320px] md:w-[711px] h-[300px] md:h-[613px] rounded-full opacity-40 blur-[163px] "></div>
       <div className="flex flex-row md:flex-col gap-5 z-10">
         {/* Support card */}
-        <div className="support-card-wave group relative overflow-hidden  bg-primary-20/80 rounded-2xl p-5 flex flex-col gap-3 md:gap-9 h-[180px] w-full md:w-[343px] group">
+        <div className="support-card-wave group relative overflow-hidden  bg-primary-20/80 rounded-2xl p-5 flex flex-col gap-3 md:gap-9 h-[180px] md:h-[160px] w-full md:w-[343px] group">
           {/* Content Wrapper */}
           <div className="relative z-[2] flex flex-col h-full">
             <h2

@@ -148,11 +148,11 @@ const OurProjects = () => {
               initial="hidden"
               animate={areTabsInView ? "visible" : "hidden"}
               transition={{ ...transition, delay: 0.4 }} // Delay after subheading
-              className="flex items-center justify-center"
+              className="flex items-center justify-center "
             >
               <ul
                 ref={containerRef}
-                className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-fit overflow-x-auto"
+                className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-[10px] sm:text-base max-w-[420px] md:max-w-fit overflow-x-auto"
               >
                 {/* Blue Highlighter */}
                 <span
@@ -170,7 +170,7 @@ const OurProjects = () => {
                       tabRefs.current[idx] = el;
                     }}
                     onClick={() => setActiveTab(idx)}
-                    className={`relative z-20 px-5 sm:px-6 py-2 transition duration-300 rounded-full cursor-pointer font-medium text-center text-nowrap hover:text-white ${
+                    className={`relative z-20 px-4 sm:px-6 py-2 transition duration-300 rounded-full cursor-pointer font-medium text-center text-nowrap hover:text-white ${
                       activeTab === idx ? "text-white" : "text-white/60"
                     }`}
                   >

@@ -30,19 +30,19 @@ const AboutPRTech = () => {
       icon: ICONS.missionGif,
       title: "Our Mission",
       description:
-        "To empower businesses with innovative digital solutions that drive growth and create meaningful connections with their audiences.",
+        "We help businesses grow through clean, scalable, and user-focused digital solutions — built with care and purpose.",
     },
     {
       icon: ICONS.visionGif,
       title: "Our Vision",
       description:
-        "To empower businesses with innovative digital solutions that drive growth and create meaningful connections with their audiences.",
+        "To become a go-to partner for brands seeking innovative, high-performing websites and apps that make an impact.",
     },
     {
       icon: ICONS.disclaimerGif,
       title: "Disclaimer",
       description:
-        "PRTech Agency is a fictitious company created for demonstration purposes only. Any resemblance to real companies, past or present, is purely coincidental.",
+        "PRtech Solutions delivers digital services tailored to client needs; results may vary based on requirements, scope, and usage.",
     },
   ];
 
