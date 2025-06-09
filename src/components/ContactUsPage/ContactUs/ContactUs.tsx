@@ -90,7 +90,7 @@ const ContactUs = () => {
                         {info?.label}
                       </h1>
                       <span className="text-sm">
-                        {info?.href ? info?.href : info?.text}
+                        {info?.text}
                       </span>
                     </div>
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
