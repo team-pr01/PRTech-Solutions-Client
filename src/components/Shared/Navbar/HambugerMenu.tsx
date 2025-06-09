@@ -1,5 +1,5 @@
 "use client";
-import { ICONS } from "@/assets";
+import { ICONS, IMAGES } from "@/assets";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { navLinks } from "./navLinks";
 import { services } from "./MegaMenu.data";
+import { usePathname } from "next/navigation";
 
 type HamburgerMenuProps = {
   sidebarOpen: boolean;
@@ -14,6 +15,7 @@ type HamburgerMenuProps = {
 };
 
 const HamburgerMenu = ({ sidebarOpen, setSidebarOpen }: HamburgerMenuProps) => {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   return (
     <div>
@@ -27,7 +29,7 @@ const HamburgerMenu = ({ sidebarOpen, setSidebarOpen }: HamburgerMenuProps) => {
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
               onClick={() => setSidebarOpen(false)}
-              className="fixed inset-0 bg-black z-40"
+              className="sticky inset-0 bg-black z-40"
             />
             {/* Sidebar */}
             <motion.div
@@ -36,23 +38,31 @@ const HamburgerMenu = ({ sidebarOpen, setSidebarOpen }: HamburgerMenuProps) => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed right-0 top-0 h-full w-[80%] max-w-sm bg-neutral-80 z-50 p-6 flex flex-col justify-between"
+              className="fixed overflow-y-auto right-0 top-0 h-full w-[80%] max-w-sm bg-secondary-20 z-50 flex flex-col justify-between"
             >
-              <div>
+              <div className="flex flex-col">
                 {/* Close Button */}
-                <div className="flex justify-end mb-6">
+                <div className="flex items-center justify-between mb-6 px-4 py-6">
+                  <Link href={"/"}>
+                    <Image
+                      src={IMAGES.prtechSolutionsLogoGray}
+                      alt={"PRTech Solutions"}
+                      className="h-[34px] 2xl:h-12 w-26 md:w-34 cursor-pointer"
+                    />
+                  </Link>
+
                   <button onClick={() => setSidebarOpen(false)}>
                     <span className="text-white text-xl">✕</span>
                   </button>
                 </div>
 
                 {/* NavLinks */}
-                <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-6">
                   {navLinks.map(({ name, href }) => (
                     <Link
                       key={name}
                       href={href}
-                      className="text-white font-medium"
+                      className={`text-white font-medium px-4 py-2 ${pathname === href ? "border-l-4 border-primary-20" : ""}`}
                       onClick={() => setSidebarOpen(false)}
                     >
                       {name}
@@ -63,7 +73,7 @@ const HamburgerMenu = ({ sidebarOpen, setSidebarOpen }: HamburgerMenuProps) => {
                   <div className="text-white font-medium mt-2">
                     <div
                       onClick={() => setOpen(!open)}
-                      className="flex justify-between items-center cursor-pointer"
+                      className="flex justify-between items-center cursor-pointer px-4 py-2"
                     >
                       <span>Services</span>
                       <Image
@@ -104,7 +114,6 @@ const HamburgerMenu = ({ sidebarOpen, setSidebarOpen }: HamburgerMenuProps) => {
                                   <h1 className="text-md font-normal text-white">
                                     {service.label}
                                   </h1>
-                                 
                                 </div>
                               </div>
                             ))}
@@ -117,9 +126,9 @@ const HamburgerMenu = ({ sidebarOpen, setSidebarOpen }: HamburgerMenuProps) => {
               </div>
 
               {/* CTA Button */}
-              <div className="mt-6">
+              <div className="mt-6 px-4 py-6">
                 <Link href="/book-consultation">
-                  <FillBgToTopOnHover btnText="Get Free Quote" />
+                  <FillBgToTopOnHover btnText="Get Free Quote" classNames="w-full py-3" />
                 </Link>
               </div>
             </motion.div>
