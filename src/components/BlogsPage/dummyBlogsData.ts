@@ -25,7 +25,7 @@ export const blogs = [
         description : "Launching a fashion eCommerce store is an exciting venture, but one of the most common questions we hear is: 'How long will it actually take?' The answer depends on several factors—your business goals, technical requirements, design complexity, and whether you're building from scratch or using a pre-built platform. In this guide, we'll break down the key stages of development and provide realistic timelines so you can plan your launch with confidence.",
         image : IMAGES.blog3 ,
         publishedDate : "11 June,2025",
-        url : "https://www.linkedin.com/posts/prtech-solutions_%F0%9D%90%96%F0%9D%90%A1%F0%9D%90%B2-%F0%9D%90%80%F0%9D%90%AB%F0%9D%90%9E-%F0%9D%90%82%F0%9D%90%AE%F0%9D%90%AC%F0%9D%90%AD%F0%9D%90%A8%F0%9D%90%A6%F0%9D%90%9E%F0%9D%90%AB%F0%9D%90%AC-%F0%9D%90%80%F0%9D%90%9B%F0%9D%90%9A%F0%9D%90%A7-activity-7338404324613476352-_bQL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADO5OtUBAzHPpt9mi-3UFGs9vUfQ9QomP_w",
+        url : "https://www.linkedin.com/feed/update/urn:li:activity:7338601375846522880",
         category: "Website Development"
     },
     {
