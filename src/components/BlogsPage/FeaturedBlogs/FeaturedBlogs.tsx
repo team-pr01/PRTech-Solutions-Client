@@ -2,6 +2,7 @@ import Container from "@/components/Reusable/Container/Container";
 import FeaturedBlogCard from "./FeaturedBlogCard";
 import Link from "next/link";
 import { CgArrowTopRight } from "react-icons/cg";
+import { blogs } from "../dummyBlogsData";
 
 /* eslint-disable react/no-unescaped-entities */
 const FeaturedBlogs = () => {
@@ -26,8 +27,9 @@ const FeaturedBlogs = () => {
         </div>
 
         <div className="flex flex-col gap-10 xl:gap-12 mt-8 z-10">
-          <FeaturedBlogCard />
-          <FeaturedBlogCard />
+          {
+            blogs?.slice(0,2)?.map(blog => <FeaturedBlogCard key={blog?._id} {...blog} />)
+          }
         </div>
       </Container>
     </div>

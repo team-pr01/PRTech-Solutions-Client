@@ -29,6 +29,7 @@ import user from "./icons/user.svg";
 import client from "./icons/clients.svg";
 import comment from "./icons/comment.svg";
 import boxShape from "./icons/box-shape.svg";
+import empty from "./icons/empty.svg";
 
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
@@ -50,7 +51,7 @@ import instagramGray from "./icons/Social Icons/instagram-gray.svg";
 import whatsappGray from "./icons/Social Icons/whatsapp-gray.svg";
 import githubGray from "./icons/Social Icons/github-gray.svg";
 
-// Teck and tool icons
+// Tech and tool icons
 import django from "./icons/tech-stack-icons/django.svg";
 import reactJs from "./icons/tech-stack-icons/reactjs.svg";
 import nextJs from "./icons/tech-stack-icons/nextjs.svg";
@@ -76,7 +77,7 @@ import java from "./icons/tech-stack-icons/java.svg";
 import firebase from "./icons/tech-stack-icons/firebase.svg";
 import expo from "./icons/tech-stack-icons/expo.svg";
 
-// Swervice icons
+// Service icons
 import designWhite from "./icons/service-icons/design-white.svg";
 import designBlue from "./icons/service-icons/design-blue.svg";
 import iosDevelopmentWhite from "./icons/service-icons/ios-development-white.svg";
@@ -130,6 +131,11 @@ import heroBgImage2 from "./images/hero-bg-image-2.png";
 import relatedProject from "./images/related-project.jpg";
 import dummyBlog from "./images/dummy-blog.png";
 import bookConsultationBg from "./images/book-consultation.png";
+
+import blog1 from "./images/blogs/Blog-01.png";
+import blog2 from "./images/blogs/Blog-02.png";
+import blog3 from "./images/blogs/Blog-03.png";
+import blog4 from "./images/blogs/Blog-04.png";
 // Logos
 import prtechSolutionsLogo from "../assets/images/logos/PRTech-Solutions-Black.png";
 import prtechSolutionsLogoGray from "../assets/images/logos/PRTech-Solutions-Gray.png";
@@ -169,7 +175,12 @@ export const IMAGES = {
   relatedProject,
   dummyBlog,
   bookConsultationBg,
-  mockup
+  mockup,
+
+  blog1,
+  blog2,
+  blog3,
+  blog4,
 };
 
 export const ICONS = {
@@ -212,6 +223,7 @@ export const ICONS = {
   client,
   comment,
   boxShape,
+  empty,
 
   // Tech stack logo
   django,

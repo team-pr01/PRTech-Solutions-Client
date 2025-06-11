@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import CategorizedBlogs from "../CategorizedBlogs/CategorizedBlogs";
+import { blogs } from "../dummyBlogsData";
 const OurAllBlogs = () => {
   const projectCategories = [
     "All Projects",
@@ -37,6 +38,8 @@ const OurAllBlogs = () => {
       });
     }
   }, [activeTab]);
+
+  const filteredBlogs = blogs.filter(blog => blog?.category === projectCategories[activeTab]);
   return (
     <div className="bg-gradient-to-r from-neutral-65/10 via-indigo-950/10 to-primary-20/20 font-Inter py-20">
       <Container>
@@ -92,7 +95,7 @@ const OurAllBlogs = () => {
           </div>
         </div>
 
-        <CategorizedBlogs heading={"All"} blogs={[1,2,3,4]} />
+        <CategorizedBlogs heading={activeTab === 0 ? "All" : activeTab === 1 ? "Website Development" : activeTab === 2 ? "Mobile App Development" : activeTab === 3 ? "UI/UX Design" : "Custom Software"} blogs={filteredBlogs} />
       </Container>
     </div>
   );
