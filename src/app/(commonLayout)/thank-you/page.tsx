@@ -5,12 +5,6 @@ import Testimonials from "@/components/HomePage/Testimonials/Testimonials";
 import Container from "@/components/Reusable/Container/Container";
 import Modal from "@/components/Reusable/Modal/Modal";
 import SubHeading from "@/components/Reusable/SubHeading/SubHeading";
-import { RocketArrowIcon } from "@/components/Shared/Footer/Footer";
-import {
-  contactInfo,
-  socialLinks,
-} from "@/components/Shared/Footer/footer.data";
-import clsx from "clsx";
 import { motion, MotionConfig, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -19,7 +13,6 @@ const ThankYou = () => {
   // Refs for triggering animations
   const headingRef = useRef(null);
   const videoRef = useRef(null);
-  const accordionRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // useInView hooks to detect when elements are in viewport
@@ -42,32 +35,31 @@ const ThankYou = () => {
   };
 
   const transition = { duration: 0.6, ease: "easeOut" };
-  const slideUpVariant = {
-    hidden: { y: 50, opacity: 0 },
-    visible: (delay = 0) => ({
-      // Accept delay as a custom prop
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay, // Use the passed delay
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    }),
-  };
+  // const slideUpVariant = {
+  //   hidden: { y: 50, opacity: 0 },
+  //   visible: (delay = 0) => ({
+  //     y: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       delay,
+  //       duration: 0.6,
+  //       ease: "easeOut",
+  //     },
+  //   }),
+  // };
 
   // Viewport settings
-  const viewportSettings = {
-    once: true, // Trigger animation only once
-    amount: 0.1, // Trigger when 10% of the element is visible
-  };
+  // const viewportSettings = {
+  //   once: true,
+  //   amount: 0.1,
+  // };
 
   // Calculate base delays dynamically
-  const contactInfoDelayIncrement = 0.1;
-  const followUsHeadingDelay =
-    0.3 + (contactInfo?.length || 0) * contactInfoDelayIncrement;
-  const socialLinkDelayIncrement = 0.07; // Slightly faster for smaller icons
-  const firstSocialLinkDelay = followUsHeadingDelay + 0.1;
+  // const contactInfoDelayIncrement = 0.1;
+  // const followUsHeadingDelay =
+  //   0.3 + (contactInfo?.length || 0) * contactInfoDelayIncrement;
+  // const socialLinkDelayIncrement = 0.07;
+  // const firstSocialLinkDelay = followUsHeadingDelay + 0.1;
 
   return (
     <div className="flex flex-col text-white items-center justify-center min-h-screen ">

@@ -11,7 +11,7 @@ type TServiceCardProps = {
   description: string;
   features: string[];
 };
-const ServiceCard = ({ index, icon, hoverIcon, title, description, features } : TServiceCardProps) => {
+const ServiceCard = ({ icon, hoverIcon, title, description, features } : TServiceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

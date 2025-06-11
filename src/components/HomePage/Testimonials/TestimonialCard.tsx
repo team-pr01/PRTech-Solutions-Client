@@ -21,11 +21,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   review,
   briefReview,
   business,
-  dashboardImage,
+  // dashboardImage,
 }) => {
   return (
     <div className="bg-gray-200  font-Inter rounded-2xl p-6 md:p-10 shadow-xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 border border-primary-70 relative">
-     {/* <div className="bg-primary-20 absolute -bottom-4 -left-8 z-0 size-[500px] overflow-hidden rounded-full opacity-10 blur-2xl"></div>
+      {/* <div className="bg-primary-20 absolute -bottom-4 -left-8 z-0 size-[500px] overflow-hidden rounded-full opacity-10 blur-2xl"></div>
       <div className="bg-primary-20 absolute bottom-0 right-0 top-6 z-[-1] size-[200px] rounded-full opacity-20 blur-2xl"></div>
       */}
       {/* Left Section */}
@@ -39,9 +39,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
         <StarRating rating={rating} />
 
-        <p className="text-neutral-70 text-base leading-relaxed">
-          “{review}”
-        </p>
+        <p className="text-neutral-70 text-base leading-relaxed">“{review}”</p>
 
         <div className="flex items-center gap-3 pt-2">
           <Image

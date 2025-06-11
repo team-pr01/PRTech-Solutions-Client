@@ -6,7 +6,7 @@ const TabMockup = () => {
   const iframeHeight = 1024;
   const bezelWidth = 8;
 
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [scaleFactor, setScaleFactor] = useState(1);
 
   useEffect(() => {
