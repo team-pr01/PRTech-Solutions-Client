@@ -1,4 +1,5 @@
-import { ICONS, IMAGES } from "@/assets";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ICONS } from "@/assets";
 import StarRating from "@/components/Reusable/RatingStars/RaitingStars";
 import Image from "next/image";
 import React from "react";
@@ -11,7 +12,7 @@ interface TestimonialCardProps {
   briefReview: string;
   business: string;
   profileImage: string;
-  dashboardImage: string;
+  image: any;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
@@ -21,7 +22,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   review,
   briefReview,
   business,
-  // dashboardImage,
+  image,
 }) => {
   return (
     <div className="bg-gray-200  font-Inter rounded-2xl p-6 md:p-10 shadow-xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 border border-primary-70 relative">
@@ -65,7 +66,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           }}
         >
           <Image
-            src={IMAGES.mockup}
+            src={image}
             alt={`${name}'s Dashboard`}
             width={600}
             height={400}

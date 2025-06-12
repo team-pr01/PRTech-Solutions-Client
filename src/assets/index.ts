@@ -131,6 +131,11 @@ import heroBgImage2 from "./images/hero-bg-image-2.png";
 import relatedProject from "./images/related-project.jpg";
 import dummyBlog from "./images/dummy-blog.png";
 import bookConsultationBg from "./images/book-consultation.png";
+import vedicDashboard from "./images/projects/vedic-dashboard.jpg";
+import shopfinity from "./images/projects/Shopfinity.jpg";
+import doctorPortfolio from "./images/projects/doctor-portfolio.jpg";
+import amplogix from "./images/projects/amplogix.jpg";
+import orbitRides from "./images/projects/orbit-tides.jpg";
 
 import blog1 from "./images/blogs/Blog-01.png";
 import blog2 from "./images/blogs/Blog-02.png";
@@ -176,6 +181,11 @@ export const IMAGES = {
   dummyBlog,
   bookConsultationBg,
   mockup,
+  vedicDashboard,
+  shopfinity,
+  doctorPortfolio,
+  amplogix,
+  orbitRides,
 
   blog1,
   blog2,

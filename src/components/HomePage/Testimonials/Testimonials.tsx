@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Container from "@/components/Reusable/Container/Container";
@@ -23,7 +24,7 @@ export interface TestimonialData {
   briefReview: string;
   business: string;
   profileImage: string;
-  dashboardImage: string;
+  image: any;
 }
 
 const Testimonials = () => {
@@ -32,53 +33,90 @@ const Testimonials = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
 
   const testimonials: TestimonialData[] = [
-    {
-      id: 1,
-      name: "Alice Johnson",
-      position: "CTO, TechCorp",
-      rating: 4.5,
-      review:
-        "TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient! The dashboard is intuitive and support is outstanding.TechCorp has never been more efficient!",
-      briefReview: "Game-Changer for Our Workflow",
-      business: "TechCorp",
-      profileImage: "/images/alice.jpg",
-      dashboardImage: "/images/dashboard1.png",
-    },
+  
     {
       id: 2,
-      name: "Michael Lee",
-      position: "Founder, StartHub",
+      name: "Shakil Mirza",
+      position: "CEO, Creative Hub IT",
       rating: 5,
       review:
-        "Absolutely loved the experience. Fast, reliable, and user-friendly. Highly recommended!",
-      briefReview: "Seamless User Experience",
-      business: "StartHub",
+        "I’m truly impressed by the outstanding work delivered by the team on my MLM website. From designing the Figma layout to developing the frontend and integrating APIs, they handled everything with professionalism and attention to detail. The user interface is clean and responsive, and the overall functionality is seamless. Their communication and timely delivery made the process smooth. I highly recommend them for any web development project—reliable, skilled, and creative.",
+      briefReview: "Seamless design to delivery.",
+      business: "Ten Stage Matrix",
       profileImage: "/images/michael.jpg",
-      dashboardImage: "/images/dashboard2.png",
+      image: IMAGES.mockup,
     },
     {
       id: 3,
-      name: "Sara Kim",
-      position: "Product Manager, InnovateX",
-      rating: 4,
+      name: "Akash Debhnath",
+      position: "Research Administrator, Arya Kalyan Foundation",
+      rating: 5,
       review:
-        "A solid tool that supports our product lifecycle. Room for improvement, but very satisfied!",
-      briefReview: "Reliable & Intuitive",
-      business: "InnovateX",
+        "The team delivered a complete Vedic Dashboard with stunning design and robust functionality. From temple and donation management to reels, everything works flawlessly. Their dedication and precision made this project truly special.",
+      briefReview: "Flawless Vedic dashboard design.",
+      business: "Arya Kalyan Foundation",
       profileImage: "/images/sara.jpg",
-      dashboardImage: "/images/dashboard3.png",
+      image: IMAGES.vedicDashboard,
     },
     {
       id: 4,
-      name: "David Brown",
-      position: "CEO, FutureVision",
-      rating: 4.5,
+      name: "Shreya Banerjee",
+      position: "CEO, Shopfinity",
+      rating: 5,
       review:
-        "Great features and excellent customer service. Helped us streamline operations across departments.",
-      briefReview: "Excellent Business Tool",
-      business: "FutureVision",
+        "I am very happy with the ecommerce website made by PRTech Solutions. They understood my needs clearly and completed everything on time. The design looks good, and all features work smoothly. It is simple to use. Great work by PRTech Solutions from start to finish.",
+      briefReview: "Perfect ecommerce website solution.",
+      business: "Shopfinity",
       profileImage: "/images/david.jpg",
-      dashboardImage: "/images/dashboard4.png",
+      image: IMAGES.shopfinity,
+    },
+      {
+      id: 1,
+      name: "Dr. Ropak Roy",
+      position: "Founder, C.R.Physiotherapy Centre",
+      rating: 5,
+      review:
+        "I’m incredibly impressed with the team’s dedication and expertise. They designed and developed my personal portfolio with precision, creativity, and a clear understanding of my vision. The final result exceeded my expectations and perfectly represents my professional identity. I highly recommend their services to anyone seeking quality and professionalism.",
+      briefReview: "Truly professional and impressive.",
+      business: "C.R.Physiotherapy Centre",
+      profileImage: "/images/alice.jpg",
+      image: IMAGES.doctorPortfolio,
+    },
+    {
+      id: 5,
+      name: "Rohan Patel",
+      position: "Co-Founder, Amplogix",
+      rating: 5,
+      review:
+        "PRTech Solutions built a professional agency website for me, and I’m very happy with the outcome. They managed everything from design to development with care and clear communication. The website looks clean, works smoothly, and loads fast. It’s also easy to update and manage. They understood my goals well and delivered just what I needed. I would surely recommend PRTech Solutions to anyone looking for a smart and reliable web partner.",
+      briefReview: "Smart, fast, and clean.",
+      business: "Amplogix",
+      profileImage: "/images/david.jpg",
+      image: IMAGES.amplogix,
+    },
+    {
+      id: 6,
+      name: "Karan Malhotra",
+      position: "Founder, Orbit Rides",
+      rating: 5,
+      review:
+        "The team has made very good landing page for my ride-share app. It is simple, easy to use, and looks nice. Many people liked it and now my app is getting more users. I would definitely recommend PRTech Solutions to anyone looking for a smart and reliable web partner.",
+      briefReview: "Boosted ride-share app growth.",
+      business: "Orbit Rides",
+      profileImage: "/images/david.jpg",
+      image: IMAGES.orbitRides,
+    },
+    {
+      id: 7,
+      name: "Brinto Chakraborti",
+      position: "Media Manager, Arya Kalyan Foundation",
+      rating: 5,
+      review:
+        "The Vedic mobile app for managing temples, donations, and reels is wonderful. The app is very easy to use and works smoothly without any problems. It helps me keep everything organized and connected with the community. The design is clean and user-friendly. I am very happy with the app.",
+      briefReview: "Smooth and helpful app.",
+      business: "Arya Kalyan Foundation",
+      profileImage: "/images/david.jpg",
+      image: "/images/dashboard4.png",
     },
   ];
   // const updateSlidesPerView = (swiper: SwiperCore) => {
