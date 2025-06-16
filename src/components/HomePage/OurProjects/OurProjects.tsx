@@ -4,10 +4,8 @@ import { IMAGES } from "@/assets";
 import Image from "next/image";
 import React, {useRef } from "react";
 import Container from "@/components/Reusable/Container/Container";
-import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 // import { Scrambler } from "react-text-scrambler";
 import TextLoop from "react-text-loop";
-import Link from "next/link";
 import { cubicBezier, motion, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
@@ -61,7 +59,7 @@ const OurProjects = () => {
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
   // const tabsRef = useRef(null);
-  const buttonRef = useRef(null); // Ref for the button wrapper
+  // const buttonRef = useRef(null); 
 
   // useInView hooks
   const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
@@ -70,7 +68,7 @@ const OurProjects = () => {
     amount: 0.3,
   });
   // const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
-  const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
+  // const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
 
   // Animation variants
   const slideUpVariants = {
@@ -236,23 +234,19 @@ const OurProjects = () => {
 
             {/* Animated See all projects button */}
             {/* Wrap the Link with motion.div for animation */}
-            <motion.div
+            {/* <motion.div
               ref={buttonRef}
               variants={slideUpVariants}
               initial="hidden"
               animate={isButtonInView ? "visible" : "hidden"}
-              // Adjust delay based on expected card loading time or keep it simple
-              transition={{ ...transition, delay: 0.6 }} // Delay after tabs (adjust as needed)
+              transition={{ ...transition, delay: 0.6 }} 
               className="flex items-center justify-center mt-10"
             >
               <Link href={"/our-projects"}>
-                {/* <FillBgToTopOnHover
-                  btnText="See All projects"
-                  classNames="bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base"
-                /> */}
+               
                 <FillBgToTopOnHover btnText="See All projects" />
               </Link>
-            </motion.div>
+            </motion.div> */}
           </div>
           {/* </div> */}
         </div>
