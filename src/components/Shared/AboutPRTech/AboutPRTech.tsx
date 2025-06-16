@@ -4,7 +4,7 @@ import AboutPRTechCard from "./AboutPRTechCard";
 import Link from "next/link";
 import AboutPRTechImages from "./AboutPRTechImages";
 import { CgArrowTopRight } from "react-icons/cg";
-import { motion, useInView } from "framer-motion";
+import { easeOut, motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { usePathname } from "next/navigation";
@@ -23,7 +23,7 @@ const AboutPRTech = () => {
     visible: { y: 0, opacity: 1 },
   };
 
-  const transition = { duration: 0.6, ease: "easeOut" };
+  const transition = { duration: 0.6, ease: easeOut };
 
   const missionAndVision = [
     {

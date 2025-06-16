@@ -4,7 +4,7 @@ import { IMAGES } from "@/assets";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Container from "../Container/Container";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 type TPageHeroSection = {
   heading: string;
@@ -24,7 +24,7 @@ const slideFromBottom = {
 
 const transition = (delay = 0) => ({
   duration: 0.8,
-  ease: "easeOut",
+  ease: easeOut,
   delay,
 });
 
@@ -39,7 +39,7 @@ const PageHeroSection: React.FC<TPageHeroSection> = ({
         className="absolute inset-0 z-0"
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        transition={{ duration: 1.2, ease: easeOut }}
       >
         <div className="relative w-full h-full">
           <Image

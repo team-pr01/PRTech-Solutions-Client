@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { useRef } from "react"; // Import useRef
 import ServiceAccordion from "./ServicesAccordion";
 import Container from "@/components/Reusable/Container/Container";
-import { motion, useInView } from "framer-motion"; // Import motion and useInView
+import { easeOut, motion, useInView } from "framer-motion"; // Import motion and useInView
 
 const OurServices = () => {
   // Refs for triggering animations
@@ -26,7 +26,7 @@ const OurServices = () => {
   };
 
   // Common transition settings
-  const transition = { duration: 0.6, ease: "easeOut" };
+  const transition = { duration: 0.6, ease: easeOut };
 
   return (
     <div className="relative w-full h-full flex flex-col justify-center items-center py-20 bg-secondary-50 overflow-hidden">

@@ -4,19 +4,18 @@ import { GRADIENT_BG, IMAGES } from "@/assets";
 import Testimonials from "@/components/HomePage/Testimonials/Testimonials";
 import Container from "@/components/Reusable/Container/Container";
 import Modal from "@/components/Reusable/Modal/Modal";
-import SubHeading from "@/components/Reusable/SubHeading/SubHeading";
-import { motion, MotionConfig, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
 const ThankYou = () => {
   // Refs for triggering animations
-  const headingRef = useRef(null);
+  // const headingRef = useRef(null);
   const videoRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // useInView hooks to detect when elements are in viewport
-  const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  // const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
   const isVideoInView = useInView(videoRef, { once: true, amount: 0.3 });
   // const isAccordionInView = useInView(accordionRef, {
   //   once: true,
@@ -24,17 +23,17 @@ const ThankYou = () => {
   // });
 
   // Animation variants
-  const slideUpVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
+  // const slideUpVariants = {
+  //   hidden: { y: 50, opacity: 0 },
+  //   visible: { y: 0, opacity: 1 },
+  // };
 
   const scaleUpVariants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1 },
   };
 
-  const transition = { duration: 0.6, ease: "easeOut" };
+  // const transition = { duration: 0.6, ease: "easeOut" };
   // const slideUpVariant = {
   //   hidden: { y: 50, opacity: 0 },
   //   visible: (delay = 0) => ({
@@ -81,7 +80,7 @@ const ThankYou = () => {
             <div className="flex mt-8 flex-col items-center justify-center mb-10 ">
               {/* Animated Heading */}
 
-              <MotionConfig transition={transition}>
+              {/* <MotionConfig transition={transition}>
                 <motion.div
                   ref={headingRef}
                   variants={slideUpVariants}
@@ -91,7 +90,7 @@ const ThankYou = () => {
                 >
                   <SubHeading heading="Thank You for your valuable time! Our industry specialist will reach out to you shortly." />
                 </motion.div>
-              </MotionConfig>
+              </MotionConfig> */}
               <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-12 2xl:gap-16">
                 {/* Animated Video container */}
                 <motion.div
@@ -99,7 +98,7 @@ const ThankYou = () => {
                   variants={scaleUpVariants}
                   initial="hidden"
                   animate={isVideoInView ? "visible" : "hidden"}
-                  transition={{ ...transition, delay: 0.2 }} // Add a slight delay
+                  // transition={{ ...transition, delay: 0.2 }}
                   className="relative flex flex-col items-center justify-center w-full h-full mt-10 "
                 >
                   <Image

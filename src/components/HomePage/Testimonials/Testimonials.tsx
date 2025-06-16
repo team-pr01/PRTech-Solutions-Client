@@ -12,7 +12,7 @@ import Image from "next/image";
 import { ICONS, IMAGES } from "@/assets";
 import TestimonialCard from "./TestimonialCard";
 import { useRef } from "react";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 // types/testimonial.ts (optional location)
 export interface TestimonialData {
@@ -150,7 +150,7 @@ const Testimonials = () => {
       x: 0, // End visible, at original position
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };
@@ -162,7 +162,7 @@ const Testimonials = () => {
       x: 0, // End visible, at original position
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
         delay: 0.2, // Optional: Slight delay for buttons
       },
     },

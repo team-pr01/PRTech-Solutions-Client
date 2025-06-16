@@ -6,8 +6,9 @@ import Container from "@/components/Reusable/Container/Container";
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react"; // Import useRef
 import { CgArrowTopRight } from "react-icons/cg";
-import { motion, useInView } from "framer-motion"; // Import motion and hooks
+import { easeInOut, easeOut, motion, useInView } from "framer-motion";
 import Link from "next/link";
+// import { easeLinear } from 'framer-motion';
 
 const Banner = () => {
   const words = [
@@ -44,7 +45,7 @@ const Banner = () => {
       scale: [1, 1.05, 1], // Pulse effect
       transition: {
         duration: 1.5,
-        ease: "easeInOut",
+        ease: easeInOut,
         repeat: Infinity, // Keep pulsing
         repeatType: "mirror" as const, // Go back and forth
         delay: 0.2,
@@ -54,13 +55,17 @@ const Banner = () => {
 
   const subtleSlideUpFadeIn = {
     hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: easeOut } },
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8, ease: "linear" } },
-  };
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: [0, 0, 1, 1] as const },
+  },
+};
+
 
   const bounceIn = {
     hidden: { scale: 0.5, opacity: 0 },
@@ -68,7 +73,7 @@ const Banner = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring", // Use spring for bounce
+        type: "spring" as const, // Use spring for bounce
         stiffness: 200,
         damping: 15,
       },

@@ -9,7 +9,7 @@ import Link from "next/link";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
 import Marquee from "react-fast-marquee";
-import { motion, useInView } from "framer-motion";
+import { easeOut, motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import { androidTechnologies, tools, webTechnologies } from "./techStack.data";
 
@@ -34,7 +34,7 @@ const OurTechStack = () => {
   // Base transition
   const transition = (delay = 0) => ({
     duration: 0.6,
-    ease: "easeOut",
+    ease: easeOut,
     delay,
   });
 

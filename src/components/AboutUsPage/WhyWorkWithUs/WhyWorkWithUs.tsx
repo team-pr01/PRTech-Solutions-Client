@@ -2,7 +2,7 @@
 import { ICONS, IMAGES } from "@/assets";
 import Container from "@/components/Reusable/Container/Container";
 import Heading from "@/components/Reusable/Heading/Heading";
-import { motion, useInView } from "framer-motion";
+import { easeInOut, easeOut, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -14,11 +14,11 @@ const WhyWorkWithUs = () => {
   const variants = {
     imageLeft: {
       hidden: { x: "-100%", opacity: 0 },
-      visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeInOut" } },
+      visible: { x: 0, opacity: 1, transition: { duration: 0.8, ease: easeInOut } },
     },
     slideFromRight: {
       hidden: { x: 100, opacity: 0 },
-      visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+      visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: easeOut } },
     },
     listContainer: {
       hidden: { opacity: 0 },
@@ -34,7 +34,7 @@ const WhyWorkWithUs = () => {
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.5, ease: "easeOut" },
+        transition: { duration: 0.5, ease: easeOut },
       },
     },
   };

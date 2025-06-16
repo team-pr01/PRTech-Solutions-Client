@@ -2,26 +2,65 @@
 import "./OurProjects.css";
 import { IMAGES } from "@/assets";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, {useRef } from "react";
 import Container from "@/components/Reusable/Container/Container";
 import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 // import { Scrambler } from "react-text-scrambler";
 import TextLoop from "react-text-loop";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { cubicBezier, motion, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
+const projects = [
+  {
+    image: IMAGES.mockup,
+    title: "Ten Stage Matrix",
+    subtitle: "Seamless design to delivery.",
+    description: "",
+  },
+  {
+    image: IMAGES.vedicDashboard,
+    title: "Arya Kalyan Foundation",
+    subtitle: "Flawless Vedic dashboard design.",
+    description: "",
+  },
+  {
+    image: IMAGES.shopfinity,
+    title: "Shopfinity",
+    subtitle: "Perfect ecommerce website solution.",
+    description: "",
+  },
+  {
+    image: IMAGES.doctorPortfolio,
+    title: "Therapy Center Portfolio",
+    subtitle: "C.R.Physiotherapy Centre Portfolio.",
+    description: "",
+  },
+  {
+    image: IMAGES.amplogix,
+    title: "Amplogix",
+    subtitle: "Smart, fast, and clean.",
+    description: "",
+  },
+  {
+    image: IMAGES.orbitRides,
+    title: "Orbit Rides",
+    subtitle: "Boosted ride-share app growth.",
+    description: "",
+  },
+];
+
 const OurProjects = () => {
-  const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
-  const [activeTab, setActiveTab] = useState(0);
-  const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
-  const containerRef = useRef<HTMLUListElement>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
+  // const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
+  // const [activeTab, setActiveTab] = useState(0);
+  // const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
+  // const containerRef = useRef<HTMLUListElement>(null);
+  // const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
 
   // Refs for animations
   const headingRef = useRef(null);
   const subheadingRef = useRef(null);
-  const tabsRef = useRef(null);
+  // const tabsRef = useRef(null);
   const buttonRef = useRef(null); // Ref for the button wrapper
 
   // useInView hooks
@@ -30,7 +69,7 @@ const OurProjects = () => {
     once: true,
     amount: 0.3,
   });
-  const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
+  // const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
   const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
 
   // Animation variants
@@ -40,21 +79,24 @@ const OurProjects = () => {
   };
 
   // Base transition
-  const transition = { duration: 0.6, ease: "easeOut" };
+  const transition = {
+  duration: 0.6,
+  ease: cubicBezier(0.17, 0.67, 0.83, 0.67),
+};
 
-  useEffect(() => {
-    const currentTab = tabRefs.current[activeTab];
-    const container = containerRef.current;
-    if (currentTab && container) {
-      const tabRect = currentTab.offsetLeft;
-      const width = currentTab.offsetWidth;
+  // useEffect(() => {
+  //   const currentTab = tabRefs.current[activeTab];
+  //   const container = containerRef.current;
+  //   if (currentTab && container) {
+  //     const tabRect = currentTab.offsetLeft;
+  //     const width = currentTab.offsetWidth;
 
-      setIndicatorStyle({
-        width: width,
-        left: tabRect,
-      });
-    }
-  }, [activeTab]);
+  //     setIndicatorStyle({
+  //       width: width,
+  //       left: tabRect,
+  //     });
+  //   }
+  // }, [activeTab]);
 
   // const [inView, setInView] = useState(false);
   // const sectionRef = useRef(null);
@@ -142,19 +184,18 @@ const OurProjects = () => {
           {/* <div className="animated-gradient-border w-full rounded-3xl text-white mt-9 z-10 sticky top-0"> */}
           <div className="bg-secondary-60 w-full rounded-3xl mt-10">
             {/* Animated Tab */}
-            <motion.div
+            {/* <motion.div
               ref={tabsRef}
               variants={slideUpVariants}
               initial="hidden"
               animate={areTabsInView ? "visible" : "hidden"}
-              transition={{ ...transition, delay: 0.4 }} // Delay after subheading
+              transition={{ ...transition, delay: 0.4 }} 
               className="flex items-center justify-center "
             >
               <ul
                 ref={containerRef}
                 className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-[10px] sm:text-base max-w-[420px] md:max-w-fit overflow-x-auto"
               >
-                {/* Blue Highlighter */}
                 <span
                   className="absolute bg-[#06A0ED] h-[85%] transition-all duration-500 rounded-full z-10"
                   style={{
@@ -178,16 +219,17 @@ const OurProjects = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.div> */}
 
             {/* Projects cards - Animation should happen inside OurProjectCard */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar w-full">
-              {[1, 2, 3, 4, 5].map((project, index) => (
+              {projects?.map((project, index) => (
                 // Pass index for individual card animation delay
                 <ProjectCard
                   key={index}
                   index={index} // Pass index here
                   cardDirection={index % 2 !== 0 ? "left" : "right"}
+                  project={project}
                 />
               ))}
             </div>

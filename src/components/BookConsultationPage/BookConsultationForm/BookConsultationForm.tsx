@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import "../../HomePage/OurProjects/OurProjects.css";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from "sonner";
@@ -70,7 +70,7 @@ const BookConsultationForm = () => {
       transition: {
         delay,
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
       },
     }),
   };

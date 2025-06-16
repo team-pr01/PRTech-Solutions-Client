@@ -6,7 +6,7 @@ import Modal from "@/components/Reusable/Modal/Modal";
 import Image from "next/image";
 import React, { useState, useRef } from "react"; // Import useRef
 import "./InAction.css";
-import { motion, useInView } from "framer-motion"; // Import motion and useInView
+import { easeOut, motion, useInView } from "framer-motion"; // Import motion and useInView
 
 const InAction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,7 +31,7 @@ const InAction = () => {
   };
 
   // Transition settings
-  const transition = { duration: 0.8, ease: "easeOut" };
+  const transition = { duration: 0.8, ease: easeOut };
 
   return (
     // Add overflow-hidden to the main container if scale causes overflow issues

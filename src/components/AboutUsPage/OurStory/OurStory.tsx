@@ -2,7 +2,7 @@
 import { IMAGES } from "@/assets";
 import Container from "@/components/Reusable/Container/Container";
 import Heading from "@/components/Reusable/Heading/Heading";
-import { useInView, motion } from "framer-motion";
+import { useInView, motion, easeOut, easeInOut } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import "./OurStory.css";
@@ -27,10 +27,10 @@ const OurStory = () => {
 
   // Base transition
   const transition = (delay = 0) => ({
-    duration: 0.6,
-    ease: "easeOut",
-    delay,
-  });
+  duration: 0.6,
+  ease: easeOut,
+  delay,
+});
 
   const variants = {
     hidden: { x: "100%", opacity: 0 },
@@ -39,7 +39,7 @@ const OurStory = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeInOut",
+        ease: easeInOut,
       },
     },
   };

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import "../../HomePage/OurProjects/OurProjects.css";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { CgArrowTopRight } from "react-icons/cg";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 
 type TFormData = {
   name: string;
@@ -34,7 +34,7 @@ const CommentForm = () => {
       transition: {
         delay,
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
       },
     }),
   };

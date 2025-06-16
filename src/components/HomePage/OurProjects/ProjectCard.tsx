@@ -1,19 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { ANIMATEDICONS, IMAGES } from "@/assets";
+// import { ANIMATEDICONS, IMAGES } from "@/assets";
 import Image from "next/image";
 import "./OurProjects.css";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const ProjectCard = ({
   index,
+  project,
 }: {
   index: number;
   cardDirection: "left" | "right";
   isIFrameView?: boolean;
+  project : any
 }) => {
   const slideUpVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -33,7 +36,7 @@ const ProjectCard = ({
 
       {/* Swiper Image Carousel */}
       <div className="relative h-[300px] md:h-[430px]">
-        <Swiper
+        {/* <Swiper
           pagination={{ clickable: true }}
           modules={[Pagination]}
           className="rounded-t-xl xl:rounded-t-2xl h-full"
@@ -48,23 +51,28 @@ const ProjectCard = ({
               />
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
+
+        <Image
+          src={project?.image}
+          alt={`project mockup`}
+          className="w-full h-full object-cover rounded-t-xl xl:rounded-t-2xl"
+          priority
+        />
       </div>
 
       <div className="p-3 xl:p-6">
         <h1 className="text-white text-2xl md:text-3xl font-bold mt-5">
-          PRTech Solutions -{" "}
+          {project?.title} -{" "}
           <span className="font-semibold text-xl md:text-2xl text-neutral-40">
-            Modern Web Design & Development Agency
+            {project?.subtitle}
           </span>
         </h1>
         <p className="text-primary-50 text-sm md:text-base leading-4 md:leading-7 mt-4">
-          Discover the passion, creativity, and dedication behind our
-          works—crafted to deliver real value, impact, and long-lasting
-          impressions.
+          {project?.description}
         </p>
 
-        <a
+        {/* <a
           href="https://mitraconsultancy.co.in/"
           target="_blank"
           className="cursor-pointer border border-white flex items-center gap-2 px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base rounded-[30px] mt-6 w-fit"
@@ -75,7 +83,7 @@ const ProjectCard = ({
             className="size-4 md:size-6"
           />
           View Live
-        </a>
+        </a> */}
       </div>
     </motion.div>
   );

@@ -7,7 +7,7 @@ import {
 import clsx from "clsx";
 import { RocketArrowIcon } from "@/components/Shared/Footer/Footer";
 import "../../AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover.css";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import ContactUsForm from "../ContactUsPage/ContactUs/ContactUsForm";
 
 const ThankYou = () => {
@@ -20,7 +20,7 @@ const ThankYou = () => {
       transition: {
         delay, // Use the passed delay
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
       },
     }),
   };

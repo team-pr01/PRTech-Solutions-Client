@@ -5,7 +5,7 @@ import Container from "@/components/Reusable/Container/Container";
 import Heading from "@/components/Reusable/Heading/Heading";
 import Image from "next/image";
 import CountUp from "react-countup";
-import { motion, useInView } from "framer-motion"; // Import motion and hooks
+import { easeOut, motion, useInView } from "framer-motion"; // Import motion and hooks
 
 const OurProgressBar = () => {
   const progressBarData = [
@@ -39,7 +39,7 @@ const OurProgressBar = () => {
   // Base transition
   const transition = (delay = 0) => ({
     duration: 0.6,
-    ease: "easeOut",
+    ease: easeOut,
     delay,
   });
 

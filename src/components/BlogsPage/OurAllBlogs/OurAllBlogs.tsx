@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/Reusable/Container/Container";
-import { motion, useInView } from "framer-motion";
+import { easeOut, motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import CategorizedBlogs from "../CategorizedBlogs/CategorizedBlogs";
@@ -23,7 +23,7 @@ const OurAllBlogs = () => {
     visible: { y: 0, opacity: 1 },
   };
 
-  const transition = { duration: 0.6, ease: "easeOut" };
+  const transition = { duration: 0.6, ease: easeOut };
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
   useEffect(() => {
     const currentTab = tabRefs.current[activeTab];

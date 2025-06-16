@@ -1,5 +1,5 @@
 "use client"
-import { useInView, motion } from "framer-motion";
+import { useInView, motion, easeOut } from "framer-motion";
 import OurProjectCard from "../../HomePage/OurProjects/OurProjectCard"
 import Container from "@/components/Reusable/Container/Container";
 import { useEffect, useRef, useState } from "react";
@@ -17,7 +17,7 @@ const OurAllProjects = () => {
         visible: { y: 0, opacity: 1 },
       };
 
-      const transition = { duration: 0.6, ease: "easeOut" };
+      const transition = { duration: 0.6, ease: easeOut };
       const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
       useEffect(() => {
           const currentTab = tabRefs.current[activeTab];

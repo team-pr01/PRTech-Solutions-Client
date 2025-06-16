@@ -5,7 +5,7 @@ import HeroSubtitle from "./HeroSubtitle";
 import Container from "@/components/Reusable/Container/Container";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import Link from "next/link";
 
 const Hero = () => {
@@ -30,7 +30,7 @@ const Hero = () => {
     duration: 0.8,
     // Use a standard easing keyword like "easeOut" or "easeInOut"
     // Or provide a VALID cubic-bezier array e.g., [0.25, 0.1, 0.25, 1.0]
-    ease: "easeOut", // Changed from the invalid array
+    ease: easeOut, // Changed from the invalid array
     delay,
   });
 
@@ -46,7 +46,7 @@ const Hero = () => {
           <motion.div
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: easeOut }}
             // The parent needs relative positioning for fill to work correctly
             className="relative w-full h-full"
           >
