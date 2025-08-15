@@ -19,7 +19,7 @@ const FeaturedBlogCard:React.FC<TFeaturedBlogCardProps> = ({ title, image, categ
   const shouldTruncate = text.length > 270;
   const displayedText = shouldTruncate ? `${text.slice(0, 270)}...` : text;
   return (
-    <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-14 font-Inter bg-neutral-800/50 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 transition-all duration-500 ease-in-out hover:scale-105">
+    <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 2xl:gap-14 font-Inter bg-neutral-800/50 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 transition-all duration-500 ease-in-out hover:scale-102">
       <Image
         src={image}
         alt=""

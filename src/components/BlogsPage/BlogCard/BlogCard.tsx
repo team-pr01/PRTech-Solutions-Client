@@ -27,11 +27,11 @@ const BlogCard: React.FC<TBlogCardProps> = ({
   return (
     <div className="group bg-neutral-800/50 rounded-2xl border border-neutral-65/30 hover:border-neutral-65/50 transition-all duration-500 ease-in-out hover:-translate-y-1">
       {/* Image will zoom when card is hovered */}
-      <div className="overflow-hidden">
+      <div className="overflow-hidden rounded-t-2xl ">
         <Image
           src={image}
           alt=""
-          className="rounded-t-2xl object-cover h-[290px] transition-transform duration-1000 ease-in-out group-hover:scale-105"
+          className="object-cover h-[290px] transition-transform duration-1000 ease-in-out group-hover:scale-105"
         />
       </div>
 

@@ -22,7 +22,7 @@ const Heading: React.FC<HeadingProps> = ({
   return (
     <div className={`${alignment} flex flex-col gap-7 lg:gap-5 2xl:gap-6 ${className}`}>
       {heading && (
-        <h1 className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] ${alignment} ${headingClassName}`}>
+        <h1 className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[58px] font-bold leading-9 2xl:leading-[64px] ${alignment} ${headingClassName}`}>
           {heading}
         </h1>
       )}

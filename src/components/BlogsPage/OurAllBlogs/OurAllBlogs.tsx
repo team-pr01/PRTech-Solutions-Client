@@ -39,7 +39,7 @@ const OurAllBlogs = () => {
     }
   }, [activeTab]);
 
-  const filteredBlogs = blogs.filter(blog => blog?.category === projectCategories[activeTab]);
+  const filteredBlogs = blogs?.filter(blog => blog?.category === projectCategories[activeTab]);
   return (
     <div className="bg-gradient-to-r from-neutral-65/10 via-indigo-950/10 to-primary-20/20 font-Inter py-20">
       <Container>
@@ -56,7 +56,7 @@ const OurAllBlogs = () => {
           >
             <ul
               ref={containerRef}
-              className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-lg px-2 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-[700px] xl:max-w-fit overflow-x-auto"
+              className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-lg px-1 py-1 font-Inter text-white text-sm sm:text-base max-w-[329px] md:max-w-[700px] xl:max-w-fit overflow-x-auto"
             >
               {/* Blue Highlighter */}
               <span
@@ -67,7 +67,7 @@ const OurAllBlogs = () => {
                 }}
               />
 
-              {projectCategories.map((category, idx) => (
+              {projectCategories?.map((category, idx) => (
                 <li
                   key={idx}
                   ref={(el) => {
@@ -95,7 +95,7 @@ const OurAllBlogs = () => {
           </div>
         </div>
 
-        <CategorizedBlogs heading={activeTab === 0 ? "All" : activeTab === 1 ? "Website Development" : activeTab === 2 ? "Mobile App Development" : activeTab === 3 ? "UI/UX Design" : "Custom Software"} blogs={filteredBlogs} />
+        <CategorizedBlogs heading={activeTab === 0 ? "All" : activeTab === 1 ? "Website Development" : activeTab === 2 ? "Mobile App Development" : activeTab === 3 ? "UI/UX Design" : "Custom Software"} blogs={activeTab===0? blogs:filteredBlogs} />
       </Container>
     </div>
   );
