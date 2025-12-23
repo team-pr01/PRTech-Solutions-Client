@@ -46,45 +46,42 @@ const OurServices = () => {
       <div className="relative z-10 w-full">
         <Container>
           <div className="flex flex-col items-center justify-center">
-            {/* <Image src={ANIMATEDICONS.servicesGif} alt="" className="size-28" /> */}
-            {/* Animated Heading */}
             <motion.div
               ref={headingRef}
               variants={slideUpVariants}
               initial="hidden"
               animate={isHeadingInView ? "visible" : "hidden"}
               transition={transition}
-              className="w-full flex flex-col items-center" // Added for layout consistency
+              className="w-full flex flex-col items-center"
             >
               <Heading
                 heading="Our Service"
                 subHeading="Smart digital solutions to grow your brand online — and beyond."
               />
             </motion.div>
-            <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-5 md:gap-9 3xl:gap-14 mt-10 md:mt-12 xl:mt-16 2xl:mt-[70px] w-full">
-              {/* Animated Left Column (Image) */}
+            <div className="grid grid-cols-1 lg:grid-cols-[40%_55%] gap-5 md:gap-9 mt-10 md:mt-12 xl:mt-16 2xl:mt-[70px] w-full">
+            
               <motion.div
                 ref={imageRef}
                 variants={slideUpVariants}
                 initial="hidden"
                 animate={isImageInView ? "visible" : "hidden"}
-                transition={{ ...transition, delay: 0.2 }} // Slight delay for staggered effect
-                className="w-full h-full" // Ensure motion div takes space
+                transition={{ ...transition, delay: 0.2 }}
+                className="w-full h-full"
               >
                 <Image
                   src={IMAGES.services}
                   alt="PRTech Solutions Services"
-                  className="w-full h-full object-cover object-center rounded-3xl 3xl:rounded-3xl" // Added object-cover
+                  className="w-full h-fit object-cover object-center rounded-3xl"
                 />
               </motion.div>
-              {/* Animated Right Column (Accordion) */}
               <motion.div
                 ref={accordionRef}
                 variants={slideUpVariants}
                 initial="hidden"
                 animate={isAccordionInView ? "visible" : "hidden"}
-                transition={{ ...transition, delay: 0.4 }} // Further delay
-                className="w-full h-full" // Ensure motion div takes space
+                transition={{ ...transition, delay: 0.4 }} 
+                className="w-full h-full"
               >
                 <ServiceAccordion />
               </motion.div>

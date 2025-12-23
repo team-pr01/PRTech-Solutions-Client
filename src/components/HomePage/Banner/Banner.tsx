@@ -12,11 +12,11 @@ import Link from "next/link";
 
 const Banner = () => {
   const words = [
-    "build websites",
-    "develop apps",
-    "create digital solutions",
-    "design user experiences",
-    "boost your brand",
+    "help you understand what’s possible",
+    "tell you what to avoid,",
+    "help founders move forward with clarity, not guesswork",
+    "turn ideas into scalable, well-thought-out systems.",
+    "help you decide what to build — and how to build it right.",
   ];
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -42,7 +42,7 @@ const Banner = () => {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
-      scale: [1, 1.05, 1], // Pulse effect
+      scale: [1, 1.05, 1], 
       transition: {
         duration: 1.5,
         ease: easeInOut,
@@ -149,8 +149,18 @@ const fadeIn = {
               transition={{ delay: 0.3 }} // Add delay
               className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
             >
-              Ready to transform your digital presence?
+              Have an idea, but not sure how to build it the right way?
             </motion.h1>
+            <motion.h2
+              ref={heading1Ref}
+              variants={subtleSlideUpFadeIn}
+              initial="hidden"
+              animate={isHeading1InView ? "visible" : "hidden"}
+              transition={{ delay: 0.3 }} // Add delay
+              className={`text-white font-rethink text-xl md:text-2xl 2xl:text-[34px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
+            >
+              Start with a free project feasibility review.
+            </motion.h2>
 
             {/* Animated Typing Heading Container */}
             <motion.div
@@ -162,10 +172,11 @@ const fadeIn = {
               className="h-14 sm:h-16" // Add height to prevent layout shift during typing
             >
               <h1 className="text-4xl sm:text-5xl font-bold text-center text-white mt-6">
-                We{" "}
-                <span className="text-primary-20 border-r-2 border-primary-20 pr-1">
+             We help you  { " "}
+                <span className="text-primary-20  border-primary-20 pr-1">
                   {/* Render typing text only when in view */}
-                  {isTypingInView ? displayedText : ""}
+                  {/* {isTypingInView ? displayedText : ""} */}
+                decide what to build — and how to build it right.
                 </span>
               </h1>
             </motion.div>
@@ -177,11 +188,9 @@ const fadeIn = {
               initial="hidden"
               animate={isParagraphInView ? "visible" : "hidden"}
               transition={{ delay: 0.7 }} // Add delay
-              className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-6 text-center max-w-[900px] mx-auto`}
+              className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 mt-20 text-center max-w-[900px] mx-auto`}
             >
-              Let’s discuss how we can help you achieve your business goals with
-              our expertise — from tailored strategies to innovative solutions,
-              we’re here to drive your success every step of the way.
+             Make confident decisions before committing to development or vendors.
             </motion.p>
 
             {/* Animated Buttons Container */}
@@ -195,7 +204,7 @@ const fadeIn = {
             >
               {/* Individual buttons don't need separate animation if container bounces */}
               <Link href="/contact-us"><FillBgOnHover classNames="w-fit group bg-primary-20 border border-primary-20 text-white flex items-center gap-1 hover:bg-primary-20/80">
-                Contact Us
+                Start Free Feasibility Review   
                 <CgArrowTopRight className="text-base md:text-xl lg:text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
               </FillBgOnHover></Link>
               <Link href="/book-consultation" className=" text-white border border-white font-Inter text-xs md:text-base font-medium flex items-center gap-2 px-5 md:px-10 py-2 md:py-[14px] rounded-[30px] hover:bg-secondary-40 transition duration-300">
@@ -207,6 +216,15 @@ const fadeIn = {
                 Schedule a Call
               </Link>
             </motion.div>
+             <motion.p
+                variants={subtleSlideUpFadeIn}
+                initial="hidden"
+                animate="visible"
+                transition={{delay: 1}}
+                className="text-white/80 text-center font-Inter text-xs md:text-base lg:text-md 3xl:text-lg font-normal leading-4 md:leading-5 lg:leading-8 2xl:leading-[30px] mt-4 lg:mt-6 max-w-[543px] lg:max-w-[720px] mx-auto"
+              >
+              No obligation · No sales pressure · Just Clarity
+              </motion.p>
           </div>
         </Container>
       </div>

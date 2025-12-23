@@ -65,11 +65,9 @@
 
   /* Gradients */
   --bg-gradient-primary: linear-gradient(180deg, #06a0ed 100%, #6ecaf8 100%);
-  --bg-project-bg-gradient: linear-gradient(
-    180deg,
-    #020817 0%,
-    rgba(2, 8, 23, 0) 100%
-  );
+   --bg-project-bg-gradient: linear-gradient(180deg, #020817 0%, rgba(2, 8, 23, 0.00) 100%);
+  --bg-project-border: linear-gradient(180deg, #06A0ED 0%, #FFFFFF00 100%);
+
   --bg-about-bg-gradient: linear-gradient(
     180deg,
     #06a0ed 0%,
@@ -130,6 +128,10 @@
 .bg-our-projects-bg-gradient {
   background: var(--bg-our-projects-bg-gradient);
 }
+.bg-project-border {
+  background: var(--bg-project-border);
+}
+
 
 /* Custom scrollbar for a specific section */
 .custom-scrollbar {

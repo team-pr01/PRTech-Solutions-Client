@@ -8,6 +8,7 @@ import { easeOut, motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import { usePathname } from "next/navigation";
+import Heading from "@/components/Reusable/Heading/Heading";
 
 const AboutPRTech = () => {
   const pathname = usePathname();
@@ -54,20 +55,18 @@ const AboutPRTech = () => {
       <div className="w-full relative">
         <div className="max-w-full 2xl:max-w-[1300px] mx-auto px-5 2xl:px-0">
           <motion.div
-            ref={headingRef}
-            variants={slideUpVariants}
-            initial="hidden"
-            animate={isHeadingInView ? "visible" : "hidden"}
-            transition={transition}
-            className="flex items-center gap-10 w-fit"
-          >
-            <h1
-              className={`text-white font-Rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px]`}
+              ref={headingRef}
+              variants={slideUpVariants}
+              initial="hidden"
+              animate={isHeadingInView ? "visible" : "hidden"}
+              transition={transition}
+              className="w-full"
             >
-              About PRTech
-            </h1>
-            {/* <Image src={ANIMATEDICONS.aboutUsGif} alt="" className="size-28 absolute -right-32 -top-12" /> */}
-          </motion.div>
+              <Heading
+                heading="About PRTech Solutions"
+                align="left"
+              />
+            </motion.div>
           <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
             {/* Left side */}
             <motion.div

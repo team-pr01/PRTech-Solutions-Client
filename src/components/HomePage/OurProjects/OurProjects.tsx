@@ -1,257 +1,206 @@
 "use client";
+
 import "./OurProjects.css";
-import { IMAGES } from "@/assets";
+import { IMAGES, ANIMATEDICONS } from "@/assets";
 import Image from "next/image";
-import React, {useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "@/components/Reusable/Container/Container";
-// import { Scrambler } from "react-text-scrambler";
-import TextLoop from "react-text-loop";
 import { cubicBezier, motion, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import AnimatedHeading from "@/components/Reusable/AniminatedHeading/AniminatedHeading";
+import Link from "next/link";
+import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/FillBgToTopOnHover";
 
 const projects = [
   {
-    image: IMAGES.mockup,
-    title: "Ten Stage Matrix",
-    subtitle: "Seamless design to delivery.",
-    description: "",
+    image: IMAGES.tradingPlatform,
+    title: "Real-Time Trading Platform",
+    subtitle: "High-reliability trading and portfolio management system",
+    subtle:"Web-based trading platform",
+    description:
+      "A web-based trading platform designed to handle real-time market data, user portfolios, and performance-critical dashboards with a strong focus on accuracy, security, and system stability.",
   },
   {
-    image: IMAGES.vedicDashboard,
-    title: "Arya Kalyan Foundation",
-    subtitle: "Flawless Vedic dashboard design.",
-    description: "",
+    image: IMAGES.ngoApp,
+    title: "AI-Powered NGO Platform",
+    subtitle: "Spiritual and wellness application with AI assistance",
+     subtle:"Mobile and web NGO application",
+    description:
+      "A mobile and web platform built for an NGO to provide spiritual guidance, religious content, multilingual text translation, and AI-assisted recommendations in a structured and responsible manner.",
   },
   {
-    image: IMAGES.shopfinity,
-    title: "Shopfinity",
-    subtitle: "Perfect ecommerce website solution.",
-    description: "",
+    image: IMAGES.educationPlatform,
+    title: "Tutor–Parent Matching Platform",
+    subtitle: "Education hiring and verification system",
+     subtle:"Education marketplace platform",
+    description:
+      "A platform where tutors, students, and parents can register, apply for teaching opportunities, and connect through an admin-controlled workflow that manages validation, agreements, and coordination.",
   },
   {
-    image: IMAGES.doctorPortfolio,
-    title: "Therapy Center Portfolio",
-    subtitle: "C.R.Physiotherapy Centre Portfolio.",
-    description: "",
-  },
-  {
-    image: IMAGES.amplogix,
-    title: "Amplogix",
-    subtitle: "Smart, fast, and clean.",
-    description: "",
-  },
-  {
-    image: IMAGES.orbitRides,
-    title: "Orbit Rides",
-    subtitle: "Boosted ride-share app growth.",
-    description: "",
+    image: IMAGES.itCompanyWebsite,
+    title: "IT Services Company Website",
+    subtitle: "Lead-focused website for a software services firm",
+     subtle:"IT services company website",
+    description:
+      "A professional website built for an IT company to clearly present services, establish credibility, and convert visitors into qualified leads through structured content and optimized performance.",
   },
 ];
 
-const OurProjects = () => {
-  // const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
-  // const [activeTab, setActiveTab] = useState(0);
-  // const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
-  // const containerRef = useRef<HTMLUListElement>(null);
-  // const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
 
-  // Refs for animations
-  const headingRef = useRef(null);
-  const subheadingRef = useRef(null);
-  // const tabsRef = useRef(null);
-  // const buttonRef = useRef(null); 
 
-  // useInView hooks
-  const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
-  const isSubheadingInView = useInView(subheadingRef, {
-    once: true,
-    amount: 0.3,
-  });
-  // const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
-  // const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
+const slideUpVariants = {
+  hidden: { y: 40, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
 
-  // Animation variants
-  const slideUpVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
-
-  // Base transition
-  const transition = {
+const transition = {
   duration: 0.6,
   ease: cubicBezier(0.17, 0.67, 0.83, 0.67),
 };
 
-  // useEffect(() => {
-  //   const currentTab = tabRefs.current[activeTab];
-  //   const container = containerRef.current;
-  //   if (currentTab && container) {
-  //     const tabRect = currentTab.offsetLeft;
-  //     const width = currentTab.offsetWidth;
+const OurProjects = () => {
+  const projectCategories = ["All Projects", "Website", "Mobile App", "UI/UX"];
+  const [activeTab, setActiveTab] = useState(0);
 
-  //     setIndicatorStyle({
-  //       width: width,
-  //       left: tabRect,
-  //     });
-  //   }
-  // }, [activeTab]);
+  const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const containerRef = useRef<HTMLUListElement>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState<{
+    width: number;
+    left: number;
+  } | null>(null);
 
-  // const [inView, setInView] = useState(false);
-  // const sectionRef = useRef(null);
+  const subheadingRef = useRef(null);
+  const tabsRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  // Intersection Observer logic to trigger when section is in view
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         setInView(entry.isIntersecting);
-  //       });
-  //     },
-  //     {
-  //       threshold: 0.5,
-  //     }
-  //   );
+  const isSubheadingInView = useInView(subheadingRef, {
+    once: true,
+    amount: 0.3,
+  });
+  const areTabsInView = useInView(tabsRef, { once: true, amount: 0.3 });
+  const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
 
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current);
-  //   }
+  useEffect(() => {
+    const currentTab = tabRefs.current[activeTab];
+    const container = containerRef.current;
 
-  //   return () => {
-  //     if (sectionRef.current) {
-  //       observer.unobserve(sectionRef.current);
-  //     }
-  //   };
-  // }, []);
+    if (!currentTab || !container) return;
+
+    setIndicatorStyle({
+      width: currentTab.offsetWidth,
+      left: currentTab.offsetLeft,
+    });
+  }, [activeTab]);
+
   return (
-    // Added overflow-hidden to the main container
-    <div
+    <section
       id="our-projects"
-      className="flex flex-col items-center justify-center w-full pb-14 bg-secondary-60 relative overflow-hidden"
+      className=" w-full pb-14 bg-secondary-60 overflow-hidden"
     >
-      {/* <div className="bg-primary-20 absolute top-20 bottom-0 left-20 right-0 z-0 w-[70%] mx-auto h-[318px] rounded-full opacity-10 blur-[150px]"></div> */}
-      <div className="absolute w-full top-0 bottom-0 right-0 left-0 opacity-[2%] bg-about-bg-gradient2 h-fit">
-        <Image src={IMAGES.techGrid} alt="" className="" />
-      </div>
-      <Container>
-        <div className="py-10 md:py-14 xl:py-20 relative">
-          {/* <section ref={sectionRef} className="">
-      <h1 className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[72px] max-w-[900px] mx-auto text-center">
-        <Scrambler text={inView ? 'Explore ' : ''} />
-        <span className="text-primary-20">Our Works</span>
-        <Scrambler text={inView ? ' And See What We Create Best' : ''} />
-      </h1>
-    </section> */}
-          {/* <Image
-            src={ANIMATEDICONS.projectsGif}
-            alt=""
-            className="size-28 justify-self-center"
-          /> */}
-          {/* Animated Heading */}
-          <motion.h1
-            ref={headingRef}
-            variants={slideUpVariants}
-            initial="hidden"
-            animate={isHeadingInView ? "visible" : "hidden"}
-            transition={transition}
-            className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 md:leading-14 2xl:leading-[72px] max-w-[900px] mx-auto text-center"
-          >
-            Explore{" "}
-            <TextLoop>
-              <span className="text-primary-20">Our Works</span>
-              <span className="text-primary-20">Our Creations</span>
-              <span className="text-primary-20">Our Solutions</span>
-              <span className="text-primary-20">Our Expertise</span>
-            </TextLoop>{" "}
-            And See What We Create Best
-          </motion.h1>
+      {/* Background grid */}
 
-          {/* Animated Subheading */}
+      <Container>
+        <div className="relative py-10 md:py-14 xl:py-20 z-10">
+          <AnimatedHeading
+            staticTextBefore="Explore"
+            loopTexts={[
+              "Our Works",
+              "Our Creations",
+              "Our Solutions",
+              "Our Expertise",
+            ]}
+            staticTextAfter="And See What We Create Best"
+            className="max-w-[700px]"
+          />
+
           <motion.p
             ref={subheadingRef}
             variants={slideUpVariants}
             initial="hidden"
             animate={isSubheadingInView ? "visible" : "hidden"}
-            transition={{ ...transition, delay: 0.2 }} // Delay after heading
-            className={`text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-[900px] mx-auto text-center mt-7`}
+            transition={{ ...transition, delay: 0.2 }}
+            className="text-neutral-30 font-Inter text-sm md:text-base 2xl:text-xl leading-6 max-w-[900px] mx-auto text-center mt-7"
           >
-            Discover the passion, creativity, and dedication behind our
-            works—crafted to deliver real value, impact, and long-lasting
-            impressions.
+            Software Development Projects Across Web, Mobile, and SaaS
           </motion.p>
-          <div className="bg-primary-20 absolute bottom-0 left-0 top-48 right-0 z-0 w-[70%] mx-auto h-[270px] rounded-full opacity-30 blur-[150px]"></div>
-          {/* <div className="animated-gradient-border w-full rounded-3xl text-white mt-9 z-10 sticky top-0"> */}
-          <div className="bg-secondary-60 w-full rounded-3xl mt-10">
-            {/* Animated Tab */}
-            {/* <motion.div
-              ref={tabsRef}
-              variants={slideUpVariants}
-              initial="hidden"
-              animate={areTabsInView ? "visible" : "hidden"}
-              transition={{ ...transition, delay: 0.4 }} 
-              className="flex items-center justify-center "
-            >
-              <ul
-                ref={containerRef}
-                className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-[10px] sm:text-base max-w-[420px] md:max-w-fit overflow-x-auto"
-              >
-                <span
-                  className="absolute bg-[#06A0ED] h-[85%] transition-all duration-500 rounded-full z-10"
-                  style={{
-                    width: `${indicatorStyle.width}px`,
-                    left: `${indicatorStyle.left}px`,
-                  }}
-                />
 
-                {projectCategories.map((category, idx) => (
-                  <li
-                    key={idx}
-                    ref={(el) => {
-                      tabRefs.current[idx] = el;
-                    }}
-                    onClick={() => setActiveTab(idx)}
-                    className={`relative z-20 px-4 sm:px-6 py-2 transition duration-300 rounded-full cursor-pointer font-medium text-center text-nowrap hover:text-white ${
-                      activeTab === idx ? "text-white" : "text-white/60"
-                    }`}
-                  >
-                    {category}
-                  </li>
-                ))}
-              </ul>
-            </motion.div> */}
-
-            {/* Projects cards - Animation should happen inside OurProjectCard */}
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-7 min-h-[800px] overflow-y-auto custom-scrollbar w-full">
-              {projects?.map((project, index) => (
-                // Pass index for individual card animation delay
-                <ProjectCard
-                  key={index}
-                  index={index} // Pass index here
-                  cardDirection={index % 2 !== 0 ? "left" : "right"}
-                  project={project}
-                />
-              ))}
+          {/* Tabs */}
+          <div className="relative bg-project-border px-[7px] mt-10 pt-[7px] rounded-4xl">
+            <div className="absolute -top-40 left-0 right-0 h-[520px] w-full pointer-events-none">
+              <Image
+                src={IMAGES.projectEllipse}
+                alt="Project ellipse background"
+                fill
+                className="object-contain"
+              />
             </div>
+            <div className="bg-secondary-60 rounded-4xl">
+              <div className=" bg-project-bg-gradient rounded-4xl px-10 pt-24 md:px-20 relative">
+                {" "}
+                <motion.div
+                  ref={tabsRef}
+                  variants={slideUpVariants}
+                  initial="hidden"
+                  animate={areTabsInView ? "visible" : "hidden"}
+                  transition={{ ...transition, delay: 0.4 }}
+                  className="absolute -top-5 right-0 left-0 flex justify-center"
+                >
+                  <ul
+                    ref={containerRef}
+                    className="relative flex items-center bg-secondary-20/80 border border-neutral-65/30 backdrop-blur-sm rounded-full px-2 py-1 font-Inter text-white text-sm overflow-x-auto"
+                  >
+                    {indicatorStyle && (
+                      <span
+                        className="absolute bg-[#06A0ED] h-[85%] rounded-full transition-all duration-500"
+                        style={indicatorStyle}
+                      />
+                    )}
 
-            {/* Animated See all projects button */}
-            {/* Wrap the Link with motion.div for animation */}
-            {/* <motion.div
-              ref={buttonRef}
-              variants={slideUpVariants}
-              initial="hidden"
-              animate={isButtonInView ? "visible" : "hidden"}
-              transition={{ ...transition, delay: 0.6 }} 
-              className="flex items-center justify-center mt-10"
-            >
-              <Link href={"/our-projects"}>
-               
-                <FillBgToTopOnHover btnText="See All projects" />
-              </Link>
-            </motion.div> */}
+                    {projectCategories.slice(0, 4).map((category, idx) => (
+                      <li
+                        key={category}
+                        ref={(el) => (tabRefs.current[idx] = el)}
+                        onClick={() => setActiveTab(idx)}
+                        className={`relative z-10 px-5 py-2 cursor-pointer whitespace-nowrap ${
+                          activeTab === idx ? "text-white" : "text-white/60"
+                        }`}
+                      >
+                        {category}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>{" "}
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-10">
+                  {projects.map((project, index) => (
+                    <ProjectCard
+                      key={project.title}
+                      index={index}
+                      cardDirection={index % 2 === 0 ? "right" : "left"}
+                      project={project}
+                    />
+                  ))}
+                </div>
+                {/* CTA */}
+              </div>
+            </div>
           </div>
-          {/* </div> */}
+          <motion.div
+            ref={buttonRef}
+            variants={slideUpVariants}
+            initial="hidden"
+            animate={isButtonInView ? "visible" : "hidden"}
+            transition={{ ...transition, delay: 0.6 }}
+            className="flex justify-center mt-12"
+          >
+            <Link href="/our-projects">
+              <FillBgToTopOnHover btnText="Explore Detailed Case Studies" />
+            </Link>
+          </motion.div>
+
+          {/* Projects */}
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 

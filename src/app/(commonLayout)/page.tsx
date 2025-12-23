@@ -1,27 +1,25 @@
 import Banner from "@/components/HomePage/Banner/Banner";
+import FeasibilityReview from "@/components/HomePage/FeasibilityReview/FeasibilityReview";
 import Hero from "@/components/HomePage/Hero/Hero";
 import InAction from "@/components/HomePage/InAction/InAction";
 import OurProgressBar from "@/components/HomePage/OurProgressBar/OurProgressBar";
 import OurProjects from "@/components/HomePage/OurProjects/OurProjects";
-import OurServices from "@/components/HomePage/OurServices/OurServices";
-import OurTechStack from "@/components/HomePage/OurTechStack/OurTechStack";
-import Testimonials from "@/components/HomePage/Testimonials/Testimonials";
-import AboutPRTech from "@/components/Shared/AboutPRTech/AboutPRTech";
+import ProjectTimeline from "@/components/ProjectTimeline/ProjectTimeline";
 // import ProjectTimeline from "@/components/ProjectTimeline/ProjectTimeline";
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-between items-center w-full">
-      <Hero/>
-      <OurServices/>
-      <AboutPRTech/>
+   <Hero/>
+      {/* <OurServices/> */}
+      <FeasibilityReview/>
       <OurProjects/>
       <InAction/> 
-      <OurTechStack/>
+      {/* <OurTechStack/> */}
       <OurProgressBar/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
       <Banner/>
-      {/* <ProjectTimeline/> */}
+      <ProjectTimeline/>
     </div>
   );
 }
