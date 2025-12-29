@@ -1,5 +1,5 @@
 "use client";
-import {IMAGES } from "@/assets";
+import { IMAGES } from "@/assets";
 import Image from "next/image";
 import HeroSubtitle from "./HeroSubtitle";
 import Container from "@/components/Reusable/Container/Container";
@@ -71,9 +71,9 @@ const Hero = () => {
                 className="text-center my-6 font-Rethink text-[28px] md:text-5xl lg:text-6xl 2xl:text-[70px] text-white font-bold leading-10 md:leading-[60px] lg:leading-[72px] text-balance"
               >
                 <span className="bg-gradient-to-r from-primary-20 to-primary-15 bg-clip-text text-transparent">
-                  Custom Web & App Solutions <br />
+                  Custom Web & App Services <br />
                 </span>{" "}
-                That Fit Your Business
+                Built for Real Business Growth
               </motion.h1>
               <motion.p
                 variants={slideFromBottom}
@@ -95,9 +95,7 @@ const Hero = () => {
               >
                 <div className="flex justify-center gap-4 md:gap-5 3xl:gap-6">
                   <Link href="/contact-us">
-                    <GlowOnHover
-                      classNames="px-2 lg:px-6"
-                    >
+                    <GlowOnHover classNames="px-2 lg:px-6">
                       Free Project Feasibility Review
                     </GlowOnHover>
                   </Link>
@@ -111,15 +109,15 @@ const Hero = () => {
                     See Systems We’ve Built
                   </FillBgOnHover>
                 </div>
-                 <motion.p
-                variants={slideFromBottom}
-                initial="hidden"
-                animate="visible"
-                transition={transition(0.6)}
-                className="text-white/80 text-center font-Inter text-xs md:text-base lg:text-md 3xl:text-lg font-normal leading-4 md:leading-5 lg:leading-8 2xl:leading-[30px] mt-4 lg:mt-6 max-w-[543px] lg:max-w-[720px] mx-auto"
-              >
-              No commitment · Clear next steps
-              </motion.p>
+                <motion.p
+                  variants={slideFromBottom}
+                  initial="hidden"
+                  animate="visible"
+                  transition={transition(0.6)}
+                  className="text-white/80 text-center font-Inter text-xs md:text-base lg:text-md 3xl:text-lg font-normal leading-4 md:leading-5 lg:leading-8 2xl:leading-[30px] mt-4 lg:mt-6 max-w-[543px] lg:max-w-[720px] mx-auto"
+                >
+                  No commitment · Clear next steps
+                </motion.p>
               </motion.div>
             </div>
           </Container>

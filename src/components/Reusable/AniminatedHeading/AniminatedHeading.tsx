@@ -51,7 +51,7 @@ export default function AnimatedHeading({
   }, [loopTexts, loopInterval]);
 
   return (
-    <motion.h1
+    <motion.h2
       ref={ref}
       variants={variants}
       initial="hidden"
@@ -79,6 +79,6 @@ export default function AnimatedHeading({
       )}{" "}
 
       {staticTextAfter}
-    </motion.h1>
+    </motion.h2>
   );
 }

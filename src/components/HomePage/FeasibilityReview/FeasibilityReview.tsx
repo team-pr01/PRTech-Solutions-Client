@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Container from "@/components/Reusable/Container/Container";
 import React, { useRef } from "react";
 import { easeInOut, easeOut, motion, useInView } from "framer-motion";
@@ -124,16 +124,21 @@ const FeasibilityReview = () => {
               initial="hidden"
               animate={isHeadingInView ? "visible" : "hidden"}
             >
-              <h3 className="text-neutral-30 text-xl font-semibold mb-2">
+              <span className="text-neutral-30 text-xl font-semibold mb-2">
                 Project Feasibility Review
-              </h3>
+              </span>
 
               <Heading
                 heading="Validate Your Idea Before You Build"
                 subHeading="Before spending time or money on development, we help you understand whether your idea can actually work in practice. This review focuses on technical feasibility, scalability, and execution risks — so you can make decisions with clarity, not assumptions."
                 align="left"
               />
-              <p className="text-neutral-30 text-left font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-full lg:max-w-[800px] text-center">There’s no sales pressure here. The goal is simple: give you a clear picture early, before development starts or vendors are chosen. Catching issues at this stage saves time, cost, and frustration later.</p>
+              <p className="text-neutral-30 text-left font-Inter text-sm md:text-base 2xl:text-xl leading-4 md:leading-7 max-w-full lg:max-w-[800px] text-center">
+                There’s no sales pressure here. The goal is simple: give you a
+                clear picture early, before development starts or vendors are
+                chosen. Catching issues at this stage saves time, cost, and
+                frustration later.
+              </p>
             </motion.div>
 
             <motion.div
@@ -160,9 +165,9 @@ const FeasibilityReview = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-neutral-20 text-xl font-semibold">
+                    <h3 className="text-neutral-20 text-xl font-semibold">
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="text-neutral-40 mt-1 ">{item.description}</p>
                   </div>
                 </motion.div>

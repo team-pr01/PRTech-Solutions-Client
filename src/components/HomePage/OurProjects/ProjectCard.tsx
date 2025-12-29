@@ -77,9 +77,9 @@ const ProjectCard = ({
       {/* CONTENT */}
       <div className="p-3 xl:p-6">
         <div className="flex items-end justify-between">
-          <h3 className="text-white text-2xl md:text-3xl font-bold">
+          <h2 className="text-white text-2xl md:text-3xl font-bold">
             {project?.title}
-          </h3>
+          </h2>
 
           <div className="rounded-full border border-white px-8 py-[7px] text-white text-sm">
             App

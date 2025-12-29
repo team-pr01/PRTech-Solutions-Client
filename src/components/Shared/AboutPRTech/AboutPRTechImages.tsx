@@ -7,6 +7,14 @@ import { useEffect, useRef, useState } from "react";
 const AboutPRTechImages = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [showContent, setShowContent] = useState(false);
+const blogTopics = [
+  "How to validate a product idea before development",
+  "Web vs mobile app: choosing the right platform",
+  "MVP vs full product: what should you build first",
+  "Common mistakes founders make before hiring developers",
+  "How to choose the right tech stack for scalability",
+  "Website performance optimization for real users",
+];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,19 +37,19 @@ const AboutPRTechImages = () => {
   return (
     <div className="flex flex-col md:flex-row gap-6 relative w-full">
       {/* Bg gradient */}
-      <div className="bg-primary-20 absolute inset-0 z-0 w-[320px] md:w-[711px] h-[300px] md:h-[613px] rounded-full opacity-40 blur-[163px]" />
+      <div className="bg-primary-20 absolute inset-0 z-0 w-[320px] md:w-[711px] h-[300px] md:h-[813px] rounded-full opacity-40 blur-[163px]" />
 
       <div className="flex flex-row md:flex-col gap-5 z-10">
         {/* Support card */}
         <div className="support-card-wave relative overflow-hidden bg-primary-20/80 rounded-2xl p-5 flex flex-col gap-3 md:gap-9 h-[180px] md:h-[160px] w-full md:w-[343px]">
           <div className="relative z-[2] flex flex-col h-full">
-            <h2 className="text-white font-Rethink text-2xl font-bold">
-              24/7 Support
-            </h2>
+            <p className="text-white font-Rethink text-sm sm:text-2xl font-bold">
+              Free Project Feasibility Review
+            </p>
 
             <div className="flex items-start md:items-center justify-between mt-auto gap-2">
-              <p className="text-white md:text-base leading-4 md:max-w-[75%]">
-                We provide 24/7 service to our customer
+              <p className="text-white text-sm sm:text-base leading-4 md:max-w-[75%]">
+              Validate your product idea before investing in development.
               </p>
 
               <div className="bg-white rounded-full flex items-center justify-center size-10 shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95">
@@ -72,18 +80,18 @@ const AboutPRTechImages = () => {
             className={`hidden md:flex flex-col bg-gradient-to-b from-secondary-20/80 via-primary-20/50 to-primary-20 rounded-2xl absolute bottom-0 w-full h-full p-5 transition-all duration-[600ms]
             ${showContent ? "translate-y-0" : "translate-y-full"}`}
           >
-            <h1
+            <h3
               className={`text-white text-2xl font-bold mt-4 leading-7 transition-all duration-500
               ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
-              Hello from PRTech
-            </h1>
+              What You Get From Our Feasibility Review
+            </h3>
 
             <div className="flex flex-col gap-2 mt-4">
-              {Array.from({ length: 9 }).map((_, i) => (
+              {blogTopics.map((blog, i) => (
                 <p
                   key={i}
-                  className={`text-white text-[15px] flex items-center gap-2 transition-all duration-500 delay-[${i *
+                  className={`text-white text-[15px] flex items-start gap-2 transition-all duration-500 delay-[${i *
                     100}ms]
                   ${
                     showContent
@@ -92,7 +100,7 @@ const AboutPRTechImages = () => {
                   }`}
                 >
                   <LuSquareMousePointer />
-                  Lorem ipsum dolor sit
+                  {blog}
                 </p>
               ))}
             </div>

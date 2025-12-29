@@ -43,11 +43,11 @@ const AboutPRTechCard: React.FC<TAboutPRTechCardProps> = ({
         <div className="animated-connector-line w-[2px] h-[96px]"></div>
       </div>
       <div>
-        <h1
+        <h3
           className={`text-white font-Inter text-xl md:text-2xl font-bold leading-7 lg:leading-[33px]`}
         >
           {title}
-        </h1>
+        </h3>
         <p className="text-xs md:text-lg leading-5 lg:leading-[28px] text-primary-50 mt-2 max-w-full md:max-w-[464px]">
           {description}
         </p>

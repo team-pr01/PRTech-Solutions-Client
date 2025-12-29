@@ -141,7 +141,7 @@ const fadeIn = {
             </motion.div>
 
             {/* Animated Heading 1 */}
-            <motion.h1
+            <motion.h2
               ref={heading1Ref}
               variants={subtleSlideUpFadeIn}
               initial="hidden"
@@ -150,8 +150,8 @@ const fadeIn = {
               className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
             >
               Have an idea, but not sure how to build it the right way?
-            </motion.h1>
-            <motion.h2
+            </motion.h2>
+            <motion.h3
               ref={heading1Ref}
               variants={subtleSlideUpFadeIn}
               initial="hidden"
@@ -160,7 +160,7 @@ const fadeIn = {
               className={`text-white font-rethink text-xl md:text-2xl 2xl:text-[34px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
             >
               Start with a free project feasibility review.
-            </motion.h2>
+            </motion.h3>
 
             {/* Animated Typing Heading Container */}
             <motion.div
@@ -171,14 +171,14 @@ const fadeIn = {
               transition={{ delay: 0.5 }} // Add delay
               className="h-14 sm:h-16" // Add height to prevent layout shift during typing
             >
-              <h1 className="text-4xl sm:text-5xl font-bold text-center text-white mt-6">
+              <h4 className="text-4xl sm:text-5xl font-bold text-center text-white mt-6">
              We help you  { " "}
                 <span className="text-primary-20  border-primary-20 pr-1">
                   {/* Render typing text only when in view */}
                   {/* {isTypingInView ? displayedText : ""} */}
                 decide what to build — and how to build it right.
                 </span>
-              </h1>
+              </h4>
             </motion.div>
 
             {/* Animated Paragraph */}
