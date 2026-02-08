@@ -33,6 +33,7 @@ import empty from "./icons/empty.svg";
 import coding from "./icons/coding-website-svgrepo-com.svg";
 import path from "./icons/git-fork-svgrepo-com.svg";
 import steps from "./icons/businessman-ascending.svg";
+import timelineArrow from "./icons/timeline-arrow.svg";
 
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
@@ -288,7 +289,8 @@ export const ICONS = {
   websiteDevelopmentBlue,
   coding,
   path,
-  steps
+  steps,
+  timelineArrow
 };
 export const GRADIENT_BG = {
   gradientHero,

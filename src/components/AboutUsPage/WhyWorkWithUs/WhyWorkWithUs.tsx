@@ -40,10 +40,10 @@ const WhyWorkWithUs = () => {
   };
 
   const specialties = [
-    { title: "Expert Team", description: "Skilled professionals with deep industry experience — committed to building smart, scalable solutions" },
-    { title: "Fast Response", description: "We value your time. Expect a clear, professional response within 24 hours — always." },
-    { title: "Quality Assurance", description: "Every line of code is tested, every product is refined. We deliver nothing less than quality." },
-    { title: "Ongoing Support", description: "Our partnership doesn’t end at launch — we’re here for updates, fixes, and future growth." },
+    { title: "Clear, Honest Communication", description: "We explain technical decisions in plain language so you understand what’s being built, why it matters, and what trade-offs exist — before problems appear later." },
+    { title: "Advice Before Code ", description: "Before writing code, we evaluate feasibility, scope, and risk. If an idea isn’t practical or scalable right now, we’ll tell you early — clearly and honestly" },
+    { title: "No Unnecessary Features", description: "We actively avoid over-engineering. Every feature must solve a real business or user problem — not inflate scope, cost, or complexity." },
+    { title: "Long-Term Thinking by Default", description: "We design clean architectures that support future growth — so your product can evolve without painful rewrites, hacks, or rebuilds." },
   ];
 
   return (
@@ -55,7 +55,7 @@ const WhyWorkWithUs = () => {
       <div className="bg-primary-20 absolute bottom-0 right-0 z-0 size-[200px] rounded-full opacity-70 blur-[150px]"></div>
 
       <Container>
-        <div className="flex flex-col xl:flex-row gap-10 xl:gap-0 items-center justify-between w-full">
+        <div  className="flex flex-col xl:flex-row gap-10 xl:gap-0 items-center justify-between w-full">
           {/* Left Column Image */}
           <motion.div
             className="relative"
@@ -92,16 +92,16 @@ const WhyWorkWithUs = () => {
               initial="hidden"
               animate={isHeadingInView ? "visible" : "hidden"}
             >
-              <h1 className="text-neutral-30 text-2xl font-semibold font-Inter mb-2">Why Work With Us</h1>
+              <p className="text-neutral-30 text-lg font-semibold font-Inter mb-2">Why Work With Us</p>
               <Heading
-                heading="We Execute Our ideas From the Start to Finish"
-                subHeading="At PRtech Solutions, we create digital experiences that drive results. Blending bold creativity with modern tech, we turn ideas into high-performing websites and apps — helping startups and growing brands stand out and scale smarter."
+                heading="Confidence Comes From How We Think — Not What We Claims"
+               
                 align="left"
               />
             </motion.div>
 
             <motion.div
-              className="flex flex-col gap-6 mt-10"
+              className="flex flex-col gap-6 mt-10 w-full"
               variants={variants.listContainer}
               initial="hidden"
               whileInView="visible"
@@ -111,8 +111,8 @@ const WhyWorkWithUs = () => {
                 <motion.div key={specialty.title} className="flex gap-6 font-Inter" variants={variants.listItem}>
                   <Image src={ICONS.tickMark} alt="" width={32} height={32} className="size-8 flex-shrink-0" />
                   <div>
-                    <h1 className="text-neutral-20 text-2xl font-semibold">{specialty.title}</h1>
-                    <p className="text-neutral-40 text-lg mt-[6px] max-w-[416px]">{specialty.description}</p>
+                    <h3 className="text-neutral-20 text-2xl font-semibold">{specialty.title}</h3>
+                    <p className="text-neutral-40 text-lg mt-[6px] ">{specialty.description}</p>
                   </div>
                 </motion.div>
               ))}

@@ -3,8 +3,9 @@ import PageHeroSection from "@/components/Reusable/PageHeroSection/PageHeroSecti
 const AboutUsHero = () => {
   return (
       <PageHeroSection
-        heading="About PRTech"
-        description="We’re a passionate team of designers, developers, and digital strategists focused on crafting meaningful digital experiences. From concept to launch, we help businesses create high-performance websites and apps that drive real results."
+        heading="About PRTech — Building Scalable Web & App Products"
+        description="We help businesses, startups, and founders design and build scalable web applications and high-performance mobile apps—with clear planning and long-term growth in mind."
+        
       />
   );
 };

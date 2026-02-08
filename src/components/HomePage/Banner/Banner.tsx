@@ -128,7 +128,7 @@ const fadeIn = {
         />
         <Container>
           {/* Apply relative z-10 to ensure content is above background */}
-          <div className="relative z-10 py-10 md:py-14 xl:py-40 flex flex-col items-center"> {/* Added flex and items-center */}
+          <div className="relative z-10 py-10 xl:py-14 flex flex-col items-center"> {/* Added flex and items-center */}
             {/* Animated Icon */}
             <motion.div
               ref={iconRef}
@@ -137,7 +137,7 @@ const fadeIn = {
               animate={isIconInView ? "visible" : "hidden"}
               // No separate transition needed, it's in the variant
             >
-              <Image src={ANIMATEDICONS.banner} alt="" className="size-40 justify-self-center" />
+              <Image src={ANIMATEDICONS.banner} alt="" className="size-24 justify-self-center" />
             </motion.div>
 
             {/* Animated Heading 1 */}
@@ -147,7 +147,7 @@ const fadeIn = {
               initial="hidden"
               animate={isHeading1InView ? "visible" : "hidden"}
               transition={{ delay: 0.3 }} // Add delay
-              className={`text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
+              className={`text-white font-rethink text-3xl xl:text-4xl font-bold leading-12 text-center mt-5`}
             >
               Have an idea, but not sure how to build it the right way?
             </motion.h2>
@@ -157,7 +157,7 @@ const fadeIn = {
               initial="hidden"
               animate={isHeading1InView ? "visible" : "hidden"}
               transition={{ delay: 0.3 }} // Add delay
-              className={`text-white font-rethink text-xl md:text-2xl 2xl:text-[34px] font-bold leading-9 2xl:leading-[64px] text-center mt-5`}
+              className={`text-white font-rethink text-xl xl:text-2xl  font-bold leading-9 text-center mt-5`}
             >
               Start with a free project feasibility review.
             </motion.h3>
@@ -171,12 +171,12 @@ const fadeIn = {
               transition={{ delay: 0.5 }} // Add delay
               className="h-14 sm:h-16" // Add height to prevent layout shift during typing
             >
-              <h4 className="text-4xl sm:text-5xl font-bold text-center text-white mt-6">
+              <h4 className="text-3xl xl:text-4xl font-bold text-center text-white mt-6">
              We help you  { " "}
                 <span className="text-primary-20  border-primary-20 pr-1">
                   {/* Render typing text only when in view */}
                   {/* {isTypingInView ? displayedText : ""} */}
-                decide what to build — and how to build it right.
+                decide what to build — <br/>and how to build it right.
                 </span>
               </h4>
             </motion.div>
@@ -200,7 +200,9 @@ const fadeIn = {
               initial="hidden"
               animate={areButtonsInView ? "visible" : "hidden"}
               transition={{ delay: 0.9 }} // Add delay for the container
-              className="flex items-center justify-center gap-5 mt-10"
+              className=" flex flex-col 
+              
+              xl:flex-row items-center justify-center gap-5 mt-10"
             >
               {/* Individual buttons don't need separate animation if container bounces */}
               <Link href="/contact-us"><FillBgOnHover classNames="w-fit group bg-primary-20 border border-primary-20 text-white flex items-center gap-1 hover:bg-primary-20/80">

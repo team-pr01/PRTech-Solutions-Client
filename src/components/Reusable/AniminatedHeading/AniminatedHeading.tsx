@@ -57,7 +57,7 @@ export default function AnimatedHeading({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       transition={transition}
-      className={`${className} text-white font-rethink text-3xl md:text-5xl 2xl:text-[58px] font-bold leading-9 md:leading-14 2xl:leading-[72px] max-w-[900px] mx-auto text-center`}
+      className={`${className} text-white font-rethink text-3xl xl:text-4xl font-bold leading-9 xl:leading-12 max-w-[900px] mx-auto text-center`}
     >
       {staticTextBefore}{" "}
 

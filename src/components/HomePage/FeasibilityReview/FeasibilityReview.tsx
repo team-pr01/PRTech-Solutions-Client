@@ -124,7 +124,7 @@ const FeasibilityReview = () => {
               initial="hidden"
               animate={isHeadingInView ? "visible" : "hidden"}
             >
-              <span className="text-neutral-30 text-xl font-semibold mb-2">
+              <span className="text-neutral-30 text-lg font-semibold mb-2">
                 Project Feasibility Review
               </span>
 
