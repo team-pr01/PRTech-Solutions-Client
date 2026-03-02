@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="relative w-full">
-      <div className="absolute top-5 margin-10 w-full flex justify-center z-50">
+      <div className="fixed top-5 margin-10 w-full flex justify-center z-9999">
         <Navbar />
       </div>
       {children}

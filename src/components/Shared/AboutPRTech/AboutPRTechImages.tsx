@@ -2,44 +2,63 @@ import { ICONS, IMAGES } from "@/assets";
 import Image from "next/image";
 import "./AboutPRTech.css";
 import { LuSquareMousePointer } from "react-icons/lu";
+import { useEffect, useRef, useState } from "react";
 
 const AboutPRTechImages = () => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [showContent, setShowContent] = useState(false);
+const blogTopics = [
+  "How to validate a product idea before development",
+  "Web vs mobile app: choosing the right platform",
+  "MVP vs full product: what should you build first",
+  "Common mistakes founders make before hiring developers",
+  "How to choose the right tech stack for scalability",
+  "Website performance optimization for real users",
+];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setShowContent(true);
+          }, 3000);
+          observer.disconnect(); // run once
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex flex-col md:flex-row gap-6 relative w-full ">
+    <div className="flex flex-col md:flex-row gap-6 relative w-full">
       {/* Bg gradient */}
-      <div className="bg-primary-20 absolute top-0 bottom-0 left-0 right-0 z-0 w-[320px] md:w-[711px] h-[300px] md:h-[613px] rounded-full opacity-40 blur-[163px] "></div>
+      <div className="bg-primary-20 absolute inset-0 z-0 w-[320px] md:w-[711px] h-[300px] md:h-[813px] rounded-full opacity-40 blur-[163px]" />
+
       <div className="flex flex-row md:flex-col gap-5 z-10">
         {/* Support card */}
-        <div className="support-card-wave group relative overflow-hidden  bg-primary-20/80 rounded-2xl p-5 flex flex-col gap-3 md:gap-9 h-[180px] md:h-[160px] w-full md:w-[343px] group">
-          {/* Content Wrapper */}
+        <div className="support-card-wave relative overflow-hidden bg-primary-20/80 rounded-2xl p-5 flex flex-col gap-3 md:gap-9 h-[180px] md:h-[160px] w-full md:w-[343px]">
           <div className="relative z-[2] flex flex-col h-full">
-            <h2
-              className={`text-white font-Rethink text-2xl font-bold`}
-            >
-              24/7 Support
-            </h2>
-            {/* Bottom section */}
-            <div className="flex flex-row items-start md:items-center gap-2 md:gap-0 justify-between mt-auto">
-              <p className="text-white md:text-base leading-4 max-full md:max-w-[75%]">
-                We provide 24/7 service to our customer
+            <p className="text-white font-Rethink text-sm sm:text-2xl font-bold">
+              Free Project Feasibility Review
+            </p>
+
+            <div className="flex items-start md:items-center justify-between mt-auto gap-2">
+              <p className="text-white text-sm sm:text-base leading-4 md:max-w-[75%]">
+              Validate your product idea before investing in development.
               </p>
 
-              <div className="bg-white rounded-full flex items-center justify-center size-10 shrink-0 group-hover:transition-all duration-300 group-hover:ease-in-out group-hover:transform group-hover:scale-105 group-hover:shadow-xl active:scale-95">
+              <div className="bg-white rounded-full flex items-center justify-center size-10 shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95">
                 <div className="relative w-6 h-6 overflow-hidden">
-                  {/* Original Icon */}
                   <Image
                     src={ICONS.rightArrowTop2}
                     width={24}
                     height={24}
-                    className="card-arrow-icon absolute inset-0 size-6"
-                    alt="Arrow icon"
-                  />
-                  {/* Copy Icon */}
-                  <Image
-                    src={ICONS.rightArrowTop2}
-                    width={24}
-                    height={24}
-                    className="card-arrow-icon card-arrow-icon--copy absolute inset-0 size-6"
+                    className="absolute inset-0 size-6"
                     alt="Arrow icon"
                   />
                 </div>
@@ -47,68 +66,48 @@ const AboutPRTechImages = () => {
             </div>
           </div>
         </div>
-        <div className="relative group overflow-hidden">
+
+        {/* Image with auto-slide overlay */}
+        <div ref={sectionRef} className="relative overflow-hidden">
           <Image
             src={IMAGES.aboutPrTech2}
             className="size-[180px] md:size-full object-cover rounded-xl"
             alt=""
           />
-          {/* Hover card */}
-          <div className="hidden  md:flex flex-col bg-gradient-to-b from-secondary-20/80 via-primary-20/50 to-primary-20 rounded-2xl absolute bottom-0 w-full h-full translate-y-full group-hover:translate-y-0 transition-all duration-[600ms] overflow-hidden p-5">
-            {/* <div className="flex items-center gap-3">
-          <div className="px-3 py-2 text-secondary-600 font-500 text-sm bg-white w-fit rounded-md translate-y-[-50px] group-hover:translate-y-0 transition-all duration-700 opacity-0 group-hover:opacity-100">
-            For All Levels
-          </div>
-          <h1 className="text-success-100 text-xl font-600 translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
-            Free
-          </h1>
-        </div> */}
 
-            <h1 className="text-white text-2xl font-bold mt-4 leading-7">
-              Hello from PRTech
-            </h1>
+          {/* AUTO SLIDE OVERLAY */}
+          <div
+            className={`hidden md:flex flex-col bg-gradient-to-b from-secondary-20/80 via-primary-20/50 to-primary-20 rounded-2xl absolute bottom-0 w-full h-full p-5 transition-all duration-[600ms]
+            ${showContent ? "translate-y-0" : "translate-y-full"}`}
+          >
+            <h3
+              className={`text-white text-2xl font-bold mt-4 leading-7 transition-all duration-500
+              ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            >
+              What You Get From Our Feasibility Review
+            </h3>
 
             <div className="flex flex-col gap-2 mt-4">
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
-              <p className="text-white text-[15px] translate-y-[100px] group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100 flex items-center gap-2">
-                <LuSquareMousePointer />
-                Lorem ipsum dolor sit
-              </p>
+              {blogTopics.map((blog, i) => (
+                <p
+                  key={i}
+                  className={`text-white text-[15px] flex items-start gap-2 transition-all duration-500 delay-[${i *
+                    100}ms]
+                  ${
+                    showContent
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-[40px]"
+                  }`}
+                >
+                  <LuSquareMousePointer />
+                  {blog}
+                </p>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
       <Image
         src={IMAGES.aboutPrTech1}
         className="z-10 h-[220px] md:h-[615px] w-full object-cover rounded-2xl"

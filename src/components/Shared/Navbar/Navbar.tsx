@@ -11,22 +11,22 @@ import MegaMenu from "./MegaMenu";
 import { motion, AnimatePresence } from "framer-motion";
 import HamburgerMenu from "./HambugerMenu";
 
-const RocketArrowIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2}
-    stroke="currentColor"
-    className="w-4 h-4"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-    />
-  </svg>
-);
+// const RocketArrowIcon = () => (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     fill="none"
+//     viewBox="0 0 24 24"
+//     strokeWidth={2}
+//     stroke="currentColor"
+//     className="w-4 h-4"
+//   >
+//     <path
+//       strokeLinecap="round"
+//       strokeLinejoin="round"
+//       d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+//     />
+//   </svg>
+// );
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // for MegaMenu (desktop & mobile)
@@ -64,30 +64,33 @@ const Navbar = () => {
   return (
     <Container>
       {/* Navbar top bar */}
-      <div id="navbar" className="bg-whites-10 border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter relative">
+      <div
+        id="navbar"
+        className="bg-whites-10 backdrop-blur-2xl border border-whites-50 rounded-[15px] px-6 py-3 w-full flex items-center justify-between font-Inter relative"
+      >
         {/* Logo */}
         <Link href={"/"}>
           <Image
             src={IMAGES.prtechSolutionsLogoGray}
             alt={"PRTech Solutions"}
-            className="h-[34px] 2xl:h-12 w-26 md:w-34 cursor-pointer"
+            className="h-7 2xl:h-10 w-fit object-contain  cursor-pointer"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:block">
-          <nav className="flex gap-8 items-center">
+        <div className="hidden md:block">
+          <nav className="flex gap-5 lg:gap-8 items-center">
             {navLinks.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
                 className={clsx(
-                  "text-white flex items-center font-medium relative group py-2 px-1"
+                  "text-white flex items-center font-medium relative group px-1"
                 )}
               >
-                <span className="relative z-10">{name}</span>
-                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                {href !== "/our-services" && (
+                <span className="relative text-sm lg:text-base z-10">{name}</span>
+                <span className="absolute left-0 bottom-[-2px] h-[2px] w-0 bg-gradient-to-r from-primary-whites-30 to-primary-20 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                {/* {href !== "/our-services" && (
                   <span
                     className={clsx(
                       "absolute -right-3 top-[13px]",
@@ -99,7 +102,7 @@ const Navbar = () => {
                   >
                     <RocketArrowIcon />
                   </span>
-                )}
+                )} */}
               </Link>
             ))}
 
@@ -119,39 +122,37 @@ const Navbar = () => {
                   }`}
                 />
               </button>
-
-             
             </div>
           </nav>
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-5">
           <Link href="/book-consultation">
-            <FillBgToTopOnHover btnText="Get Free Quote" />
+            <FillBgToTopOnHover btnText="Free Feasibility Review" />
           </Link>
         </div>
 
         {/* Hamburger for Mobile */}
-        <button className="lg:hidden" onClick={() => setSidebarOpen(true)}>
+        <button className="md:hidden" onClick={() => setSidebarOpen(true)}>
           <Image src={ICONS.hamburgerMenu} alt="menu" className="h-6 w-6" />
         </button>
       </div>
 
-       <AnimatePresence>
-                {open && (
-                  <motion.div
-                    key="mega-menu"
-                    variants={megaMenuVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    className="absolute left-0 right-0 z-50"
-                  >
-                    <MegaMenu />
-                  </motion.div>
-                )}
-              </AnimatePresence>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mega-menu"
+            variants={megaMenuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="absolute left-0 right-0 z-50"
+          >
+            <MegaMenu />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <HamburgerMenu
         sidebarOpen={sidebarOpen}

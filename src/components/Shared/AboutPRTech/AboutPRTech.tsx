@@ -1,16 +1,13 @@
 "use client";
 import { ICONS } from "@/assets";
 import AboutPRTechCard from "./AboutPRTechCard";
-import Link from "next/link";
 import AboutPRTechImages from "./AboutPRTechImages";
 import { CgArrowTopRight } from "react-icons/cg";
 import { easeOut, motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
-import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
-import { usePathname } from "next/navigation";
+import Heading from "@/components/Reusable/Heading/Heading";
 
 const AboutPRTech = () => {
-  const pathname = usePathname();
 
   const headingRef = useRef(null);
   const imagesRef = useRef(null);
@@ -28,21 +25,21 @@ const AboutPRTech = () => {
   const missionAndVision = [
     {
       icon: ICONS.missionGif,
-      title: "Our Mission",
+      title: "  Feasibility Before Code",
       description:
-        "We help businesses grow through clean, scalable, and user-focused digital solutions — built with care and purpose.",
+        " We don’t jump into development blindly. Every project starts by validating technical feasibility, scope, and trade-offs — so you avoid building the wrong thing or over-engineering too early.",
     },
     {
       icon: ICONS.visionGif,
-      title: "Our Vision",
+      title: "Built for Speed, Not Just Looks",
       description:
-        "To become a go-to partner for brands seeking innovative, high-performing websites and apps that make an impact.",
+        "Performance is treated as a requirement, not an afterthought. We design and develop systems optimized for fast load times, clean architecture, and real-world usage from day one.",
     },
     {
       icon: ICONS.disclaimerGif,
-      title: "Disclaimer",
+      title: "Future-Proof Architecture Planning",
       description:
-        "PRtech Solutions delivers digital services tailored to client needs; results may vary based on requirements, scope, and usage.",
+        "We design systems with growth in mind — so your product can evolve from MVP to scale without costly rewrites. Clear phases, clean boundaries, and room to grow.",
     },
   ];
 
@@ -54,20 +51,18 @@ const AboutPRTech = () => {
       <div className="w-full relative">
         <div className="max-w-full 2xl:max-w-[1300px] mx-auto px-5 2xl:px-0">
           <motion.div
-            ref={headingRef}
-            variants={slideUpVariants}
-            initial="hidden"
-            animate={isHeadingInView ? "visible" : "hidden"}
-            transition={transition}
-            className="flex items-center gap-10 w-fit"
-          >
-            <h1
-              className={`text-white font-Rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px]`}
+              ref={headingRef}
+              variants={slideUpVariants}
+              initial="hidden"
+              animate={isHeadingInView ? "visible" : "hidden"}
+              transition={transition}
+              className="w-full"
             >
-              About PRTech
-            </h1>
-            {/* <Image src={ANIMATEDICONS.aboutUsGif} alt="" className="size-28 absolute -right-32 -top-12" /> */}
-          </motion.div>
+              <Heading
+                heading="Why Businesses Choose PRTech for Web & App Development"
+                align="left"
+              />
+            </motion.div>
           <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
             {/* Left side */}
             <motion.div
@@ -94,17 +89,15 @@ const AboutPRTech = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: buttonDelay }}
-                className="mt-5 w-fit"
+                className="mt-5 w-full"
               >
-                <Link
-                  href={pathname === "/about-us" ? "/contact-us" : "/about-us"}
-                >
-                  <FillBgOnHover classNames="w-fit group bg-white text-secondary-60 group-hover:text-white flex items-center gap-1">
-                    {pathname === "/about-us" ? "Contact Us" : "More About Us"}
-
-                    <CgArrowTopRight className="text-base md:text-xl xl:text-2xl group-hover:rotate-45 transition-all duration-500 group-hover:translate-x-2" />
-                  </FillBgOnHover>
-                </Link>
+                <button className="text-primary-10 font-medium text-right cursor-pointer group w-full flex justify-end">
+                                {" "}
+                                <p className=" hover:underline underline-offset-3">
+                                  Start With a Free Feasibility Review{" "}
+                                </p>
+                                <CgArrowTopRight className="text-base md:text-lg xl:text-2xl group-hover:rotate-45 transition-all mt-[2px] duration-500 group-hover:translate-x-2" />
+                              </button>
               </motion.div>
             </div>
           </div>

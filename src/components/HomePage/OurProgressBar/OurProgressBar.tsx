@@ -9,11 +9,10 @@ import { easeOut, motion, useInView } from "framer-motion"; // Import motion and
 
 const OurProgressBar = () => {
   const progressBarData = [
-    { title: "Projects Delivered", value: "15" },
-    { title: "Happy Clients", value: "15" },
-    { title: "Tech Tools Used", value: "20" },
-    { title: "Years of Experience", value: "2" },
-    { title: "Success Ratio", value: "98" },
+    { title: "Production Projects Delivered", value: "15" },
+    { title: "Active & Past Clients", value: "12" },
+    { title: "Industries Served", value: "4" },
+    { title: "Production Features Delivered", value: "20" },
   ];
 
   // State for CountUp trigger (using native Intersection Observer as before)
@@ -94,9 +93,9 @@ const OurProgressBar = () => {
           initial="hidden"
           animate={isIconInView ? "visible" : "hidden"}
           transition={transition(0)}
-          className="flex justify-center mb-10" // Center the icon wrapper
+          className="flex justify-center mb-5" // Center the icon wrapper
         >
-          <Image src={ANIMATEDICONS.progressGif} alt="" className="size-28" />
+          <Image src={ANIMATEDICONS.progressGif} alt="" className=" size-10 md:size-18" />
         </motion.div>
         {/* Animated Heading */}
         <motion.div
@@ -108,7 +107,7 @@ const OurProgressBar = () => {
         >
           <Heading
             heading="Our Progress at a Glance"
-            subHeading="Driven by results, powered by performance – here’s how we measure success."
+            subHeading="What we’ve delivered so far, in simple terms."
             align="center"
           />
         </motion.div>
@@ -116,7 +115,7 @@ const OurProgressBar = () => {
         {/* Animated Cards Container */}
         <div
           ref={cardsContainerRef} // Ref for Framer Motion trigger
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start justify-between mt-16 z-10 relative" // Changed items-center to items-start if needed
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  items-start justify-between mt-16 z-10 relative " // Changed items-center to items-start if needed
         >
           {progressBarData.map((item, index) => (
             // Wrap each card in motion.div for staggered animation
@@ -129,7 +128,7 @@ const OurProgressBar = () => {
               // Apply staggered delay
               transition={transition(0.3 + index * 0.1)} // Base delay + stagger
             >
-              <h1 className="text-primary-20 font-Rethink text-[64px] font-bold text-center">
+              <h1 className="text-primary-20 font-Rethink text-3xl md:text-[64px] font-bold text-center">
                 {/* Use the state variable from native observer for CountUp */}
                 {inViewForCount ? (
                   <CountUp end={Number(item.value)} />

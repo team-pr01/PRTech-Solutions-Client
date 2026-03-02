@@ -60,7 +60,7 @@ const PageHeroSection: React.FC<TPageHeroSection> = ({
               initial="hidden"
               animate="visible"
               transition={transition(0.2)}
-              className="text-white font-rethink text-3xl md:text-5xl 2xl:text-[64px] font-bold leading-9 2xl:leading-[64px] z-10 text-center"
+              className="text-white font-rethink text-lg md:text-2xl lg:text-4xl 2xl:text-[50px] font-bold leading-9 2xl:leading-[64px] max-w-3xl z-10 text-center"
             >
               {heading}
             </motion.h1>

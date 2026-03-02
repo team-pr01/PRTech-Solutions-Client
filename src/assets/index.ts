@@ -30,6 +30,10 @@ import client from "./icons/clients.svg";
 import comment from "./icons/comment.svg";
 import boxShape from "./icons/box-shape.svg";
 import empty from "./icons/empty.svg";
+import coding from "./icons/coding-website-svgrepo-com.svg";
+import path from "./icons/git-fork-svgrepo-com.svg";
+import steps from "./icons/businessman-ascending.svg";
+import timelineArrow from "./icons/timeline-arrow.svg";
 
 import missionGif from "./icons/mission.gif";
 import visionGif from "./icons/vision.gif";
@@ -128,6 +132,8 @@ import project3 from "./images/project3.png";
 import techStackShadow from "./images/tech-stack-shadow.webp";
 import heroBgImage from "./images/hero-bg-image.webp";
 import heroBgImage2 from "./images/hero-bg-image-2.webp";
+import fesibilityCheck from "./images/fesiblity-check.webp";
+import fesibilityCheck2 from "./images/fesiblity-check2.webp";
 import relatedProject from "./images/related-project.jpg";
 import dummyBlog from "./images/dummy-blog.webp";
 import bookConsultationBg from "./images/book-consultation.webp";
@@ -191,6 +197,8 @@ export const IMAGES = {
   blog2,
   blog3,
   blog4,
+  fesibilityCheck,
+  fesibilityCheck2,
 };
 
 export const ICONS = {
@@ -279,6 +287,10 @@ export const ICONS = {
   frontendDevelopmentBlue,
   websiteDevelopmentWhite,
   websiteDevelopmentBlue,
+  coding,
+  path,
+  steps,
+  timelineArrow
 };
 export const GRADIENT_BG = {
   gradientHero,
