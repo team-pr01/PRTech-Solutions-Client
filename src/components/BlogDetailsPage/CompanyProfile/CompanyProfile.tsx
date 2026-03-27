@@ -1,4 +1,4 @@
-import { ICONS, IMAGES } from "@/assets";
+import { IMAGES } from "@/assets";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
 import Image from "next/image";
 import React from "react";
@@ -31,8 +31,8 @@ const CompanyProfile = () => {
       <div className="flex items-center justify-center">
         <GlowOnHover
           classNames="py-1 md:py-2 lg:py-[12px]"
-          icon={ICONS.arrowTopRight}
-          alt="tio-right-icon"
+          // icon={ICONS.arrowTopRight}
+          // alt="tio-right-icon"
         >
           Get Started
         </GlowOnHover>

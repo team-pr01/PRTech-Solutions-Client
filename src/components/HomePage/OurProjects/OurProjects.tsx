@@ -11,7 +11,7 @@ import FillBgToTopOnHover from "@/components/AnimatedButtons/FillBgToTopOnHover/
 
 const projects = [
   {
-    image: IMAGES.tradingPlatform,
+    image: IMAGES.project1,
     title: "Real-Time Trading Platform",
     subtitle: "High-reliability trading and portfolio management system",
     subtle: "Web-based trading platform",
@@ -19,7 +19,7 @@ const projects = [
       "A web-based trading platform designed to handle real-time market data, user portfolios, and performance-critical dashboards with a strong focus on accuracy, security, and system stability.",
   },
   {
-    image: IMAGES.ngoApp,
+    image: IMAGES.project2,
     title: "AI-Powered NGO Platform",
     subtitle: "Spiritual and wellness application with AI assistance",
     subtle: "Mobile and web NGO application",
@@ -27,7 +27,7 @@ const projects = [
       "A mobile and web platform built for an NGO to provide spiritual guidance, religious content, multilingual text translation, and AI-assisted recommendations in a structured and responsible manner.",
   },
   {
-    image: IMAGES.educationPlatform,
+    image: IMAGES.project3,
     title: "Tutor–Parent Matching Platform",
     subtitle: "Education hiring and verification system",
     subtle: "Education marketplace platform",
@@ -35,7 +35,7 @@ const projects = [
       "A platform where tutors, students, and parents can register, apply for teaching opportunities, and connect through an admin-controlled workflow that manages validation, agreements, and coordination.",
   },
   {
-    image: IMAGES.itCompanyWebsite,
+    image: IMAGES.project1,
     title: "IT Services Company Website",
     subtitle: "Lead-focused website for a software services firm",
     subtle: "IT services company website",

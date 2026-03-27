@@ -46,13 +46,13 @@ const PageHeroSection: React.FC<TPageHeroSection> = ({
             src={backgroundImage}
             alt={heading || "Page hero background"}
             fill
-            className="object-cover w-full min-h-[400px] xl:h-full"
+            className="object-cover w-full min-h-[400px] xl:min-h-[500px] 2xl:min-h-[700px] xl:h-full"
             priority
           />
         </div>
       </motion.div>
 
-      <div className="relative min-h-[400px] xl:h-auto flex items-center justify-center">
+      <div className="relative min-h-[400px] xl:min-h-[500px] 2xl:min-h-[700px] xl:h-auto flex items-center justify-center">
         <Container>
           <div className="flex flex-col items-center justify-center absolute top-10 bottom-0 right-0 left-0 h-full">
             <motion.h1

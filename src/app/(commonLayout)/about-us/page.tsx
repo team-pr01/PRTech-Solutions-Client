@@ -1,7 +1,7 @@
 import AboutUsHero from "@/components/AboutUsPage/AboutUsHero/AboutUsHero";
 import  { WhatWeDoDifferentlySection } from "@/components/AboutUsPage/DecisionFlowSection/DecisionFlowSection";
 import OurExpertise from "@/components/AboutUsPage/ExpertiesSection/ExpertiesSection";
-import OurStory from "@/components/AboutUsPage/OurStory/OurStory";
+// import OurStory from "@/components/AboutUsPage/OurStory/OurStory";
 import ProjectTimeline from "@/components/AboutUsPage/ProjectTimeline/ProjectTimeline";
 import WhyWorkWithUs from "@/components/AboutUsPage/WhyWorkWithUs/WhyWorkWithUs";
 import Banner from "@/components/HomePage/Banner/Banner";

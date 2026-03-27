@@ -119,8 +119,6 @@ const OurProjectCard = ({
                 >
                     <GlowOnHover
             classNames="px-2 md:px-3 lg:px-5 py-2 md:py-3 lg:py-3 font-Inter text-white text-sm sm:text-base border border-primary-20"
-            icon={ICONS.arrowTopRight}
-            alt="tio-right-icon"
           >
             See Details
           </GlowOnHover>
