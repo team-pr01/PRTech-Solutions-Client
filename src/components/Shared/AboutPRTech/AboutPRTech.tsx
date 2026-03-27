@@ -8,7 +8,6 @@ import React, { useRef } from "react";
 import Heading from "@/components/Reusable/Heading/Heading";
 
 const AboutPRTech = () => {
-
   const headingRef = useRef(null);
   const imagesRef = useRef(null);
 
@@ -51,18 +50,18 @@ const AboutPRTech = () => {
       <div className="w-full relative">
         <div className="max-w-full 2xl:max-w-[1300px] mx-auto px-5 2xl:px-0">
           <motion.div
-              ref={headingRef}
-              variants={slideUpVariants}
-              initial="hidden"
-              animate={isHeadingInView ? "visible" : "hidden"}
-              transition={transition}
-              className="w-full"
-            >
-              <Heading
-                heading="Why Businesses Choose PRTech for Web & App Development"
-                align="left"
-              />
-            </motion.div>
+            ref={headingRef}
+            variants={slideUpVariants}
+            initial="hidden"
+            animate={isHeadingInView ? "visible" : "hidden"}
+            transition={transition}
+            className="w-full"
+          >
+            <Heading
+              heading="Why Businesses Choose PRTech for Web & App Development"
+              align="left"
+            />
+          </motion.div>
           <div className="flex flex-col xl:flex-row justify-between mt-6 md:mt-[70px] gap-0 xl:gap-10 2xl:gap-0">
             {/* Left side */}
             <motion.div
@@ -92,12 +91,12 @@ const AboutPRTech = () => {
                 className="mt-5 w-full"
               >
                 <button className="text-primary-10 font-medium text-right cursor-pointer group w-full flex justify-end">
-                                {" "}
-                                <p className=" hover:underline underline-offset-3">
-                                  Start With a Free Feasibility Review{" "}
-                                </p>
-                                <CgArrowTopRight className="text-base md:text-lg xl:text-2xl group-hover:rotate-45 transition-all mt-[2px] duration-500 group-hover:translate-x-2" />
-                              </button>
+                  {" "}
+                  <p className=" hover:underline underline-offset-3">
+                    Start With a Free Feasibility Review{" "}
+                  </p>
+                  <CgArrowTopRight className="text-base md:text-lg xl:text-2xl group-hover:rotate-45 transition-all mt-[2px] duration-500 group-hover:translate-x-2" />
+                </button>
               </motion.div>
             </div>
           </div>

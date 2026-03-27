@@ -2,7 +2,6 @@
 "use client";
 
 import Image from "next/image";
-import "./OurProjects.css";
 import { motion } from "framer-motion";
 import { ANIMATEDICONS } from "@/assets";
 
@@ -22,106 +21,78 @@ const ProjectCard = ({
 
   return (
     <motion.div
-    onClick={(e) => {
-  e.preventDefault();
-}}
+      onClick={(e) => {
+        e.preventDefault();
+      }}
       variants={slideUpVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay: index * 0.15 }}
-      // 👇 PRESSED STATE
-      whileTap={{
-        scale: 0.98,
-        boxShadow: "0 8px 20px rgba(6,160,237,0.15)",
-      }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileTap={{ scale: 0.98 }}
       className="
-    group relative z-10
-    bg-secondary-50
-    rounded-xl xl:rounded-2xl
-    border border-primary-50
-    font-Rethink
-    transition-all duration-200 ease-out
-    hover:-translate-y-[6px]
-    hover:shadow-[0_20px_40px_rgba(6,160,237,0.25)]
-    hover:ring-2 hover:ring-primary-20/60
-  "
+        group
+        bg-[#0a1222]
+        rounded-2xl
+        overflow-hidden
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:shadow-xl
+        hover:shadow-[#06a0ed]/10
+        cursor-pointer
+        border border-[#06a0ed]/10
+      "
     >
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute bottom-0 right-0 top-6 z-[-1] size-[200px] rounded-full bg-primary-20 opacity-20 blur-2xl" />
-
-      {/* IMAGE */}
-      <div className="relative h-[200px] md:h-[330px] overflow-hidden rounded-t-xl xl:rounded-t-2xl">
-        {/* Dark overlay */}
-        <div
-          className="
-            absolute inset-0 z-10
-            bg-black/30
-            transition-opacity duration-200
-            group-hover:opacity-0
-          "
-        />
-
+      {/* Image */}
+      <div className="relative h-[240px] md:h-[280px] overflow-hidden">
         <Image
           src={project?.image}
-          alt="project mockup"
+          alt={project?.title || "Project"}
           className="
             h-full w-full object-cover
-            transition-transform duration-200 ease-out
-            group-hover:scale-[1.03]
+            transition-transform duration-500
+            group-hover:scale-105
           "
           priority
         />
+        
+        {/* Simple overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020817] via-transparent to-transparent opacity-60" />
       </div>
 
-      {/* CONTENT */}
-      <div className="p-3 xl:p-6">
-        <div className="flex items-end justify-between">
-          <h2 className="text-white text-2xl md:text-3xl font-bold">
+      {/* Content */}
+      <div className="p-5 md:p-6">
+        {/* Title and Type */}
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <h3 className="text-white text-xl md:text-2xl font-semibold leading-tight">
             {project?.title}
-          </h2>
-
-          <div className="rounded-full border border-white px-8 py-[7px] text-white text-sm">
-            App
-          </div>
+          </h3>
+          
+          <span className="text-xs text-[#bababa] whitespace-nowrap px-2 py-1 rounded-full bg-[#06a0ed]/10">
+            {project?.subtle?.includes("Mobile") ? "Mobile" : 
+             project?.subtle?.includes("Web") ? "Web" : "App"}
+          </span>
         </div>
 
-        <p className="mt-4 text-primary-50 text-sm md:text-base leading-5 md:leading-7">
+        {/* Description - shortened */}
+        <p className="text-[#d8d8d8] text-sm leading-relaxed line-clamp-2">
           {project?.description}
         </p>
 
         {/* CTA */}
-        <div className="mt-3 flex justify-between items-end">
-          <h4 className="text-white">{project.subtle}</h4>
-          <button
-            className="
-              group/cta flex items-center gap-2
-              rounded-[30px]
-              px-3 md:px-5
-              font-Inter text-sm sm:text-base text-white
-              transition-all duration-200
-              hover:text-primary-30
-            "
-          >
-            <span
-              className="
-                transition-all duration-200
-                group-hover/cta:translate-x-[4px]
-                group-hover/cta:font-semibold
-              "
-            >
-              View system overview
-            </span>
-
+        <div className="mt-5 flex items-center justify-end">
+          <button className="
+            group/cta
+            flex items-center gap-2
+            text-sm text-[#bababa]
+            hover:text-[#61dafb]
+            transition-colors duration-200
+          ">
+            <span>Learn more</span>
             <Image
               src={ANIMATEDICONS.linkGif}
-              alt="arrow-top-right"
-              className="
-                size-4 md:size-6
-                transition-all duration-200
-                group-hover/cta:translate-x-[6px]
-                group-hover/cta:brightness-125
-              "
+              alt="arrow"
+              className="size-4 transition-transform group-hover/cta:translate-x-1"
             />
           </button>
         </div>

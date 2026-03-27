@@ -1,9 +1,10 @@
 import Banner from "@/components/HomePage/Banner/Banner";
 import FeasibilityReview from "@/components/HomePage/FeasibilityReview/FeasibilityReview";
 import Hero from "@/components/HomePage/Hero/Hero";
-import InAction from "@/components/HomePage/InAction/InAction";
+// import InAction from "@/components/HomePage/InAction/InAction";
 import OurProgressBar from "@/components/HomePage/OurProgressBar/OurProgressBar";
 import OurProjects from "@/components/HomePage/OurProjects/OurProjects";
+// import OurTechStack from "@/components/HomePage/OurTechStack/OurTechStack";
 import ProjectTimeline from "@/components/HomePage/ProjectTimeline/ProjectTimeline";
 import AboutPRTech from "@/components/Shared/AboutPRTech/AboutPRTech";
 // import ProjectTimeline from "@/components/ProjectTimeline/ProjectTimeline";
@@ -50,7 +51,7 @@ export default function Home() {
       <FeasibilityReview/>
       <AboutPRTech/>
       <OurProjects/>
-      <InAction/> 
+      {/* <InAction/>  */}
       {/* <OurTechStack/> */}
       <OurProgressBar/>
       {/* <USPSection/> */}

@@ -1,12 +1,11 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
-import { ANIMATEDICONS, ICONS, IMAGES } from "@/assets";
+import { ICONS, IMAGES } from "@/assets";
 import FillBgOnHover from "@/components/AnimatedButtons/FillBgOnHover/FillBgOnHover";
 import Container from "@/components/Reusable/Container/Container";
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react"; // Import useRef
 import { CgArrowTopRight } from "react-icons/cg";
-import { easeInOut, easeOut, motion, useInView } from "framer-motion";
+import { easeOut, motion, useInView } from "framer-motion";
 import Link from "next/link";
 // import { easeLinear } from 'framer-motion';
 
@@ -23,35 +22,14 @@ const Banner = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Refs for animations
-  const iconRef = useRef(null);
-  const heading1Ref = useRef(null);
   const typingRef = useRef(null);
   const paragraphRef = useRef(null);
   const buttonsRef = useRef(null);
 
   // Check if elements are in view
-  const isIconInView = useInView(iconRef, { once: true, amount: 0.5 });
-  const isHeading1InView = useInView(heading1Ref, { once: true, amount: 0.3 });
   const isTypingInView = useInView(typingRef, { once: true, amount: 0.3 });
   const isParagraphInView = useInView(paragraphRef, { once: true, amount: 0.2 });
   const areButtonsInView = useInView(buttonsRef, { once: true, amount: 0.2 });
-
-  // Animation Variants
-  const pulseVariant = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: [1, 1.05, 1], 
-      transition: {
-        duration: 1.5,
-        ease: easeInOut,
-        repeat: Infinity, // Keep pulsing
-        repeatType: "mirror" as const, // Go back and forth
-        delay: 0.2,
-      },
-    },
-  };
 
   const subtleSlideUpFadeIn = {
     hidden: { y: 20, opacity: 0 },
@@ -130,23 +108,22 @@ const fadeIn = {
           {/* Apply relative z-10 to ensure content is above background */}
           <div className="relative z-10 py-10 xl:py-14 flex flex-col items-center"> {/* Added flex and items-center */}
             {/* Animated Icon */}
-            <motion.div
+            {/* <motion.div
               ref={iconRef}
               variants={pulseVariant}
               initial="hidden"
               animate={isIconInView ? "visible" : "hidden"}
-              // No separate transition needed, it's in the variant
             >
               <Image src={ANIMATEDICONS.banner} alt="" className="size-24 justify-self-center" />
-            </motion.div>
+            </motion.div> */}
 
             {/* Animated Heading 1 */}
-            <motion.h2
+            {/* <motion.h2
               ref={heading1Ref}
               variants={subtleSlideUpFadeIn}
               initial="hidden"
               animate={isHeading1InView ? "visible" : "hidden"}
-              transition={{ delay: 0.3 }} // Add delay
+              transition={{ delay: 0.3 }}
               className={`text-white font-rethink text-3xl xl:text-4xl font-bold leading-12 text-center mt-5`}
             >
               Have an idea, but not sure how to build it the right way?
@@ -156,11 +133,11 @@ const fadeIn = {
               variants={subtleSlideUpFadeIn}
               initial="hidden"
               animate={isHeading1InView ? "visible" : "hidden"}
-              transition={{ delay: 0.3 }} // Add delay
+              transition={{ delay: 0.3 }}
               className={`text-white font-rethink text-xl xl:text-2xl  font-bold leading-9 text-center mt-5`}
             >
               Start with a free project feasibility review.
-            </motion.h3>
+            </motion.h3> */}
 
             {/* Animated Typing Heading Container */}
             <motion.div
@@ -168,7 +145,7 @@ const fadeIn = {
               variants={fadeIn}
               initial="hidden"
               animate={isTypingInView ? "visible" : "hidden"}
-              transition={{ delay: 0.5 }} // Add delay
+              transition={{ delay: 0.5 }}
               className="h-14 sm:h-16" // Add height to prevent layout shift during typing
             >
               <h4 className="text-3xl xl:text-4xl font-bold text-center text-white mt-6">

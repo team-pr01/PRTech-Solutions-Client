@@ -1,27 +1,16 @@
 import { ICONS, IMAGES } from "@/assets";
 import Image from "next/image";
 import "./AboutPRTech.css";
-import { LuSquareMousePointer } from "react-icons/lu";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const AboutPRTechImages = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const [showContent, setShowContent] = useState(false);
-const blogTopics = [
-  "How to validate a product idea before development",
-  "Web vs mobile app: choosing the right platform",
-  "MVP vs full product: what should you build first",
-  "Common mistakes founders make before hiring developers",
-  "How to choose the right tech stack for scalability",
-  "Website performance optimization for real users",
-];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            setShowContent(true);
           }, 3000);
           observer.disconnect(); // run once
         }
@@ -75,36 +64,7 @@ const blogTopics = [
             alt=""
           />
 
-          {/* AUTO SLIDE OVERLAY */}
-          <div
-            className={`hidden md:flex flex-col bg-gradient-to-b from-secondary-20/80 via-primary-20/50 to-primary-20 rounded-2xl absolute bottom-0 w-full h-full p-5 transition-all duration-[600ms]
-            ${showContent ? "translate-y-0" : "translate-y-full"}`}
-          >
-            <h3
-              className={`text-white text-2xl font-bold mt-4 leading-7 transition-all duration-500
-              ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-            >
-              What You Get From Our Feasibility Review
-            </h3>
-
-            <div className="flex flex-col gap-2 mt-4">
-              {blogTopics.map((blog, i) => (
-                <p
-                  key={i}
-                  className={`text-white text-[15px] flex items-start gap-2 transition-all duration-500 delay-[${i *
-                    100}ms]
-                  ${
-                    showContent
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-[40px]"
-                  }`}
-                >
-                  <LuSquareMousePointer />
-                  {blog}
-                </p>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </div>
 
