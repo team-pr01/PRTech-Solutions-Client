@@ -1,5 +1,4 @@
 "use client";
-import "./OurProjects.css";
 import { IMAGES } from "@/assets";
 import React, { useRef } from "react";
 import Container from "@/components/Reusable/Container/Container";
