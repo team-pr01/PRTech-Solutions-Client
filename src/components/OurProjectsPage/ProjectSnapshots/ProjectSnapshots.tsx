@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/Reusable/Container/Container";
-import TextLoop from "react-text-loop";
+// import TextLoop from "react-text-loop";
 import TabMockup from "./TabMockup";
 import MobileMockup from "./MobileMockup";
 import DesktopMockup from "./DesktopMockup";
@@ -13,12 +13,12 @@ const ProjectSnapshots = () => {
         <div>
           {/* Heading */}
           <h1 className="text-white font-rethink text-2xl md:text-3xl xl:text-5xl font-bold leading-8 md:leading-9 xl:leading-[64px] max-w-[900px] 2xl:max-w-[1000px] mx-auto text-center">
-            Transforming Ideas into{" "}
-            <TextLoop>
+            Transforming Ideas into Innovations{" "}
+            {/* <TextLoop>
               <span className="text-primary-20">Innovations</span>
               <span className="text-primary-20">Designs</span>
               <span className="text-primary-20">Experiences</span>
-            </TextLoop>
+            </TextLoop> */}
           </h1>
           {/* Subheading */}
           <p
