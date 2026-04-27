@@ -1,7 +1,6 @@
 "use client";
 import { ANIMATEDICONS, ICONS, IMAGES } from "@/assets";
 import Image from "next/image";
-import "/OurProjects.css";
 import GlowOnHover from "@/components/AnimatedButtons/GlowOnHover/GlowOnHover";
 import Link from "next/link";
 import { motion } from "framer-motion";
